@@ -1,0 +1,170 @@
+{
+  "id": "en-u01",
+  "language": "en",
+  "level": "B1",
+  "title": "Komunikasi di tempat kerja",
+  "theme": "Rapat, tenggat, dan update pekerjaan",
+  "items": [
+    { "id": "en-u01-i01", "type": "collocation", "term": "make a decision", "meaning": "mengambil keputusan", "example": "We need to make a decision before Friday.", "example_id": "Kita perlu mengambil keputusan sebelum Jumat.", "cloze": "We need to ____ a decision before Friday.", "answer": "make", "note": "Bukan 'do a decision'." },
+    { "id": "en-u01-i02", "type": "word", "term": "deadline", "meaning": "tenggat waktu", "example": "The deadline for the report is next Monday.", "example_id": "Tenggat laporannya Senin depan.", "cloze": "The ____ for the report is next Monday.", "answer": "deadline" },
+    { "id": "en-u01-i03", "type": "idiom", "term": "on track", "meaning": "sesuai rencana", "example": "The project is on track for a March launch.", "example_id": "Proyeknya sesuai rencana untuk rilis bulan Maret.", "cloze": "The project is on ____ for a March launch.", "answer": "track" },
+    { "id": "en-u01-i04", "type": "phrasal_verb", "term": "follow up (on)", "meaning": "menindaklanjuti", "example": "I'll follow up on this after the meeting.", "example_id": "Saya akan menindaklanjuti ini setelah rapat.", "cloze": "I'll follow ____ on this after the meeting.", "answer": "up" },
+    { "id": "en-u01-i05", "type": "phrasal_verb", "term": "put off", "meaning": "menunda", "example": "Let's put off the meeting until Thursday.", "example_id": "Mari kita tunda rapatnya sampai Kamis.", "cloze": "Let's put ____ the meeting until Thursday.", "answer": "off" },
+    { "id": "en-u01-i06", "type": "phrasal_verb", "term": "run out of", "meaning": "kehabisan", "example": "We're running out of time, so let's move on.", "example_id": "Waktu kita hampir habis, jadi mari lanjut.", "cloze": "We're running ____ of time, so let's move on.", "answer": "out" },
+    { "id": "en-u01-i07", "type": "collocation", "term": "meet a deadline", "meaning": "memenuhi tenggat", "example": "I worked late to meet the deadline.", "example_id": "Saya lembur supaya memenuhi tenggat.", "cloze": "I worked late to ____ the deadline.", "answer": "meet", "note": "Kebalikannya: miss a deadline." },
+    { "id": "en-u01-i08", "type": "word", "term": "agenda", "meaning": "daftar acara rapat", "example": "Is that item on today's agenda?", "example_id": "Apakah poin itu ada di agenda hari ini?", "cloze": "Is that item on today's ____?", "answer": "agenda" },
+    { "id": "en-u01-i09", "type": "pattern", "term": "Could you ...?", "meaning": "Bisakah Anda ...? (permintaan sopan)", "example": "Could you send me the file by noon?", "example_id": "Bisakah kamu kirim filenya sebelum jam 12 siang?", "cloze": "____ you send me the file by noon?", "answer": "Could" },
+    { "id": "en-u01-i10", "type": "collocation", "term": "by the end of the day", "meaning": "paling lambat akhir hari ini", "example": "I'll have it ready by the end of the day.", "example_id": "Saya akan menyiapkannya paling lambat akhir hari ini.", "cloze": "I'll have it ready by the end of the ____.", "answer": "day", "note": "Jangan lupa 'the'." },
+    { "id": "en-u01-i11", "type": "phrasal_verb", "term": "catch up (with)", "meaning": "mengobrol untuk saling update; mengejar ketertinggalan", "example": "Let's catch up after lunch.", "example_id": "Mari ngobrol update setelah makan siang.", "cloze": "Let's catch ____ after lunch.", "answer": "up" },
+    { "id": "en-u01-i12", "type": "word", "term": "workload", "meaning": "beban kerja", "example": "My workload is heavy this week.", "example_id": "Beban kerja saya berat minggu ini.", "cloze": "My ____ is heavy this week.", "answer": "workload", "note": "Pakai 'heavy', bukan 'many'." }
+  ],
+  "grammar": [
+    {
+      "id": "en-u01-g01",
+      "title": "Present perfect untuk update pekerjaan",
+      "explanation": "Pakai present perfect (have/has + V3) untuk menyampaikan hasil yang relevan sekarang, tanpa menyebut waktu spesifik. Kalau waktunya disebut (yesterday, last week), pakai past simple.",
+      "examples": ["I've finished the first draft.", "We haven't received the data yet.", "Have you sent the invoice?"],
+      "common_mistake": { "wrong": "I have finished it yesterday.", "right": "I finished it yesterday." }
+    },
+    {
+      "id": "en-u01-g02",
+      "title": "Waiting for, not waiting",
+      "explanation": "Kata kerja 'wait' butuh preposisi 'for' sebelum objek. Kesalahan ini sering muncul karena dalam bahasa Indonesia kita bilang 'menunggu data' tanpa kata depan.",
+      "examples": ["I'm waiting for the data from finance.", "We're still waiting for approval."],
+      "common_mistake": { "wrong": "I'm waiting the data.", "right": "I'm waiting for the data." }
+    }
+  ],
+  "listening": [
+    {
+      "id": "en-u01-l01",
+      "title": "Rapat Senin pagi",
+      "speakers": [ { "name": "Maya", "voice": "en-US" }, { "name": "Tom", "voice": "en-GB" } ],
+      "lines": [
+        { "speaker": "Maya", "text": "Morning, Tom. Is the client report on track?" },
+        { "speaker": "Tom", "text": "Mostly. I've finished the first draft, but I'm still waiting for the sales numbers." },
+        { "speaker": "Maya", "text": "When do you think you'll get them?" },
+        { "speaker": "Tom", "text": "Finance said Wednesday. Could we put off the review until Thursday?" },
+        { "speaker": "Maya", "text": "That's fine, as long as we meet the Friday deadline." },
+        { "speaker": "Tom", "text": "We will. I'll follow up with finance by the end of the day." }
+      ],
+      "dictation": [1, 3, 5],
+      "questions": [
+        { "q": "Why isn't the report finished?", "options": ["Tom is sick", "The sales numbers haven't arrived", "The client cancelled"], "answer": 1 },
+        { "q": "When is the review now?", "options": ["Wednesday", "Thursday", "Friday"], "answer": 1 },
+        { "q": "What will Tom do today?", "options": ["Contact finance", "Send the report", "Call the client"], "answer": 0, "explain": "'Follow up with finance' artinya menghubungi lagi bagian keuangan." }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "id": "en-u01-r01",
+      "title": "Why remote teams write more",
+      "text": "Remote teams rely on written updates more than office teams do. When people work in different cities, or even different time zones, they can't just walk over to a colleague's desk. A clear written message often saves a follow-up meeting. Good updates answer three questions: what have I done, what am I working on now, and what is blocking me? A shared deadline and a short daily update keep everyone on track. The downside is that writing takes time, and long messages are easy to ignore. The best remote workers keep their updates short, specific, and easy to scan.",
+      "glossary": [
+        { "term": "rely on", "meaning": "bergantung pada" },
+        { "term": "follow-up meeting", "meaning": "rapat lanjutan", "item_id": "en-u01-i04" },
+        { "term": "blocking", "meaning": "menghambat" },
+        { "term": "on track", "meaning": "sesuai rencana", "item_id": "en-u01-i03" },
+        { "term": "downside", "meaning": "kekurangan" },
+        { "term": "scan", "meaning": "membaca sekilas" }
+      ],
+      "questions": [
+        { "q": "Why do remote teams write more?", "options": ["They prefer writing", "They can't easily talk face to face", "Their managers require it"], "answer": 1 },
+        { "q": "Which question does a good update NOT need to answer?", "options": ["What have I done?", "What is blocking me?", "How many hours did I work?"], "answer": 2 },
+        { "q": "What is one downside of written updates?", "options": ["They take time", "They are always too short", "Nobody reads them in the morning"], "answer": 0 }
+      ]
+    }
+  ],
+  "writing": [
+    {
+      "id": "en-u01-w01",
+      "prompt": "Tulis email singkat ke atasanmu, Sarah. Minta tenggat laporan diundur 2 hari karena data dari bagian keuangan belum masuk. Tawarkan satu solusi.",
+      "min_words": 50,
+      "max_words": 100,
+      "checklist": [
+        "Ada salam pembuka dan penutup",
+        "Alasan disampaikan dengan jelas",
+        "Permintaan memakai bentuk sopan (Could I / Would it be possible)",
+        "Ada tawaran solusi atau langkah berikutnya",
+        "Memakai 'waiting for', bukan 'waiting'"
+      ],
+      "useful_phrases": ["Would it be possible to ...?", "I'm still waiting for ...", "In the meantime, I can ...", "Please let me know if that works for you."],
+      "model_answer": "Hi Sarah,\n\nI'm writing about the client report due on Wednesday. I'm still waiting for the sales numbers from finance, so I won't be able to finish it on time. Would it be possible to move the deadline to Friday?\n\nIn the meantime, I can send you the first draft today so you can check the structure. I'll follow up with finance this afternoon.\n\nPlease let me know if that works for you.\n\nBest,\nBagus"
+    }
+  ],
+  "speaking": [
+    {
+      "id": "en-u01-s01",
+      "mode": "shadowing",
+      "sentences": [
+        "Could you send me the report by the end of the day?",
+        "I've finished the first draft.",
+        "I'm still waiting for the numbers from finance.",
+        "Let's put off the meeting until Thursday.",
+        "I'd rather work from home on Fridays.",
+        "My workload is quite heavy this week."
+      ],
+      "focus": "Perhatikan bunyi akhir: 'finished' (/t/), 'Fridays' (/z/), dan 'th' pada 'Thursday'."
+    },
+    {
+      "id": "en-u01-s02",
+      "mode": "answer",
+      "prompt": "Ceritakan dalam 3 sampai 4 kalimat: apa yang sudah kamu kerjakan minggu ini, dan apa yang sedang menghambat.",
+      "sample_answer": "This week I've finished the login page and fixed two bugs. I'm now working on the payment feature. The only thing blocking me is that I'm still waiting for the API keys from the client."
+    }
+  ],
+  "conversation": [
+    {
+      "id": "en-u01-c01",
+      "title": "Daily stand-up",
+      "role_you": "Developer di tim",
+      "role_them": "Maya, team lead",
+      "start": "n1",
+      "nodes": {
+        "n1": {
+          "them": "Morning! Let's start. What did you work on yesterday?",
+          "hints": ["sebut satu tugas yang selesai", "pakai I worked on / I finished"],
+          "replies": [
+            { "match": ["finished", "worked on", "fixed", "completed"], "next": "n2" }
+          ],
+          "fallback": { "next": "n2", "feedback": "Contoh: \"Yesterday I finished the login page and fixed a bug in the search.\"" }
+        },
+        "n2": {
+          "them": "Nice. And what are you working on today?",
+          "hints": ["pakai I'm working on / I'm going to"],
+          "replies": [
+            { "match": ["working on", "going to", "plan to", "will"], "next": "n3" }
+          ],
+          "fallback": { "next": "n3", "feedback": "Contoh: \"Today I'm working on the payment feature.\"" }
+        },
+        "n3": {
+          "them": "Is anything blocking you?",
+          "hints": ["ada hambatan: waiting for ...", "tidak ada: Nothing at the moment"],
+          "replies": [
+            { "match": ["waiting for", "blocked", "need", "problem"], "next": "n4a" },
+            { "match": ["nothing", "no", "all good", "not really"], "next": "n4b" }
+          ],
+          "fallback": { "next": "n4b", "feedback": "Contoh: \"I'm still waiting for the API keys from the client.\" atau \"Nothing at the moment.\"" }
+        },
+        "n4a": {
+          "them": "Okay, I'll follow up on that after the meeting. Can you still meet Friday's deadline?",
+          "hints": ["jawab yes/probably, beri syarat jika perlu"],
+          "replies": [
+            { "match": ["yes", "should", "probably", "as long as", "if"], "next": "end" }
+          ],
+          "fallback": { "next": "end", "feedback": "Contoh: \"Yes, as long as I get the keys by Wednesday.\"" }
+        },
+        "n4b": {
+          "them": "Great. Do you have time to help Tom with the report this afternoon?",
+          "hints": ["setuju, atau tolak dengan sopan dan beri alasan"],
+          "replies": [
+            { "match": ["sure", "yes", "of course", "happy to", "no problem"], "next": "end" },
+            { "match": ["sorry", "afraid", "busy", "workload", "maybe tomorrow"], "next": "end" }
+          ],
+          "fallback": { "next": "end", "feedback": "Contoh: \"Sure, I can help after lunch.\" atau \"I'm afraid my workload is heavy today. Could I help tomorrow?\"" }
+        },
+        "end": { "them": "Thanks, everyone. Let's catch up again tomorrow.", "end": true }
+      }
+    }
+  ]
+}
