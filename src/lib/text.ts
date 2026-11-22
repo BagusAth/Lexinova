@@ -24,13 +24,21 @@ export type DiffToken = { word: string; ok: boolean };
  * Bandingkan jawaban dengan target memakai LCS. Hasil: tiap kata target
  * ditandai benar (ada di jawaban, urutannya sesuai) atau terlewat/salah.
  */
-export function compareWords(target: string, attempt: string): { tokens: DiffToken[]; correct: number; total: number } {
+export function compareWords(
+  target: string,
+  attempt: string,
+): { tokens: DiffToken[]; correct: number; total: number } {
   const t = words(target);
   const a = words(attempt);
-  const dp: number[][] = Array.from({ length: t.length + 1 }, () => new Array(a.length + 1).fill(0));
+  const dp: number[][] = Array.from({ length: t.length + 1 }, () =>
+    new Array(a.length + 1).fill(0),
+  );
   for (let i = t.length - 1; i >= 0; i--)
     for (let j = a.length - 1; j >= 0; j--)
-      dp[i][j] = t[i] === a[j] ? dp[i + 1][j + 1] + 1 : Math.max(dp[i + 1][j], dp[i][j + 1]);
+      dp[i][j] =
+        t[i] === a[j]
+          ? dp[i + 1][j + 1] + 1
+          : Math.max(dp[i + 1][j], dp[i][j + 1]);
   const tokens: DiffToken[] = [];
   let i = 0;
   let j = 0;
@@ -57,7 +65,11 @@ function levenshtein(a: string, b: string): number {
   for (let i = 1; i <= m; i++) {
     const cur = [i];
     for (let j = 1; j <= n; j++)
-      cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+      cur[j] = Math.min(
+        prev[j] + 1,
+        cur[j - 1] + 1,
+        prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1),
+      );
     prev = cur;
   }
   return prev[n];

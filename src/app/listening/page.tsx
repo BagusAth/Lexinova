@@ -8,7 +8,19 @@ import { compareWords } from "@/lib/text";
 import type { Listening } from "@/lib/types";
 import { Quiz } from "@/components/Quiz";
 import { SkillDone } from "@/components/SkillDone";
-import { Button, Card, Chip, Feedback, inputClass, Loading, Muted, ProgressBar, Spacer, TopBar, Verdict } from "@/components/ui";
+import {
+  Button,
+  Card,
+  Chip,
+  Feedback,
+  inputClass,
+  Loading,
+  Muted,
+  ProgressBar,
+  Spacer,
+  TopBar,
+  Verdict,
+} from "@/components/ui";
 
 type Phase = "listen" | "dictation" | "quiz" | "done";
 
@@ -28,36 +40,57 @@ function ListeningExercise({ ex }: { ex: Listening }) {
   const [dIdx, setDIdx] = useState(0);
   const [score, setScore] = useState({ correct: 0, total: 0 });
 
-  const voiceOf = (speaker: string) => ex.speakers.find((s) => s.name === speaker)?.voice ?? "en-US";
+  const voiceOf = (speaker: string) =>
+    ex.speakers.find((s) => s.name === speaker)?.voice ?? "en-US";
 
   async function playAll() {
     stopSpeaking();
     for (let i = 0; i < ex.lines.length; i++) {
       setPlaying(i);
-      await speak(ex.lines[i].text, { lang: voiceOf(ex.lines[i].speaker), rate });
+      await speak(ex.lines[i].text, {
+        lang: voiceOf(ex.lines[i].speaker),
+        rate,
+      });
     }
     setPlaying(null);
   }
 
   const steps = ex.dictation.length + 2;
-  const stepNow = phase === "listen" ? 0 : phase === "dictation" ? 1 + dIdx : phase === "quiz" ? steps - 1 : steps;
+  const stepNow =
+    phase === "listen"
+      ? 0
+      : phase === "dictation"
+        ? 1 + dIdx
+        : phase === "quiz"
+          ? steps - 1
+          : steps;
 
-  if (phase === "done") return <SkillDone skill="listening" title="Listening" detail={`${ex.title} · ${score.correct} dari ${score.total} benar`} />;
+  if (phase === "done")
+    return (
+      <SkillDone
+        skill="listening"
+        title="Listening"
+        detail={`${ex.title} · ${score.correct} dari ${score.total} benar`}
+      />
+    );
 
   return (
     <>
-      <TopBar left="Listening" right={`${Math.min(stepNow + 1, steps)} / ${steps}`} />
+      <TopBar
+        left="Listening"
+        right={`${Math.min(stepNow + 1, steps)} / ${steps}`}
+      />
       <ProgressBar value={stepNow / steps} />
 
       {phase === "listen" && (
         <div className="flex flex-1 flex-col gap-3">
           <Muted>Dengarkan dialognya dulu</Muted>
-          <div className="font-display text-xl">{ex.title}</div>
+          <div className="text-2xl font-extrabold">{ex.title}</div>
           <button
             type="button"
             onClick={playAll}
             aria-label="Putar dialog"
-            className={`mx-auto my-4 grid size-20 place-items-center rounded-full bg-primary transition-colors hover:bg-[#7b73ff] active:translate-y-px ${playing !== null ? "animate-pulse-ring" : ""}`}
+            className={`mx-auto my-4 grid size-20 place-items-center rounded-full bg-gradient-to-br from-primary to-[#8b7fff] shadow-glow transition hover:brightness-110 active:scale-90 ${playing !== null ? "animate-pulse-ring" : ""}`}
           >
             <svg width="36" height="36" viewBox="0 0 24 24">
               <path d="M7 4l13 8-13 8z" fill="#F4F3FF" />
@@ -70,14 +103,19 @@ function ListeningExercise({ ex }: { ex: Listening }) {
           {showText && (
             <Card className="flex flex-col gap-1.5 text-sm">
               {ex.lines.map((l, i) => (
-                <div key={i} className={`transition ${playing === i ? "text-cyan" : ""}`}>
+                <div
+                  key={i}
+                  className={`transition ${playing === i ? "text-cyan" : ""}`}
+                >
                   <b>{l.speaker}:</b> {l.text}
                 </div>
               ))}
             </Card>
           )}
           <Spacer />
-          <Button onClick={() => (stopSpeaking(), setPhase("dictation"))}>Lanjut ke dikte</Button>
+          <Button onClick={() => (stopSpeaking(), setPhase("dictation"))}>
+            Lanjut ke dikte
+          </Button>
         </div>
       )}
 
@@ -112,7 +150,13 @@ function ListeningExercise({ ex }: { ex: Listening }) {
   );
 }
 
-function RateChips({ rate, setRate }: { rate: number; setRate: (r: number) => void }) {
+function RateChips({
+  rate,
+  setRate,
+}: {
+  rate: number;
+  setRate: (r: number) => void;
+}) {
   return (
     <div className="flex justify-center gap-2">
       {[0.75, 1].map((r) => (
@@ -138,7 +182,9 @@ function Dictation({
   onNext: (correct: number, total: number) => void;
 }) {
   const [input, setInput] = useState("");
-  const [result, setResult] = useState<ReturnType<typeof compareWords> | null>(null);
+  const [result, setResult] = useState<ReturnType<typeof compareWords> | null>(
+    null,
+  );
 
   return (
     <div className="flex flex-1 flex-col gap-3">
@@ -147,7 +193,7 @@ function Dictation({
         type="button"
         onClick={() => speak(line.text, { lang, rate })}
         aria-label="Putar kalimat"
-        className="mx-auto my-3 grid size-16 place-items-center rounded-full bg-primary transition-colors hover:bg-[#7b73ff] active:translate-y-px"
+        className="mx-auto my-3 grid size-16 place-items-center rounded-full bg-gradient-to-br from-primary to-[#8b7fff] shadow-glow transition hover:brightness-110 active:scale-90"
       >
         <svg width="30" height="30" viewBox="0 0 24 24">
           <path d="M7 4l13 8-13 8z" fill="#F4F3FF" />
@@ -171,7 +217,10 @@ function Dictation({
           </Verdict>
           <div className="mt-2 flex flex-wrap gap-x-1.5 gap-y-1">
             {result.tokens.map((t, i) => (
-              <span key={i} className={t.ok ? "text-ok" : "rounded bg-bad/20 px-1 text-bad"}>
+              <span
+                key={i}
+                className={t.ok ? "text-ok" : "rounded bg-bad/20 px-1 text-bad"}
+              >
                 {t.word}
               </span>
             ))}
@@ -181,9 +230,14 @@ function Dictation({
       )}
       <Spacer />
       {result ? (
-        <Button onClick={() => onNext(result.correct, result.total)}>Lanjut</Button>
+        <Button onClick={() => onNext(result.correct, result.total)}>
+          Lanjut
+        </Button>
       ) : (
-        <Button disabled={!input.trim()} onClick={() => setResult(compareWords(line.text, input))}>
+        <Button
+          disabled={!input.trim()}
+          onClick={() => setResult(compareWords(line.text, input))}
+        >
           Cek
         </Button>
       )}

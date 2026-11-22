@@ -16,7 +16,11 @@ export interface Queue {
   fresh: Item[]; // kartu baru untuk hari ini
 }
 
-export function buildQueue(p: Progress, items: Item[], now = new Date()): Queue {
+export function buildQueue(
+  p: Progress,
+  items: Item[],
+  now = new Date(),
+): Queue {
   const due = items
     .filter((i) => p.cards[i.id] && p.cards[i.id].due <= now)
     .sort((a, b) => +p.cards[a.id].due - +p.cards[b.id].due);
@@ -27,7 +31,11 @@ export function buildQueue(p: Progress, items: Item[], now = new Date()): Queue 
 }
 
 /** Simpan nilai kartu. Mengembalikan tanggal jatuh tempo berikutnya. */
-export function gradeCard(itemId: string, grade: Grade, now = new Date()): Date {
+export function gradeCard(
+  itemId: string,
+  grade: Grade,
+  now = new Date(),
+): Date {
   let nextDue = now;
   update((p) => {
     const isNew = !p.cards[itemId];
@@ -36,7 +44,14 @@ export function gradeCard(itemId: string, grade: Grade, now = new Date()): Date 
     p.cards[itemId] = next;
     nextDue = next.due;
     const k = todayKey(now);
-    const day = p.days[k] ?? { xp: 0, correct: 0, total: 0, newWords: [], minutes: 0, reviewed: [] };
+    const day = p.days[k] ?? {
+      xp: 0,
+      correct: 0,
+      total: 0,
+      newWords: [],
+      minutes: 0,
+      reviewed: [],
+    };
     if (isNew && !day.newWords.includes(itemId)) day.newWords.push(itemId);
     if (!day.reviewed.includes(itemId)) day.reviewed.push(itemId);
     day.total += 1;

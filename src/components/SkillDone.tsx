@@ -1,24 +1,40 @@
 import type { Skill } from "@/lib/types";
-import { Icon } from "./cosmic";
-import { Actions, ButtonLink, Card, Muted, Spacer, TopBar } from "./ui";
+import { Planet, SKILL_TONE, Sparkle } from "./cosmic";
+import { Actions, ButtonLink, Spacer, TopBar } from "./ui";
 
-export function SkillDone({ skill, title, detail }: { skill: Skill; title: string; detail: string }) {
+export function SkillDone({
+  skill,
+  title,
+  detail,
+}: {
+  skill: Skill;
+  title: string;
+  detail: string;
+}) {
   return (
     <>
       <TopBar left={title} />
-      <Card className="flex flex-col items-start gap-3 p-6">
-        <span className="grid size-12 place-items-center rounded-lg border border-line text-lavender">
-          <Icon kind={skill} size={24} />
-        </span>
-        <div className="font-display text-2xl">Latihan selesai.</div>
-        <Muted>{detail}</Muted>
-      </Card>
+      <div className="card-nebula animate-pop relative flex flex-col items-center gap-3 overflow-hidden rounded-[2rem] px-6 py-10 text-center">
+        <Sparkle className="absolute top-6 left-10" />
+        <Sparkle
+          className="absolute top-12 right-12"
+          size={10}
+          color="#7DD3FC"
+          delay={0.7}
+        />
+        <Sparkle className="absolute bottom-8 left-1/3" size={8} delay={1.4} />
+        <div className="animate-float">
+          <Planet id={`done-${skill}`} tone={SKILL_TONE[skill]} size={110} />
+        </div>
+        <h2 className="text-2xl font-extrabold">Latihan selesai!</h2>
+        <p className="text-ink/80">{detail}</p>
+      </div>
       <Spacer />
       <Actions>
         <ButtonLink href="/" variant="alt">
-          Kembali ke beranda
+          Ke beranda
         </ButtonLink>
-        <ButtonLink href="/hasil">Lihat hasil hari ini</ButtonLink>
+        <ButtonLink href="/hasil">Lihat progres</ButtonLink>
       </Actions>
     </>
   );

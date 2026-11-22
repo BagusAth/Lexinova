@@ -1,6 +1,7 @@
 // Tipe data materi. Mengikuti content/FORMAT.md.
 
-export type ItemType = "word" | "phrasal_verb" | "collocation" | "idiom" | "pattern";
+export type ItemType =
+  "word" | "phrasal_verb" | "collocation" | "idiom" | "pattern";
 
 export interface Item {
   id: string;
@@ -58,7 +59,13 @@ export interface Writing {
 
 export type Speaking =
   | { id: string; mode: "shadowing"; sentences: string[]; focus?: string }
-  | { id: string; mode: "answer"; prompt: string; sample_answer: string; focus?: string };
+  | {
+      id: string;
+      mode: "answer";
+      prompt: string;
+      sample_answer: string;
+      focus?: string;
+    };
 
 export interface ConversationNode {
   them: string;
@@ -92,4 +99,5 @@ export interface Unit {
   conversation: Conversation[];
 }
 
-export type Skill = "listening" | "writing" | "reading" | "speaking" | "conversation";
+export type Skill =
+  "listening" | "writing" | "reading" | "speaking" | "conversation";

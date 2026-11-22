@@ -8,7 +8,10 @@ export interface LtMatch {
   rule: string;
 }
 
-export async function checkText(text: string, language = "en-US"): Promise<LtMatch[]> {
+export async function checkText(
+  text: string,
+  language = "en-US",
+): Promise<LtMatch[]> {
   const body = new URLSearchParams({ text, language });
   const res = await fetch("https://api.languagetool.org/v2/check", {
     method: "POST",
@@ -17,7 +20,13 @@ export async function checkText(text: string, language = "en-US"): Promise<LtMat
   });
   if (!res.ok) throw new Error(`LanguageTool error ${res.status}`);
   const data = (await res.json()) as {
-    matches: { message: string; offset: number; length: number; replacements: { value: string }[]; rule: { id: string } }[];
+    matches: {
+      message: string;
+      offset: number;
+      length: number;
+      replacements: { value: string }[];
+      rule: { id: string };
+    }[];
   };
   return data.matches.map((m) => ({
     message: m.message,

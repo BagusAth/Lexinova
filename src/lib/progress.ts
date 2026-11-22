@@ -21,7 +21,15 @@ export interface Progress {
   cards: Record<string, Card>; // status FSRS per item
   days: Record<string, DaySession>; // kunci: YYYY-MM-DD (waktu lokal)
   done: Record<string, { date: string; score?: number }>; // latihan keterampilan yang sudah selesai
-  settings: { dailyGoal: number; unitId: string; newPerDay: number };
+  settings: {
+    dailyGoal: number;
+    unitId: string;
+    newPerDay: number;
+    name: string;
+    autoVoice: boolean;
+    onboarded: boolean;
+  };
+  achievements: Record<string, string>; // id pencapaian -> tanggal didapat
 }
 
 export const emptyProgress = (): Progress => ({
@@ -29,10 +37,25 @@ export const emptyProgress = (): Progress => ({
   cards: {},
   days: {},
   done: {},
-  settings: { dailyGoal: 50, unitId: "en-u01", newPerDay: 6 },
+  settings: {
+    dailyGoal: 50,
+    unitId: "en-u01",
+    newPerDay: 6,
+    name: "",
+    autoVoice: true,
+    onboarded: false,
+  },
+  achievements: {},
 });
 
-export const emptyDay = (): DaySession => ({ xp: 0, correct: 0, total: 0, newWords: [], minutes: 0, reviewed: [] });
+export const emptyDay = (): DaySession => ({
+  xp: 0,
+  correct: 0,
+  total: 0,
+  newWords: [],
+  minutes: 0,
+  reviewed: [],
+});
 
 export function todayKey(d = new Date()): string {
   const y = d.getFullYear();
@@ -49,7 +72,11 @@ const listeners = new Set<() => void>();
 function reviveCards(cards: Record<string, Card>): Record<string, Card> {
   const out: Record<string, Card> = {};
   for (const [id, c] of Object.entries(cards ?? {})) {
-    out[id] = { ...c, due: new Date(c.due), last_review: c.last_review ? new Date(c.last_review) : undefined };
+    out[id] = {
+      ...c,
+      due: new Date(c.due),
+      last_review: c.last_review ? new Date(c.last_review) : undefined,
+    };
   }
   return out;
 }
@@ -63,6 +90,7 @@ function parse(raw: string | null): Progress {
       ...base,
       ...p,
       settings: { ...base.settings, ...p.settings },
+      achievements: { ...(p.achievements ?? {}) },
       cards: reviveCards(p.cards),
     };
   } catch {
@@ -165,7 +193,8 @@ export function exportJson(): string {
 
 export function importJson(text: string): void {
   const p = JSON.parse(text) as Progress;
-  if (p?.version !== 1 || typeof p.cards !== "object") throw new Error("Format file tidak dikenali.");
+  if (p?.version !== 1 || typeof p.cards !== "object")
+    throw new Error("Format file tidak dikenali.");
   write(parse(text));
 }
 

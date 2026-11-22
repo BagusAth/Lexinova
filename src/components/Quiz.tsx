@@ -5,7 +5,13 @@ import type { Question } from "@/lib/types";
 import { Button, Feedback, Muted } from "./ui";
 
 /** Soal pilihan ganda berurutan. Memanggil onDone(benar, total) di akhir. */
-export function Quiz({ questions, onDone }: { questions: Question[]; onDone: (correct: number, total: number) => void }) {
+export function Quiz({
+  questions,
+  onDone,
+}: {
+  questions: Question[];
+  onDone: (correct: number, total: number) => void;
+}) {
   const [idx, setIdx] = useState(0);
   const [picked, setPicked] = useState<number | null>(null);
   const [correct, setCorrect] = useState(0);
@@ -28,15 +34,27 @@ export function Quiz({ questions, onDone }: { questions: Question[]; onDone: (co
 
   return (
     <div className="flex flex-col gap-3">
-      <Muted className="label">
+      <Muted className="font-semibold text-lavender">
         Soal {idx + 1} dari {questions.length}
       </Muted>
-      <div className="font-display text-lg">{q.q}</div>
+      <div className="text-xl font-bold">{q.q}</div>
       <div className="flex flex-col gap-2">
         {q.options.map((o, i) => {
-          const state = picked === null ? "" : i === q.answer ? "!border-ok" : i === picked ? "!border-bad" : "opacity-50";
+          const state =
+            picked === null
+              ? ""
+              : i === q.answer
+                ? "!border-ok"
+                : i === picked
+                  ? "!border-bad"
+                  : "opacity-50";
           return (
-            <button key={i} type="button" onClick={() => pick(i)} className={`rounded-lg border border-line bg-surface p-3.5 text-left transition-colors hover:border-lavender/50 ${state}`}>
+            <button
+              key={i}
+              type="button"
+              onClick={() => pick(i)}
+              className={`rounded-2xl border-2 border-transparent bg-surface px-4 py-3.5 text-left font-medium shadow-soft transition hover:border-lavender/40 active:scale-[0.98] ${state}`}
+            >
               {o}
             </button>
           );
@@ -45,10 +63,16 @@ export function Quiz({ questions, onDone }: { questions: Question[]; onDone: (co
       {picked !== null && (
         <>
           <Feedback ok={picked === q.answer}>
-            <span className={`font-semibold ${picked === q.answer ? "text-ok" : "text-bad"}`}>{picked === q.answer ? "Benar." : "Belum tepat."}</span>{" "}
+            <span
+              className={`font-semibold ${picked === q.answer ? "text-ok" : "text-bad"}`}
+            >
+              {picked === q.answer ? "Benar." : "Belum tepat."}
+            </span>{" "}
             {q.explain}
           </Feedback>
-          <Button onClick={next}>{idx + 1 >= questions.length ? "Selesai" : "Soal berikutnya"}</Button>
+          <Button onClick={next}>
+            {idx + 1 >= questions.length ? "Selesai" : "Soal berikutnya"}
+          </Button>
         </>
       )}
     </div>

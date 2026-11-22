@@ -8,7 +8,15 @@ import { addToReview } from "@/lib/srs";
 import type { Reading } from "@/lib/types";
 import { Quiz } from "@/components/Quiz";
 import { SkillDone } from "@/components/SkillDone";
-import { Button, Card, Chip, Loading, Muted, Spacer, TopBar } from "@/components/ui";
+import {
+  Button,
+  Card,
+  Chip,
+  Loading,
+  Muted,
+  Spacer,
+  TopBar,
+} from "@/components/ui";
 
 export default function ReadingPage() {
   const p = useProgress();
@@ -23,7 +31,9 @@ type Gloss = Reading["glossary"][number];
 /** Pecah teks jadi potongan biasa dan potongan glosarium (yang bisa diklik). */
 function segment(text: string, glossary: Gloss[]): (string | Gloss)[] {
   const terms = [...glossary].sort((a, b) => b.term.length - a.term.length);
-  const escaped = terms.map((g) => g.term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  const escaped = terms.map((g) =>
+    g.term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
+  );
   if (!escaped.length) return [text];
   const re = new RegExp(`\\b(${escaped.join("|")})\\b`, "gi");
   const out: (string | Gloss)[] = [];
@@ -39,7 +49,13 @@ function segment(text: string, glossary: Gloss[]): (string | Gloss)[] {
   return out;
 }
 
-function ReadingExercise({ ex, inReview }: { ex: Reading; inReview: (itemId: string) => boolean }) {
+function ReadingExercise({
+  ex,
+  inReview,
+}: {
+  ex: Reading;
+  inReview: (itemId: string) => boolean;
+}) {
   const [phase, setPhase] = useState<"read" | "quiz" | "done">("read");
   const [open, setOpen] = useState<Gloss | null>(null);
   const [added, setAdded] = useState(0);
@@ -47,7 +63,14 @@ function ReadingExercise({ ex, inReview }: { ex: Reading; inReview: (itemId: str
   const parts = useMemo(() => segment(ex.text, ex.glossary), [ex]);
   const minutes = Math.max(1, Math.round(ex.text.split(/\s+/).length / 120));
 
-  if (phase === "done") return <SkillDone skill="reading" title="Reading" detail={`${ex.title} · ${score}`} />;
+  if (phase === "done")
+    return (
+      <SkillDone
+        skill="reading"
+        title="Reading"
+        detail={`${ex.title} · ${score}`}
+      />
+    );
 
   if (phase === "quiz")
     return (
@@ -70,7 +93,7 @@ function ReadingExercise({ ex, inReview }: { ex: Reading; inReview: (itemId: str
   return (
     <>
       <TopBar left="Reading · B1" right={`${minutes} menit`} />
-      <div className="font-display text-xl">{ex.title}</div>
+      <div className="text-2xl font-extrabold">{ex.title}</div>
       <Muted>Ketuk kata bergaris untuk melihat artinya.</Muted>
       <Card>
         <p className="text-[17px] leading-8">
@@ -83,7 +106,9 @@ function ReadingExercise({ ex, inReview }: { ex: Reading; inReview: (itemId: str
                 type="button"
                 onClick={() => setOpen(part)}
                 className={`font-medium underline decoration-dotted decoration-2 underline-offset-4 transition ${
-                  open?.term === part.term ? "rounded-sm bg-primary/30 decoration-cyan" : "decoration-lavender/70 hover:text-lavender"
+                  open?.term === part.term
+                    ? "rounded-sm bg-primary/30 decoration-cyan"
+                    : "decoration-lavender/70 hover:text-lavender"
                 }`}
               >
                 {part.term}
@@ -96,9 +121,12 @@ function ReadingExercise({ ex, inReview }: { ex: Reading; inReview: (itemId: str
       {open && (
         <Card key={open.term} className="border-lavender/40">
           <div>
-            <span className="font-semibold text-lavender">{open.term}</span> · {open.meaning}
+            <span className="font-semibold text-lavender">{open.term}</span> ·{" "}
+            {open.meaning}
           </div>
-          {openItem && <Muted className="mt-1">&ldquo;{openItem.example}&rdquo;</Muted>}
+          {openItem && (
+            <Muted className="mt-1">&ldquo;{openItem.example}&rdquo;</Muted>
+          )}
           <div className="mt-3 flex flex-wrap gap-2">
             {open.item_id &&
               (inReview(open.item_id) ? (
@@ -114,7 +142,9 @@ function ReadingExercise({ ex, inReview }: { ex: Reading; inReview: (itemId: str
                   + Tambah ke review
                 </Chip>
               ))}
-            <Chip onClick={() => speak(openItem?.example ?? open.term)}>Dengar</Chip>
+            <Chip onClick={() => speak(openItem?.example ?? open.term)}>
+              Dengar
+            </Chip>
             <Chip onClick={() => setOpen(null)}>Tutup</Chip>
           </div>
         </Card>
@@ -122,7 +152,9 @@ function ReadingExercise({ ex, inReview }: { ex: Reading; inReview: (itemId: str
 
       {added > 0 && <Muted>Kata yang ditambah: {added}</Muted>}
       <Spacer />
-      <Button onClick={() => setPhase("quiz")}>Jawab {ex.questions.length} soal</Button>
+      <Button onClick={() => setPhase("quiz")}>
+        Jawab {ex.questions.length} soal
+      </Button>
     </>
   );
 }

@@ -3,9 +3,9 @@
 // - Halaman: network-first, jatuh ke cache saat offline.
 // - Permintaan ke domain lain (mis. LanguageTool) tidak disentuh.
 
-const VERSION = "v2";
+const VERSION = "v3";
 const CACHE = `lexinova-${VERSION}`;
-const PAGES = ["/", "/latihan", "/fondasi", "/listening", "/reading", "/writing", "/speaking", "/conversation", "/hasil", "/pengaturan"];
+const PAGES = ["/", "/selamat-datang", "/kata", "/latihan", "/fondasi", "/listening", "/reading", "/writing", "/speaking", "/conversation", "/hasil", "/pengaturan"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
