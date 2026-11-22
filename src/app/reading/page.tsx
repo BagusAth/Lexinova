@@ -70,10 +70,10 @@ function ReadingExercise({ ex, inReview }: { ex: Reading; inReview: (itemId: str
   return (
     <>
       <TopBar left="Reading · B1" right={`${minutes} menit`} />
-      <div className="font-display text-xl font-bold">{ex.title}</div>
+      <div className="font-display text-xl">{ex.title}</div>
       <Muted>Ketuk kata bergaris untuk melihat artinya.</Muted>
       <Card>
-        <p className="leading-relaxed">
+        <p className="text-[17px] leading-8">
           {parts.map((part, i) =>
             typeof part === "string" ? (
               <Fragment key={i}>{part}</Fragment>
@@ -82,8 +82,8 @@ function ReadingExercise({ ex, inReview }: { ex: Reading; inReview: (itemId: str
                 key={i}
                 type="button"
                 onClick={() => setOpen(part)}
-                className={`font-bold underline decoration-dotted decoration-2 underline-offset-4 transition ${
-                  open?.term === part.term ? "rounded bg-primary/30 text-moon decoration-cyan" : "decoration-lavender hover:text-moon"
+                className={`font-medium underline decoration-dotted decoration-2 underline-offset-4 transition ${
+                  open?.term === part.term ? "rounded-sm bg-primary/30 decoration-cyan" : "decoration-lavender/70 hover:text-lavender"
                 }`}
               >
                 {part.term}
@@ -94,15 +94,15 @@ function ReadingExercise({ ex, inReview }: { ex: Reading; inReview: (itemId: str
       </Card>
 
       {open && (
-        <Card key={open.term} className="animate-rise border-lavender/40 bg-elevated">
+        <Card key={open.term} className="border-lavender/40">
           <div>
-            <b className="text-moon">{open.term}</b> · {open.meaning}
+            <span className="font-semibold text-lavender">{open.term}</span> · {open.meaning}
           </div>
           {openItem && <Muted className="mt-1">&ldquo;{openItem.example}&rdquo;</Muted>}
           <div className="mt-3 flex flex-wrap gap-2">
             {open.item_id &&
               (inReview(open.item_id) ? (
-                <Chip disabled>✓ Sudah di review</Chip>
+                <Chip disabled>Sudah di review</Chip>
               ) : (
                 <Chip
                   active
@@ -114,7 +114,7 @@ function ReadingExercise({ ex, inReview }: { ex: Reading; inReview: (itemId: str
                   + Tambah ke review
                 </Chip>
               ))}
-            <Chip onClick={() => speak(openItem?.example ?? open.term)}>▶ Dengar</Chip>
+            <Chip onClick={() => speak(openItem?.example ?? open.term)}>Dengar</Chip>
             <Chip onClick={() => setOpen(null)}>Tutup</Chip>
           </div>
         </Card>

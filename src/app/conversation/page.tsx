@@ -6,7 +6,7 @@ import { addResult, markDone, useProgress } from "@/lib/progress";
 import { speak, useRecognition } from "@/lib/speech";
 import { fuzzyContains } from "@/lib/text";
 import type { Conversation } from "@/lib/types";
-import { Button, ButtonLink, Chip, inputClass, Loading, Muted, TopBar } from "@/components/ui";
+import { Actions, ButtonLink, inputClass, Loading, Muted, TopBar } from "@/components/ui";
 
 export default function ConversationPage() {
   const p = useProgress();
@@ -68,27 +68,26 @@ function Dialog({ ex }: { ex: Conversation }) {
     <>
       <TopBar left={`Conversation · ${ex.title}`} right={`${score.t} balasan`} />
       <Muted>
-        Kamu: <b className="text-ink">{ex.role_you}</b> · Lawan bicara: <b className="text-ink">{ex.role_them}</b>
+        Kamu: <span className="text-ink">{ex.role_you}</span> · Lawan bicara: <span className="text-ink">{ex.role_them}</span>
       </Muted>
 
-      <div className="flex flex-1 flex-col gap-2.5">
+      <div className="flex flex-1 flex-col gap-3">
         {msgs.map((m, i) =>
           m.who === "tip" ? (
-            <div key={i} className="animate-rise mx-2 rounded-xl border border-cyan/30 bg-cyan/10 px-3 py-2 text-sm text-cyan">
-              💡 {m.text}
+            <p key={i} className="border-l-2 border-cyan pl-3 text-sm text-mute">
+              <span className="label text-cyan">Contoh jawaban </span>
+              <br />
+              {m.text}
+            </p>
+          ) : m.who === "them" ? (
+            <div key={i} className="max-w-[85%] self-start">
+              <div className="rounded-xl rounded-tl-sm border border-line bg-surface px-4 py-2.5">{m.text}</div>
+              <button type="button" onClick={() => speak(m.text)} className="label mt-1 ml-1 hover:text-lavender">
+                Dengar
+              </button>
             </div>
           ) : (
-            <div
-              key={i}
-              className={`animate-rise max-w-[85%] rounded-2xl px-3.5 py-2.5 ${
-                m.who === "them" ? "rounded-bl-sm border border-line bg-surface" : "ml-auto rounded-br-sm bg-gradient-to-br from-primary to-[#8a7dff]"
-              }`}
-            >
-              {m.who === "them" && (
-                <button type="button" onClick={() => speak(m.text)} className="float-right ml-2 text-xs text-lavender" aria-label="Dengar">
-                  ▶
-                </button>
-              )}
+            <div key={i} className="max-w-[85%] self-end rounded-xl rounded-tr-sm bg-primary px-4 py-2.5">
               {m.text}
             </div>
           ),
@@ -97,23 +96,24 @@ function Dialog({ ex }: { ex: Conversation }) {
       </div>
 
       {finished ? (
-        <div className="flex flex-col gap-2">
-          <Muted className="text-center">
-            Dialog selesai · {score.c} dari {score.t} jawaban sesuai harapan
+        <>
+          <Muted>
+            Dialog selesai. {score.c} dari {score.t} jawabanmu sesuai yang diharapkan.
           </Muted>
-          <ButtonLink href="/hasil">Lihat hasil hari ini</ButtonLink>
-          <ButtonLink href="/" variant="alt">
-            Kembali ke beranda
-          </ButtonLink>
-        </div>
+          <Actions>
+            <ButtonLink href="/" variant="alt">
+              Kembali ke beranda
+            </ButtonLink>
+            <ButtonLink href="/hasil">Lihat hasil hari ini</ButtonLink>
+          </Actions>
+        </>
       ) : (
-        <div className="sticky bottom-0 -mx-4 flex flex-col gap-2 border-t border-line bg-bg/90 px-4 pt-3 pb-2 backdrop-blur">
+        <div className="sticky bottom-0 -mx-4 flex flex-col gap-2 border-t border-line bg-bg px-4 pt-3 pb-[max(0.5rem,env(safe-area-inset-bottom))] sm:-mx-6 sm:px-6 lg:mx-0 lg:rounded-xl lg:border lg:bg-surface lg:p-3">
           {node.hints && node.hints.length > 0 && (
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-mute">
+              <span className="label">Ide</span>
               {node.hints.map((h) => (
-                <span key={h} className="rounded-full bg-elevated px-2.5 py-1 text-xs font-bold text-moon">
-                  {h}
-                </span>
+                <span key={h}>{h}</span>
               ))}
             </div>
           )}
@@ -137,26 +137,29 @@ function Dialog({ ex }: { ex: Conversation }) {
               <button
                 type="button"
                 onClick={rec.listening ? rec.stop : rec.start}
-                aria-label="Bicara"
-                className={`grid size-12 shrink-0 place-items-center rounded-xl bg-elevated ring-1 ring-line transition active:scale-90 ${rec.listening ? "bg-primary animate-pulse-ring" : ""}`}
+                aria-label={rec.listening ? "Berhenti" : "Bicara"}
+                className={`grid size-12 shrink-0 place-items-center rounded-lg border transition-colors ${
+                  rec.listening ? "animate-pulse-ring border-primary bg-primary" : "border-line bg-surface hover:border-lavender/50"
+                }`}
               >
-                <svg width="20" height="20" viewBox="0 0 24 24">
-                  <rect x="9" y="3" width="6" height="11" rx="3" fill="#F4F3FF" />
-                  <path d="M6 11a6 6 0 0012 0M12 17v4" stroke="#F4F3FF" strokeWidth="2" fill="none" strokeLinecap="round" />
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+                  <rect x="9" y="3" width="6" height="11" rx="3" />
+                  <path d="M5.5 11a6.5 6.5 0 0013 0M12 17.5V21" />
                 </svg>
               </button>
             )}
+            <button
+              type="submit"
+              disabled={!shownInput.trim() || rec.listening}
+              className="shrink-0 rounded-lg bg-primary px-4 font-semibold transition-colors hover:bg-[#7b73ff] disabled:opacity-40"
+            >
+              Kirim
+            </button>
           </form>
-          <div className="flex items-center gap-2">
-            <Chip active={voiceOn} onClick={() => setVoiceOn(!voiceOn)}>
-              {voiceOn ? "🔊 Suara aktif" : "🔇 Suara mati"}
-            </Chip>
-            <div className="ml-auto w-28">
-              <Button className="py-2.5" onClick={send} disabled={!shownInput.trim() || rec.listening}>
-                Kirim
-              </Button>
-            </div>
-          </div>
+          <label className="flex cursor-pointer items-center gap-2 text-xs text-mute">
+            <input type="checkbox" checked={voiceOn} onChange={() => setVoiceOn(!voiceOn)} className="accent-[#6C63FF]" />
+            Bacakan balasan lawan bicara
+          </label>
         </div>
       )}
     </>

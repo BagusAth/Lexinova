@@ -1,29 +1,52 @@
 "use client";
 
-import Link from "next/link";
 import { getUnit } from "@/lib/content";
-import { emptyDay, streak, todayKey, useProgress } from "@/lib/progress";
-import { DAY_SHORT, formatDateId, ROTATION, SKILL_LABEL, SKILL_SHORT, skillForDate } from "@/lib/schedule";
+import { emptyDay, type Progress, streak, todayKey, useProgress } from "@/lib/progress";
+import { DAY_SHORT, ROTATION, SKILL_LABEL, skillForDate } from "@/lib/schedule";
 import { buildQueue } from "@/lib/srs";
 import type { Skill, Unit } from "@/lib/types";
-import { Logo, OrbitRing, Planet } from "@/components/cosmic";
-import { Big, ButtonLink, CardLink, Loading, Muted, Spacer } from "@/components/ui";
-
-const SKILLS = Object.keys(SKILL_LABEL) as Skill[];
+import { Icon, Logo, OrbitRing } from "@/components/cosmic";
+import { ButtonLink, CardLink, Loading, Spacer } from "@/components/ui";
 
 function skillDetail(unit: Unit, skill: Skill): string {
   switch (skill) {
     case "listening":
-      return `Dialog: "${unit.listening[0]?.title}"`;
+      return `Dialog "${unit.listening[0]?.title}"`;
     case "reading":
-      return `Artikel: "${unit.reading[0]?.title}"`;
+      return `Artikel "${unit.reading[0]?.title}"`;
     case "writing":
       return "Email singkat ke atasan";
     case "speaking":
       return "Shadowing dan menjawab";
     case "conversation":
-      return `Skenario: "${unit.conversation[0]?.title}"`;
+      return `Skenario "${unit.conversation[0]?.title}"`;
   }
+}
+
+function skillDoneToday(p: Progress, unit: Unit, skill: Skill): boolean {
+  const ids = (unit[skill] as { id: string }[]).map((x) => x.id);
+  return ids.length > 0 && ids.every((id) => p.done[id]?.date === todayKey());
+}
+
+function Row({ href, icon, title, sub, status }: { href: string; icon: Parameters<typeof Icon>[0]["kind"]; title: string; sub: string; status?: string }) {
+  return (
+    <CardLink href={href} className="flex items-center gap-4">
+      <span className="grid size-11 shrink-0 place-items-center rounded-lg border border-line text-lavender">
+        <Icon kind={icon} size={22} />
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="block font-medium">{title}</span>
+        <span className="block truncate text-sm text-mute">{sub}</span>
+      </span>
+      {status ? (
+        <span className="label text-ok">{status}</span>
+      ) : (
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-mute" aria-hidden="true">
+          <path d="M9 6l6 6-6 6" />
+        </svg>
+      )}
+    </CardLink>
+  );
 }
 
 export default function Home() {
@@ -36,132 +59,95 @@ export default function Home() {
   const q = buildQueue(p, unit.items, now);
   const skill = skillForDate(now);
   const s = streak(p, now);
-  const dow = now.getDay();
-  const week = [1, 2, 3, 4, 5, 6, 0]; // Senin sampai Minggu
   const foundationLeft = q.due.length + q.fresh.length;
-  const goal = day.xp / p.settings.dailyGoal;
+  const skillDone = skill ? skillDoneToday(p, unit, skill) : false;
+
+  // Senin sampai Minggu pada minggu berjalan.
+  const monday = new Date(now);
+  monday.setDate(now.getDate() - ((now.getDay() + 6) % 7));
+  const week = Array.from({ length: 7 }, (_, i) => {
+    const d = new Date(monday);
+    d.setDate(monday.getDate() + i);
+    return d;
+  });
+
+  const next = foundationLeft > 0 ? { href: "/fondasi", label: "Mulai fondasi" } : skill && !skillDone ? { href: `/${skill}`, label: `Mulai ${SKILL_LABEL[skill]}` } : { href: "/hasil", label: "Lihat hasil hari ini" };
 
   return (
-    <div className="stagger flex flex-1 flex-col gap-4">
-      <header className="flex items-center gap-2">
+    <>
+      <header className="flex items-center gap-2 lg:hidden">
         <Logo />
-        <span className="font-display text-lg font-bold tracking-wide">Lexinova</span>
-        <Link
-          href="/pengaturan"
-          aria-label="Pengaturan"
-          className="ml-auto grid size-9 place-items-center rounded-full bg-surface/70 text-mute ring-1 ring-line transition hover:text-moon active:scale-90"
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-            <circle cx="12" cy="12" r="3" />
-            <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" />
-          </svg>
-        </Link>
+        <span className="font-display text-xl">Lexinova</span>
       </header>
 
-      <section className="flex items-center gap-4 rounded-3xl border border-line bg-surface/80 p-4 backdrop-blur-sm">
-        <OrbitRing value={goal} size={116}>
+      <div>
+        <div className="label">{now.toLocaleDateString("id-ID", { weekday: "long", day: "numeric", month: "long" })}</div>
+        <h1 className="mt-1 font-display text-3xl">{day.xp >= p.settings.dailyGoal ? "Target hari ini tercapai." : "Selamat belajar."}</h1>
+      </div>
+
+      <section className="flex items-center gap-5 rounded-xl border border-line bg-surface p-4 sm:gap-8 sm:p-6">
+        <OrbitRing value={day.xp / p.settings.dailyGoal} size={112}>
           <div>
-            <div className="font-display text-2xl font-bold">{day.xp}</div>
-            <div className="text-[11px] text-mute">/ {p.settings.dailyGoal} XP</div>
+            <div className="font-mono text-2xl tabular-nums">{day.xp}</div>
+            <div className="label">/ {p.settings.dailyGoal} xp</div>
           </div>
         </OrbitRing>
-        <div className="flex flex-col gap-1">
-          <Muted className="capitalize">{formatDateId(now)}</Muted>
-          <div className="flex items-baseline gap-1.5">
-            <span className="font-display text-3xl font-bold text-cyan">{s}</span>
-            <span className="font-bold">hari streak</span>
+        <dl className="grid flex-1 grid-cols-1 gap-3 sm:grid-cols-2">
+          <div>
+            <dt className="label">Streak</dt>
+            <dd className="font-mono text-xl text-cyan tabular-nums">{s} hari</dd>
           </div>
-          <Muted>
-            {unit.level} · {unit.title}
-          </Muted>
-        </div>
+          <div>
+            <dt className="label">Unit</dt>
+            <dd className="text-sm">
+              {unit.level} · {unit.title}
+            </dd>
+          </div>
+        </dl>
       </section>
 
-      <CardLink href="/fondasi" className="flex items-center gap-3">
-        <Planet kind="fondasi" />
-        <div className="min-w-0">
-          <Muted>Fondasi harian</Muted>
-          {foundationLeft > 0 ? (
-            <>
-              <Big>{q.due.length} kartu review</Big>
-              <Muted>
-                + {q.fresh.length} kata baru · ±{Math.max(1, Math.round(foundationLeft * 0.3))} menit
-              </Muted>
-            </>
-          ) : (
-            <>
-              <Big>Orbit hari ini beres</Big>
-              <Muted>Tidak ada kartu jatuh tempo.</Muted>
-            </>
-          )}
-        </div>
-      </CardLink>
+      <section className="flex flex-col gap-2">
+        <h2 className="label">Hari ini</h2>
+        <Row
+          href="/fondasi"
+          icon="fondasi"
+          title="Fondasi"
+          sub={foundationLeft > 0 ? `${q.due.length} review · ${q.fresh.length} kata baru` : "Tidak ada kartu jatuh tempo"}
+          status={foundationLeft === 0 ? "Selesai" : undefined}
+        />
+        {skill ? (
+          <Row href={`/${skill}`} icon={skill} title={SKILL_LABEL[skill]} sub={skillDetail(unit, skill)} status={skillDone ? "Selesai" : undefined} />
+        ) : (
+          <Row href="/latihan" icon="latihan" title="Hari bebas" sub="Pilih latihan apa saja" />
+        )}
+      </section>
 
-      {skill ? (
-        <CardLink href={`/${skill}`} className="relative flex items-center gap-3 overflow-hidden border-primary/50 bg-gradient-to-br from-primary/35 to-surface/90">
-          <Planet kind={skill} size={52} />
-          <div className="min-w-0">
-            <Muted className="text-moon">Misi hari ini</Muted>
-            <Big>{SKILL_LABEL[skill]}</Big>
-            <Muted>{skillDetail(unit, skill)}</Muted>
-          </div>
-        </CardLink>
-      ) : (
-        <section className="rounded-2xl border border-primary/50 bg-gradient-to-br from-primary/35 to-surface/90 p-4">
-          <Muted className="text-moon">Hari bebas</Muted>
-          <Big>Pilih planetmu sendiri</Big>
-        </section>
-      )}
-
-      <section aria-label="Rotasi mingguan" className="relative">
-        <div className="absolute top-[18px] right-6 left-6 h-px bg-gradient-to-r from-transparent via-lavender/40 to-transparent" />
-        <div className="relative grid grid-cols-7 text-center text-[11px] font-bold">
+      <section className="flex flex-col gap-2">
+        <h2 className="label">Minggu ini</h2>
+        <ol className="grid grid-cols-7 gap-1.5">
           {week.map((d) => {
-            const sk = ROTATION[d];
-            const today = d === dow;
+            const sk = ROTATION[d.getDay()];
+            const isToday = todayKey(d) === todayKey(now);
+            const studied = (p.days[todayKey(d)]?.xp ?? 0) > 0;
             return (
-              <div key={d} className="flex flex-col items-center gap-1">
-                <span
-                  className={`grid size-9 place-items-center rounded-full ${
-                    today ? "bg-primary text-ink shadow-glow animate-pulse-ring" : "bg-surface text-mute ring-1 ring-line"
-                  }`}
-                >
-                  {sk ? SKILL_SHORT[sk] : "✦"}
+              <li
+                key={d.toISOString()}
+                className={`flex flex-col items-center gap-1.5 rounded-lg border py-2 ${isToday ? "border-lavender/60 bg-elevated" : "border-line"}`}
+                title={sk ? SKILL_LABEL[sk] : "Hari bebas"}
+              >
+                <span className={`text-[11px] ${isToday ? "text-ink" : "text-mute"}`}>{DAY_SHORT[d.getDay()]}</span>
+                <span className={isToday ? "text-lavender" : "text-mute"}>
+                  <Icon kind={sk ?? "latihan"} size={16} />
                 </span>
-                <span className={today ? "text-ink" : "text-mute"}>{DAY_SHORT[d]}</span>
-              </div>
+                <span className={`size-1.5 rounded-full ${studied ? "bg-cyan" : "bg-line"}`} aria-label={studied ? "sudah belajar" : "belum belajar"} />
+              </li>
             );
           })}
-        </div>
-      </section>
-
-      <section>
-        <Muted className="mb-2 font-bold">Semua latihan</Muted>
-        <div className="-mx-4 flex snap-x gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none]">
-          {SKILLS.map((k) => (
-            <Link
-              key={k}
-              href={`/${k}`}
-              className="flex shrink-0 snap-start flex-col items-center gap-1 rounded-2xl border border-line bg-surface/80 px-3 py-2.5 text-xs font-bold transition hover:border-lavender/60 active:scale-95"
-            >
-              <Planet kind={k} size={34} />
-              {SKILL_LABEL[k]}
-            </Link>
-          ))}
-          <Link
-            href="/hasil"
-            className="flex shrink-0 snap-start flex-col items-center justify-center gap-1 rounded-2xl border border-line bg-surface/80 px-3 py-2.5 text-xs font-bold text-cyan transition hover:border-cyan/60 active:scale-95"
-          >
-            <span className="grid size-[34px] place-items-center text-xl">✦</span>
-            Hasil
-          </Link>
-        </div>
+        </ol>
       </section>
 
       <Spacer />
-      <ButtonLink href={foundationLeft > 0 ? "/fondasi" : skill ? `/${skill}` : "/hasil"}>
-        {foundationLeft > 0 ? "Mulai fondasi" : skill ? `Lanjut ke ${SKILL_LABEL[skill]}` : "Lihat hasil hari ini"}
-      </ButtonLink>
-    </div>
+      <ButtonLink href={next.href}>{next.label}</ButtonLink>
+    </>
   );
 }

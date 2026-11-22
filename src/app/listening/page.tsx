@@ -50,14 +50,14 @@ function ListeningExercise({ ex }: { ex: Listening }) {
       <ProgressBar value={stepNow / steps} />
 
       {phase === "listen" && (
-        <div className="stagger flex flex-1 flex-col gap-3">
+        <div className="flex flex-1 flex-col gap-3">
           <Muted>Dengarkan dialognya dulu</Muted>
-          <div className="font-display text-xl font-bold">{ex.title}</div>
+          <div className="font-display text-xl">{ex.title}</div>
           <button
             type="button"
             onClick={playAll}
             aria-label="Putar dialog"
-            className={`mx-auto my-2 grid size-24 place-items-center rounded-full bg-gradient-to-br from-primary to-cyan/80 shadow-glow transition active:scale-90 ${playing !== null ? "animate-pulse-ring" : ""}`}
+            className={`mx-auto my-4 grid size-20 place-items-center rounded-full bg-primary transition-colors hover:bg-[#7b73ff] active:translate-y-px ${playing !== null ? "animate-pulse-ring" : ""}`}
           >
             <svg width="36" height="36" viewBox="0 0 24 24">
               <path d="M7 4l13 8-13 8z" fill="#F4F3FF" />
@@ -147,7 +147,7 @@ function Dictation({
         type="button"
         onClick={() => speak(line.text, { lang, rate })}
         aria-label="Putar kalimat"
-        className="mx-auto my-1 grid size-20 place-items-center rounded-full bg-gradient-to-br from-primary to-cyan/80 shadow-glow transition active:scale-90"
+        className="mx-auto my-3 grid size-16 place-items-center rounded-full bg-primary transition-colors hover:bg-[#7b73ff] active:translate-y-px"
       >
         <svg width="30" height="30" viewBox="0 0 24 24">
           <path d="M7 4l13 8-13 8z" fill="#F4F3FF" />

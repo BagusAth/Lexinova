@@ -32,11 +32,11 @@ export default function Pengaturan() {
 
   return (
     <>
-      <TopBar left="Pengaturan" />
+      <TopBar left="Pengaturan" back={null} />
 
       <Card className="flex flex-col gap-3">
         <label className="flex items-center justify-between gap-3">
-          <span className="font-bold">Target harian (XP)</span>
+          <span className="font-semibold">Target harian (XP)</span>
           <select
             value={p.settings.dailyGoal}
             onChange={(e) => update((d) => void (d.settings.dailyGoal = Number(e.target.value)))}
@@ -48,7 +48,7 @@ export default function Pengaturan() {
           </select>
         </label>
         <label className="flex items-center justify-between gap-3">
-          <span className="font-bold">Kata baru per hari</span>
+          <span className="font-semibold">Kata baru per hari</span>
           <select
             value={p.settings.newPerDay}
             onChange={(e) => update((d) => void (d.settings.newPerDay = Number(e.target.value)))}
@@ -62,7 +62,7 @@ export default function Pengaturan() {
       </Card>
 
       <Card className="flex flex-col gap-2">
-        <div className="font-bold">Cadangan progres</div>
+        <div className="font-semibold">Cadangan progres</div>
         <Muted>Progres hanya tersimpan di browser ini. Ekspor secara berkala, dan impor di perangkat lain untuk memindahkannya.</Muted>
         <Button variant="alt" onClick={download}>
           Ekspor ke file JSON
@@ -75,11 +75,11 @@ export default function Pengaturan() {
       </Card>
 
       <Card className="flex flex-col gap-2 border-bad/40">
-        <div className="font-bold">Mulai dari nol</div>
+        <div className="font-semibold">Mulai dari nol</div>
         <Muted>Menghapus semua kartu, streak, dan riwayat di browser ini.</Muted>
         <button
           type="button"
-          className="rounded-xl py-2.5 font-bold text-bad ring-1 ring-bad/50 transition hover:bg-bad/10"
+          className="rounded-lg py-2.5 font-medium text-bad md:w-auto md:self-end md:px-5 ring-1 ring-bad/50 transition hover:bg-bad/10"
           onClick={() => {
             if (confirm("Hapus semua progres? Ini tidak bisa dibatalkan kecuali kamu punya file ekspor.")) {
               resetProgress();

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { Question } from "@/lib/types";
-import { Button, Card, Muted } from "./ui";
+import { Button, Feedback, Muted } from "./ui";
 
 /** Soal pilihan ganda berurutan. Memanggil onDone(benar, total) di akhir. */
 export function Quiz({ questions, onDone }: { questions: Question[]; onDone: (correct: number, total: number) => void }) {
@@ -28,15 +28,15 @@ export function Quiz({ questions, onDone }: { questions: Question[]; onDone: (co
 
   return (
     <div className="flex flex-col gap-3">
-      <Muted>
+      <Muted className="label">
         Soal {idx + 1} dari {questions.length}
       </Muted>
-      <div className="font-display text-lg font-bold">{q.q}</div>
+      <div className="font-display text-lg">{q.q}</div>
       <div className="flex flex-col gap-2">
         {q.options.map((o, i) => {
-          const state = picked === null ? "" : i === q.answer ? "!border-ok bg-ok/10" : i === picked ? "!border-bad bg-bad/10" : "opacity-50";
+          const state = picked === null ? "" : i === q.answer ? "!border-ok" : i === picked ? "!border-bad" : "opacity-50";
           return (
-            <button key={i} type="button" onClick={() => pick(i)} className={`rounded-2xl border border-line bg-surface/85 p-3.5 text-left font-semibold transition active:scale-[0.98] hover:border-lavender/60 ${state}`}>
+            <button key={i} type="button" onClick={() => pick(i)} className={`rounded-lg border border-line bg-surface p-3.5 text-left transition-colors hover:border-lavender/50 ${state}`}>
               {o}
             </button>
           );
@@ -44,10 +44,10 @@ export function Quiz({ questions, onDone }: { questions: Question[]; onDone: (co
       </div>
       {picked !== null && (
         <>
-          <Card className={picked === q.answer ? "border-ok" : "border-bad"}>
-            <span className={`font-extrabold ${picked === q.answer ? "text-ok" : "text-bad"}`}>{picked === q.answer ? "Benar." : "Belum tepat."}</span>{" "}
+          <Feedback ok={picked === q.answer}>
+            <span className={`font-semibold ${picked === q.answer ? "text-ok" : "text-bad"}`}>{picked === q.answer ? "Benar." : "Belum tepat."}</span>{" "}
             {q.explain}
-          </Card>
+          </Feedback>
           <Button onClick={next}>{idx + 1 >= questions.length ? "Selesai" : "Soal berikutnya"}</Button>
         </>
       )}

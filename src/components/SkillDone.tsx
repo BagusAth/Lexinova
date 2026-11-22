@@ -1,21 +1,25 @@
 import type { Skill } from "@/lib/types";
-import { Planet } from "./cosmic";
-import { Big, ButtonLink, Card, Muted, Spacer, TopBar } from "./ui";
+import { Icon } from "./cosmic";
+import { Actions, ButtonLink, Card, Muted, Spacer, TopBar } from "./ui";
 
 export function SkillDone({ skill, title, detail }: { skill: Skill; title: string; detail: string }) {
   return (
     <>
       <TopBar left={title} />
-      <Card className="animate-rise flex flex-col items-center gap-2 py-8 text-center">
-        <Planet kind={skill} size={80} />
-        <Big>Misi selesai</Big>
+      <Card className="flex flex-col items-start gap-3 p-6">
+        <span className="grid size-12 place-items-center rounded-lg border border-line text-lavender">
+          <Icon kind={skill} size={24} />
+        </span>
+        <div className="font-display text-2xl">Latihan selesai.</div>
         <Muted>{detail}</Muted>
       </Card>
       <Spacer />
-      <ButtonLink href="/hasil">Lihat hasil hari ini</ButtonLink>
-      <ButtonLink href="/" variant="alt">
-        Kembali ke beranda
-      </ButtonLink>
+      <Actions>
+        <ButtonLink href="/" variant="alt">
+          Kembali ke beranda
+        </ButtonLink>
+        <ButtonLink href="/hasil">Lihat hasil hari ini</ButtonLink>
+      </Actions>
     </>
   );
 }

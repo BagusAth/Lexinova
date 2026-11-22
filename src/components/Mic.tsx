@@ -8,7 +8,7 @@ export function MicButton({ listening, onStart, onStop, disabled }: { listening:
         disabled={disabled}
         onClick={listening ? onStop : onStart}
         aria-label={listening ? "Berhenti merekam" : "Mulai bicara"}
-        className={`grid size-24 place-items-center rounded-full bg-gradient-to-br from-primary to-[#b06bff] shadow-glow transition active:scale-90 disabled:opacity-40 ${
+        className={`grid size-20 place-items-center rounded-full bg-primary transition-colors hover:bg-[#7b73ff] active:translate-y-px disabled:opacity-40 ${
           listening ? "animate-pulse-ring" : ""
         }`}
       >

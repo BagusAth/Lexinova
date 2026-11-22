@@ -8,7 +8,7 @@ import { compareWords, countWords } from "@/lib/text";
 import type { Speaking } from "@/lib/types";
 import { MicButton } from "@/components/Mic";
 import { SkillDone } from "@/components/SkillDone";
-import { Big, Button, Card, Chip, Feedback, inputClass, Loading, Muted, ProgressBar, Spacer, TopBar, Verdict } from "@/components/ui";
+import { Actions, Big, Button, Card, Chip, Feedback, inputClass, Loading, Muted, ProgressBar, Spacer, TopBar, Verdict } from "@/components/ui";
 
 export default function SpeakingPage() {
   const p = useProgress();
@@ -57,10 +57,10 @@ function Shadow({ sentence, focus, onNext }: { sentence: string; focus?: string;
 
   return (
     <div className="flex flex-1 flex-col gap-3">
-      <Muted>Dengar, lalu ucapkan kalimat ini</Muted>
-      <Big>{sentence}</Big>
+      <div className="label">Dengar, lalu ucapkan kalimat ini</div>
+      <Big className="sm:text-3xl">{sentence}</Big>
       <Chip className="self-start" onClick={() => speak(sentence)}>
-        ▶ Dengar contoh
+        Dengar contoh
       </Chip>
       {rec.supported === false ? (
         <>
@@ -77,7 +77,7 @@ function Shadow({ sentence, focus, onNext }: { sentence: string; focus?: string;
           <Muted>Yang tertangkap:</Muted>
           <div className="flex flex-wrap gap-x-1.5">
             {result.tokens.map((t, i) => (
-              <span key={i} className={`font-bold ${t.ok ? "text-ok" : "text-bad"}`}>
+              <span key={i} className={`font-semibold ${t.ok ? "text-ok" : "text-bad"}`}>
                 {t.word}
               </span>
             ))}
@@ -90,7 +90,7 @@ function Shadow({ sentence, focus, onNext }: { sentence: string; focus?: string;
       )}
       <Spacer />
       {result ? (
-        <div className="grid grid-cols-2 gap-2">
+        <Actions>
           <Button
             variant="alt"
             onClick={() => {
@@ -101,7 +101,7 @@ function Shadow({ sentence, focus, onNext }: { sentence: string; focus?: string;
             Coba lagi
           </Button>
           <Button onClick={() => onNext(result.correct, result.total)}>Lanjut</Button>
-        </div>
+        </Actions>
       ) : (
         <Button variant="alt" onClick={() => onNext(0, 0)}>
           Lewati
@@ -120,14 +120,14 @@ function Answer({ ex, onNext }: { ex: Extract<Speaking, { mode: "answer" }>; onN
 
   return (
     <div className="flex flex-1 flex-col gap-3">
-      <Card className="border-lavender/40 bg-elevated">{ex.prompt}</Card>
+      <p className="border-l-2 border-lavender pl-3">{ex.prompt}</p>
       {rec.supported === false ? (
         <textarea rows={4} value={typed} onChange={(e) => setTyped(e.target.value)} className={inputClass} placeholder="Ketik jawabanmu…" />
       ) : (
         <MicButton listening={rec.listening} onStart={rec.start} onStop={rec.stop} disabled={rec.supported === null} />
       )}
       {said && (
-        <Card className="animate-rise">
+        <Card>
           <Muted>Yang tertangkap ({n} kata):</Muted>
           <div>{said}</div>
         </Card>
@@ -136,10 +136,10 @@ function Answer({ ex, onNext }: { ex: Extract<Speaking, { mode: "answer" }>; onN
         {showSample ? "Sembunyikan contoh" : "Lihat contoh jawaban"}
       </Chip>
       {showSample && (
-        <Card className="animate-rise text-sm">
+        <Card className="text-sm">
           {ex.sample_answer}
           <Chip className="mt-2" onClick={() => speak(ex.sample_answer)}>
-            ▶ Dengar
+            Dengar
           </Chip>
         </Card>
       )}

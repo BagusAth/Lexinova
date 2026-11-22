@@ -81,13 +81,13 @@ function WritingExercise({ ex }: { ex: Writing }) {
           </span>
         }
       />
-      <Card className="border-lavender/40 bg-elevated text-sm">{ex.prompt}</Card>
+      <p className="border-l-2 border-lavender pl-3">{ex.prompt}</p>
 
       <details className="text-sm">
-        <summary className="cursor-pointer font-bold text-moon">Frasa yang berguna</summary>
+        <summary className="cursor-pointer text-sm text-lavender">Frasa yang berguna</summary>
         <div className="mt-2 flex flex-wrap gap-1.5">
           {ex.useful_phrases.map((ph) => (
-            <span key={ph} className="rounded-full bg-elevated px-2.5 py-1">
+            <span key={ph} className="rounded-md border border-line px-2 py-1">
               {ph}
             </span>
           ))}
@@ -101,9 +101,9 @@ function WritingExercise({ ex }: { ex: Writing }) {
       </Button>
       {ltError && <Muted className="text-bad">{ltError}</Muted>}
       {matches && (
-        <Card className="animate-rise text-sm">
+        <Card className="text-sm">
           {matches.length === 0 ? (
-            <span className="font-bold text-ok">Tidak ada kesalahan yang terdeteksi.</span>
+            <span className="font-semibold text-ok">Tidak ada kesalahan yang terdeteksi.</span>
           ) : (
             <ul className="flex flex-col gap-2">
               {matches.map((m, i) => (
@@ -112,7 +112,7 @@ function WritingExercise({ ex }: { ex: Writing }) {
                   {m.replacements.length > 0 && (
                     <>
                       {" → "}
-                      <span className="font-bold text-ok">{m.replacements.join(" / ")}</span>
+                      <span className="font-semibold text-ok">{m.replacements.join(" / ")}</span>
                     </>
                   )}
                   <Muted>{m.message}</Muted>
@@ -124,7 +124,7 @@ function WritingExercise({ ex }: { ex: Writing }) {
       )}
 
       <Card>
-        <Muted className="mb-2 font-bold">Daftar cek (nilai sendiri)</Muted>
+        <Muted className="mb-2 font-semibold">Daftar cek (nilai sendiri)</Muted>
         <div className="flex flex-col gap-2">
           {ex.checklist.map((c, i) => (
             <label key={i} className="flex cursor-pointer items-start gap-2.5 text-sm">
@@ -143,7 +143,7 @@ function WritingExercise({ ex }: { ex: Writing }) {
       <Chip className="self-start" onClick={() => setShowModel(!showModel)}>
         {showModel ? "Sembunyikan contoh jawaban" : "Lihat contoh jawaban"}
       </Chip>
-      {showModel && <Card className="animate-rise text-sm whitespace-pre-line">{ex.model_answer}</Card>}
+      {showModel && <Card className="text-sm whitespace-pre-line">{ex.model_answer}</Card>}
 
       <Spacer />
       <Button onClick={finish} disabled={n < ex.min_words}>
