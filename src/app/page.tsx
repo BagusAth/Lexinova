@@ -173,7 +173,7 @@ export default function Home() {
 
       <div className="grid gap-4 lg:grid-cols-3">
         {/* Misi harian */}
-        <section className="card-nebula relative flex min-h-48 overflow-hidden rounded-[2rem] p-6 lg:col-span-2">
+        <section className="card-nebula animate-pop relative flex min-h-48 overflow-hidden rounded-[2rem] p-6 lg:col-span-2">
           <Sparkle className="absolute top-5 right-1/3" size={12} />
           <Sparkle
             className="absolute right-8 bottom-8"
@@ -192,7 +192,7 @@ export default function Home() {
             <div className="mt-1 flex items-center gap-2 text-xs font-semibold text-ink/80">
               <div className="h-2 w-28 overflow-hidden rounded-full bg-white/20">
                 <i
-                  className="block h-full rounded-full bg-ink"
+                  className="block h-full rounded-full bg-ink transition-[width] duration-700 ease-[cubic-bezier(0.34,1.4,0.64,1)]"
                   style={{ width: `${Math.min(100, (day.xp / goal) * 100)}%` }}
                 />
               </div>
@@ -212,7 +212,7 @@ export default function Home() {
         </section>
 
         {/* Statistik */}
-        <div className="grid grid-cols-2 gap-4 lg:grid-cols-1">
+        <div className="stagger grid grid-cols-2 gap-4 lg:grid-cols-1">
           <Link
             href="/kata"
             className="flex flex-col gap-3 rounded-3xl bg-surface p-5 shadow-soft transition hover:-translate-y-0.5 lg:flex-row lg:items-center"
@@ -232,7 +232,9 @@ export default function Home() {
             className="flex flex-col gap-3 rounded-3xl bg-surface p-5 shadow-soft transition hover:-translate-y-0.5 lg:flex-row lg:items-center"
           >
             <span className="grid size-11 place-items-center rounded-2xl bg-[#fb923c]/15 text-[#fb923c]">
-              <Icon kind="flame" size={22} />
+              <span className={streak(p, now) > 0 ? "animate-flicker" : ""}>
+                <Icon kind="flame" size={22} />
+              </span>
             </span>
             <div>
               <div className="text-2xl font-extrabold tabular-nums">
@@ -262,11 +264,12 @@ export default function Home() {
             {unit.title}
           </span>
         </SectionTitle>
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-          {rows.map((r) => (
+        <div className="stagger grid grid-cols-1 gap-3 md:grid-cols-2">
+          {rows.map((r, i) => (
             <Link
               key={r.key}
               href={r.href}
+              style={{ "--i": i + 2 } as React.CSSProperties}
               className={`flex min-w-0 items-center gap-4 rounded-3xl bg-surface p-4 shadow-soft ring-1 transition hover:-translate-y-0.5 hover:ring-lavender/40 active:scale-[0.98] ${
                 r.key === skill ? "ring-lavender/50" : "ring-transparent"
               }`}

@@ -18,6 +18,7 @@ import {
   INTERESTS,
   LEVELS,
 } from "@/lib/levels";
+import { sfx } from "@/lib/sfx";
 import { vocabCount } from "@/lib/stats";
 import { Astronaut, Icon, type IconKind } from "@/components/cosmic";
 import { Loading, Toggle } from "@/components/ui";
@@ -222,6 +223,20 @@ export default function Pengaturan() {
               label="Bacakan dialog otomatis"
               checked={p.settings.autoVoice}
               onChange={(v) => update((d) => void (d.settings.autoVoice = v))}
+            />
+          </Row>
+          <Row
+            icon="volume"
+            title="Efek suara"
+            sub="Bunyi benar, salah, dan selesai, serta getar di HP"
+          >
+            <Toggle
+              label="Efek suara"
+              checked={p.settings.sound}
+              onChange={(v) => {
+                update((d) => void (d.settings.sound = v));
+                if (v) sfx("correct");
+              }}
             />
           </Row>
         </div>

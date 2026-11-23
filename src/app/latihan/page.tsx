@@ -105,7 +105,8 @@ export default function Jalur() {
                 role="tab"
                 aria-selected={sel === i}
                 onClick={() => setPicked(i)}
-                className={`relative flex min-w-24 flex-col items-center gap-1 rounded-3xl px-3 py-3 ring-1 transition ${
+                style={{ "--i": i } as React.CSSProperties}
+                className={`pop-in relative flex min-w-24 flex-col items-center gap-1 rounded-3xl px-3 py-3 ring-1 transition ${
                   sel === i
                     ? "bg-elevated ring-lavender/60"
                     : "bg-surface ring-transparent hover:ring-lavender/30"
@@ -270,9 +271,11 @@ function LevelUnits({ p, li, cur }: { p: Progress; li: number; cur: number }) {
           merasa mampu? Ambil Uji Lompat di kartu atas.
         </p>
       )}
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-        {units.map((u) => (
-          <UnitCard key={u.id} p={p} u={u} />
+      <div key={li} className="stagger grid grid-cols-1 gap-4 lg:grid-cols-2">
+        {units.map((u, i) => (
+          <div key={u.id} style={{ "--i": i } as React.CSSProperties}>
+            <UnitCard p={p} u={u} />
+          </div>
         ))}
       </div>
     </section>
@@ -361,7 +364,11 @@ function UnitCard({ p, u }: { p: Progress; u: Unit }) {
                 const isDone = nodeDone(p, u, k);
                 const isNext = k === firstOpen;
                 return (
-                  <li key={k} className="relative flex w-full justify-center">
+                  <li
+                    key={k}
+                    className="pop-in relative flex w-full justify-center"
+                    style={{ "--i": i } as React.CSSProperties}
+                  >
                     <button
                       type="button"
                       onClick={() => go(k)}

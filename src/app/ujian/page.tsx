@@ -35,6 +35,13 @@ import { speak, stopSpeaking } from "@/lib/speech";
 import type { Unit } from "@/lib/types";
 import { HexBadge, Icon, Planet, Sparkle } from "@/components/cosmic";
 import {
+  ComboToast,
+  Confetti,
+  CountUp,
+  isComboMilestone,
+} from "@/components/motion";
+import { buzz, sfx } from "@/lib/sfx";
+import {
   Actions,
   Button,
   ButtonLink,
@@ -175,6 +182,7 @@ function ExamFlow({ cfg, p }: { cfg: Config; p: Progress }) {
   const [idx, setIdx] = useState(0);
   const [hearts, setHearts] = useState(HEARTS);
   const [correct, setCorrect] = useState(0);
+  const [combo, setCombo] = useState(0);
   const [outcome, setOutcome] = useState<Outcome | null>(null);
 
   const name = firstName(p);
@@ -185,6 +193,7 @@ function ExamFlow({ cfg, p }: { cfg: Config; p: Progress }) {
     setQs(buildExam(cfg.units, cfg.diff, cfg.count));
     setIdx(0);
     setHearts(HEARTS);
+    setCombo(0);
     setCorrect(0);
     setOutcome(null);
     setPhase("run");
@@ -335,15 +344,21 @@ function ExamFlow({ cfg, p }: { cfg: Config; p: Progress }) {
           aria-label={`${hearts} nyawa tersisa`}
         >
           {Array.from({ length: HEARTS }, (_, i) => (
-            <Icon
-              key={i}
-              kind="heart"
-              size={22}
-              className={i < hearts ? "fill-bad text-bad" : "text-elevated"}
-            />
+            // Hati yang baru saja hilang diberi animasi "pecah".
+            <span
+              key={i === hearts ? `lost-${hearts}` : i}
+              className={i === hearts ? "animate-heart-break" : ""}
+            >
+              <Icon
+                kind="heart"
+                size={22}
+                className={i < hearts ? "fill-bad text-bad" : "text-elevated"}
+              />
+            </span>
           ))}
         </div>
       </div>
+      {isComboMilestone(combo) && <ComboToast key={combo} streak={combo} />}
       <Question
         key={idx}
         q={qs[idx]}
@@ -351,6 +366,7 @@ function ExamFlow({ cfg, p }: { cfg: Config; p: Progress }) {
         onAnswer={(ok) => {
           if (ok) setCorrect((c) => c + 1);
           else setHearts((h) => h - 1);
+          setCombo((c) => (ok ? c + 1 : 0));
         }}
         onNext={() => {
           if (hearts <= 0) return finish(false, correct, idx + 1);
@@ -378,12 +394,17 @@ function Result({
   const pct = Math.round(outcome.score * 100);
   const nextLevel = LEVELS[cfg.levelIdx + 1];
 
+  useEffect(() => {
+    if (!outcome.passed) sfx("wrong");
+    else sfx(cfg.kind === "level" ? "levelup" : "complete");
+  }, [outcome.passed, cfg.kind]);
+
   if (!outcome.passed)
     return (
       <>
         <TopBar left={cfg.title} back="/latihan" />
         <div className="animate-pop flex flex-col items-center gap-3 rounded-[2rem] bg-surface px-6 py-10 text-center">
-          <span className="grid size-16 place-items-center rounded-full bg-bad/15 text-bad">
+          <span className="animate-heart-break grid size-16 place-items-center rounded-full bg-bad/15 text-bad">
             <Icon kind="heart" size={30} />
           </span>
           <h2 className="text-2xl font-extrabold">Nyawa habis</h2>
@@ -418,6 +439,7 @@ function Result({
 
   return (
     <>
+      <Confetti count={levelUp ? 110 : 70} />
       <TopBar left={cfg.title} back="/latihan" />
       <div className="card-nebula animate-pop relative flex flex-col items-center gap-3 overflow-hidden rounded-[2rem] px-6 py-9 text-center">
         <Sparkle className="absolute top-6 left-8" size={14} />
@@ -434,9 +456,17 @@ function Result({
           delay={1.4}
         />
         <div className="text-sm font-semibold tracking-wide text-ink/80 uppercase">
-          {levelUp ? "Naik tingkat" : `Skor ${pct}%`}
+          {levelUp ? (
+            "Naik tingkat"
+          ) : (
+            <>
+              Skor <CountUp to={pct} suffix="%" />
+            </>
+          )}
         </div>
-        <HexBadge size={levelUp ? 150 : 120} />
+        <div className="animate-badge-in">
+          <HexBadge size={levelUp ? 150 : 120} />
+        </div>
         <h2 className="text-2xl font-extrabold">{title}</h2>
         <p className="max-w-md text-ink/85">{text}</p>
         {levelUp && nextLevel && !unitsOfLevel(cfg.levelIdx + 1).length && (
@@ -595,6 +625,8 @@ function Question({
     const v = evaluate(q, ans, diff);
     setVerdict(v);
     onAnswer(v.ok);
+    sfx(v.ok ? "correct" : "wrong");
+    if (!v.ok) buzz();
   }
 
   useKeys((k) => {
@@ -604,10 +636,13 @@ function Question({
   });
 
   return (
-    <div className="flex flex-1 flex-col gap-4">
+    <div className="animate-card-in flex flex-1 flex-col gap-4">
       <span className="w-fit rounded-full bg-primary/20 px-3 py-1 text-xs font-bold text-lavender uppercase">
         {q.tag}
       </span>
+      <div
+        className={`flex flex-col gap-4 ${verdict ? (verdict.ok ? "animate-bounce-in" : "animate-shake") : ""}`}
+      >
       {q.kind === "choice" && (
         <ChoiceQ
           q={q}
@@ -636,11 +671,12 @@ function Question({
           locked={locked}
         />
       )}
+      </div>
       <Spacer />
       {verdict && (
         <div
           role="status"
-          className={`animate-rise rounded-3xl p-4 ring-1 ${verdict.ok ? "bg-ok/10 ring-ok/40" : "bg-bad/10 ring-bad/40"}`}
+          className={`animate-slide-up rounded-3xl p-4 ring-1 ${verdict.ok ? "bg-ok/10 ring-ok/40" : "bg-bad/10 ring-bad/40"}`}
         >
           <div
             className={`mb-1 font-extrabold ${verdict.ok ? "text-ok" : "text-bad"}`}

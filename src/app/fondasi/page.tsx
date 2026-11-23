@@ -9,6 +9,8 @@ import { buildQueue, gradeCard, Rating, type Grade } from "@/lib/srs";
 import { sameAnswer } from "@/lib/text";
 import type { Item } from "@/lib/types";
 import { Icon, type IconKind, Planet, Sparkle } from "@/components/cosmic";
+import { Celebrate } from "@/components/motion";
+import { buzz, sfx } from "@/lib/sfx";
 import {
   Actions,
   Button,
@@ -111,14 +113,17 @@ export default function Fondasi() {
     return (
       <div className="mx-auto flex w-full max-w-xl flex-1 flex-col gap-6">
         <TopBar left="Fondasi" />
-        <div className="card-nebula relative flex flex-col items-center gap-3 overflow-hidden rounded-[2rem] px-6 py-10 text-center">
+        {queue.length > 0 && <Celebrate />}
+        <div className="card-nebula animate-pop relative flex flex-col items-center gap-3 overflow-hidden rounded-[2rem] px-6 py-10 text-center">
           <Sparkle className="absolute top-6 left-10" />
           <Sparkle
             className="absolute right-12 bottom-10"
             size={10}
             delay={1}
           />
-          <Planet id="done-fondasi" tone="lavender" size={110} />
+          <div className="animate-badge-in">
+            <Planet id="done-fondasi" tone="lavender" size={110} />
+          </div>
           <h2 className="text-2xl font-extrabold">
             {queue.length ? "Fondasi selesai!" : "Semua kartu sudah beres"}
           </h2>
@@ -196,7 +201,7 @@ function CardView({
   return (
     <>
       {/* Kartu besar */}
-      <div className="relative overflow-hidden rounded-[2rem] bg-surface shadow-soft ring-1 ring-line">
+      <div className="animate-card-in relative overflow-hidden rounded-[2rem] bg-surface shadow-soft ring-1 ring-line">
         <div className="card-nebula relative flex h-36 items-center justify-center overflow-hidden">
           <Sparkle className="absolute top-5 left-8" size={12} />
           <Sparkle
@@ -239,7 +244,11 @@ function CardView({
                 className="flex gap-2"
                 onSubmit={(e) => {
                   e.preventDefault();
-                  if (input.trim()) setRevealed(true);
+                  if (!input.trim()) return;
+                  setRevealed(true);
+                  const ok = sameAnswer(input, item.answer);
+                  sfx(ok ? "correct" : "wrong");
+                  if (!ok) buzz();
                 }}
               >
                 <input
@@ -254,8 +263,8 @@ function CardView({
                   className={`w-full rounded-full border-2 bg-elevated/60 px-5 py-3 outline-none transition focus:border-lavender ${
                     revealed
                       ? correct
-                        ? "border-ok text-ok"
-                        : "border-bad text-bad"
+                        ? "animate-bounce-in border-ok text-ok"
+                        : "animate-shake border-bad text-bad"
                       : "border-line"
                   }`}
                 />
@@ -385,7 +394,7 @@ function Rate({
             className="group flex flex-col items-center gap-1.5"
           >
             <span
-              className={`grid size-16 place-items-center rounded-full ring-2 transition group-active:scale-90 ${r.tone} ${
+              className={`grid size-16 place-items-center rounded-full ring-2 transition group-hover:-translate-y-1 group-active:scale-90 ${r.tone} ${
                 r.grade === suggest ? "scale-110 ring-4" : ""
               }`}
             >

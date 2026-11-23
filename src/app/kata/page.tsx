@@ -107,10 +107,14 @@ export default function Kata() {
         ))}
       </div>
 
-      <ul className="grid grid-cols-1 gap-3 md:grid-cols-2">
-        {shown.map((i) => (
+      <ul
+        key={`${level}-${filter}`}
+        className="stagger grid grid-cols-1 gap-3 md:grid-cols-2"
+      >
+        {shown.map((i, n) => (
           <li
             key={i.id}
+            style={{ "--i": Math.min(n, 10) } as React.CSSProperties}
             className="flex min-w-0 items-center gap-3 rounded-3xl bg-surface p-4 shadow-soft"
           >
             <button

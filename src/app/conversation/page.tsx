@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Celebrate } from "@/components/motion";
 import { getUnit } from "@/lib/content";
+import { sfx } from "@/lib/sfx";
 import { type Difficulty, difficultyOf } from "@/lib/levels";
 import { addResult, markDone, useProgress } from "@/lib/progress";
 import { speak, useRecognition } from "@/lib/speech";
@@ -97,6 +99,8 @@ function Dialog({
     const s = { c: score.c + (r.matched ? 1 : 0), t: score.t + 1 };
     setScore(s);
     addResult(r.matched ? 1 : 0, 1, r.matched ? 4 : 2);
+    // Jawaban yang cocok dapat bunyi "ting"; yang tidak cukup diberi contoh, tanpa bunyi salah.
+    if (r.matched) sfx("correct");
     if (voiceOn) speak(nextNode.them);
     if (nextNode.end) markDone(ex.id, s.c / s.t);
   }
@@ -117,7 +121,7 @@ function Dialog({
           m.who === "tip" ? (
             <p
               key={i}
-              className="rounded-2xl bg-cyan/10 px-4 py-3 text-sm text-ink/90"
+              className="animate-rise rounded-2xl bg-cyan/10 px-4 py-3 text-sm text-ink/90"
             >
               <span className="text-xs font-bold text-cyan uppercase">
                 Contoh jawaban
@@ -126,7 +130,7 @@ function Dialog({
               {m.text}
             </p>
           ) : m.who === "them" ? (
-            <div key={i} className="max-w-[85%] self-start">
+            <div key={i} className="animate-rise max-w-[85%] self-start">
               <div className="rounded-3xl rounded-bl-md bg-surface px-4 py-3 shadow-soft">
                 {m.text}
               </div>
@@ -141,7 +145,7 @@ function Dialog({
           ) : (
             <div
               key={i}
-              className="max-w-[85%] self-end rounded-3xl rounded-br-md bg-gradient-to-br from-primary to-[#8b7fff] px-4 py-3 shadow-glow"
+              className="animate-pop max-w-[85%] self-end rounded-3xl rounded-br-md bg-gradient-to-br from-primary to-[#8b7fff] px-4 py-3 shadow-glow"
             >
               {m.text}
             </div>
@@ -152,6 +156,7 @@ function Dialog({
 
       {finished ? (
         <>
+          <Celebrate />
           <Muted>
             Dialog selesai. {score.c} dari {score.t} jawabanmu sesuai yang
             diharapkan.

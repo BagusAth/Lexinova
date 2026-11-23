@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
-import type { ComponentProps, ReactNode } from "react";
+import { useEffect, type ComponentProps, type ReactNode } from "react";
+import { buzz, sfx } from "@/lib/sfx";
 import { Icon } from "./cosmic";
 
 /** Baris judul halaman latihan: tombol kembali, judul, dan penanda langkah. */
@@ -50,7 +53,7 @@ export function ProgressBar({
       aria-valuemax={100}
     >
       <i
-        className="block h-full rounded-full bg-gradient-to-r from-primary to-lavender transition-[width] duration-500"
+        className={`block h-full rounded-full bg-gradient-to-r from-primary to-lavender transition-[width] duration-700 ease-[cubic-bezier(0.34,1.4,0.64,1)] ${pct > 0 ? "progress-shine" : ""}`}
         style={{ width: `${pct}%` }}
       />
     </div>
@@ -97,14 +100,16 @@ export function Chip({
   );
 }
 
-// Tombol pill. Di HP selebar layar; di desktop menyesuaikan isi.
+// Tombol pill 3D ala Duolingo: punya "alas" di bawah dan turun saat ditekan.
+// Di HP selebar layar; di desktop menyesuaikan isi.
 const btnBase =
-  "inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-3.5 font-bold transition duration-200 active:scale-[0.97] disabled:pointer-events-none disabled:opacity-40 md:w-auto md:min-w-48";
+  "inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-3.5 font-bold transition-[transform,box-shadow,filter,background-color] duration-100 active:translate-y-[4px] disabled:pointer-events-none disabled:opacity-40 md:w-auto md:min-w-48";
 const btnVariant = {
   primary:
-    "bg-gradient-to-r from-primary to-[#8b7fff] text-ink shadow-glow hover:brightness-110",
-  alt: "bg-elevated text-ink hover:bg-[#33345a]",
-  light: "bg-ink text-[#2a2470] hover:bg-white",
+    "bg-gradient-to-r from-primary to-[#8b7fff] text-ink shadow-[0_4px_0_#3d358f,0_12px_32px_-12px_rgb(108_99_255/0.7)] hover:brightness-110 active:shadow-[0_0_0_#3d358f]",
+  alt: "bg-elevated text-ink shadow-[0_4px_0_#16172e] hover:bg-[#33345a] active:shadow-[0_0_0_#16172e]",
+  light:
+    "bg-ink text-[#2a2470] shadow-[0_4px_0_#a99bff] hover:bg-white active:shadow-[0_0_0_#a99bff]",
 };
 
 export function Button({
@@ -178,16 +183,27 @@ export function Spacer() {
   return <div className="flex-1 md:h-2 md:flex-none" />;
 }
 
+/** Kotak umpan balik: membal + bunyi "ting" bila benar, bergetar bila salah. */
 export function Feedback({
   ok,
   children,
+  silent = false,
 }: {
   ok: boolean;
   children: ReactNode;
+  silent?: boolean;
 }) {
+  useEffect(() => {
+    if (silent) return;
+    sfx(ok ? "correct" : "wrong");
+    if (!ok) buzz();
+    // Bunyi hanya saat kotak pertama kali muncul.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <div
-      className={`animate-rise rounded-3xl p-4 ring-1 ${ok ? "bg-ok/10 ring-ok/40" : "bg-bad/10 ring-bad/40"}`}
+      role="status"
+      className={`rounded-3xl p-4 ring-1 ${ok ? "animate-bounce-in bg-ok/10 ring-ok/40" : "animate-shake bg-bad/10 ring-bad/40"}`}
     >
       {children}
     </div>

@@ -41,6 +41,7 @@ export interface Progress {
     newPerDay: number;
     name: string;
     autoVoice: boolean;
+    sound: boolean; // efek suara benar/salah/selesai
     goals: string[]; // kunci GOALS di levels.ts
     interests: string[]; // kunci INTERESTS di levels.ts
     targetLevel: string; // level id yang ingin dicapai
@@ -68,6 +69,7 @@ export const emptyProgress = (): Progress => ({
     newPerDay: 6,
     name: OWNER,
     autoVoice: true,
+    sound: true,
     goals: ["karier", "ielts", "studi", "travel"],
     interests: ["teknologi", "bisnis", "desain", "sains"],
     targetLevel: "b2",

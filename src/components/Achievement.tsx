@@ -2,7 +2,10 @@
 
 import { type Progress, streak, todayKey, update } from "@/lib/progress";
 import { vocabCount } from "@/lib/stats";
+import { useEffect } from "react";
+import { sfx } from "@/lib/sfx";
 import { HexBadge, Sparkle } from "./cosmic";
+import { Confetti } from "./motion";
 import { Button } from "./ui";
 
 interface Pending {
@@ -46,6 +49,11 @@ function pending(p: Progress): Pending | null {
 export function Achievement({ p }: { p: Progress }) {
   const a = pending(p);
   if (!a) return null;
+  return <AchievementDialog key={a.id} a={a} />;
+}
+
+function AchievementDialog({ a }: { a: Pending }) {
+  useEffect(() => sfx("levelup"), []);
 
   const claim = () =>
     update((d) => {
@@ -54,7 +62,7 @@ export function Achievement({ p }: { p: Progress }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 grid place-items-center bg-[#0b0c1d]/80 p-5 backdrop-blur-sm"
+      className="animate-page fixed inset-0 z-50 grid place-items-center bg-[#0b0c1d]/80 p-5 backdrop-blur-sm"
       role="dialog"
       aria-modal="true"
       aria-labelledby="ach-title"
@@ -76,7 +84,9 @@ export function Achievement({ p }: { p: Progress }) {
         <div className="text-sm font-semibold tracking-wide text-lavender uppercase">
           Pencapaian terbuka
         </div>
-        <HexBadge size={150} />
+        <div className="animate-badge-in">
+          <HexBadge size={150} />
+        </div>
         <h2 id="ach-title" className="text-2xl font-extrabold">
           {a.title}
         </h2>
@@ -85,6 +95,7 @@ export function Achievement({ p }: { p: Progress }) {
           Mantap!
         </Button>
       </div>
+      <Confetti />
     </div>
   );
 }

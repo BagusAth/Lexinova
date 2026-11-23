@@ -27,6 +27,7 @@ export function AppShell({ children }: { children: ReactNode }) {
   const path = usePathname();
   const p = useProgress();
   const showTabs = WITH_TABS.has(path);
+  const activeTab = NAV.findIndex((n) => n.href === path);
 
   // Minta browser menyimpan data secara permanen supaya progres tidak ikut
   // terhapus saat browser membersihkan penyimpanan otomatis.
@@ -86,7 +87,9 @@ export function AppShell({ children }: { children: ReactNode }) {
                         : "text-mute hover:bg-surface hover:text-ink"
                     }`}
                   >
-                    <Icon kind={n.icon} size={20} />
+                    <span key={active ? path : "idle"} className={active ? "animate-hop" : ""}>
+                      <Icon kind={n.icon} size={20} />
+                    </span>
                     {n.label}
                   </Link>
                 );
@@ -96,7 +99,9 @@ export function AppShell({ children }: { children: ReactNode }) {
               {p && (
                 <div className="flex items-center gap-3 rounded-3xl bg-surface p-4">
                   <span className="grid size-10 place-items-center rounded-full bg-gradient-to-br from-[#fb923c] to-[#f43f5e] text-ink">
-                    <Icon kind="flame" size={20} />
+                    <span className={streak(p) > 0 ? "animate-flicker" : ""}>
+                      <Icon kind="flame" size={20} />
+                    </span>
                   </span>
                   <div>
                     <div className="text-lg font-extrabold">
@@ -121,7 +126,8 @@ export function AppShell({ children }: { children: ReactNode }) {
 
           <div className="min-w-0 flex-1">
             <main
-              className={`mx-auto flex min-h-dvh w-full ${showTabs ? "max-w-5xl" : "max-w-2xl"} flex-col gap-6 px-5 pt-[max(1.5rem,env(safe-area-inset-top))] sm:px-8 lg:min-h-0 lg:px-10 lg:py-8 ${
+              key={path}
+              className={`animate-page mx-auto flex min-h-dvh w-full ${showTabs ? "max-w-5xl" : "max-w-2xl"} flex-col gap-6 px-5 pt-[max(1.5rem,env(safe-area-inset-top))] sm:px-8 lg:min-h-0 lg:px-10 lg:py-8 ${
                 showTabs
                   ? "pb-28 lg:pb-10"
                   : "pb-[max(1.5rem,env(safe-area-inset-bottom))]"
@@ -134,7 +140,15 @@ export function AppShell({ children }: { children: ReactNode }) {
           {/* Navigasi bawah untuk HP */}
           {showTabs && (
             <nav className="fixed inset-x-3 bottom-[max(0.75rem,env(safe-area-inset-bottom))] z-20 mx-auto max-w-md rounded-full bg-surface/95 p-1.5 shadow-soft ring-1 ring-line backdrop-blur lg:hidden">
-              <div className="grid grid-cols-4">
+              <div className="relative grid grid-cols-4">
+                {/* Penanda aktif yang bergeser mulus antar-tab. */}
+                {activeTab >= 0 && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-y-0 left-0 w-1/4 rounded-full bg-primary shadow-glow transition-transform duration-300 ease-[cubic-bezier(0.34,1.4,0.64,1)]"
+                    style={{ transform: `translateX(${activeTab * 100}%)` }}
+                  />
+                )}
                 {NAV.map((n) => {
                   const active = path === n.href;
                   return (
@@ -142,9 +156,11 @@ export function AppShell({ children }: { children: ReactNode }) {
                       key={n.href}
                       href={n.href}
                       aria-current={active ? "page" : undefined}
-                      className={`flex flex-col items-center gap-0.5 rounded-full py-2 text-[11px] font-semibold transition ${active ? "bg-primary text-ink" : "text-mute"}`}
+                      className={`relative flex flex-col items-center gap-0.5 rounded-full py-2 text-[11px] font-semibold transition-colors ${active ? "text-ink" : "text-mute"}`}
                     >
-                      <Icon kind={n.icon} size={20} />
+                      <span key={active ? path : "idle"} className={active ? "animate-hop" : ""}>
+                        <Icon kind={n.icon} size={20} />
+                      </span>
                       {n.label}
                     </Link>
                   );
