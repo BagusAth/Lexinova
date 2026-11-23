@@ -14,12 +14,16 @@ import {
 import {
   currentLevel,
   type Difficulty,
+  findLevel,
   HEARTS,
+  type Lang,
+  langOf,
   LESSON_COUNT,
   lessonsDone,
-  LEVELS,
-  levelIndex,
+  type Level,
   levelOfUnit,
+  levelsOf,
+  unitsOfCourse,
   unitsOfLevel,
   unitUnlocked,
 } from "@/lib/levels";
@@ -34,6 +38,8 @@ import {
 import { speak, stopSpeaking } from "@/lib/speech";
 import type { Unit } from "@/lib/types";
 import { HexBadge, Icon, Planet, Sparkle } from "@/components/cosmic";
+import { T } from "@/components/T";
+import { AudioButton, TileBoard } from "@/components/Tiles";
 import {
   ComboToast,
   Confetti,
@@ -72,6 +78,8 @@ interface Config {
   diff: Difficulty;
   count: number;
   levelIdx: number;
+  lang: Lang;
+  levels: Level[];
 }
 
 function Blocked({ title, children }: { title: string; children: ReactNode }) {
@@ -112,47 +120,56 @@ function ExamRoute() {
         </Blocked>
       );
     const li = levelOfUnit(u);
+    const lang = langOf(u);
+    const levels = levelsOf(lang);
     cfg = {
       key: `unit:${u.id}`,
       kind: "unit",
       title: "Ujian Unit",
       subtitle: u.title,
       units: [u],
-      diff: LEVELS[li].difficulty,
-      count: LEVELS[li].difficulty.unitQuestions,
+      diff: levels[li].difficulty,
+      count: levels[li].difficulty.unitQuestions,
       levelIdx: li,
+      lang,
+      levels,
     };
   } else if (levelId) {
-    const li = levelIndex(levelId);
-    if (li < 0)
+    const found = findLevel(levelId);
+    if (!found)
       return (
         <Blocked title="Tingkat tidak ditemukan">Cek lagi tautannya.</Blocked>
       );
-    const units = unitsOfLevel(li);
-    if (li > currentLevel(p))
+    const { lang, idx: li } = found;
+    const levels = levelsOf(lang);
+    const units = unitsOfLevel(li, lang);
+    const cur = currentLevel(p, lang);
+    if (li > cur)
       return (
         <Blocked title="Tingkat masih terkunci">
-          Selesaikan tingkat {LEVELS[currentLevel(p)].cefr} dulu.
+          Selesaikan tingkat {levels[cur].cefr} dulu.
         </Blocked>
       );
     if (!units.length)
       return (
         <Blocked title="Materi belum tersedia">
-          Materi tingkat {LEVELS[li].cefr} sedang disiapkan.
+          Materi tingkat {levels[li].cefr} sedang disiapkan.
         </Blocked>
       );
-    const next = LEVELS[li + 1];
+    const next = levels[li + 1];
     cfg = {
-      key: `level:${LEVELS[li].id}`,
+      key: `level:${levels[li].id}`,
       kind: "level",
       title: next
         ? `Ujian Naik ke ${next.cefr}`
-        : `Ujian Akhir ${LEVELS[li].cefr}`,
-      subtitle: `Semua materi tingkat ${LEVELS[li].cefr}`,
+        : `Ujian Akhir ${levels[li].cefr}`,
+      subtitle: `Semua materi tingkat ${levels[li].cefr}`,
       units,
-      diff: LEVELS[li].difficulty,
-      count: LEVELS[li].difficulty.levelQuestions,
+      diff: levels[li].difficulty,
+      count: levels[li].difficulty.levelQuestions,
       levelIdx: li,
+      lang,
+      levels,
     };
   }
 
@@ -187,7 +204,7 @@ function ExamFlow({ cfg, p }: { cfg: Config; p: Progress }) {
 
   const name = firstName(p);
   const record = p.path.exams[cfg.key];
-  const level = LEVELS[cfg.levelIdx];
+  const level = cfg.levels[cfg.levelIdx];
 
   function start() {
     setQs(buildExam(cfg.units, cfg.diff, cfg.count));
@@ -210,10 +227,10 @@ function ExamFlow({ cfg, p }: { cfg: Config; p: Progress }) {
     let nextUnit: Unit | undefined;
     if (passed) {
       if (cfg.kind === "unit") {
-        const list = unitsOfLevel(cfg.levelIdx);
+        const list = unitsOfLevel(cfg.levelIdx, cfg.lang);
         nextUnit = list[list.findIndex((x) => x.id === cfg.units[0].id) + 1];
       } else {
-        nextUnit = unitsOfLevel(cfg.levelIdx + 1)[0];
+        nextUnit = unitsOfLevel(cfg.levelIdx + 1, cfg.lang)[0];
       }
     }
     saveExam(cfg.key, score, passed, (d) => {
@@ -223,8 +240,8 @@ function ExamFlow({ cfg, p }: { cfg: Config; p: Progress }) {
       } else {
         // Lulus tingkat (termasuk lewat Uji Lompat) = semua unit di tingkat itu dan sebelumnya ikut lulus.
         for (let i = 0; i <= cfg.levelIdx; i++)
-          d.path.passedLevels[LEVELS[i].id] ??= today;
-        for (const u of UNITS)
+          d.path.passedLevels[cfg.levels[i].id] ??= today;
+        for (const u of unitsOfCourse(cfg.lang))
           if (levelOfUnit(u) <= cfg.levelIdx)
             d.path.passedUnits[u.id] ??= today;
       }
@@ -239,11 +256,22 @@ function ExamFlow({ cfg, p }: { cfg: Config; p: Progress }) {
     const rules = [
       `${cfg.count} soal`,
       `${HEARTS} nyawa`,
-      d.clozeChoices ? "Isi celah: pilihan" : "Isi celah: diketik",
-      d.orderDistractors
-        ? `Susun kata + ${d.orderDistractors} pengecoh`
-        : "Susun kata tanpa pengecoh",
-      `Dengar: ${Math.round(d.listenPass * 100)}% kata tepat`,
+      ...(d.mix.cloze > 0
+        ? [d.clozeChoices ? "Isi celah: pilihan" : "Isi celah: diketik"]
+        : []),
+      ...(d.listenMode === "tiles"
+        ? [d.mix.order > 0 ? "Dengar lalu susun" : "Dengar lalu pilih huruf"]
+        : []),
+      ...(d.mix.order > 0
+        ? [
+            d.orderDistractors
+              ? `Susun kata + ${d.orderDistractors} pengecoh`
+              : "Susun kata tanpa pengecoh",
+          ]
+        : []),
+      ...(d.listenMode === "type"
+        ? [`Dengar: ${Math.round(d.listenPass * 100)}% kata tepat`]
+        : []),
     ];
     const done = cfg.kind === "unit" ? lessonsDone(p, cfg.units[0]) : null;
     return (
@@ -263,7 +291,7 @@ function ExamFlow({ cfg, p }: { cfg: Config; p: Progress }) {
           <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-bold tracking-wide uppercase">
             {cfg.kind === "unit"
               ? "Ujian Unit"
-              : LEVELS[cfg.levelIdx + 1]
+              : cfg.levels[cfg.levelIdx + 1]
                 ? "Ujian Naik Tingkat"
                 : "Ujian Akhir"}
           </span>
@@ -271,9 +299,9 @@ function ExamFlow({ cfg, p }: { cfg: Config; p: Progress }) {
           <p className="max-w-md text-sm text-ink/85">
             {cfg.kind === "unit"
               ? `${name}, lulus ujian ini untuk membuka unit berikutnya. Salah ${HEARTS} kali dan ujian berhenti, tapi kamu bisa mencoba lagi kapan saja.`
-              : LEVELS[cfg.levelIdx + 1]
+              : cfg.levels[cfg.levelIdx + 1]
                 ? `${name}, lulus di sini dan kamu naik tingkat. Soalnya diambil dari semua unit ${level.cefr}, jadi ini juga bisa dipakai sebagai Uji Lompat.`
-                : `${name}, ini ujian terakhir di jalur Lexinova. Soalnya diambil dari semua unit C1 dengan tingkat kesulitan tertinggi.`}
+                : `${name}, ini ujian terakhir di jalur Lexinova. Soalnya diambil dari semua unit ${level.cefr} dengan tingkat kesulitan tertinggi.`}
           </p>
         </div>
 
@@ -392,7 +420,7 @@ function Result({
   onRetry: () => void;
 }) {
   const pct = Math.round(outcome.score * 100);
-  const nextLevel = LEVELS[cfg.levelIdx + 1];
+  const nextLevel = cfg.levels[cfg.levelIdx + 1];
 
   useEffect(() => {
     if (!outcome.passed) sfx("wrong");
@@ -427,15 +455,15 @@ function Result({
   const title = levelUp
     ? nextLevel
       ? `${name} naik ke ${nextLevel.cefr}!`
-      : `${name} menuntaskan C1!`
+      : `${name} menuntaskan ${cfg.levels[cfg.levelIdx].cefr}!`
     : "Unit lulus!";
   const text = levelUp
     ? nextLevel
-      ? `Sekarang kamu di tingkat ${nextLevel.name}, kira-kira setara IELTS ${nextLevel.ielts}. Di sini kamu berlatih: ${nextLevel.canDo.charAt(0).toLowerCase()}${nextLevel.canDo.slice(1)}`
+      ? `Sekarang kamu di tingkat ${nextLevel.name}, kira-kira setara ${nextLevel.badges[0].replace("≈ ", "")}. Di sini kamu berlatih: ${nextLevel.canDo.charAt(0).toLowerCase()}${nextLevel.canDo.slice(1)}`
       : "Semua tingkat sudah kamu lewati. Saatnya memakai bahasa Inggrismu di dunia nyata."
     : outcome.nextUnit
       ? `Skor ${pct}%. Unit berikutnya terbuka: ${outcome.nextUnit.title}.`
-      : `Skor ${pct}%. Semua unit ${LEVELS[cfg.levelIdx].cefr} sudah lulus, jadi Ujian Naik Tingkat sekarang terbuka.`;
+      : `Skor ${pct}%. Semua unit ${cfg.levels[cfg.levelIdx].cefr} sudah lulus, jadi Ujian Naik Tingkat sekarang terbuka.`;
 
   return (
     <>
@@ -469,7 +497,7 @@ function Result({
         </div>
         <h2 className="text-2xl font-extrabold">{title}</h2>
         <p className="max-w-md text-ink/85">{text}</p>
-        {levelUp && nextLevel && !unitsOfLevel(cfg.levelIdx + 1).length && (
+        {levelUp && nextLevel && !unitsOfLevel(cfg.levelIdx + 1, cfg.lang).length && (
           <p className="max-w-md rounded-2xl bg-white/10 px-4 py-2 text-sm">
             Materi {nextLevel.cefr} sedang disiapkan. Minta Claude membuat unit
             berikutnya.
@@ -534,10 +562,14 @@ function evaluate(q: ExamQ, a: Answer, diff: Difficulty): Verdict {
           <>
             {!ok && (
               <div>
-                Jawaban: <b>{q.options[q.answer]}</b>
+                Jawaban: <b><T>{q.options[q.answer]}</T></b>
               </div>
             )}
-            {q.explain && <div className="mt-1 text-mute">{q.explain}</div>}
+            {q.explain && (
+              <div className="mt-1 text-mute">
+                <T romaji={false}>{q.explain}</T>
+              </div>
+            )}
           </>
         ),
       };
@@ -568,11 +600,18 @@ function evaluate(q: ExamQ, a: Answer, diff: Difficulty): Verdict {
       );
       return {
         ok,
-        body: ok ? (
-          q.target
-        ) : (
+        body: (
           <>
-            Susunan yang benar: <b>{q.target}</b>
+            {ok ? (
+              <T>{q.target}</T>
+            ) : (
+              <>
+                Susunan yang benar: <b><T>{q.target}</T></b>
+              </>
+            )}
+            {q.translation && (
+              <div className="mt-1 text-mute">{q.translation}</div>
+            )}
           </>
         ),
       };
@@ -702,10 +741,10 @@ function Question({
 function Blanked({ sentence }: { sentence: string }) {
   const [a, b] = sentence.split("____");
   return (
-    <div className="text-xl leading-relaxed font-bold">
-      {a}
+    <div className="text-xl leading-loose font-bold">
+      {a.trim() && <T romaji={false}>{a.trim()}</T>}
       <span className="mx-1 inline-block min-w-16 border-b-2 border-lavender align-baseline" />
-      {b}
+      {b.trim() && <T romaji={false}>{b.trim()}</T>}
     </div>
   );
 }
@@ -728,11 +767,20 @@ function ChoiceQ({
   return (
     <>
       <div className="text-xl font-bold">{q.prompt}</div>
+      {q.audio && <AudioButton text={q.audio} />}
+      {q.focus && (
+        <div className="text-3xl leading-relaxed font-extrabold">
+          {/* Romaji dimatikan di ujian supaya tidak membocorkan jawaban. */}
+          <T romaji={false}>{q.focus}</T>
+        </div>
+      )}
       {q.sentence &&
         (q.sentence.includes("____") ? (
           <Blanked sentence={q.sentence} />
         ) : (
-          <Muted className="italic">{q.sentence}</Muted>
+          <Muted className="italic">
+            <T romaji={false}>{q.sentence}</T>
+          </Muted>
         ))}
       <div className="grid gap-2 sm:grid-cols-2">
         {q.options.map((o, i) => {
@@ -756,7 +804,9 @@ function ChoiceQ({
               <span className="hidden size-6 shrink-0 place-items-center rounded-md bg-elevated text-xs font-bold text-mute lg:grid">
                 {i + 1}
               </span>
-              {o}
+              <span className="text-lg">
+                <T romaji={false}>{o}</T>
+              </span>
             </button>
           );
         })}
@@ -807,44 +857,20 @@ function OrderQ({
   onChange: (v: number[]) => void;
   locked: boolean;
 }) {
-  const tile =
-    "rounded-xl border-b-4 border-[#1a1b33] bg-elevated px-3 py-2 font-semibold shadow-soft transition active:translate-y-0.5 active:border-b-2";
   return (
     <>
-      <div className="text-xl font-bold">Susun terjemahan kalimat ini</div>
-      <div className="text-ink/90">&ldquo;{q.prompt}&rdquo;</div>
-      <div
-        className="flex min-h-24 flex-wrap content-start gap-2 border-y border-line py-3"
-        aria-label="Kalimat yang kamu susun"
-      >
-        {value.map((i, pos) => (
-          <button
-            key={`${i}-${pos}`}
-            type="button"
-            disabled={locked}
-            onClick={() => onChange(value.filter((_, k) => k !== pos))}
-            className={`${tile} animate-rise`}
-          >
-            {q.tiles[i]}
-          </button>
-        ))}
-      </div>
-      <div className="flex flex-wrap justify-center gap-2">
-        {q.tiles.map((w, i) => {
-          const used = value.includes(i);
-          return (
-            <button
-              key={i}
-              type="button"
-              disabled={locked || used}
-              onClick={() => onChange([...value, i])}
-              className={`${tile} ${used ? "text-transparent opacity-40 shadow-none" : "hover:bg-[#33345a]"}`}
-            >
-              {w}
-            </button>
-          );
-        })}
-      </div>
+      {q.audio ? (
+        <>
+          <div className="text-xl font-bold">{q.prompt}</div>
+          <AudioButton text={q.audio} />
+        </>
+      ) : (
+        <>
+          <div className="text-xl font-bold">Susun terjemahan kalimat ini</div>
+          <div className="text-ink/90">&ldquo;{q.prompt}&rdquo;</div>
+        </>
+      )}
+      <TileBoard tiles={q.tiles} value={value} onChange={onChange} locked={locked} />
     </>
   );
 }

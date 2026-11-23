@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getUnit } from "@/lib/content";
+import { allItems, getUnit } from "@/lib/content";
+import { isJaMarkup } from "@/lib/ja";
+import { T } from "@/components/T";
 import { useProgress } from "@/lib/progress";
 import { skillForDate, SKILL_LABEL } from "@/lib/schedule";
 import { speak } from "@/lib/speech";
@@ -30,7 +32,25 @@ const TYPE_LABEL: Record<Item["type"], string> = {
   collocation: "kolokasi",
   idiom: "ungkapan",
   pattern: "pola kalimat",
+  kana: "huruf",
 };
+
+/** Pilihan untuk isi celah tanpa keyboard (bahasa Jepang). Urutan tetap, bukan acak. */
+function clozeOptions(item: Item): string[] {
+  const prefix = item.id.split("-")[0] + "-";
+  const seen = new Set([item.answer]);
+  const others = allItems()
+    .filter((x) => x.id.startsWith(prefix) && x.answer && !seen.has(x.answer))
+    .map((x) => x.answer!)
+    .filter((a) => (seen.has(a) ? false : (seen.add(a), true)));
+  const seed = [...item.id].reduce((a, c) => a + c.charCodeAt(0), 0);
+  const picks = [0, 1, 2].map((k) => others[(seed * (k + 3) + k * 7) % others.length]);
+  const opts = [...new Set([item.answer!, ...picks])].slice(0, 4);
+  // Sisipkan jawaban di posisi yang tergantung item, supaya tidak selalu di depan.
+  const correct = opts.shift()!;
+  opts.splice(seed % (opts.length + 1), 0, correct);
+  return opts;
+}
 
 const RATINGS: {
   grade: Grade;
@@ -179,11 +199,22 @@ function CardView({
   onGraded: () => void;
 }) {
   const [mode, setMode] = useState<Mode>(
-    isNew ? "intro" : reps % 2 === 0 ? "cloze" : "meaning",
+    isNew ? "intro" : item.cloze && reps % 2 === 0 ? "cloze" : "meaning",
   );
   const [input, setInput] = useState("");
   const [revealed, setRevealed] = useState(false);
-  const correct = sameAnswer(input, item.answer);
+  const correct = sameAnswer(input, item.answer ?? "");
+  // Bahasa Jepang: isi celah dipilih dari ubin, bukan diketik.
+  const choose = isJaMarkup(item.example);
+
+  function reveal(answer: string) {
+    if (!answer.trim()) return;
+    setInput(answer);
+    setRevealed(true);
+    const ok = sameAnswer(answer, item.answer ?? "");
+    sfx(ok ? "correct" : "wrong");
+    if (!ok) buzz();
+  }
 
   function grade(g: Grade) {
     gradeCard(item.id, g);
@@ -192,7 +223,7 @@ function CardView({
 
   useKey((k) => {
     if (k !== "Enter" && k !== " ") return;
-    if (mode === "intro") setMode("cloze");
+    if (mode === "intro") setMode(item.cloze ? "cloze" : "meaning");
     else if (mode === "meaning" && !revealed) setRevealed(true);
   });
 
@@ -227,7 +258,7 @@ function CardView({
               ? "Kata baru"
               : mode === "cloze"
                 ? "Isi celah"
-                : "Ingat arti"}
+                : item.type === "kana" ? "Ingat bunyi" : "Ingat arti"}
           </span>
         </div>
 
@@ -237,18 +268,39 @@ function CardView({
               <span className="w-fit rounded-full bg-elevated px-3 py-1 text-xs font-semibold text-lavender">
                 {TYPE_LABEL[item.type]}
               </span>
-              <p className="text-xl leading-relaxed font-bold sm:text-2xl">
-                {item.cloze}
+              <p className="text-xl leading-loose font-bold sm:text-2xl">
+                <T romaji={false}>{item.cloze!.replace("____", "＿＿")}</T>
               </p>
+              <p className="-mt-2 text-sm text-mute">{item.example_id}</p>
+              {choose ? (
+                <div className="grid grid-cols-2 gap-2">
+                  {clozeOptions(item).map((o) => {
+                    const state = !revealed
+                      ? "border-transparent hover:border-lavender/50"
+                      : sameAnswer(o, item.answer ?? "")
+                        ? "border-ok"
+                        : o === input
+                          ? "border-bad"
+                          : "border-transparent opacity-50";
+                    return (
+                      <button
+                        key={o}
+                        type="button"
+                        disabled={revealed}
+                        onClick={() => reveal(o)}
+                        className={`rounded-2xl border-2 bg-elevated/60 px-4 py-3 text-lg font-bold transition active:scale-[0.98] ${state}`}
+                      >
+                        <T romaji={false}>{o}</T>
+                      </button>
+                    );
+                  })}
+                </div>
+              ) : (
               <form
                 className="flex gap-2"
                 onSubmit={(e) => {
                   e.preventDefault();
-                  if (!input.trim()) return;
-                  setRevealed(true);
-                  const ok = sameAnswer(input, item.answer);
-                  sfx(ok ? "correct" : "wrong");
-                  if (!ok) buzz();
+                  reveal(input);
                 }}
               >
                 <input
@@ -278,15 +330,24 @@ function CardView({
                   </button>
                 )}
               </form>
+              )}
               {revealed && (
                 <div className="animate-rise flex flex-col gap-1">
                   <p
                     className={`font-bold ${correct ? "text-ok" : "text-bad"}`}
                   >
-                    {correct ? "Benar!" : `Jawabannya: ${item.answer}`}
+                    {correct ? (
+                      "Benar!"
+                    ) : (
+                      <>
+                        Jawabannya: <T romaji={false}>{item.answer ?? ""}</T>
+                      </>
+                    )}
                   </p>
                   <p>
-                    <span className="font-bold">{item.term}</span>{" "}
+                    <span className="font-bold">
+                      <T>{item.term}</T>
+                    </span>{" "}
                     <span className="text-mute">· {item.meaning}</span>
                   </p>
                   {item.note && (
@@ -302,8 +363,12 @@ function CardView({
                   <span className="rounded-full bg-elevated px-3 py-1 text-xs font-semibold text-lavender">
                     {TYPE_LABEL[item.type]}
                   </span>
-                  <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">
-                    {item.term}
+                  <h2
+                    className={`mt-3 font-extrabold ${item.type === "kana" ? "text-6xl" : "text-3xl sm:text-4xl"}`}
+                  >
+                    <T romaji={item.type === "kana" ? false : undefined}>
+                      {item.term}
+                    </T>
                   </h2>
                 </div>
                 <button
@@ -322,7 +387,9 @@ function CardView({
                     {item.meaning}
                   </p>
                   <div className="rounded-2xl bg-elevated/60 p-4">
-                    <p className="font-medium">&ldquo;{item.example}&rdquo;</p>
+                    <p className="text-lg font-medium">
+                      <T>{item.example}</T>
+                    </p>
                     <p className="mt-1 text-sm text-mute">{item.example_id}</p>
                     <button
                       type="button"
@@ -345,7 +412,7 @@ function CardView({
                   onClick={() => setRevealed(true)}
                   className="rounded-2xl border-2 border-dashed border-line py-8 text-mute transition hover:border-lavender/50 hover:text-ink"
                 >
-                  Ketuk untuk melihat arti <Kbd>Spasi</Kbd>
+                  Ketuk untuk melihat {item.type === "kana" ? "bunyinya" : "arti"} <Kbd>Spasi</Kbd>
                 </button>
               )}
             </>
@@ -356,7 +423,7 @@ function CardView({
       <Spacer />
 
       {mode === "intro" ? (
-        <Button className="md:self-center" onClick={() => setMode("cloze")}>
+        <Button className="md:self-center" onClick={() => setMode(item.cloze ? "cloze" : "meaning")}>
           Coba latihan <Kbd>Enter</Kbd>
         </Button>
       ) : (

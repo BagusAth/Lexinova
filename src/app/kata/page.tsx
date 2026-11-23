@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { UNITS } from "@/lib/content";
-import { LEVELS } from "@/lib/levels";
+import { activeLang, COURSES, levelsOf } from "@/lib/levels";
+import { T } from "@/components/T";
 import { useProgress } from "@/lib/progress";
 import { speak } from "@/lib/speech";
 import { wordStatus, type WordStatus } from "@/lib/stats";
@@ -35,7 +36,11 @@ export default function Kata() {
   const [level, setLevel] = useState<string>("semua");
   if (!p) return <Loading />;
 
-  const items = UNITS.filter((u) => level === "semua" || u.level === level).flatMap((u) =>
+  // Hanya kosakata kursus yang sedang aktif (Inggris atau Jepang).
+  const lang = activeLang(p);
+  const items = UNITS.filter(
+    (u) => u.language === lang && (level === "semua" || u.level === level),
+  ).flatMap((u) =>
     u.items.map((i) => ({ ...i, level: u.level, status: wordStatus(p, i.id) })),
   );
   const counts = {
@@ -59,6 +64,7 @@ export default function Kata() {
       <div className="flex items-end justify-between gap-3">
         <div>
           <h1 className="text-3xl font-extrabold">Kata</h1>
+          <p className="text-sm font-semibold text-lavender">{COURSES[lang].name}</p>
           <p className="mt-1 text-mute">
             {counts.belajar + counts.dikuasai} dari {counts.semua} kata sudah
             mulai kamu pelajari.
@@ -94,7 +100,7 @@ export default function Kata() {
         className="-mx-5 -mt-2 flex gap-2 overflow-x-auto px-5 [scrollbar-width:none] md:mx-0 md:px-0"
         aria-label="Filter tingkat"
       >
-        {["semua", ...LEVELS.map((l) => l.cefr)].map((l) => (
+        {["semua", ...levelsOf(lang).map((l) => l.cefr)].map((l) => (
           <button
             key={l}
             type="button"
@@ -120,20 +126,24 @@ export default function Kata() {
             <button
               type="button"
               onClick={() => speak(i.term)}
-              aria-label={`Dengar ${i.term}`}
+              aria-label="Dengar"
               className="grid size-11 shrink-0 place-items-center rounded-full bg-primary/20 text-lavender transition hover:bg-primary/30 active:scale-90"
             >
               <Icon kind="volume" size={20} />
             </button>
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-2">
-                <span className="truncate font-bold">{i.term}</span>
+                <span className="truncate text-lg font-bold">
+                  <T>{i.term}</T>
+                </span>
                 <span className="shrink-0 rounded-md bg-elevated px-1.5 text-[10px] font-bold text-mute">
                   {i.level}
                 </span>
               </div>
               <div className="truncate text-sm text-mute">{i.meaning}</div>
-              <div className="truncate text-xs text-mute/80 italic">{i.example}</div>
+              <div className="truncate text-xs text-mute/80 italic">
+                <T romaji={false}>{i.example}</T>
+              </div>
             </div>
             <span
               className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-bold ${STATUS_STYLE[i.status]}`}

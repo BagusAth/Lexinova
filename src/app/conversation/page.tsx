@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Celebrate } from "@/components/motion";
 import { getUnit } from "@/lib/content";
-import { sfx } from "@/lib/sfx";
+import { buzz, sfx } from "@/lib/sfx";
+import { T } from "@/components/T";
 import { type Difficulty, difficultyOf } from "@/lib/levels";
 import { addResult, markDone, useProgress } from "@/lib/progress";
 import { speak, useRecognition } from "@/lib/speech";
@@ -71,7 +72,9 @@ function Dialog({
   const [input, setInput] = useState("");
   const [score, setScore] = useState({ c: 0, t: 0 });
   const [voiceOn, setVoiceOn] = useState(autoVoice);
-  const rec = useRecognition("en-US");
+  // Dialog dengan pilihan balasan dipakai materi Jepang.
+  const usesChoices = Object.values(ex.nodes).some((n) => n.choices);
+  const rec = useRecognition(usesChoices ? "ja-JP" : "en-US");
   const endRef = useRef<HTMLDivElement>(null);
   const node = ex.nodes[nodeId];
   const finished = !!node.end;
@@ -105,6 +108,26 @@ function Dialog({
     if (nextNode.end) markDone(ex.id, s.c / s.t);
   }
 
+  /** Pilihan balasan (materi Jepang): langsung lanjut, beri koreksi bila kurang tepat. */
+  function pick(choice: NonNullable<typeof node.choices>[number]) {
+    if (finished) return;
+    const ok = choice.ok !== false;
+    const nextNode = ex.nodes[choice.next];
+    const add: Msg[] = [{ who: "me", text: choice.text }];
+    if (choice.feedback) add.push({ who: "tip", text: choice.feedback });
+    add.push({ who: "them", text: nextNode.them });
+    setMsgs((m) => [...m, ...add]);
+    setNodeId(choice.next);
+    setHintFor(null);
+    const sc = { c: score.c + (ok ? 1 : 0), t: score.t + 1 };
+    setScore(sc);
+    addResult(ok ? 1 : 0, 1, ok ? 4 : 1);
+    sfx(ok ? "correct" : "wrong");
+    if (!ok) buzz();
+    if (voiceOn) speak(nextNode.them);
+    if (nextNode.end) markDone(ex.id, sc.c / sc.t);
+  }
+
   return (
     <>
       <TopBar
@@ -124,15 +147,15 @@ function Dialog({
               className="animate-rise rounded-2xl bg-cyan/10 px-4 py-3 text-sm text-ink/90"
             >
               <span className="text-xs font-bold text-cyan uppercase">
-                Contoh jawaban
+                {usesChoices ? "Koreksi" : "Contoh jawaban"}
               </span>
               <br />
-              {m.text}
+              <T romaji={false}>{m.text}</T>
             </p>
           ) : m.who === "them" ? (
             <div key={i} className="animate-rise max-w-[85%] self-start">
-              <div className="rounded-3xl rounded-bl-md bg-surface px-4 py-3 shadow-soft">
-                {m.text}
+              <div className="rounded-3xl rounded-bl-md bg-surface px-4 py-3 text-lg shadow-soft">
+                <T>{m.text}</T>
               </div>
               <button
                 type="button"
@@ -145,9 +168,9 @@ function Dialog({
           ) : (
             <div
               key={i}
-              className="animate-pop max-w-[85%] self-end rounded-3xl rounded-br-md bg-gradient-to-br from-primary to-[#8b7fff] px-4 py-3 shadow-glow"
+              className="animate-pop max-w-[85%] self-end rounded-3xl rounded-br-md bg-gradient-to-br from-primary to-[#8b7fff] px-4 py-3 text-lg shadow-glow"
             >
-              {m.text}
+              <T romaji={false}>{m.text}</T>
             </div>
           ),
         )}
@@ -170,6 +193,22 @@ function Dialog({
         </>
       ) : (
         <div className="sticky bottom-0 -mx-5 flex flex-col gap-2 border-t border-line bg-bg px-5 pt-3 pb-[max(0.5rem,env(safe-area-inset-bottom))] sm:-mx-8 sm:px-8 lg:mx-0 lg:rounded-3xl lg:border lg:bg-surface lg:p-4">
+          {node.choices && (
+            <div key={nodeId} className="stagger flex flex-col gap-2">
+              <Muted className="font-semibold text-lavender">Pilih balasanmu</Muted>
+              {node.choices.map((c, i) => (
+                <button
+                  key={c.text}
+                  type="button"
+                  onClick={() => pick(c)}
+                  style={{ "--i": i } as React.CSSProperties}
+                  className="rounded-2xl border-2 border-transparent bg-surface px-4 py-3 text-left text-lg shadow-[0_3px_0_#16172e] transition hover:border-lavender/50 active:translate-y-[3px] active:shadow-none lg:bg-elevated"
+                >
+                  <T>{c.text}</T>
+                </button>
+              ))}
+            </div>
+          )}
           {hints === "tap" && node.hints && node.hints.length > 0 && hintFor !== nodeId && (
             <button
               type="button"
@@ -182,12 +221,15 @@ function Dialog({
           {(hints === "show" || (hints === "tap" && hintFor === nodeId)) &&
             node.hints && node.hints.length > 0 && (
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-mute">
-              <span className="font-bold text-lavender">Ide:</span>
+              <span className="font-bold text-lavender">
+                {node.choices ? "Artinya:" : "Ide:"}
+              </span>
               {node.hints.map((h) => (
                 <span key={h}>{h}</span>
               ))}
             </div>
           )}
+          {!node.choices && (
           <form
             className="flex gap-2"
             onSubmit={(e) => {
@@ -237,6 +279,7 @@ function Dialog({
               Kirim
             </button>
           </form>
+          )}
           <label className="flex cursor-pointer items-center gap-2 text-xs text-mute">
             <input
               type="checkbox"

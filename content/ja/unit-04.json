@@ -1,0 +1,452 @@
+{
+ "id": "ja-u04",
+ "language": "ja",
+ "level": "N5",
+ "title": "Makan dan jalan-jalan di Jepang",
+ "theme": "Restoran, stasiun, arah, dan harga",
+ "tags": [
+  "travel",
+  "budaya",
+  "jlpt"
+ ],
+ "items": [
+  {
+   "id": "ja-u04-i01",
+   "type": "pattern",
+   "term": "〜を ください",
+   "meaning": "tolong beri saya ...",
+   "example": "{水|みず} を ください 。",
+   "example_id": "Tolong beri saya air.",
+   "cloze": "{水|みず} を ____ 。",
+   "answer": "ください"
+  },
+  {
+   "id": "ja-u04-i02",
+   "type": "word",
+   "term": "いくら",
+   "meaning": "berapa (harga)",
+   "example": "これ は いくら です か ？",
+   "example_id": "Ini berapa harganya?",
+   "cloze": "これ は ____ です か ？",
+   "answer": "いくら"
+  },
+  {
+   "id": "ja-u04-i03",
+   "type": "word",
+   "term": "{駅|えき}",
+   "meaning": "stasiun",
+   "example": "{駅|えき} は どこ です か ？",
+   "example_id": "Stasiunnya di mana?",
+   "cloze": "____ は どこ です か ？",
+   "answer": "{駅|えき}"
+  },
+  {
+   "id": "ja-u04-i04",
+   "type": "word",
+   "term": "{右|みぎ}",
+   "meaning": "kanan",
+   "example": "{右|みぎ} に あります 。",
+   "example_id": "Ada di sebelah kanan.",
+   "cloze": "____ に あります 。",
+   "answer": "{右|みぎ}"
+  },
+  {
+   "id": "ja-u04-i05",
+   "type": "word",
+   "term": "{左|ひだり}",
+   "meaning": "kiri",
+   "example": "{左|ひだり} に {曲|ま}がって ください 。",
+   "example_id": "Tolong belok ke kiri.",
+   "cloze": "____ に {曲|ま}がって ください 。",
+   "answer": "{左|ひだり}"
+  },
+  {
+   "id": "ja-u04-i06",
+   "type": "word",
+   "term": "おいしい",
+   "meaning": "enak",
+   "example": "この ラーメン は おいしい です 。",
+   "example_id": "Ramen ini enak.",
+   "cloze": "この ラーメン は ____ です 。",
+   "answer": "おいしい"
+  },
+  {
+   "id": "ja-u04-i07",
+   "type": "pattern",
+   "term": "すみません",
+   "meaning": "permisi; maaf",
+   "example": "すみません 、 メニュー を ください 。",
+   "example_id": "Permisi, tolong menunya.",
+   "cloze": "____ 、 メニュー を ください 。",
+   "answer": "すみません",
+   "note": "Dipakai untuk memanggil pelayan, minta maaf, dan berterima kasih atas kerepotan."
+  },
+  {
+   "id": "ja-u04-i08",
+   "type": "word",
+   "term": "{切符|きっぷ}",
+   "meaning": "tiket (kereta)",
+   "example": "{切符|きっぷ} を {買|か}います 。",
+   "example_id": "Saya membeli tiket.",
+   "cloze": "____ を {買|か}います 。",
+   "answer": "{切符|きっぷ}"
+  },
+  {
+   "id": "ja-u04-i09",
+   "type": "word",
+   "term": "{電車|でんしゃ}",
+   "meaning": "kereta listrik",
+   "example": "{電車|でんしゃ} で {京都|きょうと} へ {行|い}きます 。",
+   "example_id": "Saya pergi ke Kyoto naik kereta.",
+   "cloze": "____ で {京都|きょうと} へ {行|い}きます 。",
+   "answer": "{電車|でんしゃ}"
+  },
+  {
+   "id": "ja-u04-i10",
+   "type": "word",
+   "term": "{何時|なんじ}",
+   "meaning": "jam berapa",
+   "example": "{電車|でんしゃ} は {何時|なんじ} です か ？",
+   "example_id": "Keretanya jam berapa?",
+   "cloze": "{電車|でんしゃ} は ____ です か ？",
+   "answer": "{何時|なんじ}"
+  },
+  {
+   "id": "ja-u04-i11",
+   "type": "word",
+   "term": "あります",
+   "meaning": "ada (untuk benda)",
+   "example": "トイレ は あそこ に あります 。",
+   "example_id": "Toiletnya ada di sana.",
+   "cloze": "トイレ は あそこ に ____ 。",
+   "answer": "あります",
+   "note": "Untuk orang dan hewan pakai います."
+  },
+  {
+   "id": "ja-u04-i12",
+   "type": "word",
+   "term": "おすすめ",
+   "meaning": "rekomendasi",
+   "example": "{今日|きょう} の おすすめ は ラーメン です 。",
+   "example_id": "Rekomendasi hari ini adalah ramen.",
+   "cloze": "{今日|きょう} の ____ は ラーメン です 。",
+   "answer": "おすすめ"
+  }
+ ],
+ "grammar": [
+  {
+   "id": "ja-u04-g01",
+   "title": "Partikel を dan 〜を ください",
+   "explanation": "を (dibaca 'o') menandai objek. Pola 'benda を ください' dipakai untuk meminta atau memesan dengan sopan.",
+   "examples": [
+    "{水|みず} を ください 。",
+    "ラーメン を {二|ふた}つ ください 。",
+    "{切符|きっぷ} を {買|か}います 。"
+   ],
+   "common_mistake": {
+    "wrong": "{水|みず} ください を 。",
+    "right": "{水|みず} を ください 。"
+   }
+  },
+  {
+   "id": "ja-u04-g02",
+   "title": "Partikel へ, で, に untuk tempat",
+   "explanation": "へ (dibaca 'e') atau に menunjukkan tujuan pergi. で menunjukkan alat transportasi atau tempat kegiatan. に + あります menunjukkan letak benda.",
+   "examples": [
+    "{京都|きょうと} へ {行|い}きます 。",
+    "{電車|でんしゃ} で {行|い}きます 。",
+    "{駅|えき} の {前|まえ} に あります 。"
+   ],
+   "common_mistake": {
+    "wrong": "{電車|でんしゃ} に {京都|きょうと} へ {行|い}きます 。",
+    "right": "{電車|でんしゃ} で {京都|きょうと} へ {行|い}きます 。"
+   }
+  },
+  {
+   "id": "ja-u04-g03",
+   "title": "これ, それ, あれ, dan この",
+   "explanation": "これ (ini, dekat pembicara), それ (itu, dekat lawan bicara), あれ (itu, jauh dari keduanya), どれ (yang mana). Sebelum kata benda, pakai この, その, あの, どの.",
+   "examples": [
+    "これ は いくら です か ？",
+    "それ を ください 。",
+    "この ラーメン は おいしい です 。"
+   ],
+   "common_mistake": {
+    "wrong": "これ ラーメン を ください 。",
+    "right": "この ラーメン を ください 。"
+   }
+  }
+ ],
+ "listening": [
+  {
+   "id": "ja-u04-l01",
+   "title": "Di kedai ramen",
+   "speakers": [
+    {
+     "name": "Staf",
+     "voice": "ja-JP"
+    },
+    {
+     "name": "Bagus",
+     "voice": "ja-JP"
+    }
+   ],
+   "lines": [
+    {
+     "speaker": "Staf",
+     "text": "いらっしゃいませ 。 {何名|なんめい} さま です か ？"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "{一人|ひとり} です 。"
+    },
+    {
+     "speaker": "Staf",
+     "text": "こちら へ どうぞ 。 ご{注文|ちゅうもん} は ？"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "おすすめ の ラーメン と {水|みず} を ください 。"
+    },
+    {
+     "speaker": "Staf",
+     "text": "はい 。 {千二百円|せんにひゃくえん} です 。"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "カード で いい です か ？"
+    },
+    {
+     "speaker": "Staf",
+     "text": "すみません 、 {現金|げんきん} だけ です 。"
+    }
+   ],
+   "dictation": [
+    1,
+    3,
+    5
+   ],
+   "questions": [
+    {
+     "q": "Bagus datang dengan berapa orang?",
+     "options": [
+      "Sendirian",
+      "Berdua",
+      "Bertiga"
+     ],
+     "answer": 0,
+     "explain": "「一人」 (hitori) = satu orang."
+    },
+    {
+     "q": "Berapa harga pesanannya?",
+     "options": [
+      "1.000 yen",
+      "1.200 yen",
+      "2.100 yen"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Bagaimana cara membayar di kedai ini?",
+     "options": [
+      "Kartu saja",
+      "Tunai saja",
+      "Kartu atau tunai"
+     ],
+     "answer": 1,
+     "explain": "「現金だけ」 = hanya uang tunai."
+    }
+   ]
+  }
+ ],
+ "reading": [
+  {
+   "id": "ja-u04-r01",
+   "title": "Rute ke Fushimi Inari",
+   "text": "{京都|きょうと} {駅|えき} から {電車|でんしゃ} で {稲荷|いなり} {駅|えき} へ {行|い}きます 。 {五分|ごふん} ぐらい です 。 {駅|えき} を {出|で}る と 、 {前|まえ} に {大|おお}きい {神社|じんじゃ} が あります 。 お{金|かね} は いりません 。 {朝|あさ} は {人|ひと} が {少|すく}ない です 。 {早|はや}く {行|い}きましょう 。",
+   "glossary": [
+    {
+     "term": "{電車|でんしゃ}",
+     "meaning": "kereta listrik",
+     "item_id": "ja-u04-i09"
+    },
+    {
+     "term": "{駅|えき}",
+     "meaning": "stasiun",
+     "item_id": "ja-u04-i03"
+    },
+    {
+     "term": "ぐらい",
+     "meaning": "sekitar"
+    },
+    {
+     "term": "{神社|じんじゃ}",
+     "meaning": "kuil Shinto"
+    },
+    {
+     "term": "いりません",
+     "meaning": "tidak perlu"
+    },
+    {
+     "term": "{少|すく}ない",
+     "meaning": "sedikit"
+    },
+    {
+     "term": "{早|はや}く",
+     "meaning": "lebih awal; cepat"
+    }
+   ],
+   "questions": [
+    {
+     "q": "Naik apa ke Stasiun Inari?",
+     "options": [
+      "Bus",
+      "Kereta",
+      "Taksi"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Berapa lama perjalanannya?",
+     "options": [
+      "Sekitar 5 menit",
+      "Sekitar 50 menit",
+      "Sekitar 15 menit"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Kenapa sebaiknya datang pagi?",
+     "options": [
+      "Masuknya gratis hanya pagi hari",
+      "Orangnya masih sedikit",
+      "Keretanya lebih murah"
+     ],
+     "answer": 1
+    }
+   ]
+  }
+ ],
+ "writing": [
+  {
+   "id": "ja-u04-w01",
+   "mode": "build",
+   "prompt": "Terjemahkan dengan menyusun ubin kata.",
+   "sentences": [
+    {
+     "id": "Tolong beri saya air.",
+     "ja": "{水|みず} を ください 。"
+    },
+    {
+     "id": "Ini berapa harganya?",
+     "ja": "これ は いくら です か ？"
+    },
+    {
+     "id": "Stasiunnya di mana?",
+     "ja": "{駅|えき} は どこ です か ？"
+    },
+    {
+     "id": "Saya pergi ke Kyoto naik kereta.",
+     "ja": "{電車|でんしゃ} で {京都|きょうと} へ {行|い}きます 。"
+    },
+    {
+     "id": "Ramen ini enak.",
+     "ja": "この ラーメン は おいしい です 。"
+    }
+   ]
+  }
+ ],
+ "speaking": [
+  {
+   "id": "ja-u04-s01",
+   "mode": "shadowing",
+   "sentences": [
+    "すみません 、 メニュー を ください 。",
+    "これ は いくら です か ？",
+    "{駅|えき} は どこ です か ？",
+    "カード で いい です か ？",
+    "この ラーメン は おいしい です 。",
+    "ごちそうさま でした 。"
+   ],
+   "focus": "Nada naik di akhir pertanyaan 〜か？. ごちそうさまでした diucapkan setelah makan, dengan 'sō' panjang."
+  },
+  {
+   "id": "ja-u04-s02",
+   "mode": "answer",
+   "prompt": "Kamu tersesat di Tokyo. Tanyakan arah ke stasiun dengan sopan, lalu ucapkan terima kasih (3 kalimat).",
+   "sample_answer": "すみません 。 {駅|えき} は どこ です か ？ ありがとう ございます 。"
+  }
+ ],
+ "conversation": [
+  {
+   "id": "ja-u04-c01",
+   "title": "Bertanya arah di Asakusa",
+   "role_you": "Wisatawan",
+   "role_them": "Warga yang ramah",
+   "start": "n1",
+   "nodes": {
+    "n1": {
+     "them": "どう しました か ？",
+     "hints": [
+      "Ada yang bisa dibantu?"
+     ],
+     "choices": [
+      {
+       "text": "すみません 、 {浅草|あさくさ} {駅|えき} は どこ です か ？",
+       "next": "n2",
+       "ok": true
+      },
+      {
+       "text": "{浅草|あさくさ} {駅|えき} を ください 。",
+       "next": "n2",
+       "ok": false,
+       "feedback": "「〜をください」 untuk meminta barang. Untuk bertanya tempat: 「〜はどこですか」."
+      }
+     ]
+    },
+    "n2": {
+     "them": "あそこ の {信号|しんごう} を {右|みぎ} です 。",
+     "hints": [
+      "Belok kanan di lampu lalu lintas di sana."
+     ],
+     "choices": [
+      {
+       "text": "{右|みぎ} です ね 。 {遠|とお}い です か ？",
+       "next": "n3",
+       "ok": true
+      },
+      {
+       "text": "{左|ひだり} です ね 。",
+       "next": "n3",
+       "ok": false,
+       "feedback": "Dia bilang 「右」 = kanan, bukan kiri (「左」)."
+      }
+     ]
+    },
+    "n3": {
+     "them": "いいえ 、 {歩|ある}いて {五分|ごふん} ぐらい です よ 。",
+     "hints": [
+      "Tidak, jalan kaki sekitar lima menit."
+     ],
+     "choices": [
+      {
+       "text": "ありがとう ございました ！",
+       "next": "end",
+       "ok": true
+      },
+      {
+       "text": "ごちそうさま でした 。",
+       "next": "end",
+       "ok": false,
+       "feedback": "「ごちそうさまでした」 hanya diucapkan setelah makan. Untuk berterima kasih: 「ありがとうございました」."
+      }
+     ]
+    },
+    "end": {
+     "them": "どう いたしまして 。 {気|き} を つけて ！",
+     "end": true
+    }
+   }
+  }
+ ]
+}

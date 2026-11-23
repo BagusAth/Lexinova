@@ -7,6 +7,7 @@ import { speak, useRecognition } from "@/lib/speech";
 import { compareWords, countWords } from "@/lib/text";
 import type { Speaking } from "@/lib/types";
 import { MicButton } from "@/components/Mic";
+import { T } from "@/components/T";
 import { SkillDone } from "@/components/SkillDone";
 import {
   Actions,
@@ -27,9 +28,16 @@ import {
 export default function SpeakingPage() {
   const p = useProgress();
   if (!p) return <Loading />;
-  const list = getUnit(p.settings.unitId).speaking;
+  const unit = getUnit(p.settings.unitId);
+  const list = unit.speaking;
   if (!list.length) return <Muted>Belum ada materi speaking.</Muted>;
-  return <SpeakingFlow list={list} />;
+  return (
+    <SpeakingFlow
+      key={unit.id}
+      list={list}
+      lang={unit.language === "ja" ? "ja-JP" : "en-US"}
+    />
+  );
 }
 
 /** Ratakan semua latihan jadi langkah: satu kalimat shadowing per langkah, satu prompt per langkah. */
@@ -37,7 +45,7 @@ type Step =
   | { kind: "shadow"; sentence: string; focus?: string; exId: string }
   | { kind: "answer"; ex: Extract<Speaking, { mode: "answer" }> };
 
-function SpeakingFlow({ list }: { list: Speaking[] }) {
+function SpeakingFlow({ list, lang }: { list: Speaking[]; lang: string }) {
   const steps: Step[] = list.flatMap((s): Step[] =>
     s.mode === "shadowing"
       ? s.sentences.map((sentence) => ({
@@ -81,10 +89,11 @@ function SpeakingFlow({ list }: { list: Speaking[] }) {
           key={idx}
           sentence={step.sentence}
           focus={step.focus}
+          lang={lang}
           onNext={next}
         />
       ) : (
-        <Answer key={idx} ex={step.ex} onNext={next} />
+        <Answer key={idx} ex={step.ex} lang={lang} onNext={next} />
       )}
     </>
   );
@@ -93,13 +102,16 @@ function SpeakingFlow({ list }: { list: Speaking[] }) {
 function Shadow({
   sentence,
   focus,
+  lang,
   onNext,
 }: {
   sentence: string;
   focus?: string;
+  lang: string;
   onNext: (c: number, t: number) => void;
 }) {
-  const rec = useRecognition("en-US");
+  const rec = useRecognition(lang);
+  const ja = lang.startsWith("ja");
   const [typed, setTyped] = useState("");
   const said = rec.supported === false ? typed : rec.transcript;
   const result = said && !rec.listening ? compareWords(sentence, said) : null;
@@ -109,7 +121,9 @@ function Shadow({
       <div className="text-sm font-semibold text-lavender">
         Dengar, lalu ucapkan kalimat ini
       </div>
-      <Big className="sm:text-3xl">{sentence}</Big>
+      <Big className="leading-loose sm:text-3xl">
+        <T>{sentence}</T>
+      </Big>
       <Chip className="self-start" onClick={() => speak(sentence)}>
         Dengar contoh
       </Chip>
@@ -140,7 +154,7 @@ function Shadow({
       {result && (
         <Feedback ok={result.correct === result.total}>
           <Muted>Yang tertangkap:</Muted>
-          <div className="flex flex-wrap gap-x-1.5">
+          <div className={`flex flex-wrap ${ja ? "text-lg" : "gap-x-1.5"}`}>
             {result.tokens.map((t, i) => (
               <span
                 key={i}
@@ -151,7 +165,7 @@ function Shadow({
             ))}
           </div>
           <Verdict ok={result.correct === result.total}>
-            {result.correct} / {result.total} kata
+            {result.correct} / {result.total} {ja ? "huruf" : "kata"}
           </Verdict>
           {focus && <Muted className="mt-1">{focus}</Muted>}
         </Feedback>
@@ -183,12 +197,16 @@ function Shadow({
 
 function Answer({
   ex,
+  lang,
   onNext,
 }: {
   ex: Extract<Speaking, { mode: "answer" }>;
+  lang: string;
   onNext: (c: number, t: number) => void;
 }) {
-  const rec = useRecognition("en-US");
+  const rec = useRecognition(lang);
+  // Jawaban Jepang lebih pendek dalam hitungan "kata".
+  const minWords = lang.startsWith("ja") ? 8 : 15;
   const [typed, setTyped] = useState("");
   const [showSample, setShowSample] = useState(false);
   const said = rec.supported === false ? typed : rec.transcript;
@@ -215,7 +233,7 @@ function Answer({
       )}
       {said && (
         <Card>
-          <Muted>Yang tertangkap ({n} kata):</Muted>
+          <Muted>Yang tertangkap (±{n} kata):</Muted>
           <div>{said}</div>
         </Card>
       )}
@@ -224,7 +242,9 @@ function Answer({
       </Chip>
       {showSample && (
         <Card className="text-sm">
-          {ex.sample_answer}
+          <span className="text-lg leading-loose">
+            <T>{ex.sample_answer}</T>
+          </span>
           <Chip className="mt-2" onClick={() => speak(ex.sample_answer)}>
             Dengar
           </Chip>
@@ -232,7 +252,7 @@ function Answer({
       )}
       <Spacer />
       <Button
-        onClick={() => onNext(n >= 15 ? 1 : 0, 1)}
+        onClick={() => onNext(n >= minWords ? 1 : 0, 1)}
         disabled={!said || rec.listening}
       >
         Selesai

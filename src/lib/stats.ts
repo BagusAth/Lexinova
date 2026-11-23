@@ -14,8 +14,10 @@ export function wordStatus(p: Progress, id: string): WordStatus {
   return c.state === State.Review && c.stability >= 21 ? "dikuasai" : "belajar";
 }
 
-export function vocabCount(p: Progress): number {
-  return Object.keys(p.cards).length;
+/** Jumlah kartu yang sudah dipelajari; bila `lang` diisi, hanya kursus itu. */
+export function vocabCount(p: Progress, lang?: string): number {
+  const ids = Object.keys(p.cards);
+  return lang ? ids.filter((id) => id.startsWith(`${lang}-`)).length : ids.length;
 }
 
 /** XP per hari untuk n hari terakhir (paling lama di kiri). */

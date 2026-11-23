@@ -44,7 +44,12 @@ export interface Progress {
     sound: boolean; // efek suara benar/salah/selesai
     goals: string[]; // kunci GOALS di levels.ts
     interests: string[]; // kunci INTERESTS di levels.ts
-    targetLevel: string; // level id yang ingin dicapai
+    /** Tingkat target per kursus, mis. { en: "b2", ja: "n4" }. */
+    targets: Record<string, string>;
+    /** Unit terakhir yang dibuka per kursus, supaya bisa kembali saat ganti bahasa. */
+    lastUnit: Record<string, string>;
+    /** Tampilkan romaji di bawah teks Jepang (di tingkat yang mengizinkan). */
+    romaji: boolean;
   };
   achievements: Record<string, string>; // id pencapaian -> tanggal didapat
   path: PathState;
@@ -70,9 +75,11 @@ export const emptyProgress = (): Progress => ({
     name: OWNER,
     autoVoice: true,
     sound: true,
-    goals: ["karier", "ielts", "studi", "travel"],
+    goals: ["karier", "ielts", "studi", "travel", "jlpt", "budaya"],
     interests: ["teknologi", "bisnis", "desain", "sains"],
-    targetLevel: "b2",
+    targets: { en: "b2", ja: "n4" },
+    lastUnit: {},
+    romaji: true,
   },
   achievements: {},
   path: { passedUnits: {}, passedLevels: {}, exams: {} },
@@ -116,8 +123,19 @@ function parse(raw: string | null): Progress {
   try {
     const p = JSON.parse(raw) as Progress;
     const base = emptyProgress();
-    const settings = { ...base.settings, ...p.settings };
+    const old = (p.settings ?? {}) as Partial<Progress["settings"]> & {
+      targetLevel?: string;
+    };
+    const settings = { ...base.settings, ...old };
     if (!settings.name?.trim()) settings.name = OWNER;
+    // Migrasi dari versi sebelum ada kursus bahasa Jepang.
+    if (!old.targets) {
+      settings.targets = { ...base.settings.targets, en: old.targetLevel ?? "b2" };
+      for (const g of ["jlpt", "budaya"])
+        if (!settings.goals.includes(g)) settings.goals = [...settings.goals, g];
+    }
+    delete (settings as { targetLevel?: string }).targetLevel;
+    settings.lastUnit = { ...(old.lastUnit ?? {}) };
     return {
       ...base,
       ...p,

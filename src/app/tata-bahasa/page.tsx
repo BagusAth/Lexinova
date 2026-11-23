@@ -6,6 +6,7 @@ import { addResult, markDone, useProgress } from "@/lib/progress";
 import { speak } from "@/lib/speech";
 import type { GrammarPoint } from "@/lib/types";
 import { Icon } from "@/components/cosmic";
+import { T } from "@/components/T";
 import { SkillDone } from "@/components/SkillDone";
 import {
   Button,
@@ -83,7 +84,9 @@ function GrammarLesson({
             <Muted className="font-semibold text-lavender">Poin {idx + 1}</Muted>
             <h2 className="text-2xl font-extrabold">{g.title}</h2>
           </div>
-          <p className="leading-relaxed text-ink/90">{g.explanation}</p>
+          <p className="leading-relaxed text-ink/90">
+            <T romaji={false}>{g.explanation}</T>
+          </p>
 
           <Card className="flex flex-col gap-2">
             <div className="text-sm font-bold text-mute">Contoh</div>
@@ -95,7 +98,9 @@ function GrammarLesson({
                 className="flex items-start gap-3 rounded-2xl px-2 py-1.5 text-left transition hover:bg-elevated"
               >
                 <Icon kind="volume" size={18} className="mt-0.5 text-lavender" />
-                <span>{ex}</span>
+                <span className="text-lg">
+                  <T>{ex}</T>
+                </span>
               </button>
             ))}
           </Card>
@@ -104,11 +109,15 @@ function GrammarLesson({
             <div className="text-sm font-bold text-mute">Kesalahan umum</div>
             <div className="flex items-start gap-2 text-bad">
               <Icon kind="x" size={18} className="mt-0.5" strokeWidth={2.4} />
-              <span className="line-through decoration-bad/60">{g.common_mistake.wrong}</span>
+              <span className="line-through decoration-bad/60">
+                <T romaji={false}>{g.common_mistake.wrong}</T>
+              </span>
             </div>
             <div className="flex items-start gap-2 text-ok">
               <Icon kind="check" size={18} className="mt-0.5" strokeWidth={2.4} />
-              <span>{g.common_mistake.right}</span>
+              <span>
+                <T>{g.common_mistake.right}</T>
+              </span>
             </div>
           </Card>
 
@@ -137,7 +146,9 @@ function GrammarLesson({
                   onClick={() => setPicked(o)}
                   className={`rounded-2xl border-2 bg-surface px-4 py-3.5 text-left font-medium shadow-soft transition active:scale-[0.98] ${state}`}
                 >
-                  {o}
+                  <span className="text-lg">
+                    <T romaji={false}>{o}</T>
+                  </span>
                 </button>
               );
             })}
@@ -147,7 +158,13 @@ function GrammarLesson({
               <span className={`font-bold ${ok ? "text-ok" : "text-bad"}`}>
                 {ok ? "Benar!" : "Belum tepat."}
               </span>{" "}
-              {ok ? "Kamu menghindari kesalahan yang umum." : `Yang benar: ${g.common_mistake.right}`}
+              {ok ? (
+                "Kamu menghindari kesalahan yang umum."
+              ) : (
+                <>
+                  Yang benar: <T romaji={false}>{g.common_mistake.right}</T>
+                </>
+              )}
               <div className="mt-2">
                 <Chip onClick={() => speak(g.common_mistake.right)}>
                   <Icon kind="volume" size={16} /> Dengar

@@ -10,8 +10,11 @@ import {
   updateToday,
   useProgress,
 } from "@/lib/progress";
+import { getUnit } from "@/lib/content";
+import { difficultyOf } from "@/lib/levels";
 import { Achievement } from "./Achievement";
 import { Icon, type IconKind, Logo } from "./cosmic";
+import { TextSettingsProvider } from "./T";
 
 const NAV: { href: string; label: string; icon: IconKind }[] = [
   { href: "/", label: "Beranda", icon: "home" },
@@ -57,8 +60,15 @@ export function AppShell({ children }: { children: ReactNode }) {
     };
   }, []);
 
+  // Romaji/furigana mengikuti tingkat unit yang sedang dibuka dan pengaturan Bagus.
+  const diff = p ? difficultyOf(getUnit(p.settings.unitId)) : null;
+  const textSettings = {
+    romaji: !!(p?.settings.romaji && diff?.romaji),
+    furigana: diff?.furigana ?? "always",
+  } as const;
+
   return (
-    <>
+    <TextSettingsProvider value={textSettings}>
       <div className="starfield" aria-hidden="true">
         <i className="s1" />
         <i className="s2" />
@@ -182,6 +192,6 @@ export function AppShell({ children }: { children: ReactNode }) {
 
       {/* Di halaman ujian pop-up ditunda supaya tidak menutupi layar hasil/naik tingkat. */}
       {p && path !== "/ujian" && <Achievement p={p} />}
-    </>
+    </TextSettingsProvider>
   );
 }

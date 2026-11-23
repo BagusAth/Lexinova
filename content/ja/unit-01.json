@@ -1,0 +1,699 @@
+{
+ "id": "ja-u01",
+ "language": "ja",
+ "level": "Kana",
+ "title": "Hiragana",
+ "theme": "46 huruf dasar dan kata pertamamu",
+ "tags": [
+  "travel",
+  "budaya",
+  "jlpt"
+ ],
+ "items": [
+  {
+   "id": "ja-u01-i01",
+   "type": "kana",
+   "term": "あ",
+   "meaning": "a",
+   "example": "あさ",
+   "example_id": "pagi"
+  },
+  {
+   "id": "ja-u01-i02",
+   "type": "kana",
+   "term": "い",
+   "meaning": "i",
+   "example": "いぬ",
+   "example_id": "anjing"
+  },
+  {
+   "id": "ja-u01-i03",
+   "type": "kana",
+   "term": "う",
+   "meaning": "u",
+   "example": "うみ",
+   "example_id": "laut"
+  },
+  {
+   "id": "ja-u01-i04",
+   "type": "kana",
+   "term": "え",
+   "meaning": "e",
+   "example": "えき",
+   "example_id": "stasiun"
+  },
+  {
+   "id": "ja-u01-i05",
+   "type": "kana",
+   "term": "お",
+   "meaning": "o",
+   "example": "おちゃ",
+   "example_id": "teh hijau"
+  },
+  {
+   "id": "ja-u01-i06",
+   "type": "kana",
+   "term": "か",
+   "meaning": "ka",
+   "example": "かさ",
+   "example_id": "payung"
+  },
+  {
+   "id": "ja-u01-i07",
+   "type": "kana",
+   "term": "き",
+   "meaning": "ki",
+   "example": "きた",
+   "example_id": "utara"
+  },
+  {
+   "id": "ja-u01-i08",
+   "type": "kana",
+   "term": "く",
+   "meaning": "ku",
+   "example": "くつ",
+   "example_id": "sepatu"
+  },
+  {
+   "id": "ja-u01-i09",
+   "type": "kana",
+   "term": "け",
+   "meaning": "ke",
+   "example": "けいたい",
+   "example_id": "ponsel"
+  },
+  {
+   "id": "ja-u01-i10",
+   "type": "kana",
+   "term": "こ",
+   "meaning": "ko",
+   "example": "ここ",
+   "example_id": "di sini"
+  },
+  {
+   "id": "ja-u01-i11",
+   "type": "kana",
+   "term": "さ",
+   "meaning": "sa",
+   "example": "さかな",
+   "example_id": "ikan"
+  },
+  {
+   "id": "ja-u01-i12",
+   "type": "kana",
+   "term": "し",
+   "meaning": "shi",
+   "example": "しお",
+   "example_id": "garam",
+   "note": "Dibaca 'shi', bukan 'si'."
+  },
+  {
+   "id": "ja-u01-i13",
+   "type": "kana",
+   "term": "す",
+   "meaning": "su",
+   "example": "すし",
+   "example_id": "sushi"
+  },
+  {
+   "id": "ja-u01-i14",
+   "type": "kana",
+   "term": "せ",
+   "meaning": "se",
+   "example": "せかい",
+   "example_id": "dunia"
+  },
+  {
+   "id": "ja-u01-i15",
+   "type": "kana",
+   "term": "そ",
+   "meaning": "so",
+   "example": "そら",
+   "example_id": "langit"
+  },
+  {
+   "id": "ja-u01-i16",
+   "type": "kana",
+   "term": "た",
+   "meaning": "ta",
+   "example": "たまご",
+   "example_id": "telur"
+  },
+  {
+   "id": "ja-u01-i17",
+   "type": "kana",
+   "term": "ち",
+   "meaning": "chi",
+   "example": "ちかてつ",
+   "example_id": "kereta bawah tanah",
+   "note": "Dibaca 'chi', bukan 'ti'."
+  },
+  {
+   "id": "ja-u01-i18",
+   "type": "kana",
+   "term": "つ",
+   "meaning": "tsu",
+   "example": "つくえ",
+   "example_id": "meja",
+   "note": "Dibaca 'tsu', bukan 'tu'."
+  },
+  {
+   "id": "ja-u01-i19",
+   "type": "kana",
+   "term": "て",
+   "meaning": "te",
+   "example": "てがみ",
+   "example_id": "surat"
+  },
+  {
+   "id": "ja-u01-i20",
+   "type": "kana",
+   "term": "と",
+   "meaning": "to",
+   "example": "とけい",
+   "example_id": "jam"
+  },
+  {
+   "id": "ja-u01-i21",
+   "type": "kana",
+   "term": "な",
+   "meaning": "na",
+   "example": "なつ",
+   "example_id": "musim panas"
+  },
+  {
+   "id": "ja-u01-i22",
+   "type": "kana",
+   "term": "に",
+   "meaning": "ni",
+   "example": "にく",
+   "example_id": "daging"
+  },
+  {
+   "id": "ja-u01-i23",
+   "type": "kana",
+   "term": "ぬ",
+   "meaning": "nu",
+   "example": "ぬいぐるみ",
+   "example_id": "boneka"
+  },
+  {
+   "id": "ja-u01-i24",
+   "type": "kana",
+   "term": "ね",
+   "meaning": "ne",
+   "example": "ねこ",
+   "example_id": "kucing"
+  },
+  {
+   "id": "ja-u01-i25",
+   "type": "kana",
+   "term": "の",
+   "meaning": "no",
+   "example": "のみもの",
+   "example_id": "minuman"
+  },
+  {
+   "id": "ja-u01-i26",
+   "type": "kana",
+   "term": "は",
+   "meaning": "ha",
+   "example": "はな",
+   "example_id": "bunga",
+   "note": "Sebagai partikel topik dibaca 'wa': わたし は (watashi wa)."
+  },
+  {
+   "id": "ja-u01-i27",
+   "type": "kana",
+   "term": "ひ",
+   "meaning": "hi",
+   "example": "ひと",
+   "example_id": "orang"
+  },
+  {
+   "id": "ja-u01-i28",
+   "type": "kana",
+   "term": "ふ",
+   "meaning": "fu",
+   "example": "ふね",
+   "example_id": "kapal",
+   "note": "Bunyinya di antara 'fu' dan 'hu', bibir tidak menyentuh gigi."
+  },
+  {
+   "id": "ja-u01-i29",
+   "type": "kana",
+   "term": "へ",
+   "meaning": "he",
+   "example": "へや",
+   "example_id": "kamar",
+   "note": "Sebagai partikel arah dibaca 'e': えき へ (eki e)."
+  },
+  {
+   "id": "ja-u01-i30",
+   "type": "kana",
+   "term": "ほ",
+   "meaning": "ho",
+   "example": "ほし",
+   "example_id": "bintang"
+  },
+  {
+   "id": "ja-u01-i31",
+   "type": "kana",
+   "term": "ま",
+   "meaning": "ma",
+   "example": "まど",
+   "example_id": "jendela"
+  },
+  {
+   "id": "ja-u01-i32",
+   "type": "kana",
+   "term": "み",
+   "meaning": "mi",
+   "example": "みず",
+   "example_id": "air"
+  },
+  {
+   "id": "ja-u01-i33",
+   "type": "kana",
+   "term": "む",
+   "meaning": "mu",
+   "example": "むし",
+   "example_id": "serangga"
+  },
+  {
+   "id": "ja-u01-i34",
+   "type": "kana",
+   "term": "め",
+   "meaning": "me",
+   "example": "めがね",
+   "example_id": "kacamata"
+  },
+  {
+   "id": "ja-u01-i35",
+   "type": "kana",
+   "term": "も",
+   "meaning": "mo",
+   "example": "もも",
+   "example_id": "buah persik"
+  },
+  {
+   "id": "ja-u01-i36",
+   "type": "kana",
+   "term": "や",
+   "meaning": "ya",
+   "example": "やま",
+   "example_id": "gunung"
+  },
+  {
+   "id": "ja-u01-i37",
+   "type": "kana",
+   "term": "ゆ",
+   "meaning": "yu",
+   "example": "ゆき",
+   "example_id": "salju"
+  },
+  {
+   "id": "ja-u01-i38",
+   "type": "kana",
+   "term": "よ",
+   "meaning": "yo",
+   "example": "よる",
+   "example_id": "malam"
+  },
+  {
+   "id": "ja-u01-i39",
+   "type": "kana",
+   "term": "ら",
+   "meaning": "ra",
+   "example": "らいねん",
+   "example_id": "tahun depan"
+  },
+  {
+   "id": "ja-u01-i40",
+   "type": "kana",
+   "term": "り",
+   "meaning": "ri",
+   "example": "りんご",
+   "example_id": "apel"
+  },
+  {
+   "id": "ja-u01-i41",
+   "type": "kana",
+   "term": "る",
+   "meaning": "ru",
+   "example": "くるま",
+   "example_id": "mobil",
+   "note": "Bunyi 'r' Jepang ada di antara r dan l: lidah hanya mengetuk sekali."
+  },
+  {
+   "id": "ja-u01-i42",
+   "type": "kana",
+   "term": "れ",
+   "meaning": "re",
+   "example": "れきし",
+   "example_id": "sejarah"
+  },
+  {
+   "id": "ja-u01-i43",
+   "type": "kana",
+   "term": "ろ",
+   "meaning": "ro",
+   "example": "いろ",
+   "example_id": "warna"
+  },
+  {
+   "id": "ja-u01-i44",
+   "type": "kana",
+   "term": "わ",
+   "meaning": "wa",
+   "example": "わたし",
+   "example_id": "saya"
+  },
+  {
+   "id": "ja-u01-i45",
+   "type": "kana",
+   "term": "を",
+   "meaning": "o",
+   "example": "ほん を よみます",
+   "example_id": "membaca buku",
+   "note": "Hanya dipakai sebagai partikel objek, dibaca 'o'."
+  },
+  {
+   "id": "ja-u01-i46",
+   "type": "kana",
+   "term": "ん",
+   "meaning": "n",
+   "example": "ほん",
+   "example_id": "buku",
+   "note": "Satu-satunya huruf konsonan tanpa vokal."
+  }
+ ],
+ "grammar": [
+  {
+   "id": "ja-u01-g01",
+   "title": "Dakuten dan handakuten (゛ ゜)",
+   "explanation": "Dua garis kecil (゛) di kanan atas mengubah bunyi: か→が (ka→ga), さ→ざ (sa→za), た→だ (ta→da), は→ば (ha→ba). Lingkaran kecil (゜) hanya dipakai di baris は: は→ぱ (ha→pa).",
+   "examples": [
+    "がっこう",
+    "ざっし",
+    "てんぷら",
+    "ぶどう"
+   ],
+   "common_mistake": {
+    "wrong": "てんふら",
+    "right": "てんぷら"
+   }
+  },
+  {
+   "id": "ja-u01-g02",
+   "title": "Huruf kecil っ dan ゃ ゅ ょ",
+   "explanation": "っ kecil menggandakan konsonan berikutnya dan memberi jeda singkat: がっこう (gakkou). ゃ ゅ ょ kecil menyatu dengan huruf sebelumnya menjadi satu suku kata: き + ゃ = きゃ (kya), し + ゅ = しゅ (shu), ち + ょ = ちょ (cho).",
+   "examples": [
+    "きって",
+    "おちゃ",
+    "しゅくだい",
+    "ちょっと"
+   ],
+   "common_mistake": {
+    "wrong": "おちや",
+    "right": "おちゃ"
+   }
+  },
+  {
+   "id": "ja-u01-g03",
+   "title": "Partikel は, へ, を",
+   "explanation": "Tiga huruf ini dibaca berbeda saat menjadi partikel: は dibaca 'wa' (penanda topik), へ dibaca 'e' (arah), dan を dibaca 'o' (penanda objek). Tulisannya tetap は, へ, dan を.",
+   "examples": [
+    "わたし は がくせい です 。",
+    "えき へ いきます 。",
+    "ほん を よみます 。"
+   ],
+   "common_mistake": {
+    "wrong": "わたし わ がくせい です 。",
+    "right": "わたし は がくせい です 。"
+   }
+  }
+ ],
+ "listening": [
+  {
+   "id": "ja-u01-l01",
+   "title": "Sapaan pagi",
+   "speakers": [
+    {
+     "name": "Yuki",
+     "voice": "ja-JP"
+    },
+    {
+     "name": "Bagus",
+     "voice": "ja-JP"
+    }
+   ],
+   "lines": [
+    {
+     "speaker": "Yuki",
+     "text": "おはよう ございます 。"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "おはよう ございます 。"
+    },
+    {
+     "speaker": "Yuki",
+     "text": "おげんき です か ？"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "はい 、 げんき です 。"
+    },
+    {
+     "speaker": "Yuki",
+     "text": "では 、 また ね 。"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "また ね 。"
+    }
+   ],
+   "dictation": [
+    1,
+    3,
+    5
+   ],
+   "questions": [
+    {
+     "q": "Kapan percakapan ini terjadi?",
+     "options": [
+      "Pagi hari",
+      "Siang hari",
+      "Malam hari"
+     ],
+     "answer": 0,
+     "explain": "「おはようございます」 = selamat pagi."
+    },
+    {
+     "q": "Bagaimana kabar Bagus?",
+     "options": [
+      "Sakit",
+      "Baik",
+      "Lelah"
+     ],
+     "answer": 1,
+     "explain": "「げんきです」 = saya baik/sehat."
+    },
+    {
+     "q": "Apa arti 「またね」?",
+     "options": [
+      "Terima kasih",
+      "Sampai jumpa",
+      "Selamat malam"
+     ],
+     "answer": 1
+    }
+   ]
+  }
+ ],
+ "reading": [
+  {
+   "id": "ja-u01-r01",
+   "title": "Pagi di stasiun",
+   "text": "あさ です 。 そら は くもり です 。 わたし は えき へ いきます 。 えき で おちゃ を のみます 。 おいしい です 。",
+   "glossary": [
+    {
+     "term": "あさ",
+     "meaning": "pagi"
+    },
+    {
+     "term": "そら",
+     "meaning": "langit"
+    },
+    {
+     "term": "くもり",
+     "meaning": "berawan"
+    },
+    {
+     "term": "えき",
+     "meaning": "stasiun"
+    },
+    {
+     "term": "おちゃ",
+     "meaning": "teh hijau"
+    },
+    {
+     "term": "のみます",
+     "meaning": "minum"
+    },
+    {
+     "term": "おいしい",
+     "meaning": "enak"
+    }
+   ],
+   "questions": [
+    {
+     "q": "Ke mana penulis pergi?",
+     "options": [
+      "Ke sekolah",
+      "Ke stasiun",
+      "Ke kantor"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Apa yang ia minum?",
+     "options": [
+      "Kopi",
+      "Teh hijau",
+      "Air putih"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Bagaimana cuacanya?",
+     "options": [
+      "Cerah",
+      "Berawan",
+      "Bersalju"
+     ],
+     "answer": 1
+    }
+   ]
+  }
+ ],
+ "writing": [
+  {
+   "id": "ja-u01-w01",
+   "mode": "build",
+   "prompt": "Susun ubin huruf menjadi kalimat Jepang yang artinya sama.",
+   "sentences": [
+    {
+     "id": "Selamat pagi.",
+     "ja": "おはよう ございます 。"
+    },
+    {
+     "id": "Saya pelajar.",
+     "ja": "わたし は がくせい です 。"
+    },
+    {
+     "id": "Ini sushi.",
+     "ja": "これ は すし です 。"
+    },
+    {
+     "id": "Terima kasih banyak.",
+     "ja": "どうも ありがとう ございます 。"
+    }
+   ]
+  }
+ ],
+ "speaking": [
+  {
+   "id": "ja-u01-s01",
+   "mode": "shadowing",
+   "sentences": [
+    "おはよう ございます 。",
+    "ありがとう ございます 。",
+    "すみません 。",
+    "わたし は がくせい です 。",
+    "おいしい です 。",
+    "また ね 。"
+   ],
+   "focus": "Vokal Jepang pendek dan jelas: a-i-u-e-o. Bunyi 'su' di akhir です hampir tidak terdengar (des)."
+  },
+  {
+   "id": "ja-u01-s02",
+   "mode": "answer",
+   "prompt": "Perkenalkan dirimu dengan sangat sederhana: salam pertama bertemu, 'saya karyawan', lalu salam penutup.",
+   "sample_answer": "はじめまして 。 わたし は かいしゃいん です 。 よろしく おねがいします 。"
+  }
+ ],
+ "conversation": [
+  {
+   "id": "ja-u01-c01",
+   "title": "Menyapa tetangga",
+   "role_you": "Kamu",
+   "role_them": "Tanaka-san, tetangga",
+   "start": "n1",
+   "nodes": {
+    "n1": {
+     "them": "おはよう ございます ！",
+     "hints": [
+      "Selamat pagi!"
+     ],
+     "choices": [
+      {
+       "text": "おはよう ございます 。",
+       "next": "n2",
+       "ok": true
+      },
+      {
+       "text": "こんばんは 。",
+       "next": "n2",
+       "ok": false,
+       "feedback": "Pagi hari memakai 「おはようございます」. 「こんばんは」 untuk malam hari."
+      }
+     ]
+    },
+    "n2": {
+     "them": "おげんき です か ？",
+     "hints": [
+      "Apa kabar?"
+     ],
+     "choices": [
+      {
+       "text": "はい 、 げんき です 。",
+       "next": "n3",
+       "ok": true
+      },
+      {
+       "text": "いいえ 、 がくせい です 。",
+       "next": "n3",
+       "ok": false,
+       "feedback": "「げんきですか」 menanyakan kabar. Jawab 「はい、げんきです」."
+      }
+     ]
+    },
+    "n3": {
+     "them": "いい てんき です ね 。",
+     "hints": [
+      "Cuacanya bagus ya."
+     ],
+     "choices": [
+      {
+       "text": "そう です ね 。",
+       "next": "end",
+       "ok": true
+      },
+      {
+       "text": "すみません 。",
+       "next": "end",
+       "ok": false,
+       "feedback": "「そうですね」 = iya ya, untuk menyetujui. すみません berarti maaf/permisi."
+      }
+     ]
+    },
+    "end": {
+     "them": "じゃあ 、 また ね 。",
+     "end": true
+    }
+   }
+  }
+ ]
+}

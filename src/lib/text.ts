@@ -1,6 +1,11 @@
 // Utilitas teks: normalisasi, perbandingan kata per kata, dan fuzzy match.
+// Teks Jepang (tanpa spasi) dibandingkan per karakter; katakana disamakan
+// dengan hiragana, dan bacaan kana juga dicoba supaya jawaban kana tetap benar.
+
+import { isJaMarkup, normalizeJa, normalizeJaReading, plain } from "./ja";
 
 export function normalize(s: string): string {
+  if (isJaMarkup(s)) return normalizeJa(s);
   return s
     .toLowerCase()
     .replace(/[’‘]/g, "'")
@@ -11,10 +16,13 @@ export function normalize(s: string): string {
 
 export function words(s: string): string[] {
   const n = normalize(s);
+  if (isJaMarkup(s)) return [...n];
   return n ? n.split(" ") : [];
 }
 
 export function countWords(s: string): number {
+  // Bahasa Jepang tidak berspasi: kira-kira 2 karakter per kata.
+  if (isJaMarkup(s)) return Math.ceil(normalizeJa(s).length / 2);
   return s.trim() ? s.trim().split(/\s+/).length : 0;
 }
 
@@ -28,8 +36,24 @@ export function compareWords(
   target: string,
   attempt: string,
 ): { tokens: DiffToken[]; correct: number; total: number } {
-  const t = words(target);
-  const a = words(attempt);
+  if (isJaMarkup(target)) {
+    // Bandingkan dengan tulisan asli (kanji) dan dengan bacaan kana; ambil yang terbaik.
+    const a = [...normalizeJa(attempt)];
+    const bySurface = lcsTokens([...normalizeJa(target)], a);
+    const byReading = lcsTokens([...normalizeJaReading(target)], a);
+    const best =
+      byReading.correct / byReading.total > bySurface.correct / bySurface.total
+        ? byReading
+        : bySurface;
+    return best;
+  }
+  return lcsTokens(words(target), words(attempt));
+}
+
+function lcsTokens(
+  t: string[],
+  a: string[],
+): { tokens: DiffToken[]; correct: number; total: number } {
   const dp: number[][] = Array.from({ length: t.length + 1 }, () =>
     new Array(a.length + 1).fill(0),
   );
@@ -77,6 +101,8 @@ function levenshtein(a: string, b: string): number {
 
 /** Apakah frasa kunci muncul di jawaban, dengan toleransi salah ketik kecil per kata. */
 export function fuzzyContains(answer: string, phrase: string): boolean {
+  if (isJaMarkup(phrase) || isJaMarkup(answer))
+    return normalizeJa(answer).includes(normalizeJa(phrase));
   const a = words(answer);
   const p = words(phrase);
   if (!p.length) return false;
@@ -98,5 +124,16 @@ export function fuzzyContains(answer: string, phrase: string): boolean {
 
 /** Cocokkan jawaban bebas dengan teks cloze, toleran terhadap huruf besar dan tanda baca. */
 export function sameAnswer(a: string, b: string): boolean {
+  if (isJaMarkup(a) || isJaMarkup(b))
+    return (
+      normalizeJa(a) === normalizeJa(b) ||
+      normalizeJa(a) === normalizeJaReading(b) ||
+      normalizeJaReading(a) === normalizeJa(b)
+    );
   return normalize(a) === normalize(b);
+}
+
+/** Teks untuk ditampilkan tanpa markup (mis. di notifikasi). */
+export function display(s: string): string {
+  return isJaMarkup(s) ? plain(s) : s;
 }

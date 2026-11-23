@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { getUnit } from "@/lib/content";
 import {
+  activeLang,
+  COURSES,
   currentLevel,
   examHref,
   LESSON_COUNT,
@@ -44,6 +46,15 @@ import {
 
 const SKILLS = Object.keys(SKILL_LABEL) as Skill[];
 
+// Deskripsi singkat untuk kursus Jepang (latihan tanpa keyboard Jepang).
+const SKILL_SUB_JA: Record<Skill, string> = {
+  listening: "Dialog dan susun yang didengar",
+  reading: "Teks pendek dengan furigana",
+  writing: "Susun kalimat dari ubin",
+  speaking: "Shadowing dan menjawab",
+  conversation: "Dialog dengan pilihan balasan",
+};
+
 const SKILL_SUB: Record<Skill, string> = {
   listening: "Dialog dan dikte",
   reading: "Artikel pendek",
@@ -63,7 +74,10 @@ export default function Home() {
   const skill = skillForDate(now);
   const foundationLeft = q.due.length + q.fresh.length;
   const goal = p.settings.dailyGoal;
-  const li = currentLevel(p);
+  const lang = activeLang(p);
+  const course = COURSES[lang];
+  const skillSub = lang === "ja" ? SKILL_SUB_JA : SKILL_SUB;
+  const li = currentLevel(p, lang);
   const level = LEVELS[li];
   const next = LEVELS[li + 1];
   const unitReady =
@@ -94,7 +108,7 @@ export default function Home() {
           : skill
         ? {
             title: `Misi ${SKILL_LABEL[skill]}`,
-            sub: SKILL_SUB[skill],
+            sub: skillSub[skill],
             href: `/${skill}`,
             cta: "Mulai",
           }
@@ -131,7 +145,7 @@ export default function Home() {
     ...SKILLS.map((s) => ({
       key: s,
       title: SKILL_LABEL[s],
-      sub: SKILL_SUB[s],
+      sub: skillSub[s],
       href: `/${s}`,
       value: skillProgress(p, unit, s),
     })),
@@ -155,8 +169,9 @@ export default function Home() {
         <Link
           href="/latihan"
           className="ml-auto shrink-0 rounded-full bg-surface px-3 py-1.5 text-sm font-bold text-lavender ring-1 ring-lavender/30 transition hover:ring-lavender/60 lg:ml-auto"
-          title={`${level.name} · perkiraan IELTS ${level.ielts}`}
+          title={`${course.name} · ${level.name} · ${level.badges[0]}`}
         >
+          <span className="mr-1 text-mute">{course.code}</span>
           {level.cefr}
           <span className="ml-1 hidden font-semibold text-mute sm:inline">
             · {level.name}
@@ -222,7 +237,7 @@ export default function Home() {
             </span>
             <div>
               <div className="text-2xl font-extrabold tabular-nums">
-                {vocabCount(p)}
+                {vocabCount(p, lang)}
               </div>
               <div className="text-sm text-mute">Kosakata</div>
             </div>

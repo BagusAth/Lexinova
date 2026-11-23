@@ -1,0 +1,694 @@
+{
+ "id": "ja-u02",
+ "language": "ja",
+ "level": "Kana",
+ "title": "Katakana",
+ "theme": "Huruf untuk kata serapan, nama, dan menu",
+ "tags": [
+  "travel",
+  "budaya",
+  "jlpt"
+ ],
+ "items": [
+  {
+   "id": "ja-u02-i01",
+   "type": "kana",
+   "term": "ア",
+   "meaning": "a",
+   "example": "アイス",
+   "example_id": "es krim"
+  },
+  {
+   "id": "ja-u02-i02",
+   "type": "kana",
+   "term": "イ",
+   "meaning": "i",
+   "example": "イギリス",
+   "example_id": "Inggris (negara)"
+  },
+  {
+   "id": "ja-u02-i03",
+   "type": "kana",
+   "term": "ウ",
+   "meaning": "u",
+   "example": "ウール",
+   "example_id": "wol"
+  },
+  {
+   "id": "ja-u02-i04",
+   "type": "kana",
+   "term": "エ",
+   "meaning": "e",
+   "example": "エアコン",
+   "example_id": "AC"
+  },
+  {
+   "id": "ja-u02-i05",
+   "type": "kana",
+   "term": "オ",
+   "meaning": "o",
+   "example": "オレンジ",
+   "example_id": "jeruk"
+  },
+  {
+   "id": "ja-u02-i06",
+   "type": "kana",
+   "term": "カ",
+   "meaning": "ka",
+   "example": "カメラ",
+   "example_id": "kamera"
+  },
+  {
+   "id": "ja-u02-i07",
+   "type": "kana",
+   "term": "キ",
+   "meaning": "ki",
+   "example": "キロ",
+   "example_id": "kilo"
+  },
+  {
+   "id": "ja-u02-i08",
+   "type": "kana",
+   "term": "ク",
+   "meaning": "ku",
+   "example": "クラス",
+   "example_id": "kelas"
+  },
+  {
+   "id": "ja-u02-i09",
+   "type": "kana",
+   "term": "ケ",
+   "meaning": "ke",
+   "example": "ケーキ",
+   "example_id": "kue"
+  },
+  {
+   "id": "ja-u02-i10",
+   "type": "kana",
+   "term": "コ",
+   "meaning": "ko",
+   "example": "コーヒー",
+   "example_id": "kopi"
+  },
+  {
+   "id": "ja-u02-i11",
+   "type": "kana",
+   "term": "サ",
+   "meaning": "sa",
+   "example": "サラダ",
+   "example_id": "salad"
+  },
+  {
+   "id": "ja-u02-i12",
+   "type": "kana",
+   "term": "シ",
+   "meaning": "shi",
+   "example": "シャツ",
+   "example_id": "kemeja",
+   "note": "Mirip ツ. シ: dua garis pendek lebih ke kiri, goresan panjang naik dari bawah."
+  },
+  {
+   "id": "ja-u02-i13",
+   "type": "kana",
+   "term": "ス",
+   "meaning": "su",
+   "example": "スマホ",
+   "example_id": "ponsel pintar"
+  },
+  {
+   "id": "ja-u02-i14",
+   "type": "kana",
+   "term": "セ",
+   "meaning": "se",
+   "example": "セーター",
+   "example_id": "sweter"
+  },
+  {
+   "id": "ja-u02-i15",
+   "type": "kana",
+   "term": "ソ",
+   "meaning": "so",
+   "example": "ソファ",
+   "example_id": "sofa",
+   "note": "Mirip ン. ソ: goresan panjang turun dari atas."
+  },
+  {
+   "id": "ja-u02-i16",
+   "type": "kana",
+   "term": "タ",
+   "meaning": "ta",
+   "example": "タクシー",
+   "example_id": "taksi"
+  },
+  {
+   "id": "ja-u02-i17",
+   "type": "kana",
+   "term": "チ",
+   "meaning": "chi",
+   "example": "チーズ",
+   "example_id": "keju"
+  },
+  {
+   "id": "ja-u02-i18",
+   "type": "kana",
+   "term": "ツ",
+   "meaning": "tsu",
+   "example": "ツアー",
+   "example_id": "tur",
+   "note": "Mirip シ. ツ: dua garis pendek di atas, goresan panjang turun dari atas."
+  },
+  {
+   "id": "ja-u02-i19",
+   "type": "kana",
+   "term": "テ",
+   "meaning": "te",
+   "example": "テレビ",
+   "example_id": "televisi"
+  },
+  {
+   "id": "ja-u02-i20",
+   "type": "kana",
+   "term": "ト",
+   "meaning": "to",
+   "example": "トイレ",
+   "example_id": "toilet"
+  },
+  {
+   "id": "ja-u02-i21",
+   "type": "kana",
+   "term": "ナ",
+   "meaning": "na",
+   "example": "ナイフ",
+   "example_id": "pisau"
+  },
+  {
+   "id": "ja-u02-i22",
+   "type": "kana",
+   "term": "ニ",
+   "meaning": "ni",
+   "example": "ニュース",
+   "example_id": "berita"
+  },
+  {
+   "id": "ja-u02-i23",
+   "type": "kana",
+   "term": "ヌ",
+   "meaning": "nu",
+   "example": "カヌー",
+   "example_id": "kano"
+  },
+  {
+   "id": "ja-u02-i24",
+   "type": "kana",
+   "term": "ネ",
+   "meaning": "ne",
+   "example": "ネクタイ",
+   "example_id": "dasi"
+  },
+  {
+   "id": "ja-u02-i25",
+   "type": "kana",
+   "term": "ノ",
+   "meaning": "no",
+   "example": "ノート",
+   "example_id": "buku catatan"
+  },
+  {
+   "id": "ja-u02-i26",
+   "type": "kana",
+   "term": "ハ",
+   "meaning": "ha",
+   "example": "ハンバーガー",
+   "example_id": "hamburger"
+  },
+  {
+   "id": "ja-u02-i27",
+   "type": "kana",
+   "term": "ヒ",
+   "meaning": "hi",
+   "example": "ヒーター",
+   "example_id": "pemanas ruangan"
+  },
+  {
+   "id": "ja-u02-i28",
+   "type": "kana",
+   "term": "フ",
+   "meaning": "fu",
+   "example": "フランス",
+   "example_id": "Prancis"
+  },
+  {
+   "id": "ja-u02-i29",
+   "type": "kana",
+   "term": "ヘ",
+   "meaning": "he",
+   "example": "ヘリコプター",
+   "example_id": "helikopter"
+  },
+  {
+   "id": "ja-u02-i30",
+   "type": "kana",
+   "term": "ホ",
+   "meaning": "ho",
+   "example": "ホテル",
+   "example_id": "hotel"
+  },
+  {
+   "id": "ja-u02-i31",
+   "type": "kana",
+   "term": "マ",
+   "meaning": "ma",
+   "example": "マスク",
+   "example_id": "masker"
+  },
+  {
+   "id": "ja-u02-i32",
+   "type": "kana",
+   "term": "ミ",
+   "meaning": "mi",
+   "example": "ミルク",
+   "example_id": "susu"
+  },
+  {
+   "id": "ja-u02-i33",
+   "type": "kana",
+   "term": "ム",
+   "meaning": "mu",
+   "example": "ハム",
+   "example_id": "daging ham"
+  },
+  {
+   "id": "ja-u02-i34",
+   "type": "kana",
+   "term": "メ",
+   "meaning": "me",
+   "example": "メール",
+   "example_id": "email"
+  },
+  {
+   "id": "ja-u02-i35",
+   "type": "kana",
+   "term": "モ",
+   "meaning": "mo",
+   "example": "メモ",
+   "example_id": "catatan"
+  },
+  {
+   "id": "ja-u02-i36",
+   "type": "kana",
+   "term": "ヤ",
+   "meaning": "ya",
+   "example": "タイヤ",
+   "example_id": "ban"
+  },
+  {
+   "id": "ja-u02-i37",
+   "type": "kana",
+   "term": "ユ",
+   "meaning": "yu",
+   "example": "ユニフォーム",
+   "example_id": "seragam"
+  },
+  {
+   "id": "ja-u02-i38",
+   "type": "kana",
+   "term": "ヨ",
+   "meaning": "yo",
+   "example": "ヨーグルト",
+   "example_id": "yoghurt"
+  },
+  {
+   "id": "ja-u02-i39",
+   "type": "kana",
+   "term": "ラ",
+   "meaning": "ra",
+   "example": "ラーメン",
+   "example_id": "ramen"
+  },
+  {
+   "id": "ja-u02-i40",
+   "type": "kana",
+   "term": "リ",
+   "meaning": "ri",
+   "example": "リモコン",
+   "example_id": "remot"
+  },
+  {
+   "id": "ja-u02-i41",
+   "type": "kana",
+   "term": "ル",
+   "meaning": "ru",
+   "example": "ルール",
+   "example_id": "aturan"
+  },
+  {
+   "id": "ja-u02-i42",
+   "type": "kana",
+   "term": "レ",
+   "meaning": "re",
+   "example": "レストラン",
+   "example_id": "restoran"
+  },
+  {
+   "id": "ja-u02-i43",
+   "type": "kana",
+   "term": "ロ",
+   "meaning": "ro",
+   "example": "ロボット",
+   "example_id": "robot"
+  },
+  {
+   "id": "ja-u02-i44",
+   "type": "kana",
+   "term": "ワ",
+   "meaning": "wa",
+   "example": "ワイン",
+   "example_id": "anggur (minuman)"
+  },
+  {
+   "id": "ja-u02-i45",
+   "type": "kana",
+   "term": "ン",
+   "meaning": "n",
+   "example": "パン",
+   "example_id": "roti",
+   "note": "Mirip ソ. ン: goresan panjang naik dari bawah."
+  }
+ ],
+ "grammar": [
+  {
+   "id": "ja-u02-g01",
+   "title": "Garis panjang ー",
+   "explanation": "Di katakana, vokal panjang ditulis dengan garis ー. コーヒー dibaca koohii (dua ketukan untuk 'oo'). Tanpa garis, kata bisa salah dibaca atau berubah arti.",
+   "examples": [
+    "コーヒー",
+    "ケーキ",
+    "ラーメン",
+    "スーパー"
+   ],
+   "common_mistake": {
+    "wrong": "コヒー",
+    "right": "コーヒー"
+   }
+  },
+  {
+   "id": "ja-u02-g02",
+   "title": "Kombinasi untuk bunyi asing",
+   "explanation": "Untuk bunyi yang tidak ada di bahasa Jepang asli, katakana memakai huruf vokal kecil: ファ (fa), フォ (fo), ティ (ti), ウェ (we), シェ (she). Contoh: パーティー (pesta), フォーク (garpu).",
+   "examples": [
+    "パーティー",
+    "フォーク",
+    "シェフ",
+    "ウェブ"
+   ],
+   "common_mistake": {
+    "wrong": "フオーク",
+    "right": "フォーク"
+   }
+  },
+  {
+   "id": "ja-u02-g03",
+   "title": "Nama dan negara ditulis katakana",
+   "explanation": "Nama orang asing dan nama negara ditulis dengan katakana. Nama Bagus menjadi バグス, Indonesia menjadi インドネシア, Jakarta menjadi ジャカルタ.",
+   "examples": [
+    "バグス",
+    "インドネシア",
+    "ジャカルタ",
+    "バリ"
+   ],
+   "common_mistake": {
+    "wrong": "ばぐす",
+    "right": "バグス"
+   }
+  }
+ ],
+ "listening": [
+  {
+   "id": "ja-u02-l01",
+   "title": "Memesan di kafe",
+   "speakers": [
+    {
+     "name": "Staf",
+     "voice": "ja-JP"
+    },
+    {
+     "name": "Bagus",
+     "voice": "ja-JP"
+    }
+   ],
+   "lines": [
+    {
+     "speaker": "Staf",
+     "text": "いらっしゃいませ 。"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "コーヒー と ケーキ を ください 。"
+    },
+    {
+     "speaker": "Staf",
+     "text": "ホット です か 、 アイス です か ？"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "アイス で おねがいします 。"
+    },
+    {
+     "speaker": "Staf",
+     "text": "はい 、 ろっぴゃく えん です 。"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "カード で いい です か ？"
+    },
+    {
+     "speaker": "Staf",
+     "text": "はい 、 だいじょうぶ です 。"
+    }
+   ],
+   "dictation": [
+    1,
+    3,
+    5
+   ],
+   "questions": [
+    {
+     "q": "Apa yang dipesan Bagus?",
+     "options": [
+      "Teh dan roti",
+      "Kopi dan kue",
+      "Ramen dan salad"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Kopinya panas atau dingin?",
+     "options": [
+      "Panas",
+      "Dingin (es)",
+      "Tidak disebutkan"
+     ],
+     "answer": 1,
+     "explain": "「アイスで」 = yang dingin/es."
+    },
+    {
+     "q": "Bagaimana Bagus membayar?",
+     "options": [
+      "Tunai",
+      "Kartu",
+      "Belum membayar"
+     ],
+     "answer": 1
+    }
+   ]
+  }
+ ],
+ "reading": [
+  {
+   "id": "ja-u02-r01",
+   "title": "Menu kafe",
+   "text": "この カフェ に は コーヒー と ケーキ が あります 。 きょう の おすすめ は チーズケーキ です 。 サンドイッチ と サラダ も あります 。 ワイファイ は ありません 。",
+   "glossary": [
+    {
+     "term": "カフェ",
+     "meaning": "kafe"
+    },
+    {
+     "term": "おすすめ",
+     "meaning": "rekomendasi"
+    },
+    {
+     "term": "チーズケーキ",
+     "meaning": "kue keju"
+    },
+    {
+     "term": "サンドイッチ",
+     "meaning": "roti lapis"
+    },
+    {
+     "term": "サラダ",
+     "meaning": "salad"
+    },
+    {
+     "term": "ワイファイ",
+     "meaning": "Wi-Fi"
+    },
+    {
+     "term": "ありません",
+     "meaning": "tidak ada"
+    }
+   ],
+   "questions": [
+    {
+     "q": "Apa rekomendasi hari ini?",
+     "options": [
+      "Kopi",
+      "Kue keju",
+      "Salad"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Apa yang TIDAK ada di kafe ini?",
+     "options": [
+      "Salad",
+      "Roti lapis",
+      "Wi-Fi"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "Selain kopi dan kue, ada apa lagi?",
+     "options": [
+      "Roti lapis dan salad",
+      "Ramen",
+      "Sushi"
+     ],
+     "answer": 0
+    }
+   ]
+  }
+ ],
+ "writing": [
+  {
+   "id": "ja-u02-w01",
+   "mode": "build",
+   "prompt": "Susun ubin menjadi kalimat Jepang yang artinya sama.",
+   "sentences": [
+    {
+     "id": "Kopi, tolong.",
+     "ja": "コーヒー を ください 。"
+    },
+    {
+     "id": "Saya Bagus.",
+     "ja": "わたし は バグス です 。"
+    },
+    {
+     "id": "Saya orang Indonesia.",
+     "ja": "わたし は インドネシア じん です 。"
+    },
+    {
+     "id": "Toiletnya di mana?",
+     "ja": "トイレ は どこ です か ？"
+    }
+   ]
+  }
+ ],
+ "speaking": [
+  {
+   "id": "ja-u02-s01",
+   "mode": "shadowing",
+   "sentences": [
+    "コーヒー を ください 。",
+    "わたし は バグス です 。",
+    "トイレ は どこ です か ？",
+    "カード で いい です か ？",
+    "アイス で おねがいします 。",
+    "ラーメン が すき です 。"
+   ],
+   "focus": "Panjangkan vokal bergaris ー selama dua ketukan: ko-o-hi-i. Bunyi 'r' di ラーメン diucapkan dengan satu ketukan lidah."
+  },
+  {
+   "id": "ja-u02-s02",
+   "mode": "answer",
+   "prompt": "Pesan satu minuman dan satu makanan di kafe dengan pola '... を ください'.",
+   "sample_answer": "すみません 。 アイスコーヒー と チーズケーキ を ください 。"
+  }
+ ],
+ "conversation": [
+  {
+   "id": "ja-u02-c01",
+   "title": "Memesan di kafe",
+   "role_you": "Pelanggan",
+   "role_them": "Staf kafe",
+   "start": "n1",
+   "nodes": {
+    "n1": {
+     "them": "いらっしゃいませ ！ ごちゅうもん は ？",
+     "hints": [
+      "Selamat datang! Mau pesan apa?"
+     ],
+     "choices": [
+      {
+       "text": "コーヒー を ください 。",
+       "next": "n2",
+       "ok": true
+      },
+      {
+       "text": "コーヒー です か ？",
+       "next": "n2",
+       "ok": false,
+       "feedback": "Untuk memesan, pakai 「〜をください」 (tolong beri saya ...)."
+      }
+     ]
+    },
+    "n2": {
+     "them": "ホット です か 、 アイス です か ？",
+     "hints": [
+      "Panas atau dingin?"
+     ],
+     "choices": [
+      {
+       "text": "アイス で おねがいします 。",
+       "next": "n3",
+       "ok": true
+      },
+      {
+       "text": "ホット で おねがいします 。",
+       "next": "n3",
+       "ok": true
+      },
+      {
+       "text": "はい 、 そう です 。",
+       "next": "n3",
+       "ok": false,
+       "feedback": "Ini pertanyaan pilihan. Jawab 「ホットで」 atau 「アイスで」 lalu 「おねがいします」."
+      }
+     ]
+    },
+    "n3": {
+     "them": "ほか に なにか ？",
+     "hints": [
+      "Ada lagi?"
+     ],
+     "choices": [
+      {
+       "text": "チーズケーキ も ください 。",
+       "next": "end",
+       "ok": true
+      },
+      {
+       "text": "いいえ 、 だいじょうぶ です 。",
+       "next": "end",
+       "ok": true
+      }
+     ]
+    },
+    "end": {
+     "them": "ありがとう ございます 。 しょうしょう おまち ください 。",
+     "end": true
+    }
+   }
+  }
+ ]
+}

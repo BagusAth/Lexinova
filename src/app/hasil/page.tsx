@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { getUnit, UNITS } from "@/lib/content";
-import { currentLevel, LEVELS } from "@/lib/levels";
+import { activeLang, COURSES, currentLevel, findLevel, levelsOf } from "@/lib/levels";
 import { emptyDay, streak, todayKey, useProgress } from "@/lib/progress";
 import { DAY_SHORT, SKILL_LABEL } from "@/lib/schedule";
 import {
@@ -225,20 +225,28 @@ export default function Progres() {
 function examName(key: string): string {
   const [kind, id] = key.split(":");
   if (kind === "unit") {
-    const i = UNITS.findIndex((u) => u.id === id);
-    return i < 0 ? id : `Ujian Unit ${i + 1} · ${UNITS[i].title}`;
+    const u = UNITS.find((x) => x.id === id);
+    if (!u) return id;
+    const n = UNITS.filter((x) => x.language === u.language).indexOf(u) + 1;
+    return `${COURSES[u.language === "ja" ? "ja" : "en"].code} · Unit ${n} · ${u.title}`;
   }
-  const li = LEVELS.findIndex((l) => l.id === id);
-  const next = LEVELS[li + 1];
-  return next ? `Ujian naik ke ${next.cefr}` : `Ujian akhir ${LEVELS[li]?.cefr ?? id}`;
+  const f = findLevel(id);
+  if (!f) return id;
+  const levels = levelsOf(f.lang);
+  const next = levels[f.idx + 1];
+  const code = COURSES[f.lang].code;
+  return next ? `${code} · Ujian naik ke ${next.cefr}` : `${code} · Ujian akhir ${f.level.cefr}`;
 }
 
 function LevelCard({ p }: { p: Progress }) {
-  const cur = currentLevel(p);
+  const lang = activeLang(p);
+  const LEVELS = levelsOf(lang);
+  const cur = currentLevel(p, lang);
   const history = Object.entries(p.path.exams)
     .sort((a, b) => b[1].last.localeCompare(a[1].last))
     .slice(0, 5);
-  const unitsPassed = Object.keys(p.path.passedUnits).length;
+  const courseUnits = UNITS.filter((u) => u.language === lang);
+  const unitsPassed = courseUnits.filter((u) => p.path.passedUnits[u.id]).length;
 
   return (
     <Card className="flex flex-col gap-4">
@@ -249,7 +257,7 @@ function LevelCard({ p }: { p: Progress }) {
           </Link>
         }
       >
-        Tingkat & ujian
+        Tingkat & ujian · {COURSES[lang].name}
       </SectionTitle>
       <ol className="flex items-center gap-1" aria-label="Tangga tingkat">
         {LEVELS.map((l, i) => {
@@ -271,17 +279,17 @@ function LevelCard({ p }: { p: Progress }) {
           );
         })}
       </ol>
-      <div className="grid gap-4 sm:grid-cols-[auto_1fr]">
-        <dl className="grid grid-cols-2 gap-x-6 gap-y-1 text-sm sm:grid-cols-1">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-[auto_minmax(0,1fr)]">
+        <dl className="grid min-w-0 grid-cols-[auto_minmax(0,1fr)] gap-x-4 gap-y-1 text-sm sm:grid-cols-1">
           <dt className="text-mute">Tingkat sekarang</dt>
           <dd className="font-bold">
             {LEVELS[cur].cefr} · {LEVELS[cur].name}
           </dd>
-          <dt className="text-mute">Perkiraan IELTS</dt>
-          <dd className="font-bold text-cyan">{LEVELS[cur].ielts}</dd>
+          <dt className="text-mute">Setara</dt>
+          <dd className="font-bold text-cyan">{LEVELS[cur].badges[0]}</dd>
           <dt className="text-mute">Unit lulus</dt>
           <dd className="font-bold">
-            {unitsPassed} dari {UNITS.length}
+            {unitsPassed} dari {courseUnits.length}
           </dd>
         </dl>
         <div>

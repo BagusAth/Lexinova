@@ -6,10 +6,25 @@ import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
 const ROOT = new URL("..", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1");
-const LEVELS = ["B1", "B1+", "B2", "B2+", "C1"];
-const TAGS = ["karier", "ielts", "studi", "travel", "teknologi", "bisnis", "desain", "sains"];
-const TYPES = ["word", "phrasal_verb", "collocation", "idiom", "pattern"];
-const VOICES = ["en-US", "en-GB", "en-AU"];
+const LEVELS_BY_LANG = {
+  en: ["B1", "B1+", "B2", "B2+", "C1"],
+  ja: ["Kana", "N5", "N4", "N3", "N2", "N1"],
+};
+const TAGS = ["karier", "ielts", "studi", "travel", "jlpt", "budaya", "teknologi", "bisnis", "desain", "sains"];
+const TYPES = ["word", "phrasal_verb", "collocation", "idiom", "pattern", "kana"];
+const VOICES = ["en-US", "en-GB", "en-AU", "ja-JP"];
+
+// --- markup Jepang: token dipisah spasi, kanji ditulis {漢字|かな} ---
+const RUBY = /\{([^|{}]+)\|([^{}]+)\}/g;
+const plainJa = (s) => s.replace(RUBY, "$1").replace(/ +/g, "");
+const normJa = (s) =>
+  plainJa(s)
+    .replace(/[ァ-ヶ]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0x60))
+    .replace(/[\s。、！？「」『』（）・…〜!?.,"'：:]/g, "");
+/** Markup ruby rusak? (kurung atau | yang tersisa setelah ruby valid dihapus) */
+const badRuby = (s) => /[{}|]/.test(s.replace(RUBY, ""));
+const tokensJa = (s) => s.split(/ +/).filter(Boolean);
+const PUNCT_JA = /^[。、！？「」『』（）・…〜!?.,]+$/;
 
 const errors = [];
 const warnings = [];
@@ -59,7 +74,20 @@ for (const { file, u } of units) {
 
   for (const k of ["id", "language", "level", "title", "theme"])
     if (!u[k]) err(name, `kolom "${k}" kosong`);
-  if (!LEVELS.includes(u.level)) err(name, `level "${u.level}" tidak dikenal`);
+  const LEVELS = LEVELS_BY_LANG[u.language];
+  if (!LEVELS) err(name, `bahasa "${u.language}" tidak dikenal`);
+  else if (!LEVELS.includes(u.level)) err(name, `level "${u.level}" tidak dikenal untuk bahasa ${u.language}`);
+  const ja = u.language === "ja";
+  // Semua teks Jepang di unit ini harus punya markup ruby yang valid.
+  if (ja) {
+    const walk = (v, path) => {
+      if (typeof v === "string") {
+        if (badRuby(v)) err(name, `markup ruby rusak di ${path}: "${v}"`);
+      } else if (Array.isArray(v)) v.forEach((x, i) => walk(x, `${path}[${i}]`));
+      else if (v && typeof v === "object") for (const [k, x] of Object.entries(v)) walk(x, `${path}.${k}`);
+    };
+    walk(u, u.id);
+  }
   for (const t of u.tags ?? []) if (!TAGS.includes(t)) err(name, `tag "${t}" tidak dikenal`);
   for (const k of ["items", "grammar", "listening", "reading", "writing", "speaking", "conversation"])
     if (!Array.isArray(u[k]) || !u[k].length) err(name, `bagian "${k}" kosong`);
@@ -69,9 +97,12 @@ for (const { file, u } of units) {
   for (const it of u.items ?? []) {
     own(it.id, "item");
     if (!TYPES.includes(it.type)) err(name, `${it.id}: type "${it.type}" tidak dikenal`);
-    for (const k of ["term", "meaning", "example", "example_id", "cloze", "answer"])
+    const needCloze = it.type !== "kana";
+    for (const k of ["term", "meaning", "example", "example_id", ...(needCloze ? ["cloze", "answer"] : [])])
       if (!it[k]) err(name, `${it.id}: "${k}" kosong`);
-    if ((it.cloze ?? "").split("____").length !== 2)
+    if (!needCloze && !it.cloze) {
+      // Item huruf kana: cukup huruf, bunyi (romaji), dan kata contoh.
+    } else if ((it.cloze ?? "").split("____").length !== 2)
       err(name, `${it.id}: cloze harus berisi tepat satu ____`);
     else if (it.cloze.replace("____", it.answer) !== it.example)
       err(name, `${it.id}: cloze + answer ≠ example\n    "${it.cloze.replace("____", it.answer)}"\n    "${it.example}"`);
@@ -105,6 +136,14 @@ for (const { file, u } of units) {
   for (const r of u.reading ?? []) {
     own(r.id, "reading");
     for (const g of r.glossary ?? []) {
+      if (ja) {
+        // Glosarium Jepang dicocokkan per token (bisa diketuk di halaman Reading).
+        const want = normJa(g.term);
+        if (!tokensJa(r.text).some((t) => normJa(t) === want))
+          err(name, `${r.id}: glosarium "${g.term}" bukan salah satu token teks`);
+        if (g.item_id && !allItemIds.has(g.item_id)) err(name, `${r.id}: item_id "${g.item_id}" tidak ada`);
+        continue;
+      }
       const esc = g.term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
       if (!new RegExp(`\\b${esc}\\b`, "i").test(r.text)) err(name, `${r.id}: glosarium "${g.term}" tidak muncul di teks`);
       if (g.item_id && !allItemIds.has(g.item_id)) err(name, `${r.id}: item_id "${g.item_id}" tidak ada`);
@@ -115,6 +154,15 @@ for (const { file, u } of units) {
   // writing
   for (const w of u.writing ?? []) {
     own(w.id, "writing");
+    if (w.mode === "build") {
+      if (!w.sentences?.length) err(name, `${w.id}: kalimat susun kosong`);
+      for (const s of w.sentences ?? []) {
+        if (!s.id || !s.ja) err(name, `${w.id}: kalimat susun belum lengkap`);
+        else if (tokensJa(s.ja).filter((t) => !PUNCT_JA.test(t)).length < 2)
+          err(name, `${w.id}: "${s.ja}" perlu minimal 2 ubin (pisahkan token dengan spasi)`);
+      }
+      continue;
+    }
     if (!(w.min_words > 0 && w.max_words > w.min_words)) err(name, `${w.id}: rentang kata tidak valid`);
     const n = words(w.model_answer ?? "");
     if (n < w.min_words || n > w.max_words)
@@ -146,6 +194,15 @@ for (const { file, u } of units) {
       seen.add(id);
       const n = nodes[id];
       if (n.end) { reachesEnd = true; continue; }
+      if (n.choices) {
+        if (!n.choices.some((ch) => ch.ok !== false)) err(name, `${c.id}/${id}: tidak ada pilihan yang benar`);
+        for (const ch of n.choices) {
+          if (!nodes[ch.next]) err(name, `${c.id}/${id}: pilihan "${ch.text}" menuju "${ch.next}" yang tidak ada`);
+          if (ch.ok === false && !ch.feedback) err(name, `${c.id}/${id}: pilihan salah "${ch.text}" perlu feedback`);
+          stack.push(ch.next);
+        }
+        continue;
+      }
       if (!n.fallback) err(name, `${c.id}/${id}: tanpa fallback (dialog bisa macet)`);
       for (const r of n.replies ?? []) {
         if (!nodes[r.next]) err(name, `${c.id}/${id}: next "${r.next}" tidak ada`);
@@ -168,12 +225,14 @@ for (const { file } of units) {
   const rel = file.replace(/\\/g, "/").replace(/^content\//, "@content/");
   if (!contentTs.includes(rel)) err(file, `belum diimpor di src/lib/content.ts`);
 }
-const order = units.map(({ u }) => LEVELS.indexOf(u.level));
-for (let i = 1; i < order.length; i++)
-  if (order[i] < order[i - 1]) warn(units[i].u.id, "tingkat unit ini lebih rendah dari unit sebelumnya (cek urutan file)");
-
-const perLevel = Object.fromEntries(LEVELS.map((l) => [l, units.filter(({ u }) => u.level === l).length]));
-console.log(`${units.length} unit · ${allItemIds.size} kartu · per tingkat: ${LEVELS.map((l) => `${l}=${perLevel[l]}`).join(" ")}`);
+for (const [lang, LEVELS] of Object.entries(LEVELS_BY_LANG)) {
+  const list = units.filter(({ u }) => u.language === lang);
+  const order = list.map(({ u }) => LEVELS.indexOf(u.level));
+  for (let i = 1; i < order.length; i++)
+    if (order[i] < order[i - 1]) warn(list[i].u.id, "tingkat unit ini lebih rendah dari unit sebelumnya (cek urutan file)");
+  const cards = list.reduce((a, { u }) => a + (u.items?.length ?? 0), 0);
+  console.log(`${lang.toUpperCase()}: ${list.length} unit · ${cards} kartu · ${LEVELS.map((l) => `${l}=${list.filter(({ u }) => u.level === l).length}`).join(" ")}`);
+}
 for (const w of warnings) console.log(`peringatan  ${w}`);
 for (const e of errors) console.log(`KESALAHAN   ${e}`);
 if (errors.length) {

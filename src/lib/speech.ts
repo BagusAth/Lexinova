@@ -4,6 +4,7 @@
 // Pengenalan suara paling andal di Chrome dan Edge.
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { isJaMarkup, plain } from "./ja";
 
 function pickVoice(lang: string): SpeechSynthesisVoice | undefined {
   const voices = window.speechSynthesis.getVoices();
@@ -20,8 +21,9 @@ export function speak(
   return new Promise((resolve) => {
     if (typeof window === "undefined" || !("speechSynthesis" in window))
       return resolve();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = opts.lang ?? "en-US";
+    const ja = isJaMarkup(text);
+    const u = new SpeechSynthesisUtterance(ja ? plain(text) : text);
+    u.lang = opts.lang ?? (ja ? "ja-JP" : "en-US");
     u.rate = opts.rate ?? 1;
     const v = pickVoice(u.lang);
     if (v) u.voice = v;
@@ -29,6 +31,15 @@ export function speak(
     u.onerror = () => resolve();
     window.speechSynthesis.speak(u);
   });
+}
+
+/** Apakah browser punya suara untuk bahasa ini (mis. "ja-JP")? null = belum diketahui. */
+export function hasVoiceFor(lang: string): boolean | null {
+  if (typeof window === "undefined" || !("speechSynthesis" in window))
+    return false;
+  const voices = window.speechSynthesis.getVoices();
+  if (!voices.length) return null;
+  return voices.some((v) => v.lang.toLowerCase().startsWith(lang.slice(0, 2)));
 }
 
 export function stopSpeaking() {

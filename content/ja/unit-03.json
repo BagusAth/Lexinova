@@ -1,0 +1,474 @@
+{
+ "id": "ja-u03",
+ "language": "ja",
+ "level": "N5",
+ "title": "Perkenalan diri",
+ "theme": "Nama, asal, pekerjaan, dan hobi",
+ "tags": [
+  "karier",
+  "budaya",
+  "jlpt"
+ ],
+ "items": [
+  {
+   "id": "ja-u03-i01",
+   "type": "word",
+   "term": "{私|わたし}",
+   "meaning": "saya",
+   "example": "{私|わたし} は バグス です 。",
+   "example_id": "Saya Bagus.",
+   "cloze": "____ は バグス です 。",
+   "answer": "{私|わたし}"
+  },
+  {
+   "id": "ja-u03-i02",
+   "type": "pattern",
+   "term": "はじめまして",
+   "meaning": "salam kenal (saat pertama bertemu)",
+   "example": "はじめまして 、 バグス です 。",
+   "example_id": "Salam kenal, saya Bagus.",
+   "cloze": "____ 、 バグス です 。",
+   "answer": "はじめまして"
+  },
+  {
+   "id": "ja-u03-i03",
+   "type": "pattern",
+   "term": "よろしく おねがいします",
+   "meaning": "senang berkenalan; mohon kerja samanya",
+   "example": "どうぞ よろしく おねがいします 。",
+   "example_id": "Senang berkenalan dengan Anda.",
+   "cloze": "どうぞ よろしく ____ 。",
+   "answer": "おねがいします",
+   "note": "Diucapkan di akhir perkenalan, juga saat memulai kerja sama."
+  },
+  {
+   "id": "ja-u03-i04",
+   "type": "word",
+   "term": "〜{人|じん}",
+   "meaning": "orang (dari negara) ...",
+   "example": "インドネシア {人|じん} です 。",
+   "example_id": "Saya orang Indonesia.",
+   "cloze": "インドネシア ____ です 。",
+   "answer": "{人|じん}"
+  },
+  {
+   "id": "ja-u03-i05",
+   "type": "word",
+   "term": "{会社員|かいしゃいん}",
+   "meaning": "karyawan perusahaan",
+   "example": "{私|わたし} は {会社員|かいしゃいん} です 。",
+   "example_id": "Saya karyawan perusahaan.",
+   "cloze": "{私|わたし} は ____ です 。",
+   "answer": "{会社員|かいしゃいん}"
+  },
+  {
+   "id": "ja-u03-i06",
+   "type": "word",
+   "term": "エンジニア",
+   "meaning": "insinyur; engineer",
+   "example": "ウェブ の エンジニア です 。",
+   "example_id": "Saya engineer web.",
+   "cloze": "ウェブ の ____ です 。",
+   "answer": "エンジニア"
+  },
+  {
+   "id": "ja-u03-i07",
+   "type": "word",
+   "term": "{仕事|しごと}",
+   "meaning": "pekerjaan",
+   "example": "{仕事|しごと} は {何|なん} です か ？",
+   "example_id": "Apa pekerjaanmu?",
+   "cloze": "____ は {何|なん} です か ？",
+   "answer": "{仕事|しごと}"
+  },
+  {
+   "id": "ja-u03-i08",
+   "type": "word",
+   "term": "{趣味|しゅみ}",
+   "meaning": "hobi",
+   "example": "{趣味|しゅみ} は アニメ です 。",
+   "example_id": "Hobi saya anime.",
+   "cloze": "____ は アニメ です 。",
+   "answer": "{趣味|しゅみ}"
+  },
+  {
+   "id": "ja-u03-i09",
+   "type": "word",
+   "term": "{好|す}き",
+   "meaning": "suka",
+   "example": "{日本|にほん} の {音楽|おんがく} が {好|す}き です 。",
+   "example_id": "Saya suka musik Jepang.",
+   "cloze": "{日本|にほん} の {音楽|おんがく} が ____ です 。",
+   "answer": "{好|す}き",
+   "note": "Benda yang disukai ditandai が, bukan を."
+  },
+  {
+   "id": "ja-u03-i10",
+   "type": "word",
+   "term": "{日本語|にほんご}",
+   "meaning": "bahasa Jepang",
+   "example": "{日本語|にほんご} を {勉強|べんきょう} して います 。",
+   "example_id": "Saya sedang belajar bahasa Jepang.",
+   "cloze": "____ を {勉強|べんきょう} して います 。",
+   "answer": "{日本語|にほんご}"
+  },
+  {
+   "id": "ja-u03-i11",
+   "type": "word",
+   "term": "どこ",
+   "meaning": "di mana; mana",
+   "example": "どこ から {来|き}ました か ？",
+   "example_id": "Anda datang dari mana?",
+   "cloze": "____ から {来|き}ました か ？",
+   "answer": "どこ"
+  },
+  {
+   "id": "ja-u03-i12",
+   "type": "word",
+   "term": "{名前|なまえ}",
+   "meaning": "nama",
+   "example": "お{名前|なまえ} は ？",
+   "example_id": "Siapa nama Anda?",
+   "cloze": "お____ は ？",
+   "answer": "{名前|なまえ}",
+   "note": "Tambahan お membuat lebih sopan saat menanyakan nama orang lain."
+  }
+ ],
+ "grammar": [
+  {
+   "id": "ja-u03-g01",
+   "title": "Pola A は B です",
+   "explanation": "は (dibaca 'wa') menandai topik, dan です membuat kalimat sopan: 'A adalah B'. Untuk menyangkal, ganti です dengan じゃ ありません.",
+   "examples": [
+    "{私|わたし} は {会社員|かいしゃいん} です 。",
+    "バグス さん は インドネシア {人|じん} です 。",
+    "{私|わたし} は {学生|がくせい} じゃ ありません 。"
+   ],
+   "common_mistake": {
+    "wrong": "{私|わたし} わ バグス です 。",
+    "right": "{私|わたし} は バグス です 。"
+   }
+  },
+  {
+   "id": "ja-u03-g02",
+   "title": "Kalimat tanya dengan か",
+   "explanation": "Cukup tambahkan か di akhir kalimat untuk bertanya. Susunan kata tidak dibalik seperti dalam bahasa Inggris.",
+   "examples": [
+    "{会社員|かいしゃいん} です か ？",
+    "{仕事|しごと} は {何|なん} です か ？",
+    "どこ から {来|き}ました か ？"
+   ],
+   "common_mistake": {
+    "wrong": "です {会社員|かいしゃいん} か ？",
+    "right": "{会社員|かいしゃいん} です か ？"
+   }
+  },
+  {
+   "id": "ja-u03-g03",
+   "title": "Partikel の",
+   "explanation": "の menghubungkan dua kata benda: 'B milik A' atau 'B tentang A'. Urutannya kebalikan bahasa Indonesia: 私の名前 = nama saya.",
+   "examples": [
+    "{私|わたし} の {名前|なまえ}",
+    "{日本|にほん} の アニメ",
+    "ウェブ の エンジニア"
+   ],
+   "common_mistake": {
+    "wrong": "{名前|なまえ} の {私|わたし} は バグス です 。",
+    "right": "{私|わたし} の {名前|なまえ} は バグス です 。"
+   }
+  }
+ ],
+ "listening": [
+  {
+   "id": "ja-u03-l01",
+   "title": "Perkenalan di kantor",
+   "speakers": [
+    {
+     "name": "Tanaka",
+     "voice": "ja-JP"
+    },
+    {
+     "name": "Bagus",
+     "voice": "ja-JP"
+    }
+   ],
+   "lines": [
+    {
+     "speaker": "Tanaka",
+     "text": "はじめまして 。 {田中|たなか} です 。"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "はじめまして 。 バグス です 。 インドネシア {人|じん} です 。"
+    },
+    {
+     "speaker": "Tanaka",
+     "text": "バグス さん の お{仕事|しごと} は {何|なん} です か ？"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "ウェブ の エンジニア です 。"
+    },
+    {
+     "speaker": "Tanaka",
+     "text": "そう です か 。 {趣味|しゅみ} は {何|なん} です か ？"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "アニメ と {旅行|りょこう} です 。 どうぞ よろしく おねがいします 。"
+    }
+   ],
+   "dictation": [
+    1,
+    3,
+    5
+   ],
+   "questions": [
+    {
+     "q": "Dari mana Bagus berasal?",
+     "options": [
+      "Jepang",
+      "Indonesia",
+      "Singapura"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Apa pekerjaan Bagus?",
+     "options": [
+      "Guru",
+      "Engineer web",
+      "Pelajar"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Apa hobi Bagus?",
+     "options": [
+      "Anime dan traveling",
+      "Musik dan olahraga",
+      "Memasak"
+     ],
+     "answer": 0,
+     "explain": "「旅行」 (ryokou) = perjalanan, traveling."
+    }
+   ]
+  }
+ ],
+ "reading": [
+  {
+   "id": "ja-u03-r01",
+   "title": "Profil di aplikasi tukar bahasa",
+   "text": "はじめまして 。 {私|わたし} は バグス です 。 インドネシア {人|じん} です 。 {仕事|しごと} は ウェブ の エンジニア です 。 {趣味|しゅみ} は アニメ と {旅行|りょこう} です 。 {日本|にほん} の {音楽|おんがく} も {好|す}き です 。 {今|いま} 、 {日本語|にほんご} を {勉強|べんきょう} して います 。 どうぞ よろしく おねがいします 。",
+   "glossary": [
+    {
+     "term": "{仕事|しごと}",
+     "meaning": "pekerjaan",
+     "item_id": "ja-u03-i07"
+    },
+    {
+     "term": "{趣味|しゅみ}",
+     "meaning": "hobi",
+     "item_id": "ja-u03-i08"
+    },
+    {
+     "term": "{旅行|りょこう}",
+     "meaning": "perjalanan; traveling"
+    },
+    {
+     "term": "{音楽|おんがく}",
+     "meaning": "musik"
+    },
+    {
+     "term": "{今|いま}",
+     "meaning": "sekarang"
+    },
+    {
+     "term": "{勉強|べんきょう}",
+     "meaning": "belajar"
+    },
+    {
+     "term": "{日本語|にほんご}",
+     "meaning": "bahasa Jepang",
+     "item_id": "ja-u03-i10"
+    }
+   ],
+   "questions": [
+    {
+     "q": "Apa pekerjaan penulis?",
+     "options": [
+      "Engineer web",
+      "Guru bahasa Jepang",
+      "Penerjemah"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Apa yang sedang ia pelajari sekarang?",
+     "options": [
+      "Bahasa Inggris",
+      "Bahasa Jepang",
+      "Musik"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Selain anime dan traveling, apa yang juga ia suka?",
+     "options": [
+      "Musik Jepang",
+      "Makanan Jepang",
+      "Olahraga"
+     ],
+     "answer": 0,
+     "explain": "「も」 = juga."
+    }
+   ]
+  }
+ ],
+ "writing": [
+  {
+   "id": "ja-u03-w01",
+   "mode": "build",
+   "prompt": "Terjemahkan dengan menyusun ubin kata.",
+   "sentences": [
+    {
+     "id": "Saya karyawan perusahaan.",
+     "ja": "{私|わたし} は {会社員|かいしゃいん} です 。"
+    },
+    {
+     "id": "Hobi saya anime.",
+     "ja": "{趣味|しゅみ} は アニメ です 。"
+    },
+    {
+     "id": "Senang berkenalan dengan Anda.",
+     "ja": "どうぞ よろしく おねがいします 。"
+    },
+    {
+     "id": "Saya sedang belajar bahasa Jepang.",
+     "ja": "{日本語|にほんご} を {勉強|べんきょう} して います 。"
+    },
+    {
+     "id": "Apa pekerjaan Anda?",
+     "ja": "お{仕事|しごと} は {何|なん} です か ？"
+    }
+   ]
+  }
+ ],
+ "speaking": [
+  {
+   "id": "ja-u03-s01",
+   "mode": "shadowing",
+   "sentences": [
+    "はじめまして 。",
+    "{私|わたし} は バグス です 。",
+    "インドネシア {人|じん} です 。",
+    "ウェブ の エンジニア です 。",
+    "{趣味|しゅみ} は アニメ です 。",
+    "どうぞ よろしく おねがいします 。"
+   ],
+   "focus": "Bahasa Jepang punya ketukan rata (mora). よろしく dibaca yo-ro-shi-ku dengan 'shi' sangat ringan."
+  },
+  {
+   "id": "ja-u03-s02",
+   "mode": "answer",
+   "prompt": "Jikoshoukai (perkenalan diri) dalam 4 sampai 5 kalimat: salam, nama, pekerjaan, hobi, lalu tutup dengan yoroshiku.",
+   "sample_answer": "はじめまして 。 バグス です 。 ウェブ の エンジニア です 。 {趣味|しゅみ} は アニメ と {旅行|りょこう} です 。 どうぞ よろしく おねがいします 。"
+  }
+ ],
+ "conversation": [
+  {
+   "id": "ja-u03-c01",
+   "title": "Perkenalan di meetup",
+   "role_you": "Kamu",
+   "role_them": "Sato-san, peserta meetup",
+   "start": "n1",
+   "nodes": {
+    "n1": {
+     "them": "はじめまして 。 {佐藤|さとう} です 。",
+     "hints": [
+      "Salam kenal. Saya Sato."
+     ],
+     "choices": [
+      {
+       "text": "はじめまして 。 バグス です 。",
+       "next": "n2",
+       "ok": true
+      },
+      {
+       "text": "さようなら 。",
+       "next": "n2",
+       "ok": false,
+       "feedback": "「さようなら」 = selamat tinggal. Saat pertama bertemu pakai 「はじめまして」."
+      }
+     ]
+    },
+    "n2": {
+     "them": "バグス さん は どこ から {来|き}ました か ？",
+     "hints": [
+      "Bagus-san datang dari mana?"
+     ],
+     "choices": [
+      {
+       "text": "インドネシア から {来|き}ました 。",
+       "next": "n3",
+       "ok": true
+      },
+      {
+       "text": "{日本語|にほんご} です 。",
+       "next": "n3",
+       "ok": false,
+       "feedback": "Pertanyaannya 'dari mana'. Jawab: 「インドネシアから来ました」."
+      }
+     ]
+    },
+    "n3": {
+     "them": "お{仕事|しごと} は ？",
+     "hints": [
+      "Pekerjaannya apa?"
+     ],
+     "choices": [
+      {
+       "text": "ウェブ の エンジニア です 。",
+       "next": "n4",
+       "ok": true
+      },
+      {
+       "text": "{会社員|かいしゃいん} です 。",
+       "next": "n4",
+       "ok": true
+      },
+      {
+       "text": "アニメ が {好|す}き です 。",
+       "next": "n4",
+       "ok": false,
+       "feedback": "Itu hobi. Untuk pekerjaan: 「エンジニアです」 atau 「会社員です」."
+      }
+     ]
+    },
+    "n4": {
+     "them": "そう です か 。 {日本語|にほんご} 、 じょうず です ね ！",
+     "hints": [
+      "Oh begitu. Bahasa Jepangmu bagus ya!"
+     ],
+     "choices": [
+      {
+       "text": "いいえ 、 まだまだ です 。",
+       "next": "end",
+       "ok": true
+      },
+      {
+       "text": "はい 、 じょうず です 。",
+       "next": "end",
+       "ok": false,
+       "feedback": "Orang Jepang biasanya merendah saat dipuji: 「いいえ、まだまだです」 (belum, masih belajar)."
+      }
+     ]
+    },
+    "end": {
+     "them": "これから よろしく おねがいします 。",
+     "end": true
+    }
+   }
+  }
+ ]
+}

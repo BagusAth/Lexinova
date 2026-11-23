@@ -6,6 +6,14 @@ import { addResult, markDone, useProgress } from "@/lib/progress";
 import { speak } from "@/lib/speech";
 import { addToReview } from "@/lib/srs";
 import type { Reading } from "@/lib/types";
+import {
+  isJaMarkup,
+  needsSpace,
+  normalizeJa,
+  plain,
+  splitTokens,
+} from "@/lib/ja";
+import { JaToken, T } from "@/components/T";
 import { Quiz } from "@/components/Quiz";
 import { SkillDone } from "@/components/SkillDone";
 import {
@@ -35,6 +43,17 @@ export default function ReadingPage() {
 }
 
 type Gloss = Reading["glossary"][number];
+
+/**
+ * Teks Jepang: pecah per token (markup dipisah spasi). Token yang cocok dengan
+ * glosarium bisa diketuk. Pencocokan memakai teks tanpa furigana/tanda kutip.
+ */
+function segmentJa(text: string, glossary: Gloss[]): { tok: string; g?: Gloss }[] {
+  return splitTokens(text).map((tok) => ({
+    tok,
+    g: glossary.find((x) => normalizeJa(x.term) === normalizeJa(tok)),
+  }));
+}
 
 /** Pecah teks jadi potongan biasa dan potongan glosarium (yang bisa diklik). */
 function segment(text: string, glossary: Gloss[]): (string | Gloss)[] {
@@ -70,8 +89,16 @@ function ReadingExercise({
   const [open, setOpen] = useState<Gloss | null>(null);
   const [added, setAdded] = useState(0);
   const [score, setScore] = useState("");
+  const ja = isJaMarkup(ex.text);
   const parts = useMemo(() => segment(ex.text, ex.glossary), [ex]);
-  const minutes = Math.max(1, Math.round(ex.text.split(/\s+/).length / 120));
+  const jaParts = useMemo(
+    () => (ja ? segmentJa(ex.text, ex.glossary) : []),
+    [ex, ja],
+  );
+  // Bahasa Jepang: ±300 karakter per menit untuk pemula.
+  const minutes = ja
+    ? Math.max(1, Math.round(plain(ex.text).length / 300))
+    : Math.max(1, Math.round(ex.text.split(/\s+/).length / 120));
 
   if (phase === "done")
     return (
@@ -104,8 +131,43 @@ function ReadingExercise({
     <>
       <TopBar left={`Reading · ${level}`} right={`${minutes} menit`} />
       <div className="text-2xl font-extrabold">{ex.title}</div>
-      <Muted>Ketuk kata bergaris untuk melihat artinya.</Muted>
+      <Muted>
+        Ketuk kata bergaris untuk melihat artinya.
+        {ja && " Furigana di atas kanji menunjukkan cara bacanya."}
+      </Muted>
       <Card>
+        {ja ? (
+          <p lang="ja" className="ja text-xl leading-[2.6]">
+            {jaParts.map(({ tok, g }, i) => {
+              const gap =
+                i > 0 &&
+                needsSpace(plain(jaParts[i - 1].tok), plain(tok))
+                  ? " "
+                  : "";
+              return g ? (
+                <Fragment key={i}>
+                  {gap}
+                  <button
+                    type="button"
+                    onClick={() => setOpen(g)}
+                    className={`underline decoration-dotted decoration-2 underline-offset-[6px] transition ${
+                      open?.term === g.term
+                        ? "rounded-sm bg-primary/30 decoration-cyan"
+                        : "decoration-lavender/70 hover:text-lavender"
+                    }`}
+                  >
+                    <JaToken tok={tok} />
+                  </button>
+                </Fragment>
+              ) : (
+                <Fragment key={i}>
+                  {gap}
+                  <JaToken tok={tok} />
+                </Fragment>
+              );
+            })}
+          </p>
+        ) : (
         <p className="text-[17px] leading-8">
           {parts.map((part, i) =>
             typeof part === "string" ? (
@@ -126,16 +188,21 @@ function ReadingExercise({
             ),
           )}
         </p>
+        )}
       </Card>
 
       {open && (
         <Card key={open.term} className="border-lavender/40">
           <div>
-            <span className="font-semibold text-lavender">{open.term}</span> ·{" "}
-            {open.meaning}
+            <span className="text-lg font-semibold text-lavender">
+              <T>{open.term}</T>
+            </span>{" "}
+            · {open.meaning}
           </div>
           {openItem && (
-            <Muted className="mt-1">&ldquo;{openItem.example}&rdquo;</Muted>
+            <Muted className="mt-1">
+              <T>{openItem.example}</T>
+            </Muted>
           )}
           <div className="mt-3 flex flex-wrap gap-2">
             {open.item_id &&

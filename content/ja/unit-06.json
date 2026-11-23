@@ -1,0 +1,468 @@
+{
+ "id": "ja-u06",
+ "language": "ja",
+ "level": "N4",
+ "title": "Hobi, anime, dan rencana akhir pekan",
+ "theme": "Keinginan, pengalaman, dan pendapat",
+ "tags": [
+  "budaya",
+  "travel",
+  "jlpt"
+ ],
+ "items": [
+  {
+   "id": "ja-u06-i01",
+   "type": "pattern",
+   "term": "〜たい",
+   "meaning": "ingin ...",
+   "example": "{秋葉原|あきはばら} に {行|い}きたい です 。",
+   "example_id": "Saya ingin pergi ke Akihabara.",
+   "cloze": "{秋葉原|あきはばら} に ____ です 。",
+   "answer": "{行|い}きたい"
+  },
+  {
+   "id": "ja-u06-i02",
+   "type": "pattern",
+   "term": "〜た こと が あります",
+   "meaning": "pernah ...",
+   "example": "{温泉|おんせん} に {入|はい}った こと が あります か ？",
+   "example_id": "Apakah kamu pernah berendam di onsen?",
+   "cloze": "{温泉|おんせん} に ____ こと が あります か ？",
+   "answer": "{入|はい}った"
+  },
+  {
+   "id": "ja-u06-i03",
+   "type": "pattern",
+   "term": "〜と {思|おも}います",
+   "meaning": "menurut saya ...",
+   "example": "この アニメ は {面白|おもしろ}い と {思|おも}います 。",
+   "example_id": "Menurut saya anime ini menarik.",
+   "cloze": "この アニメ は {面白|おもしろ}い と ____ 。",
+   "answer": "{思|おも}います"
+  },
+  {
+   "id": "ja-u06-i04",
+   "type": "pattern",
+   "term": "〜つもり です",
+   "meaning": "berencana ...",
+   "example": "{週末|しゅうまつ} は {映画|えいが} を {見|み}る つもり です 。",
+   "example_id": "Akhir pekan saya berencana menonton film.",
+   "cloze": "{週末|しゅうまつ} は {映画|えいが} を {見|み}る ____ です 。",
+   "answer": "つもり"
+  },
+  {
+   "id": "ja-u06-i05",
+   "type": "word",
+   "term": "{面白|おもしろ}い",
+   "meaning": "menarik; lucu",
+   "example": "この {漫画|まんが} は とても {面白|おもしろ}い です 。",
+   "example_id": "Manga ini sangat menarik.",
+   "cloze": "この {漫画|まんが} は とても ____ です 。",
+   "answer": "{面白|おもしろ}い"
+  },
+  {
+   "id": "ja-u06-i06",
+   "type": "word",
+   "term": "{週末|しゅうまつ}",
+   "meaning": "akhir pekan",
+   "example": "{週末|しゅうまつ} 、 {何|なに} を します か ？",
+   "example_id": "Akhir pekan mau ngapain?",
+   "cloze": "____ 、 {何|なに} を します か ？",
+   "answer": "{週末|しゅうまつ}"
+  },
+  {
+   "id": "ja-u06-i07",
+   "type": "word",
+   "term": "{声優|せいゆう}",
+   "meaning": "pengisi suara (anime)",
+   "example": "{好|す}き な {声優|せいゆう} は {誰|だれ} です か ？",
+   "example_id": "Siapa pengisi suara favoritmu?",
+   "cloze": "{好|す}き な ____ は {誰|だれ} です か ？",
+   "answer": "{声優|せいゆう}"
+  },
+  {
+   "id": "ja-u06-i08",
+   "type": "pattern",
+   "term": "{一緒|いっしょ} に 〜ません か",
+   "meaning": "mau ... bersama?",
+   "example": "{一緒|いっしょ} に カラオケ に {行|い}きません か ？",
+   "example_id": "Mau pergi karaoke bersama?",
+   "cloze": "____ に カラオケ に {行|い}きません か ？",
+   "answer": "{一緒|いっしょ}",
+   "note": "Ajakan yang sopan: memakai bentuk negatif ません + か."
+  },
+  {
+   "id": "ja-u06-i09",
+   "type": "word",
+   "term": "{季節|きせつ}",
+   "meaning": "musim",
+   "example": "{一番|いちばん} {好|す}き な {季節|きせつ} は {秋|あき} です 。",
+   "example_id": "Musim yang paling saya suka adalah musim gugur.",
+   "cloze": "{一番|いちばん} {好|す}き な ____ は {秋|あき} です 。",
+   "answer": "{季節|きせつ}"
+  },
+  {
+   "id": "ja-u06-i10",
+   "type": "word",
+   "term": "{予約|よやく}",
+   "meaning": "reservasi",
+   "example": "ホテル を {予約|よやく} しました 。",
+   "example_id": "Saya sudah memesan hotel.",
+   "cloze": "ホテル を ____ しました 。",
+   "answer": "{予約|よやく}"
+  },
+  {
+   "id": "ja-u06-i11",
+   "type": "word",
+   "term": "{楽|たの}しみ",
+   "meaning": "menantikan; tidak sabar",
+   "example": "{旅行|りょこう} が {楽|たの}しみ です 。",
+   "example_id": "Saya tidak sabar menantikan perjalanannya.",
+   "cloze": "{旅行|りょこう} が ____ です 。",
+   "answer": "{楽|たの}しみ"
+  },
+  {
+   "id": "ja-u06-i12",
+   "type": "pattern",
+   "term": "〜し 、 〜し",
+   "meaning": "..., lagi pula ... (beberapa alasan)",
+   "example": "{京都|きょうと} は きれい だ し 、 {食|た}べ{物|もの} も おいしい です 。",
+   "example_id": "Kyoto itu indah, makanannya juga enak.",
+   "cloze": "{京都|きょうと} は きれい だ ____ 、 {食|た}べ{物|もの} も おいしい です 。",
+   "answer": "し"
+  }
+ ],
+ "grammar": [
+  {
+   "id": "ja-u06-g01",
+   "title": "Keinginan: 〜たい",
+   "explanation": "Bentuk ます tanpa ます + たい = ingin. 行きます → 行きたい, 見ます → 見たい. Untuk keinginan orang lain biasanya dipakai 〜たがっています.",
+   "examples": [
+    "{日本|にほん} に {行|い}きたい です 。",
+    "ラーメン が {食|た}べたい です 。",
+    "{何|なに} を {見|み}たい です か ？"
+   ],
+   "common_mistake": {
+    "wrong": "{日本|にほん} に {行|い}くたい です 。",
+    "right": "{日本|にほん} に {行|い}きたい です 。"
+   }
+  },
+  {
+   "id": "ja-u06-g02",
+   "title": "Pengalaman: 〜たことが あります",
+   "explanation": "Bentuk た (lampau santai) + こと が あります = pernah. Untuk 'belum pernah' pakai 〜たことがありません. Perhatikan bentuk た-nya: 行きます → 行った (bukan 行きた), 食べます → 食べた.",
+   "examples": [
+    "{寿司|すし} を {食|た}べた こと が あります 。",
+    "{日本|にほん} に {行|い}った こと が ありません 。",
+    "{着物|きもの} を {着|き}た こと が あります か ？"
+   ],
+   "common_mistake": {
+    "wrong": "{日本|にほん} に {行|い}きた こと が ありません 。",
+    "right": "{日本|にほん} に {行|い}った こと が ありません 。"
+   }
+  },
+  {
+   "id": "ja-u06-g03",
+   "title": "Pendapat: 〜と 思います",
+   "explanation": "Kalimat bentuk santai + と 思います = menurut saya. Untuk kata benda dan kata sifat な, tambahkan だ sebelum と: 雨だと思います, きれいだと思います.",
+   "examples": [
+    "{明日|あした} は {雨|あめ} だ と {思|おも}います 。",
+    "この {映画|えいが} は {面白|おもしろ}い と {思|おも}います 。",
+    "{田中|たなか} さん は {来|こ}ない と {思|おも}います 。"
+   ],
+   "common_mistake": {
+    "wrong": "{明日|あした} は {雨|あめ} と {思|おも}います 。",
+    "right": "{明日|あした} は {雨|あめ} だ と {思|おも}います 。"
+   }
+  }
+ ],
+ "listening": [
+  {
+   "id": "ja-u06-l01",
+   "title": "Rencana akhir pekan",
+   "speakers": [
+    {
+     "name": "Yuki",
+     "voice": "ja-JP"
+    },
+    {
+     "name": "Bagus",
+     "voice": "ja-JP"
+    }
+   ],
+   "lines": [
+    {
+     "speaker": "Yuki",
+     "text": "バグス さん 、 {週末|しゅうまつ} は {何|なに} を する つもり です か ？"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "{秋葉原|あきはばら} に {行|い}って 、 フィギュア を {見|み}たい です 。"
+    },
+    {
+     "speaker": "Yuki",
+     "text": "いい です ね 。 {秋葉原|あきはばら} に {行|い}った こと が あります か ？"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "いいえ 、 まだ {一度|いちど} も ありません 。 だから {楽|たの}しみ です 。"
+    },
+    {
+     "speaker": "Yuki",
+     "text": "じゃあ 、 {一緒|いっしょ} に {行|い}きません か ？ おいしい カレー の {店|みせ} も ある し 。"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "ぜひ ！ {土曜日|どようび} の {午後|ごご} は どう です か ？"
+    }
+   ],
+   "dictation": [
+    1,
+    3,
+    5
+   ],
+   "questions": [
+    {
+     "q": "Apa yang ingin Bagus lakukan di Akihabara?",
+     "options": [
+      "Melihat figur",
+      "Membeli kamera",
+      "Bekerja"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Apakah Bagus pernah ke Akihabara?",
+     "options": [
+      "Sudah sering",
+      "Belum pernah",
+      "Sekali"
+     ],
+     "answer": 1,
+     "explain": "「まだ一度もありません」 = belum pernah sekali pun."
+    },
+    {
+     "q": "Kapan Bagus mengusulkan pergi?",
+     "options": [
+      "Jumat malam",
+      "Sabtu siang",
+      "Minggu pagi"
+     ],
+     "answer": 1,
+     "explain": "「午後」 = siang sampai sore."
+    }
+   ]
+  }
+ ],
+ "reading": [
+  {
+   "id": "ja-u06-r01",
+   "title": "Blog: seichi junrei pertama",
+   "text": "{去年|きょねん} の {秋|あき} 、 {初|はじ}めて {日本|にほん} へ {行|い}きました 。 {一番|いちばん} {行|い}きたかった ところ は 、 {好|す}き な アニメ の {舞台|ぶたい} に なった {町|まち} です 。 アニメ で {見|み}た {駅|えき} や {神社|じんじゃ} が {本当|ほんとう} に あって 、 とても {感動|かんどう} しました 。 {町|まち} の {人|ひと} も やさしかった し 、 {食|た}べ{物|もの} も おいしかった です 。 こういう {旅行|りょこう} を 「{聖地巡礼|せいちじゅんれい}」 と {言|い}います 。 {次|つぎ} は {冬|ふゆ} に {行|い}って 、 {雪|ゆき} の {町|まち} を {見|み}たい と {思|おも}います 。",
+   "glossary": [
+    {
+     "term": "{舞台|ぶたい}",
+     "meaning": "latar (tempat cerita)"
+    },
+    {
+     "term": "{本当|ほんとう}",
+     "meaning": "benar-benar; sungguh"
+    },
+    {
+     "term": "{感動|かんどう}",
+     "meaning": "terharu; tersentuh"
+    },
+    {
+     "term": "やさしかった",
+     "meaning": "(dulu) ramah, baik hati"
+    },
+    {
+     "term": "{聖地巡礼|せいちじゅんれい}",
+     "meaning": "ziarah ke lokasi latar anime/film"
+    },
+    {
+     "term": "{次|つぎ}",
+     "meaning": "berikutnya"
+    },
+    {
+     "term": "{雪|ゆき}",
+     "meaning": "salju"
+    }
+   ],
+   "questions": [
+    {
+     "q": "Ke mana penulis paling ingin pergi?",
+     "options": [
+      "Kota yang menjadi latar anime favoritnya",
+      "Gunung Fuji",
+      "Menara Tokyo"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Apa itu 'seichi junrei'?",
+     "options": [
+      "Perjalanan ke lokasi latar anime atau film",
+      "Festival musim gugur",
+      "Kuil terkenal di Kyoto"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Kapan penulis ingin pergi lagi?",
+     "options": [
+      "Musim semi",
+      "Musim panas",
+      "Musim dingin"
+     ],
+     "answer": 2
+    }
+   ]
+  }
+ ],
+ "writing": [
+  {
+   "id": "ja-u06-w01",
+   "mode": "build",
+   "prompt": "Terjemahkan dengan menyusun ubin kata.",
+   "sentences": [
+    {
+     "id": "Saya ingin pergi ke Akihabara.",
+     "ja": "{秋葉原|あきはばら} に {行|い}きたい です 。"
+    },
+    {
+     "id": "Apakah kamu pernah berendam di onsen?",
+     "ja": "{温泉|おんせん} に {入|はい}った こと が あります か ？"
+    },
+    {
+     "id": "Menurut saya anime ini menarik.",
+     "ja": "この アニメ は {面白|おもしろ}い と {思|おも}います 。"
+    },
+    {
+     "id": "Mau pergi karaoke bersama?",
+     "ja": "{一緒|いっしょ} に カラオケ に {行|い}きません か ？"
+    },
+    {
+     "id": "Saya tidak sabar menantikan perjalanannya.",
+     "ja": "{旅行|りょこう} が {楽|たの}しみ です 。"
+    }
+   ]
+  }
+ ],
+ "speaking": [
+  {
+   "id": "ja-u06-s01",
+   "mode": "shadowing",
+   "sentences": [
+    "{秋葉原|あきはばら} に {行|い}きたい です 。",
+    "{温泉|おんせん} に {入|はい}った こと が あります か ？",
+    "この アニメ は {面白|おもしろ}い と {思|おも}います 。",
+    "{一緒|いっしょ} に カラオケ に {行|い}きません か ？",
+    "{旅行|りょこう} が {楽|たの}しみ です 。",
+    "{週末|しゅうまつ} は {映画|えいが} を {見|み}る つもり です 。"
+   ],
+   "focus": "Tsu kecil di 行った (itta) dan 一緒 (issho), serta nada naik di akhir ajakan 〜ませんか？"
+  },
+  {
+   "id": "ja-u06-s02",
+   "mode": "answer",
+   "prompt": "Ceritakan rencana akhir pekanmu dalam 3 kalimat: apa yang ingin kamu lakukan (〜たい), dengan siapa, dan kenapa (〜し、〜し).",
+   "sample_answer": "{週末|しゅうまつ} は {友達|ともだち} と {映画|えいが} を {見|み}る つもり です 。 {新|あたら}しい アニメ の {映画|えいが} が {見|み}たい です 。 {話|はなし} も {面白|おもしろ}い し 、 {音楽|おんがく} も いい し 、 とても {楽|たの}しみ です 。"
+  }
+ ],
+ "conversation": [
+  {
+   "id": "ja-u06-c01",
+   "title": "Mengajak teman menonton film",
+   "role_you": "Kamu",
+   "role_them": "Yuki, teman",
+   "start": "n1",
+   "nodes": {
+    "n1": {
+     "them": "{今週|こんしゅう} の {土曜日|どようび} 、 {暇|ひま} です か ？",
+     "hints": [
+      "Sabtu minggu ini, kamu senggang?"
+     ],
+     "choices": [
+      {
+       "text": "はい 、 {暇|ひま} です よ 。 どうして です か ？",
+       "next": "n2",
+       "ok": true
+      },
+      {
+       "text": "{午後|ごご} なら {大丈夫|だいじょうぶ} です 。",
+       "next": "n2",
+       "ok": true
+      },
+      {
+       "text": "はい 、 {暇|ひま} でした 。",
+       "next": "n2",
+       "ok": false,
+       "feedback": "Pakai bentuk sekarang 「暇です」, karena hari Sabtu belum terjadi."
+      }
+     ]
+    },
+    "n2": {
+     "them": "{一緒|いっしょ} に アニメ の {映画|えいが} を {見|み}に {行|い}きません か ？",
+     "hints": [
+      "Mau nonton film anime bersama?"
+     ],
+     "choices": [
+      {
+       "text": "いい です ね ！ {見|み}たい と {思|おも}って いました 。",
+       "next": "n3",
+       "ok": true
+      },
+      {
+       "text": "いいえ 、 {見|み}ません 。",
+       "next": "n3",
+       "ok": false,
+       "feedback": "Menolak terlalu langsung terdengar dingin. Lebih halus: 「すみません、土曜日はちょっと…」."
+      }
+     ]
+    },
+    "n3": {
+     "them": "その {映画|えいが} 、 もう {見|み}た こと が あります か ？",
+     "hints": [
+      "Kamu sudah pernah nonton film itu?"
+     ],
+     "choices": [
+      {
+       "text": "いいえ 、 まだ {見|み}た こと が ありません 。",
+       "next": "n4",
+       "ok": true
+      },
+      {
+       "text": "いいえ 、 {見|み}る こと が ありません 。",
+       "next": "n4",
+       "ok": false,
+       "feedback": "'Belum pernah' memakai bentuk た: 「見たことがありません」."
+      }
+     ]
+    },
+    "n4": {
+     "them": "じゃあ 、 {駅|えき} の {前|まえ} で {一時|いちじ} に {会|あ}いましょう 。",
+     "hints": [
+      "Kalau begitu, ketemu di depan stasiun jam satu."
+     ],
+     "choices": [
+      {
+       "text": "わかりました 。 {楽|たの}しみ に して います ！",
+       "next": "end",
+       "ok": true
+      },
+      {
+       "text": "はい 、 {一時|いちじ} に {行|い}きます 。",
+       "next": "end",
+       "ok": true
+      }
+     ]
+    },
+    "end": {
+     "them": "わたし も ！ じゃあ 、 また {土曜日|どようび} に 。",
+     "end": true
+    }
+   }
+  }
+ ]
+}

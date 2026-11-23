@@ -7,8 +7,8 @@ Semua materi disimpan sebagai file JSON di repo (`content/<bahasa>/unit-XX.json`
 ```
 {
   "id": "en-u01",            // <bahasa>-u<nomor>
-  "language": "en",          // en | ko | ja
-  "level": "B1",             // tingkat jalur: B1 | B1+ | B2 | B2+ | C1 (nanti TOPIK/JLPT untuk ko/ja)
+  "language": "en",          // en | ja (ko menyusul)
+  "level": "B1",             // en: B1 | B1+ | B2 | B2+ | C1 · ja: Kana | N5 | N4 | N3 | N2 | N1
   "title": "...",            // judul unit (bahasa Indonesia)
   "theme": "...",
   "tags": ["karier", ...],   // opsional: tujuan/minat untuk personalisasi (lihat di bawah)
@@ -45,8 +45,76 @@ Panduan isi per tingkat:
 
 ### tags
 
-Kunci tujuan: `karier`, `ielts`, `studi`, `travel`. Kunci minat: `teknologi`, `bisnis`, `desain`, `sains`.
+Kunci tujuan: `karier`, `ielts`, `studi`, `travel`, `jlpt`, `budaya`. Kunci minat: `teknologi`, `bisnis`, `desain`, `sains`.
 Tag yang cocok dengan profil di Pengaturan disorot di halaman Jalur.
+
+## Materi bahasa Jepang (`content/ja/`)
+
+Kursus Jepang memakai gaya Duolingo tanpa keyboard Jepang: isi celah berupa pilihan, dikte dan writing berupa susun ubin, dan conversation berupa pilihan balasan. Tingkatnya Kana → N5 → N4 → N3 → N2 → N1 (lihat `JA_LEVELS` di `src/lib/levels.ts`).
+
+### Markup teks Jepang
+
+Semua teks Jepang (term, example, cloze, answer, kalimat dialog, teks bacaan, contoh grammar) memakai dua aturan:
+
+1. **Token dipisah spasi.** Spasi tidak ditampilkan, tapi menentukan ubin di soal susun kalimat. Partikel dan tanda baca jadi token sendiri.
+2. **Kanji diberi bacaan** dengan `{漢字|かんじ}`. Furigana dan romaji dibuat otomatis dari bacaan ini, jadi romaji tidak perlu ditulis.
+
+```
+"{私|わたし} は {学生|がくせい} です 。"
+→ tampil: 私は学生です。 (furigana di atas kanji)
+→ romaji: watashi wa gakusei desu.
+→ ubin:   私 | は | 学生 | です
+```
+
+- Partikel は/へ/を otomatis dibaca wa/e/o bila berdiri sebagai token sendiri.
+- Kanji yang ditulis bersama okurigana: `{行|い}きます`, `{面白|おもしろ}い`.
+- Kutipan Jepang di dalam teks Indonesia ditulis tanpa spasi di dalam 「」, mis. `Apa arti 「またね」?`.
+- `cloze` boleh berada di dalam token: `"お____ は ？"` dengan `answer` `"{名前|なまえ}"`.
+
+### items jenis `kana`
+
+Untuk unit huruf (tingkat Kana): `type: "kana"`, `term` = huruf, `meaning` = bunyinya dalam romaji, `example` = kata contoh dengan huruf itu, `example_id` = artinya. `cloze` dan `answer` tidak perlu. Ujian unit kana memakai soal bunyi, pilih huruf, dan dengar-lalu-pilih.
+
+### writing mode `build`
+
+```
+{ "id": "...", "mode": "build", "prompt": "Terjemahkan dengan menyusun ubin kata.",
+  "sentences": [ { "id": "Saya pelajar.", "ja": "{私|わたし} は {学生|がくせい} です 。" } ] }
+```
+
+Kalimat Indonesia ditampilkan, lalu kalimat Jepang disusun dari ubin (ditambah kata pengecoh sesuai tingkat). Minimal 2 ubin per kalimat.
+
+### conversation dengan `choices`
+
+Node boleh memakai pilihan balasan alih-alih `replies`/`fallback`:
+
+```
+"n1": {
+  "them": "はじめまして 。 {佐藤|さとう} です 。",
+  "hints": ["Salam kenal. Saya Sato."],          // ditampilkan sebagai "Artinya:"
+  "choices": [
+    { "text": "はじめまして 。 バグス です 。", "next": "n2", "ok": true },
+    { "text": "さようなら 。", "next": "n2", "ok": false,
+      "feedback": "「さようなら」 = selamat tinggal. Saat pertama bertemu pakai 「はじめまして」." }
+  ]
+}
+```
+
+Setiap node wajib punya minimal satu pilihan `ok`, dan pilihan dengan `ok: false` wajib punya `feedback`.
+
+### glosarium bacaan
+
+`term` glosarium harus sama dengan salah satu token di `text` (dibandingkan tanpa furigana dan tanda kutip), misalnya token `{仕事|しごと}` dengan glosarium `"term": "{仕事|しごと}"`.
+
+Panduan tingkat Jepang:
+
+| Tingkat | Isi | Gaya tugas |
+|---|---|---|
+| Kana | hiragana, katakana, dakuten, huruf kecil | baca huruf, kata serapan, salam |
+| N5 | です/ます, partikel dasar, これ/それ, angka, arah | perkenalan, memesan, bertanya arah |
+| N4 | bentuk て/た/ない, izin, kewajiban, keinginan, pengalaman | kantor, rencana, hobi, opini |
+| N3–N2 | keigo, bentuk pasif/kausatif, kosakata berita | rapat, artikel, email kerja |
+| N1 | ungkapan formal dan tulisan | berita, esai, diskusi |
 
 ## items (kartu fondasi)
 

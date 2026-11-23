@@ -3,15 +3,19 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { UNITS } from "@/lib/content";
+import { switchCourse } from "@/lib/course";
 import {
+  activeLang,
+  COURSE_LIST,
   currentLevel,
   examHref,
   frontierUnit,
+  type Lang,
+  type Level,
   LESSON_COUNT,
   lessonsDone,
-  LEVELS,
-  levelIndex,
   levelReadyForExam,
+  levelsOf,
   NODE_ORDER,
   type NodeKey,
   nodeDone,
@@ -45,7 +49,7 @@ const NODE_LABEL: Record<NodeKey, string> = {
 };
 
 const NODE_SUB: Record<NodeKey, string> = {
-  fondasi: "Kosakata & kolokasi",
+  fondasi: "Kartu kosakata",
   grammar: "Penjelasan & cek singkat",
   listening: "Dialog dan dikte",
   reading: "Artikel pendek",
@@ -58,21 +62,20 @@ const NODE_SUB: Record<NodeKey, string> = {
 // Pola zigzag jalur (px dari tengah), seperti jalur Duolingo.
 const ZIG = [0, 52, 78, 52, 0, -52, -78];
 
-const LANGS = [
-  { code: "EN", name: "Bahasa Inggris", active: true, colors: ["#6C63FF", "#7DD3FC"] },
-  { code: "KO", name: "Bahasa Korea", active: false, colors: ["#fb7185", "#A99BFF"] },
-  { code: "JA", name: "Bahasa Jepang", active: false, colors: ["#fda4af", "#F4F3FF"] },
-];
-
 export default function Jalur() {
   const p = useProgress();
-  const [picked, setPicked] = useState<number | null>(null);
+  const [picked, setPicked] = useState<{ lang: Lang; i: number } | null>(null);
   if (!p) return <Loading />;
 
-  const cur = currentLevel(p);
-  const sel = picked ?? cur;
+  const lang = activeLang(p);
+  const levels = levelsOf(lang);
+  const cur = currentLevel(p, lang);
+  const sel = picked?.lang === lang ? picked.i : cur;
   const name = firstName(p);
-  const target = Math.max(0, levelIndex(p.settings.targetLevel));
+  const target = Math.max(
+    0,
+    levels.findIndex((l) => l.id === p.settings.targets[lang]),
+  );
 
   return (
     <>
@@ -84,27 +87,38 @@ export default function Jalur() {
         </p>
       </div>
 
-      <LevelHero p={p} cur={cur} target={target} />
+      <CourseSwitcher p={p} lang={lang} />
+
+      <LevelHero
+        key={lang}
+        p={p}
+        lang={lang}
+        levels={levels}
+        cur={cur}
+        target={target}
+      />
 
       {/* Tangga tingkat */}
       <section className="flex flex-col gap-3">
         <SectionTitle>Tingkat</SectionTitle>
         <div
-          className="-mx-5 flex gap-2 overflow-x-auto px-5 pb-1 sm:mx-0 sm:grid sm:grid-cols-5 sm:px-0"
+          key={lang}
+          className="-mx-5 flex gap-2 overflow-x-auto px-5 pb-1 sm:mx-0 sm:grid sm:px-0"
+          style={{ gridTemplateColumns: `repeat(${levels.length}, minmax(0, 1fr))` }}
           role="tablist"
           aria-label="Pilih tingkat"
         >
-          {LEVELS.map((l, i) => {
+          {levels.map((l, i) => {
             const passed = !!p.path.passedLevels[l.id];
             const isCur = i === cur && !passed;
-            const empty = unitsOfLevel(i).length === 0;
+            const empty = unitsOfLevel(i, lang).length === 0;
             return (
               <button
                 key={l.id}
                 type="button"
                 role="tab"
                 aria-selected={sel === i}
-                onClick={() => setPicked(i)}
+                onClick={() => setPicked({ lang, i })}
                 style={{ "--i": i } as React.CSSProperties}
                 className={`pop-in relative flex min-w-24 flex-col items-center gap-1 rounded-3xl px-3 py-3 ring-1 transition ${
                   sel === i
@@ -144,43 +158,85 @@ export default function Jalur() {
         </div>
       </section>
 
-      <LevelUnits p={p} li={sel} cur={cur} />
-
-      <section className="flex flex-col gap-3">
-        <SectionTitle>Bahasa</SectionTitle>
-        <div className="grid gap-2.5 sm:grid-cols-3">
-          {LANGS.map((l) => (
-            <div
-              key={l.code}
-              className={`flex items-center gap-3 rounded-3xl bg-surface p-4 shadow-soft ${l.active ? "" : "opacity-60"}`}
-            >
-              <span
-                className="grid size-11 shrink-0 place-items-center rounded-full text-sm font-extrabold text-ink"
-                style={{ background: `linear-gradient(135deg, ${l.colors[0]}, ${l.colors[1]})` }}
-              >
-                {l.code}
-              </span>
-              <div className="flex-1">
-                <div className="font-bold">{l.name}</div>
-                <div className="text-sm text-mute">
-                  {l.active ? `${LEVELS[cur].cefr} · ${LEVELS[cur].name}` : "Segera hadir"}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <LevelUnits p={p} lang={lang} levels={levels} li={sel} cur={cur} />
     </>
   );
 }
 
-function LevelHero({ p, cur, target }: { p: Progress; cur: number; target: number }) {
-  const l = LEVELS[cur];
-  const units = unitsOfLevel(cur);
+/** Pilih kursus bahasa. Unit terakhir tiap kursus diingat. */
+function CourseSwitcher({ p, lang }: { p: Progress; lang: Lang }) {
+  return (
+    <section
+      className="grid grid-cols-3 gap-2.5"
+      role="radiogroup"
+      aria-label="Kursus bahasa"
+    >
+      {COURSE_LIST.map((c) => {
+        const active = c.lang === lang;
+        const lv = levelsOf(c.lang)[currentLevel(p, c.lang)];
+        return (
+          <button
+            key={c.lang}
+            type="button"
+            role="radio"
+            aria-checked={active}
+            onClick={() => switchCourse(c.lang)}
+            className={`flex min-w-0 flex-col items-center gap-2 rounded-3xl p-3 text-center ring-1 transition active:scale-[0.98] sm:flex-row sm:p-4 sm:text-left ${
+              active
+                ? "bg-elevated ring-lavender/60"
+                : "bg-surface ring-transparent hover:ring-lavender/30"
+            }`}
+          >
+            <span
+              className="grid size-10 shrink-0 place-items-center rounded-full text-sm font-extrabold text-ink sm:size-11"
+              style={{ background: `linear-gradient(135deg, ${c.colors[0]}, ${c.colors[1]})` }}
+            >
+              {c.code}
+            </span>
+            <span className="w-full min-w-0">
+              <span className="block truncate font-bold">
+                {c.name.replace("Bahasa ", "")}
+              </span>
+              <span className="block truncate text-xs text-mute sm:text-sm">
+                {lv.cefr}
+                <span className="hidden sm:inline"> · {lv.name}</span>
+              </span>
+            </span>
+          </button>
+        );
+      })}
+      <div className="flex min-w-0 flex-col items-center gap-2 rounded-3xl bg-surface p-3 text-center opacity-60 sm:flex-row sm:p-4 sm:text-left">
+        <span className="grid size-10 shrink-0 place-items-center rounded-full bg-gradient-to-br from-[#fb7185] to-[#A99BFF] text-sm font-extrabold text-ink sm:size-11">
+          KO
+        </span>
+        <span className="w-full min-w-0">
+          <span className="block truncate font-bold">Korea</span>
+          <span className="block truncate text-xs text-mute sm:text-sm">Segera hadir</span>
+        </span>
+      </div>
+    </section>
+  );
+}
+
+function LevelHero({
+  p,
+  lang,
+  levels,
+  cur,
+  target,
+}: {
+  p: Progress;
+  lang: Lang;
+  levels: Level[];
+  cur: number;
+  target: number;
+}) {
+  const l = levels[cur];
+  const units = unitsOfLevel(cur, lang);
   const passedCount = units.filter((u) => unitPassed(p, u)).length;
-  const ready = levelReadyForExam(p, cur);
-  const next = LEVELS[cur + 1];
-  const allDone = LEVELS.every((x) => p.path.passedLevels[x.id]);
+  const ready = levelReadyForExam(p, cur, lang);
+  const next = levels[cur + 1];
+  const allDone = levels.every((x) => p.path.passedLevels[x.id]);
   const gap = target - cur;
 
   return (
@@ -199,8 +255,11 @@ function LevelHero({ p, cur, target }: { p: Progress; cur: number; target: numbe
         </h2>
         <p className="text-sm text-ink/85">{l.canDo}</p>
         <div className="flex flex-wrap gap-2 text-xs font-semibold">
-          <span className="rounded-full bg-white/15 px-2.5 py-1">≈ IELTS {l.ielts}</span>
-          <span className="rounded-full bg-white/15 px-2.5 py-1">≈ TOEFL iBT {l.toefl}</span>
+          {l.badges.map((b) => (
+            <span key={b} className="rounded-full bg-white/15 px-2.5 py-1">
+              {b}
+            </span>
+          ))}
         </div>
         {units.length > 0 ? (
           <div className="mt-1 flex items-center gap-2 text-xs font-semibold text-ink/85">
@@ -217,8 +276,8 @@ function LevelHero({ p, cur, target }: { p: Progress; cur: number; target: numbe
         )}
         <p className="text-sm font-semibold">
           {gap > 0
-            ? `Target: ${LEVELS[target].cefr} (IELTS ${LEVELS[target].ielts}), ${gap} tingkat lagi.`
-            : `Target ${LEVELS[target].cefr} tercapai. Mau pasang target baru di Pengaturan?`}
+            ? `Target: ${levels[target].cefr} (${levels[target].badges[0]}), ${gap} tingkat lagi.`
+            : `Target ${levels[target].cefr} tercapai. Mau pasang target baru di Pengaturan?`}
         </p>
         {units.length > 0 && !allDone && (
           <div className="mt-2 flex flex-wrap gap-2">
@@ -228,13 +287,11 @@ function LevelHero({ p, cur, target }: { p: Progress; cur: number; target: numbe
               className="w-fit px-6 py-2.5 md:min-w-0"
             >
               <Icon kind="trophy" size={18} />
-              {ready
-                ? next
+              {next
+                ? ready
                   ? `Ujian naik ke ${next.cefr}`
-                  : "Ujian akhir C1"
-                : next
-                  ? `Uji lompat ke ${next.cefr}`
-                  : "Ujian akhir C1"}
+                  : `Uji lompat ke ${next.cefr}`
+                : `Ujian akhir ${l.cefr}`}
             </ButtonLink>
           </div>
         )}
@@ -243,9 +300,21 @@ function LevelHero({ p, cur, target }: { p: Progress; cur: number; target: numbe
   );
 }
 
-function LevelUnits({ p, li, cur }: { p: Progress; li: number; cur: number }) {
-  const units = unitsOfLevel(li);
-  const l = LEVELS[li];
+function LevelUnits({
+  p,
+  lang,
+  levels,
+  li,
+  cur,
+}: {
+  p: Progress;
+  lang: Lang;
+  levels: Level[];
+  li: number;
+  cur: number;
+}) {
+  const units = unitsOfLevel(li, lang);
+  const l = levels[li];
   if (!units.length)
     return (
       <section className="flex flex-col items-center gap-2 rounded-3xl bg-surface p-8 text-center">
@@ -261,17 +330,17 @@ function LevelUnits({ p, li, cur }: { p: Progress; li: number; cur: number }) {
   return (
     <section className="flex flex-col gap-4">
       <SectionTitle
-        action={<span className="text-sm text-mute">≈ IELTS {l.ielts}</span>}
+        action={<span className="text-sm text-mute">{l.badges[0]}</span>}
       >
         Unit {l.cefr}
       </SectionTitle>
       {li > cur && (
         <p className="rounded-2xl bg-elevated px-4 py-3 text-sm text-mute">
-          Tingkat ini terbuka setelah kamu lulus Ujian Naik Tingkat {LEVELS[cur].cefr}. Sudah
+          Tingkat ini terbuka setelah kamu lulus Ujian Naik Tingkat {levels[cur].cefr}. Sudah
           merasa mampu? Ambil Uji Lompat di kartu atas.
         </p>
       )}
-      <div key={li} className="stagger grid grid-cols-1 gap-4 lg:grid-cols-2">
+      <div key={`${lang}-${li}`} className="stagger grid grid-cols-1 gap-4 lg:grid-cols-2">
         {units.map((u, i) => (
           <div key={u.id} style={{ "--i": i } as React.CSSProperties}>
             <UnitCard p={p} u={u} />
@@ -300,7 +369,7 @@ function UnitCard({ p, u }: { p: Progress; u: Unit }) {
   const isFrontier = frontierUnit(p).id === u.id;
   const [open, setOpen] = useState(isFrontier);
   const done = lessonsDone(p, u);
-  const number = UNITS.findIndex((x) => x.id === u.id) + 1;
+  const number = UNITS.filter((x) => x.language === u.language).findIndex((x) => x.id === u.id) + 1;
   const firstOpen = NODE_ORDER.find((k) => !nodeDone(p, u, k));
   const interests = new Set([...p.settings.goals, ...p.settings.interests]);
 

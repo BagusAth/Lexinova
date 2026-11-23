@@ -13,10 +13,12 @@ import {
   useProgress,
 } from "@/lib/progress";
 import {
+  activeLang,
+  COURSES,
   currentLevel,
   GOALS,
   INTERESTS,
-  LEVELS,
+  levelsOf,
 } from "@/lib/levels";
 import { sfx } from "@/lib/sfx";
 import { vocabCount } from "@/lib/stats";
@@ -191,7 +193,8 @@ export default function Pengaturan() {
             className="w-full rounded-xl bg-transparent px-1 py-0.5 text-xl font-extrabold outline-none placeholder:text-ink/60 focus:bg-white/10"
           />
           <div className="px-1 text-sm text-ink/80">
-            Inggris {LEVELS[currentLevel(p)].cefr} · {vocabCount(p)} kata ·{" "}
+            {COURSES[activeLang(p)].name} {levelsOf(activeLang(p))[currentLevel(p)].cefr} ·{" "}
+            {vocabCount(p, activeLang(p))} kata ·{" "}
             {streak(p)} hari streak
           </div>
         </div>
@@ -223,6 +226,17 @@ export default function Pengaturan() {
               label="Bacakan dialog otomatis"
               checked={p.settings.autoVoice}
               onChange={(v) => update((d) => void (d.settings.autoVoice = v))}
+            />
+          </Row>
+          <Row
+            icon="words"
+            title="Tampilkan romaji"
+            sub="Di bawah teks Jepang (Kana dan N5). Mulai N4 romaji otomatis disembunyikan."
+          >
+            <Toggle
+              label="Tampilkan romaji"
+              checked={p.settings.romaji}
+              onChange={(v) => update((d) => void (d.settings.romaji = v))}
             />
           </Row>
           <Row
@@ -261,32 +275,39 @@ export default function Pengaturan() {
             value={p.settings.interests}
             onChange={(v) => update((d) => void (d.settings.interests = v))}
           />
-          <div>
-            <div className="font-semibold">Target tingkat</div>
-            <div className="mb-2 text-sm text-mute">
-              Ditampilkan di Jalur sebagai tujuanmu, beserta perkiraan IELTS
+          {(["en", "ja"] as const).map((lang) => (
+            <div key={lang}>
+              <div className="font-semibold">Target {COURSES[lang].name}</div>
+              <div className="mb-2 text-sm text-mute">
+                Ditampilkan di Jalur sebagai tujuanmu
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {levelsOf(lang).map((l) => {
+                  const on = p.settings.targets[lang] === l.id;
+                  return (
+                    <button
+                      key={l.id}
+                      type="button"
+                      aria-pressed={on}
+                      onClick={() =>
+                        update((d) => void (d.settings.targets[lang] = l.id))
+                      }
+                      className={`rounded-2xl px-3 py-2 text-left text-sm transition ${
+                        on
+                          ? "bg-primary text-ink"
+                          : "bg-elevated text-mute hover:text-ink"
+                      }`}
+                    >
+                      <div className="font-bold">{l.cefr}</div>
+                      <div className="text-[11px] opacity-80">
+                        {l.badges[0].replace("≈ ", "")}
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
-            <div className="flex flex-wrap gap-2">
-              {LEVELS.map((l) => (
-                <button
-                  key={l.id}
-                  type="button"
-                  aria-pressed={p.settings.targetLevel === l.id}
-                  onClick={() =>
-                    update((d) => void (d.settings.targetLevel = l.id))
-                  }
-                  className={`rounded-2xl px-3 py-2 text-left text-sm transition ${
-                    p.settings.targetLevel === l.id
-                      ? "bg-primary text-ink"
-                      : "bg-elevated text-mute hover:text-ink"
-                  }`}
-                >
-                  <div className="font-bold">{l.cefr}</div>
-                  <div className="text-[11px] opacity-80">IELTS {l.ielts}</div>
-                </button>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 

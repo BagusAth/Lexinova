@@ -1,0 +1,467 @@
+{
+ "id": "ja-u05",
+ "language": "ja",
+ "level": "N4",
+ "title": "Bekerja di kantor Jepang",
+ "theme": "Minta tolong, minta izin, dan aturan kerja",
+ "tags": [
+  "karier",
+  "jlpt"
+ ],
+ "items": [
+  {
+   "id": "ja-u05-i01",
+   "type": "pattern",
+   "term": "〜て ください",
+   "meaning": "tolong ...",
+   "example": "{資料|しりょう} を {送|おく}って ください 。",
+   "example_id": "Tolong kirimkan dokumennya.",
+   "cloze": "{資料|しりょう} を ____ ください 。",
+   "answer": "{送|おく}って"
+  },
+  {
+   "id": "ja-u05-i02",
+   "type": "pattern",
+   "term": "〜て も いい です か",
+   "meaning": "bolehkah saya ...?",
+   "example": "{窓|まど} を {開|あ}けて も いい です か ？",
+   "example_id": "Bolehkah saya membuka jendela?",
+   "cloze": "{窓|まど} を {開|あ}けて も ____ です か ？",
+   "answer": "いい"
+  },
+  {
+   "id": "ja-u05-i03",
+   "type": "pattern",
+   "term": "〜なければ なりません",
+   "meaning": "harus ...",
+   "example": "{金曜日|きんようび} まで に {出|だ}さなければ なりません 。",
+   "example_id": "Harus diserahkan paling lambat hari Jumat.",
+   "cloze": "{金曜日|きんようび} まで に ____ なりません 。",
+   "answer": "{出|だ}さなければ"
+  },
+  {
+   "id": "ja-u05-i04",
+   "type": "word",
+   "term": "{会議|かいぎ}",
+   "meaning": "rapat",
+   "example": "{三時|さんじ} から {会議|かいぎ} が あります 。",
+   "example_id": "Ada rapat mulai jam tiga.",
+   "cloze": "{三時|さんじ} から ____ が あります 。",
+   "answer": "{会議|かいぎ}"
+  },
+  {
+   "id": "ja-u05-i05",
+   "type": "word",
+   "term": "{締|し}め{切|き}り",
+   "meaning": "tenggat",
+   "example": "{締|し}め{切|き}り は {来週|らいしゅう} です 。",
+   "example_id": "Tenggatnya minggu depan.",
+   "cloze": "____ は {来週|らいしゅう} です 。",
+   "answer": "{締|し}め{切|き}り"
+  },
+  {
+   "id": "ja-u05-i06",
+   "type": "word",
+   "term": "{遅|おく}れます",
+   "meaning": "terlambat",
+   "example": "{電車|でんしゃ} が {止|と}まった ので 、 {少|すこ}し {遅|おく}れます 。",
+   "example_id": "Karena keretanya berhenti, saya akan sedikit terlambat.",
+   "cloze": "{電車|でんしゃ} が {止|と}まった ので 、 {少|すこ}し ____ 。",
+   "answer": "{遅|おく}れます"
+  },
+  {
+   "id": "ja-u05-i07",
+   "type": "pattern",
+   "term": "お{先|さき} に {失礼|しつれい} します",
+   "meaning": "saya pamit duluan (di kantor)",
+   "example": "お{疲|つか}れ{様|さま} です 。 お{先|さき} に {失礼|しつれい} します 。",
+   "example_id": "Terima kasih atas kerja kerasnya. Saya pamit duluan.",
+   "cloze": "お{疲|つか}れ{様|さま} です 。 お{先|さき} に ____ します 。",
+   "answer": "{失礼|しつれい}",
+   "note": "お疲れ様です adalah salam sehari-hari antarrekan kerja."
+  },
+  {
+   "id": "ja-u05-i08",
+   "type": "word",
+   "term": "{確認|かくにん}",
+   "meaning": "pengecekan; konfirmasi",
+   "example": "{確認|かくにん} して から {返事|へんじ} します 。",
+   "example_id": "Saya akan membalas setelah mengeceknya.",
+   "cloze": "____ して から {返事|へんじ} します 。",
+   "answer": "{確認|かくにん}"
+  },
+  {
+   "id": "ja-u05-i09",
+   "type": "word",
+   "term": "{手伝|てつだ}います",
+   "meaning": "membantu",
+   "example": "{何|なに} か {手伝|てつだ}いましょう か ？",
+   "example_id": "Ada yang bisa saya bantu?",
+   "cloze": "{何|なに} か ____ か ？",
+   "answer": "{手伝|てつだ}いましょう"
+  },
+  {
+   "id": "ja-u05-i10",
+   "type": "word",
+   "term": "{休|やす}み",
+   "meaning": "libur; cuti",
+   "example": "{明日|あした} は {休|やす}み を {取|と}ります 。",
+   "example_id": "Besok saya mengambil cuti.",
+   "cloze": "{明日|あした} は ____ を {取|と}ります 。",
+   "answer": "{休|やす}み"
+  },
+  {
+   "id": "ja-u05-i11",
+   "type": "pattern",
+   "term": "〜ので",
+   "meaning": "karena ... (alasan, sopan)",
+   "example": "{熱|ねつ} が ある ので 、 {早|はや}く {帰|かえ}ります 。",
+   "example_id": "Karena demam, saya pulang lebih awal.",
+   "cloze": "{熱|ねつ} が ある ____ 、 {早|はや}く {帰|かえ}ります 。",
+   "answer": "ので",
+   "note": "Lebih halus daripada から saat memberi alasan ke atasan."
+  },
+  {
+   "id": "ja-u05-i12",
+   "type": "word",
+   "term": "{連絡|れんらく}",
+   "meaning": "kabar; menghubungi",
+   "example": "あとで {連絡|れんらく} します 。",
+   "example_id": "Nanti saya kabari.",
+   "cloze": "あとで ____ します 。",
+   "answer": "{連絡|れんらく}"
+  }
+ ],
+ "grammar": [
+  {
+   "id": "ja-u05-g01",
+   "title": "Bentuk て + ください: minta tolong",
+   "explanation": "Ubah kata kerja ke bentuk て, lalu tambahkan ください untuk meminta dengan sopan. 送ります → 送って, 見ます → 見て, します → して.",
+   "examples": [
+    "{資料|しりょう} を {送|おく}って ください 。",
+    "ちょっと {見|み}て ください 。",
+    "{確認|かくにん} して ください 。"
+   ],
+   "common_mistake": {
+    "wrong": "{資料|しりょう} を {送|おく}ります ください 。",
+    "right": "{資料|しりょう} を {送|おく}って ください 。"
+   }
+  },
+  {
+   "id": "ja-u05-g02",
+   "title": "Minta izin: 〜ても いいですか",
+   "explanation": "Bentuk て + も いい です か = 'bolehkah saya ...?'. Untuk melarang dengan sopan dipakai 〜ないでください (tolong jangan ...).",
+   "examples": [
+    "{写真|しゃしん} を {撮|と}って も いい です か ？",
+    "{今日|きょう} は {早|はや}く {帰|かえ}って も いい です か ？",
+    "ここ で {食|た}べないで ください 。"
+   ],
+   "common_mistake": {
+    "wrong": "{帰|かえ}る も いい です か ？",
+    "right": "{帰|かえ}って も いい です か ？"
+   }
+  },
+  {
+   "id": "ja-u05-g03",
+   "title": "Kewajiban: 〜なければ なりません",
+   "explanation": "Bentuk ない tanpa い + ければ なりません = 'harus'. 出さない → 出さなければなりません. Dalam percakapan santai sering disingkat 〜なきゃ.",
+   "examples": [
+    "{明日|あした} {早|はや}く {来|こ}なければ なりません 。",
+    "レポート を {書|か}かなければ なりません 。"
+   ],
+   "common_mistake": {
+    "wrong": "{出|だ}すなければ なりません 。",
+    "right": "{出|だ}さなければ なりません 。"
+   }
+  }
+ ],
+ "listening": [
+  {
+   "id": "ja-u05-l01",
+   "title": "Pagi di kantor Tokyo",
+   "speakers": [
+    {
+     "name": "Yamamoto",
+     "voice": "ja-JP"
+    },
+    {
+     "name": "Bagus",
+     "voice": "ja-JP"
+    }
+   ],
+   "lines": [
+    {
+     "speaker": "Yamamoto",
+     "text": "バグス さん 、 おはよう 。 {会議|かいぎ} の {資料|しりょう} 、 もう できました か ？"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "すみません 、 まだ です 。 お{昼|ひる} まで に {送|おく}ります 。"
+    },
+    {
+     "speaker": "Yamamoto",
+     "text": "わかりました 。 {会議|かいぎ} は {三時|さんじ} から です から 、 {遅|おく}れないで ください ね 。"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "はい 。 あの 、 {明日|あした} {休|やす}み を {取|と}って も いい です か ？"
+    },
+    {
+     "speaker": "Yamamoto",
+     "text": "{明日|あした} です か 。 どう しました か ？"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "{病院|びょういん} に {行|い}かなければ ならない ので 。"
+    },
+    {
+     "speaker": "Yamamoto",
+     "text": "そう です か 。 いい です よ 。 お{大事|だいじ} に 。"
+    }
+   ],
+   "dictation": [
+    1,
+    3,
+    5
+   ],
+   "questions": [
+    {
+     "q": "Kapan Bagus akan mengirim dokumennya?",
+     "options": [
+      "Sebelum siang",
+      "Sore hari",
+      "Besok"
+     ],
+     "answer": 0,
+     "explain": "「お昼までに」 = paling lambat siang."
+    },
+    {
+     "q": "Rapatnya mulai jam berapa?",
+     "options": [
+      "Jam satu",
+      "Jam tiga",
+      "Jam lima"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Kenapa Bagus mengambil cuti besok?",
+     "options": [
+      "Harus ke rumah sakit",
+      "Liburan",
+      "Menjemput keluarga"
+     ],
+     "answer": 0
+    }
+   ]
+  }
+ ],
+ "reading": [
+  {
+   "id": "ja-u05-r01",
+   "title": "Aturan tak tertulis di kantor Jepang",
+   "text": "{日本|にほん} の {会社|かいしゃ} で {働|はたら}く とき 、 {大切|たいせつ} な ルール が いくつか あります 。 まず 、 {時間|じかん} を {守|まも}らなければ なりません 。 {遅|おく}れる とき は 、 {必|かなら}ず {電話|でんわ} か メール で {連絡|れんらく} します 。 それから 、 「ほうれんそう」 と いう {言葉|ことば} が あります 。 {報告|ほうこく} 、 {連絡|れんらく} 、 {相談|そうだん} の こと です 。 {問題|もんだい} が ある とき は 、 {一人|ひとり} で {考|かんが}えないで 、 {早|はや}く {上司|じょうし} に {相談|そうだん} して ください 。 {帰|かえ}る とき は 「お{先|さき} に {失礼|しつれい} します」 と {言|い}います 。",
+   "glossary": [
+    {
+     "term": "{大切|たいせつ}",
+     "meaning": "penting"
+    },
+    {
+     "term": "{守|まも}らなければ",
+     "meaning": "harus menepati"
+    },
+    {
+     "term": "{必|かなら}ず",
+     "meaning": "pasti; selalu"
+    },
+    {
+     "term": "{連絡|れんらく}",
+     "meaning": "kabar; menghubungi",
+     "item_id": "ja-u05-i12"
+    },
+    {
+     "term": "{報告|ほうこく}",
+     "meaning": "laporan"
+    },
+    {
+     "term": "{相談|そうだん}",
+     "meaning": "konsultasi; minta pendapat"
+    },
+    {
+     "term": "{上司|じょうし}",
+     "meaning": "atasan"
+    }
+   ],
+   "questions": [
+    {
+     "q": "Apa yang harus dilakukan jika akan terlambat?",
+     "options": [
+      "Tidak perlu memberi tahu",
+      "Menghubungi lewat telepon atau email",
+      "Datang besok saja"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "'Hōrensō' adalah singkatan dari apa?",
+     "options": [
+      "Laporan, kabar, konsultasi",
+      "Rapat, makan, pulang",
+      "Tenggat, cuti, lembur"
+     ],
+     "answer": 0,
+     "explain": "ほうれんそう juga berarti bayam, jadi mudah diingat."
+    },
+    {
+     "q": "Apa yang diucapkan saat pulang lebih dulu dari rekan kerja?",
+     "options": [
+      "いただきます",
+      "お{先|さき} に {失礼|しつれい} します",
+      "おはよう ございます"
+     ],
+     "answer": 1
+    }
+   ]
+  }
+ ],
+ "writing": [
+  {
+   "id": "ja-u05-w01",
+   "mode": "build",
+   "prompt": "Terjemahkan dengan menyusun ubin kata.",
+   "sentences": [
+    {
+     "id": "Tolong kirimkan dokumennya.",
+     "ja": "{資料|しりょう} を {送|おく}って ください 。"
+    },
+    {
+     "id": "Bolehkah saya pulang lebih awal hari ini?",
+     "ja": "{今日|きょう} は {早|はや}く {帰|かえ}って も いい です か ？"
+    },
+    {
+     "id": "Ada rapat mulai jam tiga.",
+     "ja": "{三時|さんじ} から {会議|かいぎ} が あります 。"
+    },
+    {
+     "id": "Saya harus menyerahkannya paling lambat Jumat.",
+     "ja": "{金曜日|きんようび} まで に {出|だ}さなければ なりません 。"
+    },
+    {
+     "id": "Nanti saya kabari.",
+     "ja": "あとで {連絡|れんらく} します 。"
+    }
+   ]
+  }
+ ],
+ "speaking": [
+  {
+   "id": "ja-u05-s01",
+   "mode": "shadowing",
+   "sentences": [
+    "お{疲|つか}れ{様|さま} です 。",
+    "{資料|しりょう} を {送|おく}って ください 。",
+    "{窓|まど} を {開|あ}けて も いい です か ？",
+    "{確認|かくにん} して から {返事|へんじ} します 。",
+    "{少|すこ}し {遅|おく}れます 。 すみません 。",
+    "お{先|さき} に {失礼|しつれい} します 。"
+   ],
+   "focus": "Tsu kecil di 送って (okutte) dan 失礼 (shitsurei) terdengar sebagai jeda singkat. Ucapkan お疲れ様です dengan nada datar dan sopan."
+  },
+  {
+   "id": "ja-u05-s02",
+   "mode": "answer",
+   "prompt": "Kamu akan terlambat ke kantor karena kereta berhenti. Kabari atasanmu dengan sopan: minta maaf, sebut alasan, dan perkiraan waktu tiba (3 kalimat).",
+   "sample_answer": "{山本|やまもと} さん 、 すみません 。 {電車|でんしゃ} が {止|と}まった ので 、 {少|すこ}し {遅|おく}れます 。 {十時|じゅうじ} ごろ {着|つ}きます 。"
+  }
+ ],
+ "conversation": [
+  {
+   "id": "ja-u05-c01",
+   "title": "Minta cuti ke atasan",
+   "role_you": "Engineer di kantor Tokyo",
+   "role_them": "Yamamoto-san, atasan",
+   "start": "n1",
+   "nodes": {
+    "n1": {
+     "them": "バグス さん 、 どう しました か ？",
+     "hints": [
+      "Bagus-san, ada apa?"
+     ],
+     "choices": [
+      {
+       "text": "すみません 、 ちょっと よろしい です か ？",
+       "next": "n2",
+       "ok": true
+      },
+      {
+       "text": "ねえ 、 {聞|き}いて ！",
+       "next": "n2",
+       "ok": false,
+       "feedback": "Terlalu santai untuk atasan. Pakai 「すみません、ちょっとよろしいですか」."
+      }
+     ]
+    },
+    "n2": {
+     "them": "はい 、 どうぞ 。",
+     "hints": [
+      "Ya, silakan."
+     ],
+     "choices": [
+      {
+       "text": "{来週|らいしゅう} の {金曜日|きんようび} 、 {休|やす}み を {取|と}って も いい です か ？",
+       "next": "n3",
+       "ok": true
+      },
+      {
+       "text": "{来週|らいしゅう} の {金曜日|きんようび} 、 {休|やす}みます 。",
+       "next": "n3",
+       "ok": false,
+       "feedback": "Ke atasan sebaiknya meminta izin dengan 「〜てもいいですか」, bukan langsung memberi tahu."
+      }
+     ]
+    },
+    "n3": {
+     "them": "{金曜日|きんようび} は {大切|たいせつ} な {会議|かいぎ} が あります が …… 。",
+     "hints": [
+      "Hari Jumat ada rapat penting, sih..."
+     ],
+     "choices": [
+      {
+       "text": "では 、 {資料|しりょう} は {木曜日|もくようび} まで に {送|おく}ります 。",
+       "next": "n4",
+       "ok": true
+      },
+      {
+       "text": "{会議|かいぎ} は {関係|かんけい} ありません 。",
+       "next": "n4",
+       "ok": false,
+       "feedback": "Terlalu blak-blakan. Tawarkan solusi, misalnya mengirim dokumen lebih awal."
+      }
+     ]
+    },
+    "n4": {
+     "them": "それ なら 、 いい です よ 。",
+     "hints": [
+      "Kalau begitu, boleh."
+     ],
+     "choices": [
+      {
+       "text": "ありがとう ございます 。 よろしく おねがいします 。",
+       "next": "end",
+       "ok": true
+      },
+      {
+       "text": "{助|たす}かります 。 ありがとう ございます 。",
+       "next": "end",
+       "ok": true
+      }
+     ]
+    },
+    "end": {
+     "them": "はい 。 ゆっくり {休|やす}んで ください 。",
+     "end": true
+    }
+   }
+  }
+ ]
+}

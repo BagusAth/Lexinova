@@ -26,7 +26,10 @@ export function buildQueue(
   items: Item[],
   now = new Date(),
 ): Queue {
+  // Kartu Inggris dan Jepang tidak dicampur dalam satu sesi review.
+  const prefix = (items[0]?.id ?? "en-").split("-")[0] + "-";
   const due = allItems()
+    .filter((i) => i.id.startsWith(prefix))
     .filter((i) => p.cards[i.id] && p.cards[i.id].due <= now)
     .sort((a, b) => +p.cards[a.id].due - +p.cards[b.id].due);
   const learnedToday = p.days[todayKey(now)]?.newWords.length ?? 0;
