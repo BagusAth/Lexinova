@@ -20,7 +20,11 @@ export type IconKind =
   | "back"
   | "flame"
   | "book"
-  | "upload";
+  | "upload"
+  | "lock"
+  | "heart"
+  | "trophy"
+  | "target";
 
 const PATHS: Record<IconKind, ReactNode> = {
   home: <path d="M3 11l9-7 9 7v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z" />,
@@ -76,6 +80,25 @@ const PATHS: Record<IconKind, ReactNode> = {
   ),
   book: <path d="M5 4h11a3 3 0 013 3v13H8a3 3 0 01-3-3zM5 17a3 3 0 013-3h11" />,
   upload: <path d="M12 16V4M7 9l5-5 5 5M4 20h16" />,
+  lock: (
+    <>
+      <rect x="5" y="11" width="14" height="10" rx="2.5" />
+      <path d="M8 11V8a4 4 0 018 0v3" />
+    </>
+  ),
+  heart: (
+    <path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0112 7.3a4.3 4.3 0 017.5 2.5C19.5 15.4 12 20 12 20z" />
+  ),
+  trophy: (
+    <path d="M8 4h8v5a4 4 0 01-8 0zM8 6H4.5a3 3 0 003.6 4.4M16 6h3.5a3 3 0 01-3.6 4.4M12 13v4M8.5 20h7M10 17h4v3h-4z" />
+  ),
+  target: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="12" r="5" />
+      <circle cx="12" cy="12" r="1.2" />
+    </>
+  ),
 };
 
 export function Icon({

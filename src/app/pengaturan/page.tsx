@@ -1,15 +1,23 @@
 "use client";
 
-import { useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
   exportJson,
   importJson,
+  requestPersistentStorage,
   resetProgress,
+  storagePersisted,
   streak,
   todayKey,
   update,
   useProgress,
 } from "@/lib/progress";
+import {
+  currentLevel,
+  GOALS,
+  INTERESTS,
+  LEVELS,
+} from "@/lib/levels";
 import { vocabCount } from "@/lib/stats";
 import { Astronaut, Icon, type IconKind } from "@/components/cosmic";
 import { Loading, Toggle } from "@/components/ui";
@@ -84,10 +92,58 @@ function Segmented({
   );
 }
 
+function ChipGroup({
+  title,
+  sub,
+  options,
+  value,
+  onChange,
+}: {
+  title: string;
+  sub: string;
+  options: Record<string, string>;
+  value: string[];
+  onChange: (v: string[]) => void;
+}) {
+  return (
+    <div>
+      <div className="font-semibold">{title}</div>
+      <div className="mb-2 text-sm text-mute">{sub}</div>
+      <div className="flex flex-wrap gap-2">
+        {Object.entries(options).map(([k, label]) => {
+          const on = value.includes(k);
+          return (
+            <button
+              key={k}
+              type="button"
+              aria-pressed={on}
+              onClick={() =>
+                onChange(on ? value.filter((x) => x !== k) : [...value, k])
+              }
+              className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-sm font-semibold transition active:scale-95 ${
+                on
+                  ? "bg-cyan/15 text-cyan ring-1 ring-cyan/40"
+                  : "bg-elevated text-mute hover:text-ink"
+              }`}
+            >
+              {on && <Icon kind="check" size={14} strokeWidth={2.6} />}
+              {label}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 export default function Pengaturan() {
   const p = useProgress();
   const fileRef = useRef<HTMLInputElement>(null);
   const [msg, setMsg] = useState<string | null>(null);
+  const [persisted, setPersisted] = useState<boolean | null>(null);
+  useEffect(() => {
+    storagePersisted().then(setPersisted);
+  }, []);
   if (!p) return <Loading />;
 
   function download() {
@@ -104,7 +160,6 @@ export default function Pengaturan() {
     if (!f) return;
     try {
       importJson(await f.text());
-      update((d) => void (d.settings.onboarded = true));
       setMsg("Progres berhasil diimpor.");
     } catch (e) {
       setMsg(`Gagal impor: ${(e as Error).message}`);
@@ -135,7 +190,8 @@ export default function Pengaturan() {
             className="w-full rounded-xl bg-transparent px-1 py-0.5 text-xl font-extrabold outline-none placeholder:text-ink/60 focus:bg-white/10"
           />
           <div className="px-1 text-sm text-ink/80">
-            Inggris B1 · {vocabCount(p)} kata · {streak(p)} hari streak
+            Inggris {LEVELS[currentLevel(p)].cefr} · {vocabCount(p)} kata ·{" "}
+            {streak(p)} hari streak
           </div>
         </div>
       </section>
@@ -172,8 +228,89 @@ export default function Pengaturan() {
       </section>
 
       <section>
+        <h2 className="mb-2 px-1 text-sm font-semibold text-mute">
+          Profil belajar
+        </h2>
+        <div className="flex flex-col gap-5 rounded-3xl bg-surface p-5 shadow-soft">
+          <ChipGroup
+            title="Tujuan"
+            sub="Menentukan tema unit yang disorot di jalur"
+            options={GOALS}
+            value={p.settings.goals}
+            onChange={(v) => update((d) => void (d.settings.goals = v))}
+          />
+          <ChipGroup
+            title="Minat"
+            sub="Bidang yang ingin sering muncul di materi"
+            options={INTERESTS}
+            value={p.settings.interests}
+            onChange={(v) => update((d) => void (d.settings.interests = v))}
+          />
+          <div>
+            <div className="font-semibold">Target tingkat</div>
+            <div className="mb-2 text-sm text-mute">
+              Ditampilkan di Jalur sebagai tujuanmu, beserta perkiraan IELTS
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {LEVELS.map((l) => (
+                <button
+                  key={l.id}
+                  type="button"
+                  aria-pressed={p.settings.targetLevel === l.id}
+                  onClick={() =>
+                    update((d) => void (d.settings.targetLevel = l.id))
+                  }
+                  className={`rounded-2xl px-3 py-2 text-left text-sm transition ${
+                    p.settings.targetLevel === l.id
+                      ? "bg-primary text-ink"
+                      : "bg-elevated text-mute hover:text-ink"
+                  }`}
+                >
+                  <div className="font-bold">{l.cefr}</div>
+                  <div className="text-[11px] opacity-80">IELTS {l.ielts}</div>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
         <h2 className="mb-2 px-1 text-sm font-semibold text-mute">Data</h2>
         <div className="divide-y divide-line overflow-hidden rounded-3xl bg-surface shadow-soft">
+          <Row
+            icon="lock"
+            title="Penyimpanan permanen"
+            sub={
+              persisted === true
+                ? "Aktif. Browser tidak akan menghapus progresmu secara otomatis."
+                : persisted === false
+                  ? "Belum diizinkan browser. Progres tetap tersimpan, tapi bisa terhapus bila disk penuh."
+                  : "Memeriksa…"
+            }
+          >
+            {persisted === true ? (
+              <span className="rounded-full bg-ok/15 px-2.5 py-1 text-xs font-bold text-ok">
+                Aktif
+              </span>
+            ) : persisted === false ? (
+              <button
+                type="button"
+                onClick={async () => {
+                  const ok = await requestPersistentStorage();
+                  setPersisted(ok);
+                  setMsg(
+                    ok
+                      ? "Penyimpanan permanen aktif."
+                      : "Browser belum mengizinkan. Pasang Lexinova ke layar utama/desktop lalu coba lagi.",
+                  );
+                }}
+                className="shrink-0 rounded-full bg-primary px-3 py-1.5 text-xs font-bold transition hover:bg-[#7b73ff]"
+              >
+                Minta izin
+              </button>
+            ) : null}
+          </Row>
           <Row
             icon="upload"
             title="Ekspor progres"
@@ -198,7 +335,6 @@ export default function Pengaturan() {
                 )
               ) {
                 resetProgress();
-                update((d) => void (d.settings.onboarded = true));
                 setMsg("Progres dihapus.");
               }
             }}
@@ -215,8 +351,10 @@ export default function Pengaturan() {
       </section>
 
       <p className="px-1 text-xs text-mute">
-        Progres hanya tersimpan di browser ini. Ekspor secara berkala supaya
-        aman.
+        Progres tersimpan otomatis di browser ini setiap kali kamu menjawab,
+        jadi tetap ada walau tab atau browser ditutup. Data tidak ikut pindah
+        ke browser atau perangkat lain, dan hilang bila riwayat situs dihapus.
+        Ekspor sesekali sebagai cadangan.
       </p>
     </div>
   );

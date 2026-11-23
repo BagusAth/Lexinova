@@ -1,0 +1,171 @@
+{
+  "id": "en-u03",
+  "language": "en",
+  "level": "B1+",
+  "title": "Wawancara kerja dan beasiswa",
+  "theme": "Menceritakan pengalaman, kekuatan, dan rencana",
+  "tags": ["karier", "studi", "ielts", "sains"],
+  "items": [
+    { "id": "en-u03-i01", "type": "pattern", "term": "be responsible for", "meaning": "bertanggung jawab atas", "example": "In my current role, I'm responsible for the mobile app.", "example_id": "Di posisi saya sekarang, saya bertanggung jawab atas aplikasi mobile.", "cloze": "In my current role, I'm responsible ____ the mobile app.", "answer": "for", "note": "Pakai 'for', bukan 'to'." },
+    { "id": "en-u03-i02", "type": "collocation", "term": "have experience in", "meaning": "berpengalaman di", "example": "I have three years of experience in web development.", "example_id": "Saya punya pengalaman tiga tahun di pengembangan web.", "cloze": "I have three years of ____ in web development.", "answer": "experience", "note": "Dalam arti 'pengalaman kerja', experience tidak dijamak." },
+    { "id": "en-u03-i03", "type": "word", "term": "strength", "meaning": "kelebihan; kekuatan", "example": "My biggest strength is solving problems under pressure.", "example_id": "Kelebihan terbesar saya adalah memecahkan masalah di bawah tekanan.", "cloze": "My biggest ____ is solving problems under pressure.", "answer": "strength" },
+    { "id": "en-u03-i04", "type": "word", "term": "weakness", "meaning": "kelemahan", "example": "One weakness I'm working on is public speaking.", "example_id": "Satu kelemahan yang sedang saya perbaiki adalah berbicara di depan umum.", "cloze": "One ____ I'm working on is public speaking.", "answer": "weakness" },
+    { "id": "en-u03-i05", "type": "phrasal_verb", "term": "come up with", "meaning": "menemukan; mencetuskan (ide)", "example": "I came up with a simpler way to test the app.", "example_id": "Saya menemukan cara yang lebih sederhana untuk menguji aplikasinya.", "cloze": "I came up ____ a simpler way to test the app.", "answer": "with" },
+    { "id": "en-u03-i06", "type": "phrasal_verb", "term": "take on", "meaning": "mengambil (tugas, tanggung jawab)", "example": "I'm ready to take on more responsibility.", "example_id": "Saya siap mengambil tanggung jawab yang lebih besar.", "cloze": "I'm ready to take ____ more responsibility.", "answer": "on" },
+    { "id": "en-u03-i07", "type": "pattern", "term": "look forward to + -ing", "meaning": "menantikan", "example": "I look forward to hearing from you.", "example_id": "Saya menantikan kabar dari Anda.", "cloze": "I look forward to ____ from you.", "answer": "hearing", "note": "Setelah 'to' di pola ini pakai -ing, bukan 'to hear'." },
+    { "id": "en-u03-i08", "type": "phrasal_verb", "term": "apply for", "meaning": "melamar; mendaftar", "example": "I'm applying for a master's scholarship in the UK.", "example_id": "Saya sedang mendaftar beasiswa S2 di Inggris.", "cloze": "I'm applying ____ a master's scholarship in the UK.", "answer": "for" },
+    { "id": "en-u03-i09", "type": "idiom", "term": "in the long run", "meaning": "dalam jangka panjang", "example": "In the long run, I want to lead a product team.", "example_id": "Dalam jangka panjang, saya ingin memimpin tim produk.", "cloze": "In the long ____, I want to lead a product team.", "answer": "run" },
+    { "id": "en-u03-i10", "type": "pattern", "term": "On the other hand, ...", "meaning": "Di sisi lain, ...", "example": "Remote work is flexible. On the other hand, it can feel lonely.", "example_id": "Kerja jarak jauh itu fleksibel. Di sisi lain, bisa terasa sepi.", "cloze": "Remote work is flexible. On the other ____, it can feel lonely.", "answer": "hand" },
+    { "id": "en-u03-i11", "type": "word", "term": "evidence", "meaning": "bukti", "example": "There is strong evidence that sleep improves memory.", "example_id": "Ada bukti kuat bahwa tidur meningkatkan daya ingat.", "cloze": "There is strong ____ that sleep improves memory.", "answer": "evidence", "note": "Tidak bisa dijamak: bukan 'evidences'." },
+    { "id": "en-u03-i12", "type": "collocation", "term": "make progress", "meaning": "mengalami kemajuan", "example": "I've made a lot of progress with my English this year.", "example_id": "Bahasa Inggris saya banyak kemajuan tahun ini.", "cloze": "I've made a lot of ____ with my English this year.", "answer": "progress", "note": "Bukan 'do progress'." }
+  ],
+  "grammar": [
+    {
+      "id": "en-u03-g01",
+      "title": "Present perfect continuous untuk pengalaman yang masih berjalan",
+      "explanation": "Untuk kegiatan yang dimulai di masa lalu dan masih berlangsung sampai sekarang, pakai have/has been + V-ing dengan 'for' (lamanya) atau 'since' (titik mulai). Kalimat ini sangat sering dipakai saat wawancara.",
+      "examples": ["I've been working as a developer for three years.", "She's been studying for IELTS since January.", "How long have you been living here?"],
+      "common_mistake": { "wrong": "I am working here since 2022.", "right": "I've been working here since 2022." }
+    },
+    {
+      "id": "en-u03-g02",
+      "title": "Kata kerja -ing setelah preposisi",
+      "explanation": "Setelah preposisi (in, for, about, at, to pada 'look forward to'), kata kerja memakai bentuk -ing. Ini sering muncul di email lamaran dan wawancara.",
+      "examples": ["I'm interested in joining your team.", "Thank you for considering my application.", "I'm good at explaining technical ideas."],
+      "common_mistake": { "wrong": "I look forward to hear from you.", "right": "I look forward to hearing from you." }
+    }
+  ],
+  "listening": [
+    {
+      "id": "en-u03-l01",
+      "title": "Wawancara kerja online",
+      "speakers": [ { "name": "Ms Carter", "voice": "en-GB" }, { "name": "Bagus", "voice": "en-US" } ],
+      "lines": [
+        { "speaker": "Ms Carter", "text": "Thanks for joining, Bagus. Could you tell me a bit about your current role?" },
+        { "speaker": "Bagus", "text": "Sure. I've been working as a web developer for three years, and I'm responsible for our mobile app." },
+        { "speaker": "Ms Carter", "text": "What would you say is your biggest strength?" },
+        { "speaker": "Bagus", "text": "I'm good at solving problems. Last year I came up with a faster way to test our releases." },
+        { "speaker": "Ms Carter", "text": "And why are you interested in this position?" },
+        { "speaker": "Bagus", "text": "I'm ready to take on more responsibility, and in the long run I'd like to lead a product team." }
+      ],
+      "dictation": [1, 3, 5],
+      "questions": [
+        { "q": "How long has Bagus worked as a developer?", "options": ["One year", "Three years", "Five years"], "answer": 1 },
+        { "q": "What did he do last year?", "options": ["He led a team", "He found a faster way to test releases", "He moved abroad"], "answer": 1 },
+        { "q": "What is his long-term goal?", "options": ["To lead a product team", "To become a designer", "To work from home"], "answer": 0, "explain": "'In the long run' = dalam jangka panjang." }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "id": "en-u03-r01",
+      "title": "Why sleep helps you learn",
+      "text": "If you are studying for an exam, the best thing you can do tonight might be to go to bed early. Scientists have found strong evidence that sleep helps the brain store new information. During deep sleep, the brain replays what we learned during the day and moves it into long-term memory. In one study, students who slept after learning new words remembered more of them the next morning than students who stayed awake. On the other hand, pulling an all-nighter before a test can make it harder to recall facts, even if you spent more hours studying. In the long run, regular sleep may be one of the simplest ways to make progress with a new language.",
+      "glossary": [
+        { "term": "evidence", "meaning": "bukti", "item_id": "en-u03-i11" },
+        { "term": "store", "meaning": "menyimpan" },
+        { "term": "replays", "meaning": "memutar ulang" },
+        { "term": "long-term memory", "meaning": "ingatan jangka panjang" },
+        { "term": "pulling an all-nighter", "meaning": "begadang semalaman" },
+        { "term": "recall", "meaning": "mengingat kembali" },
+        { "term": "make progress", "meaning": "mengalami kemajuan", "item_id": "en-u03-i12" }
+      ],
+      "questions": [
+        { "q": "According to the text, what happens during deep sleep?", "options": ["The brain forgets unimportant words", "The brain moves new information into long-term memory", "The body stops using energy"], "answer": 1 },
+        { "q": "In the study, which students remembered more words?", "options": ["Students who slept after learning", "Students who stayed awake", "Students who studied longer"], "answer": 0 },
+        { "q": "What is the writer's main advice?", "options": ["Study all night before a test", "Sleep regularly to learn better", "Only learn new words in the morning"], "answer": 1 }
+      ]
+    }
+  ],
+  "writing": [
+    {
+      "id": "en-u03-w01",
+      "prompt": "Gaya IELTS Writing Task 2 (versi pendek). Tulis paragraf opini untuk pernyataan ini: 'Some people think working from home makes employees more productive. Do you agree or disagree?' Beri pendapatmu, dua alasan, satu contoh, dan sisi lainnya.",
+      "min_words": 120,
+      "max_words": 180,
+      "checklist": [
+        "Pendapat jelas di kalimat pertama (In my opinion / I believe)",
+        "Dua alasan dengan penghubung (Firstly, Secondly)",
+        "Ada contoh nyata (For example, ...)",
+        "Memakai 'On the other hand' untuk sisi lain",
+        "Kesimpulan singkat di akhir (Overall, ...)"
+      ],
+      "useful_phrases": ["In my opinion, ...", "Firstly, ... Secondly, ...", "For example, ...", "On the other hand, ...", "Overall, I believe ..."],
+      "model_answer": "In my opinion, working from home makes many employees more productive, but not all of them. Firstly, people save time because they do not have to commute. For example, I used to spend almost two hours a day in traffic, and now I use that time to finish tasks or study English. Secondly, it is easier to focus at home, where there are fewer meetings and interruptions. On the other hand, some people find it hard to separate work from personal life, and they may feel lonely without their colleagues. Teams also need clear written communication, otherwise small problems take longer to solve. Overall, I believe working from home increases productivity for people who can manage their own time, as long as the company supports them with good tools and regular check-ins."
+    }
+  ],
+  "speaking": [
+    {
+      "id": "en-u03-s01",
+      "mode": "shadowing",
+      "sentences": [
+        "I've been working as a web developer for three years.",
+        "My biggest strength is solving problems under pressure.",
+        "I'm ready to take on more responsibility.",
+        "I look forward to hearing from you.",
+        "I'm applying for a master's scholarship in the UK.",
+        "In the long run, I'd like to lead a product team."
+      ],
+      "focus": "Bentuk pendek 'I've been' dan 'I'd like', serta tekanan kata: re-spon-si-BIL-i-ty dan SCHOL-ar-ship."
+    },
+    {
+      "id": "en-u03-s02",
+      "mode": "answer",
+      "prompt": "Gaya IELTS Speaking Part 2: ceritakan satu keterampilan yang ingin kamu kuasai. Sebutkan apa itu, kenapa penting, dan bagaimana kamu mempelajarinya (4 sampai 6 kalimat).",
+      "sample_answer": "One skill I'd really like to master is public speaking. In my job I often have to explain technical ideas to people who aren't developers, and I sometimes get nervous. I think it's important because good ideas are useless if you can't explain them clearly. At the moment I'm practising by recording short presentations and watching them back. I've also been joining online meetups where I can speak English. In the long run, I hope to give a talk at a tech conference."
+    }
+  ],
+  "conversation": [
+    {
+      "id": "en-u03-c01",
+      "title": "Wawancara beasiswa",
+      "role_you": "Pelamar beasiswa S2",
+      "role_them": "Dr Hughes, panel pewawancara",
+      "start": "n1",
+      "nodes": {
+        "n1": {
+          "them": "Good morning. Could you start by telling us why you're applying for this scholarship?",
+          "hints": ["sebut tujuan studi: I'm applying because I want to ...", "kaitkan dengan kariermu"],
+          "replies": [
+            { "match": ["want to", "because", "study", "learn", "career", "master"], "next": "n2" }
+          ],
+          "fallback": { "next": "n2", "feedback": "Contoh: \"I'm applying because I want to study human-computer interaction and build better digital products.\"" }
+        },
+        "n2": {
+          "them": "Interesting. What experience do you have in this field?",
+          "hints": ["I've been working as ... for ...", "I'm responsible for ..."],
+          "replies": [
+            { "match": ["been working", "years", "experience", "responsible", "worked"], "next": "n3" }
+          ],
+          "fallback": { "next": "n3", "feedback": "Contoh: \"I've been working as a web developer for three years, and I'm responsible for our mobile app.\"" }
+        },
+        "n3": {
+          "them": "What would you say is your biggest weakness?",
+          "hints": ["sebut kelemahan dan cara memperbaikinya: One weakness I'm working on is ..."],
+          "replies": [
+            { "match": ["weakness", "working on", "improve", "sometimes", "practising", "practicing"], "next": "n4" }
+          ],
+          "fallback": { "next": "n4", "feedback": "Contoh: \"One weakness I'm working on is public speaking, so I've been practising with short presentations.\"" }
+        },
+        "n4": {
+          "them": "And what do you plan to do after you graduate?",
+          "hints": ["In the long run, I'd like to ...", "I'm planning to ..."],
+          "replies": [
+            { "match": ["long run", "like to", "plan", "going to", "return", "back", "lead"], "next": "n5" }
+          ],
+          "fallback": { "next": "n5", "feedback": "Contoh: \"In the long run, I'd like to go back to Indonesia and lead a product team.\"" }
+        },
+        "n5": {
+          "them": "Thank you. Do you have any questions for us?",
+          "hints": ["tanya: Could you tell me more about ...?", "atau tutup dengan sopan"],
+          "replies": [
+            { "match": ["could you", "when", "how", "what", "question", "tell me"], "next": "end" },
+            { "match": ["no", "thank you", "that's all", "not at the moment"], "next": "end" }
+          ],
+          "fallback": { "next": "end", "feedback": "Contoh: \"Yes, could you tell me when we'll hear about the results? Thank you for your time.\"" }
+        },
+        "end": { "them": "Thank you, Bagus. We'll let you know the result within two weeks. Good luck!", "end": true }
+      }
+    }
+  ]
+}

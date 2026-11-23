@@ -90,6 +90,8 @@ export interface Unit {
   level: string;
   title: string;
   theme: string;
+  /** Kunci tujuan/minat (lihat GOALS & INTERESTS di levels.ts) untuk personalisasi. */
+  tags?: string[];
   items: Item[];
   grammar: GrammarPoint[];
   listening: Listening[];

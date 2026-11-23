@@ -4,6 +4,7 @@
 
 import { useSyncExternalStore } from "react";
 import type { Card } from "ts-fsrs";
+import { xpMultiplierFor } from "./levels";
 
 const KEY = "lexinova:progress:v1";
 
@@ -14,6 +15,19 @@ export interface DaySession {
   newWords: string[]; // item id yang pertama kali dipelajari hari ini
   minutes: number;
   reviewed: string[]; // item id yang direview hari ini
+}
+
+export interface ExamRecord {
+  best: number; // skor terbaik 0..1
+  attempts: number;
+  passed: boolean;
+  last: string; // tanggal percobaan terakhir
+}
+
+export interface PathState {
+  passedUnits: Record<string, string>; // unit id -> tanggal lulus Ujian Unit
+  passedLevels: Record<string, string>; // level id -> tanggal lulus Ujian Naik Tingkat
+  exams: Record<string, ExamRecord>; // "unit:en-u01" / "level:b1"
 }
 
 export interface Progress {
@@ -27,9 +41,20 @@ export interface Progress {
     newPerDay: number;
     name: string;
     autoVoice: boolean;
-    onboarded: boolean;
+    goals: string[]; // kunci GOALS di levels.ts
+    interests: string[]; // kunci INTERESTS di levels.ts
+    targetLevel: string; // level id yang ingin dicapai
   };
   achievements: Record<string, string>; // id pencapaian -> tanggal didapat
+  path: PathState;
+}
+
+/** Lexinova hanya dipakai satu orang, jadi profil langsung terisi tanpa layar sambutan. */
+export const OWNER = "Bagus Athallah";
+
+/** Nama panggilan (kata pertama) untuk sapaan singkat. */
+export function firstName(p: Progress): string {
+  return (p.settings.name.trim() || OWNER).split(/\s+/)[0];
 }
 
 export const emptyProgress = (): Progress => ({
@@ -41,11 +66,14 @@ export const emptyProgress = (): Progress => ({
     dailyGoal: 50,
     unitId: "en-u01",
     newPerDay: 6,
-    name: "",
+    name: OWNER,
     autoVoice: true,
-    onboarded: false,
+    goals: ["karier", "ielts", "studi", "travel"],
+    interests: ["teknologi", "bisnis", "desain", "sains"],
+    targetLevel: "b2",
   },
   achievements: {},
+  path: { passedUnits: {}, passedLevels: {}, exams: {} },
 });
 
 export const emptyDay = (): DaySession => ({
@@ -86,14 +114,27 @@ function parse(raw: string | null): Progress {
   try {
     const p = JSON.parse(raw) as Progress;
     const base = emptyProgress();
+    const settings = { ...base.settings, ...p.settings };
+    if (!settings.name?.trim()) settings.name = OWNER;
     return {
       ...base,
       ...p,
-      settings: { ...base.settings, ...p.settings },
+      settings,
       achievements: { ...(p.achievements ?? {}) },
+      // Progres lama (sebelum ada jalur tingkat) tetap terbaca.
+      path: {
+        passedUnits: { ...(p.path?.passedUnits ?? {}) },
+        passedLevels: { ...(p.path?.passedLevels ?? {}) },
+        exams: { ...(p.path?.exams ?? {}) },
+      },
       cards: reviveCards(p.cards),
     };
   } catch {
+    // Data rusak: simpan salinan mentahnya dulu supaya tidak hilang tertimpa,
+    // lalu mulai dari progres kosong. Salinan bisa dipulihkan secara manual.
+    try {
+      localStorage.setItem(`${KEY}:rusak:${Date.now()}`, raw);
+    } catch {}
     return emptyProgress();
   }
 }
@@ -108,12 +149,24 @@ function read(): Progress {
   return cache;
 }
 
+let saveFailed = false;
+
+/** true bila penulisan terakhir ke localStorage gagal (penuh/diblokir). */
+export function lastSaveFailed(): boolean {
+  return saveFailed;
+}
+
 function write(p: Progress) {
   cache = p;
   try {
+    // Ditulis langsung (sinkron) setiap ada perubahan, jadi tidak ada yang
+    // tertunda saat tab atau browser ditutup.
     localStorage.setItem(KEY, JSON.stringify(p));
+    saveFailed = false;
   } catch {
-    // penyimpanan penuh atau diblokir; progres tetap ada di memori sampai tab ditutup
+    // Penyimpanan penuh atau diblokir (mis. mode penyamaran ketat).
+    // Progres tetap ada di memori; AppShell menampilkan peringatan.
+    saveFailed = true;
   }
   listeners.forEach((l) => l());
 }
@@ -157,17 +210,45 @@ export function updateToday(fn: (d: DaySession) => void) {
   });
 }
 
+/** XP dasar dikali pengali tingkat unit yang sedang dibuka (tingkat tinggi = XP lebih besar). */
+export function scaledXp(base: number, p = read()): number {
+  return Math.round(base * xpMultiplierFor(p.settings.unitId));
+}
+
 export function addResult(correct: number, total: number, xp: number) {
+  const gained = scaledXp(xp);
   updateToday((d) => {
     d.correct += correct;
     d.total += total;
-    d.xp += xp;
+    d.xp += gained;
   });
 }
 
 export function markDone(exerciseId: string, score?: number) {
   update((p) => {
     p.done[exerciseId] = { date: todayKey(), score };
+  });
+}
+
+/**
+ * Simpan hasil ujian (skor terbaik, jumlah percobaan) dan, bila lulus,
+ * jalankan `apply` untuk membuka unit/tingkat berikutnya. Semua dalam satu tulis.
+ */
+export function saveExam(
+  key: string,
+  score: number,
+  passed: boolean,
+  apply?: (p: Progress) => void,
+) {
+  update((p) => {
+    const prev = p.path.exams[key];
+    p.path.exams[key] = {
+      best: Math.max(prev?.best ?? 0, score),
+      attempts: (prev?.attempts ?? 0) + 1,
+      passed: !!prev?.passed || passed,
+      last: todayKey(),
+    };
+    apply?.(p);
   });
 }
 
@@ -183,6 +264,33 @@ export function streak(p: Progress, now = new Date()): number {
     d.setDate(d.getDate() - 1);
   }
   return count;
+}
+
+// ---- penyimpanan permanen ----
+
+/**
+ * Minta browser menandai penyimpanan situs ini sebagai permanen, supaya
+ * localStorage tidak ikut dibersihkan otomatis saat ruang disk menipis.
+ * Chrome/Edge biasanya langsung mengizinkan untuk situs yang sering dibuka
+ * atau dipasang sebagai aplikasi (PWA).
+ */
+export async function requestPersistentStorage(): Promise<boolean> {
+  try {
+    if (!navigator.storage?.persist) return false;
+    if (await navigator.storage.persisted()) return true;
+    return await navigator.storage.persist();
+  } catch {
+    return false;
+  }
+}
+
+export async function storagePersisted(): Promise<boolean | null> {
+  try {
+    if (!navigator.storage?.persisted) return null;
+    return await navigator.storage.persisted();
+  } catch {
+    return null;
+  }
 }
 
 // ---- ekspor / impor ----

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { getUnit } from "@/lib/content";
+import { type Difficulty, difficultyOf } from "@/lib/levels";
 import { addResult, markDone, useProgress } from "@/lib/progress";
 import { speak, stopSpeaking } from "@/lib/speech";
 import { compareWords } from "@/lib/text";
@@ -27,14 +28,15 @@ type Phase = "listen" | "dictation" | "quiz" | "done";
 export default function ListeningPage() {
   const p = useProgress();
   if (!p) return <Loading />;
-  const ex = getUnit(p.settings.unitId).listening[0];
+  const unit = getUnit(p.settings.unitId);
+  const ex = unit.listening[0];
   if (!ex) return <Muted>Belum ada materi listening.</Muted>;
-  return <ListeningExercise ex={ex} />;
+  return <ListeningExercise key={ex.id} ex={ex} diff={difficultyOf(unit)} />;
 }
 
-function ListeningExercise({ ex }: { ex: Listening }) {
+function ListeningExercise({ ex, diff }: { ex: Listening; diff: Difficulty }) {
   const [phase, setPhase] = useState<Phase>("listen");
-  const [rate, setRate] = useState(1);
+  const [rate, setRate] = useState(diff.rates.includes(1) ? 1 : diff.rates[0]);
   const [playing, setPlaying] = useState<number | null>(null);
   const [showText, setShowText] = useState(false);
   const [dIdx, setDIdx] = useState(0);
@@ -96,10 +98,16 @@ function ListeningExercise({ ex }: { ex: Listening }) {
               <path d="M7 4l13 8-13 8z" fill="#F4F3FF" />
             </svg>
           </button>
-          <RateChips rate={rate} setRate={setRate} />
-          <Chip className="self-center" onClick={() => setShowText(!showText)}>
-            {showText ? "Sembunyikan teks" : "Tampilkan teks"}
-          </Chip>
+          <RateChips rates={diff.rates} rate={rate} setRate={setRate} />
+          {diff.transcript ? (
+            <Chip className="self-center" onClick={() => setShowText(!showText)}>
+              {showText ? "Sembunyikan teks" : "Tampilkan teks"}
+            </Chip>
+          ) : (
+            <Muted className="text-center">
+              Di tingkat ini transkrip disembunyikan. Andalkan telingamu.
+            </Muted>
+          )}
           {showText && (
             <Card className="flex flex-col gap-1.5 text-sm">
               {ex.lines.map((l, i) => (
@@ -124,6 +132,7 @@ function ListeningExercise({ ex }: { ex: Listening }) {
           key={dIdx}
           line={ex.lines[ex.dictation[dIdx]]}
           lang={voiceOf(ex.lines[ex.dictation[dIdx]].speaker)}
+          rates={diff.rates}
           rate={rate}
           setRate={setRate}
           onNext={(c, t) => {
@@ -151,15 +160,18 @@ function ListeningExercise({ ex }: { ex: Listening }) {
 }
 
 function RateChips({
+  rates,
   rate,
   setRate,
 }: {
+  rates: number[];
   rate: number;
   setRate: (r: number) => void;
 }) {
+  if (rates.length < 2) return null;
   return (
     <div className="flex justify-center gap-2">
-      {[0.75, 1].map((r) => (
+      {rates.map((r) => (
         <Chip key={r} active={rate === r} onClick={() => setRate(r)}>
           {r}x
         </Chip>
@@ -171,12 +183,14 @@ function RateChips({
 function Dictation({
   line,
   lang,
+  rates,
   rate,
   setRate,
   onNext,
 }: {
   line: { speaker: string; text: string };
   lang: string;
+  rates: number[];
   rate: number;
   setRate: (r: number) => void;
   onNext: (correct: number, total: number) => void;
@@ -199,7 +213,7 @@ function Dictation({
           <path d="M7 4l13 8-13 8z" fill="#F4F3FF" />
         </svg>
       </button>
-      <RateChips rate={rate} setRate={setRate} />
+      <RateChips rates={rates} rate={rate} setRate={setRate} />
       <textarea
         rows={3}
         value={input}

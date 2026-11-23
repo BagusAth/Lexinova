@@ -4,6 +4,7 @@
   "level": "B1",
   "title": "Komunikasi di tempat kerja",
   "theme": "Rapat, tenggat, dan update pekerjaan",
+  "tags": ["karier", "bisnis", "teknologi"],
   "items": [
     { "id": "en-u01-i01", "type": "collocation", "term": "make a decision", "meaning": "mengambil keputusan", "example": "We need to make a decision before Friday.", "example_id": "Kita perlu mengambil keputusan sebelum Jumat.", "cloze": "We need to ____ a decision before Friday.", "answer": "make", "note": "Bukan 'do a decision'." },
     { "id": "en-u01-i02", "type": "word", "term": "deadline", "meaning": "tenggat waktu", "example": "The deadline for the report is next Monday.", "example_id": "Tenggat laporannya Senin depan.", "cloze": "The ____ for the report is next Monday.", "answer": "deadline" },

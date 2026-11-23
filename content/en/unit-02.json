@@ -1,0 +1,179 @@
+{
+  "id": "en-u02",
+  "language": "en",
+  "level": "B1",
+  "title": "Bekerja di tim produk digital",
+  "theme": "Bug, feedback desain, dan rilis fitur",
+  "tags": ["karier", "teknologi", "desain"],
+  "items": [
+    { "id": "en-u02-i01", "type": "collocation", "term": "fix a bug", "meaning": "memperbaiki bug", "example": "Can you fix the bug before the release?", "example_id": "Bisakah kamu memperbaiki bug-nya sebelum rilis?", "cloze": "Can you ____ the bug before the release?", "answer": "fix", "note": "Bukan 'repair a bug'." },
+    { "id": "en-u02-i02", "type": "word", "term": "release", "meaning": "merilis; rilis", "example": "We plan to release the new feature next week.", "example_id": "Kami berencana merilis fitur baru minggu depan.", "cloze": "We plan to ____ the new feature next week.", "answer": "release" },
+    { "id": "en-u02-i03", "type": "phrasal_verb", "term": "figure out", "meaning": "mencari tahu; memecahkan", "example": "I'm trying to figure out why the app crashes.", "example_id": "Saya sedang mencari tahu kenapa aplikasinya crash.", "cloze": "I'm trying to figure ____ why the app crashes.", "answer": "out" },
+    { "id": "en-u02-i04", "type": "phrasal_verb", "term": "set up", "meaning": "menyiapkan; memasang", "example": "Could you set up a test account for me?", "example_id": "Bisakah kamu menyiapkan akun uji untuk saya?", "cloze": "Could you set ____ a test account for me?", "answer": "up" },
+    { "id": "en-u02-i05", "type": "phrasal_verb", "term": "roll out", "meaning": "meluncurkan (bertahap)", "example": "We'll roll out the update to all users on Monday.", "example_id": "Kami akan meluncurkan pembaruan ke semua pengguna hari Senin.", "cloze": "We'll roll ____ the update to all users on Monday.", "answer": "out" },
+    { "id": "en-u02-i06", "type": "collocation", "term": "give feedback (on)", "meaning": "memberi masukan", "example": "Can you give feedback on the new design?", "example_id": "Bisakah kamu memberi masukan untuk desain baru ini?", "cloze": "Can you ____ feedback on the new design?", "answer": "give", "note": "Feedback tidak dijamak: bukan 'feedbacks'." },
+    { "id": "en-u02-i07", "type": "word", "term": "user-friendly", "meaning": "mudah dipakai", "example": "The new checkout page is much more user-friendly.", "example_id": "Halaman checkout yang baru jauh lebih mudah dipakai.", "cloze": "The new checkout page is much more ____.", "answer": "user-friendly" },
+    { "id": "en-u02-i08", "type": "collocation", "term": "take a look at", "meaning": "melihat; memeriksa", "example": "Could you take a look at my pull request?", "example_id": "Bisakah kamu memeriksa pull request saya?", "cloze": "Could you take a ____ at my pull request?", "answer": "look" },
+    { "id": "en-u02-i09", "type": "idiom", "term": "in the meantime", "meaning": "sementara itu", "example": "The fix is coming. In the meantime, please use the old version.", "example_id": "Perbaikannya segera datang. Sementara itu, pakai versi lama dulu.", "cloze": "The fix is coming. In the ____, please use the old version.", "answer": "meantime" },
+    { "id": "en-u02-i10", "type": "pattern", "term": "It turns out (that) ...", "meaning": "Ternyata ...", "example": "It turns out the problem was in the database.", "example_id": "Ternyata masalahnya ada di database.", "cloze": "It ____ out the problem was in the database.", "answer": "turns" },
+    { "id": "en-u02-i11", "type": "word", "term": "priority", "meaning": "prioritas", "example": "Fixing the login error is our top priority.", "example_id": "Memperbaiki error login adalah prioritas utama kami.", "cloze": "Fixing the login error is our top ____.", "answer": "priority" },
+    { "id": "en-u02-i12", "type": "collocation", "term": "go live", "meaning": "mulai tayang; aktif dipakai", "example": "The new website will go live at midnight.", "example_id": "Situs baru akan mulai tayang tengah malam.", "cloze": "The new website will ____ live at midnight.", "answer": "go" }
+  ],
+  "grammar": [
+    {
+      "id": "en-u02-g01",
+      "title": "Going to vs will",
+      "explanation": "Pakai 'be going to' untuk rencana yang sudah diputuskan sebelumnya. Pakai 'will' untuk keputusan spontan saat bicara, janji, atau tawaran. Jangan lupa 'am/is/are' sebelum 'going to'.",
+      "examples": ["We're going to release it on Monday.", "The build failed? I'll check it right now.", "I'll send you the link after the meeting."],
+      "common_mistake": { "wrong": "I going to fix it tomorrow.", "right": "I'm going to fix it tomorrow." }
+    },
+    {
+      "id": "en-u02-g02",
+      "title": "Feedback dan information tidak bisa dijamak",
+      "explanation": "Beberapa kata benda dalam bahasa Inggris tidak bisa dihitung, jadi tidak diberi -s dan tidak memakai 'a': feedback, information, advice, equipment, software. Untuk jumlah, pakai 'some', 'a lot of', atau 'a piece of'.",
+      "examples": ["Thanks for your feedback.", "I need some information about the API.", "She gave me a useful piece of advice."],
+      "common_mistake": { "wrong": "Thanks for your feedbacks.", "right": "Thanks for your feedback." }
+    }
+  ],
+  "listening": [
+    {
+      "id": "en-u02-l01",
+      "title": "Bug sebelum rilis",
+      "speakers": [ { "name": "Rina", "voice": "en-US" }, { "name": "James", "voice": "en-GB" } ],
+      "lines": [
+        { "speaker": "Rina", "text": "James, have you seen the bug report from yesterday?" },
+        { "speaker": "James", "text": "Yes. Some users can't log in after the latest update." },
+        { "speaker": "Rina", "text": "That sounds serious. Do we know what's causing it?" },
+        { "speaker": "James", "text": "Not yet. I'm trying to figure out if it's the new password rule." },
+        { "speaker": "Rina", "text": "The release is on Thursday. Should we put it off?" },
+        { "speaker": "James", "text": "Let's wait until tomorrow. In the meantime, I'll roll back the update." }
+      ],
+      "dictation": [1, 3, 5],
+      "questions": [
+        { "q": "What is the problem?", "options": ["The app is too slow", "Some users can't log in", "The design is unclear"], "answer": 1 },
+        { "q": "What might be causing it?", "options": ["The new password rule", "A server in Europe", "An old browser"], "answer": 0 },
+        { "q": "What will James do now?", "options": ["Release the update early", "Roll back the update", "Call the users"], "answer": 1, "explain": "'Roll back' artinya mengembalikan ke versi sebelumnya." }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "id": "en-u02-r01",
+      "title": "What makes a good bug report",
+      "text": "A good bug report saves hours of work. First, give it a clear title, such as 'Checkout button does nothing on iPhone'. Next, explain the steps to reproduce the problem, one by one. Then describe what you expected to happen and what actually happened. Screenshots or a short video help a lot, especially for design issues. Finally, add details like the device, the browser, and the app version. Developers often say that a bug they can reproduce is a bug they can fix. When reports are vague, like 'the app is broken', the team has to figure out everything from the beginning, and the fix takes much longer.",
+      "glossary": [
+        { "term": "reproduce", "meaning": "memunculkan lagi (masalah yang sama)" },
+        { "term": "expected", "meaning": "diharapkan" },
+        { "term": "actually", "meaning": "sebenarnya" },
+        { "term": "vague", "meaning": "samar; tidak jelas" },
+        { "term": "figure out", "meaning": "mencari tahu", "item_id": "en-u02-i03" },
+        { "term": "issues", "meaning": "masalah; kendala" }
+      ],
+      "questions": [
+        { "q": "What kind of title should a bug report have?", "options": ["Long and detailed", "Clear and specific", "Short and funny"], "answer": 1 },
+        { "q": "Why are steps to reproduce important?", "options": ["Developers can see the bug for themselves", "They make the report look professional", "Managers require them"], "answer": 0 },
+        { "q": "What happens when a report is vague?", "options": ["The fix takes longer", "The bug disappears", "Users complain less"], "answer": 0 }
+      ]
+    }
+  ],
+  "writing": [
+    {
+      "id": "en-u02-w01",
+      "prompt": "Kamu menemukan bug: tombol 'Pay' di halaman checkout tidak berfungsi di HP. Tulis pesan Slack singkat ke tim developer. Jelaskan masalahnya, langkah memunculkannya, dan apa yang seharusnya terjadi.",
+      "min_words": 50,
+      "max_words": 110,
+      "checklist": [
+        "Ringkasan masalah ada di kalimat pertama",
+        "Langkah-langkah ditulis berurutan",
+        "Ada perbandingan yang diharapkan vs yang terjadi (I expected ..., but ...)",
+        "Menyebut perangkat atau browser",
+        "'Feedback' dan 'information' tidak diberi -s"
+      ],
+      "useful_phrases": ["I've found a bug in ...", "Steps to reproduce:", "I expected ..., but ...", "Let me know if you need more details."],
+      "model_answer": "Hi team,\n\nI've found a bug on the checkout page: the Pay button does nothing on mobile.\n\nSteps to reproduce:\n1. Open the app on an Android phone (Chrome).\n2. Add any item to the cart.\n3. Tap Pay.\n\nI expected the payment form to open, but nothing happens. It works fine on desktop. I've attached a short video.\n\nLet me know if you need more information. Happy to test the fix.\n\nThanks,\nBagus"
+    }
+  ],
+  "speaking": [
+    {
+      "id": "en-u02-s01",
+      "mode": "shadowing",
+      "sentences": [
+        "I'm trying to figure out why the app crashes.",
+        "Could you take a look at my pull request?",
+        "We're going to release the new feature next week.",
+        "Fixing the login error is our top priority.",
+        "The new website will go live at midnight.",
+        "Thanks for your feedback on the design."
+      ],
+      "focus": "Bunyi 'th' pada 'thanks' dan 'the', serta tekanan kata: pri-OR-i-ty, re-LEASE, FEED-back."
+    },
+    {
+      "id": "en-u02-s02",
+      "mode": "answer",
+      "prompt": "Ceritakan dalam 3 sampai 4 kalimat: aplikasi atau situs apa yang menurutmu paling user-friendly, dan kenapa?",
+      "sample_answer": "I think my banking app is very user-friendly. The design is clean, so I can find what I need in a few seconds. It also works well on both my phone and my laptop. The only thing I'd improve is the loading speed."
+    }
+  ],
+  "conversation": [
+    {
+      "id": "en-u02-c01",
+      "title": "Review desain",
+      "role_you": "Developer di tim produk",
+      "role_them": "Lia, product designer",
+      "start": "n1",
+      "nodes": {
+        "n1": {
+          "them": "Hi! Thanks for joining. Have you had a chance to look at the new onboarding design?",
+          "hints": ["sudah: Yes, I've taken a look at it", "belum: Not yet, sorry"],
+          "replies": [
+            { "match": ["yes", "looked", "seen", "checked", "taken a look"], "next": "n2" },
+            { "match": ["not yet", "sorry", "haven't", "no"], "next": "n2b" }
+          ],
+          "fallback": { "next": "n2", "feedback": "Contoh: \"Yes, I took a look at it this morning.\"" }
+        },
+        "n2b": {
+          "them": "No problem. In short, we've cut the sign-up steps from five to three. What do you think?",
+          "hints": ["beri pendapat: I think ... / That sounds ..."],
+          "replies": [
+            { "match": ["think", "sounds", "great", "good", "like", "better"], "next": "n3" }
+          ],
+          "fallback": { "next": "n3", "feedback": "Contoh: \"That sounds great. Fewer steps should make it more user-friendly.\"" }
+        },
+        "n2": {
+          "them": "Great. So what do you think of it overall?",
+          "hints": ["pendapat umum: It looks ..., I like ..."],
+          "replies": [
+            { "match": ["like", "looks", "great", "clean", "user friendly", "nice", "simple"], "next": "n3" }
+          ],
+          "fallback": { "next": "n3", "feedback": "Contoh: \"Overall it looks clean and user-friendly. I like the new progress bar.\"" }
+        },
+        "n3": {
+          "them": "Thanks! Is there anything that might be hard to build?",
+          "hints": ["ada: The animation might take ...", "tidak ada: It should be fine"],
+          "replies": [
+            { "match": ["might", "hard", "difficult", "animation", "take time", "tricky"], "next": "n4a" },
+            { "match": ["fine", "easy", "no problem", "should be ok", "nothing"], "next": "n4b" }
+          ],
+          "fallback": { "next": "n4b", "feedback": "Contoh: \"The animation on the last screen might take some time to build.\"" }
+        },
+        "n4a": {
+          "them": "Good point. Could we keep it simple for the first release and improve it later?",
+          "hints": ["setuju dan usulkan langkah: Sure, let's ..."],
+          "replies": [
+            { "match": ["sure", "yes", "good idea", "let's", "agree", "ok"], "next": "end" }
+          ],
+          "fallback": { "next": "end", "feedback": "Contoh: \"Sure, let's release a simple version first and roll out the animation later.\"" }
+        },
+        "n4b": {
+          "them": "Perfect. When do you think it could go live?",
+          "hints": ["beri perkiraan: by next Friday / in two weeks"],
+          "replies": [
+            { "match": ["by", "next", "week", "friday", "days", "monday"], "next": "end" }
+          ],
+          "fallback": { "next": "end", "feedback": "Contoh: \"If nothing changes, it could go live by next Friday.\"" }
+        },
+        "end": { "them": "Great, I'll send you the final files today. Thanks for the feedback!", "end": true }
+      }
+    }
+  ]
+}

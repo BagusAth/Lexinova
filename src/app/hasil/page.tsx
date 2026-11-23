@@ -1,7 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
-import { getUnit } from "@/lib/content";
+import { getUnit, UNITS } from "@/lib/content";
+import { currentLevel, LEVELS } from "@/lib/levels";
 import { emptyDay, streak, todayKey, useProgress } from "@/lib/progress";
 import { DAY_SHORT, SKILL_LABEL } from "@/lib/schedule";
 import {
@@ -22,6 +24,7 @@ import {
 } from "@/components/cosmic";
 import { LineChart } from "@/components/LineChart";
 import { Card, Loading, ProgressBar, SectionTitle } from "@/components/ui";
+import type { Progress } from "@/lib/progress";
 
 const RANGES = [
   { days: 7, label: "7H" },
@@ -194,10 +197,103 @@ export default function Progres() {
         </Card>
       </div>
 
+      <LevelCard p={p} />
+
       <p className="flex items-center gap-2 text-sm text-mute">
         <Icon kind="star" size={16} className="text-gold" /> Capai target harian
         dan jaga streak untuk membuka pencapaian.
       </p>
     </>
+  );
+}
+
+function examName(key: string): string {
+  const [kind, id] = key.split(":");
+  if (kind === "unit") {
+    const i = UNITS.findIndex((u) => u.id === id);
+    return i < 0 ? id : `Ujian Unit ${i + 1} · ${UNITS[i].title}`;
+  }
+  const li = LEVELS.findIndex((l) => l.id === id);
+  const next = LEVELS[li + 1];
+  return next ? `Ujian naik ke ${next.cefr}` : `Ujian akhir ${LEVELS[li]?.cefr ?? id}`;
+}
+
+function LevelCard({ p }: { p: Progress }) {
+  const cur = currentLevel(p);
+  const history = Object.entries(p.path.exams)
+    .sort((a, b) => b[1].last.localeCompare(a[1].last))
+    .slice(0, 5);
+  const unitsPassed = Object.keys(p.path.passedUnits).length;
+
+  return (
+    <Card className="flex flex-col gap-4">
+      <SectionTitle
+        action={
+          <Link href="/latihan" className="text-sm font-semibold text-lavender hover:underline">
+            Lihat jalur
+          </Link>
+        }
+      >
+        Tingkat & ujian
+      </SectionTitle>
+      <ol className="flex items-center gap-1" aria-label="Tangga tingkat">
+        {LEVELS.map((l, i) => {
+          const passed = !!p.path.passedLevels[l.id];
+          return (
+            <li key={l.id} className="flex flex-1 items-center gap-1">
+              <span
+                className={`grid h-9 flex-1 place-items-center rounded-full text-xs font-extrabold ${
+                  passed
+                    ? "bg-ok/20 text-ok"
+                    : i === cur
+                      ? "bg-gradient-to-r from-primary to-lavender text-ink shadow-glow"
+                      : "bg-elevated text-mute"
+                }`}
+              >
+                {l.cefr}
+              </span>
+            </li>
+          );
+        })}
+      </ol>
+      <div className="grid gap-4 sm:grid-cols-[auto_1fr]">
+        <dl className="grid grid-cols-2 gap-x-6 gap-y-1 text-sm sm:grid-cols-1">
+          <dt className="text-mute">Tingkat sekarang</dt>
+          <dd className="font-bold">
+            {LEVELS[cur].cefr} · {LEVELS[cur].name}
+          </dd>
+          <dt className="text-mute">Perkiraan IELTS</dt>
+          <dd className="font-bold text-cyan">{LEVELS[cur].ielts}</dd>
+          <dt className="text-mute">Unit lulus</dt>
+          <dd className="font-bold">
+            {unitsPassed} dari {UNITS.length}
+          </dd>
+        </dl>
+        <div>
+          <div className="mb-2 text-sm font-semibold text-mute">Riwayat ujian</div>
+          {history.length ? (
+            <ul className="flex flex-col gap-2">
+              {history.map(([key, r]) => (
+                <li key={key} className="flex items-center gap-3 rounded-2xl bg-elevated/60 px-3 py-2 text-sm">
+                  <span
+                    className={`grid size-7 shrink-0 place-items-center rounded-full ${r.passed ? "bg-ok/20 text-ok" : "bg-bad/15 text-bad"}`}
+                  >
+                    <Icon kind={r.passed ? "check" : "x"} size={14} strokeWidth={2.6} />
+                  </span>
+                  <span className="min-w-0 flex-1 truncate">{examName(key)}</span>
+                  <span className="shrink-0 text-mute tabular-nums">
+                    {Math.round(r.best * 100)}% · {r.attempts}x
+                  </span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-sm text-mute">
+              Belum ada ujian. Selesaikan pelajaran unit, lalu ambil Ujian Unit di Jalur.
+            </p>
+          )}
+        </div>
+      </div>
+    </Card>
   );
 }

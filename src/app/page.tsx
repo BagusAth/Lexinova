@@ -2,7 +2,22 @@
 
 import Link from "next/link";
 import { getUnit } from "@/lib/content";
-import { emptyDay, streak, todayKey, useProgress } from "@/lib/progress";
+import {
+  currentLevel,
+  examHref,
+  LESSON_COUNT,
+  lessonsDone,
+  LEVELS,
+  levelReadyForExam,
+  unitPassed,
+} from "@/lib/levels";
+import {
+  emptyDay,
+  OWNER,
+  streak,
+  todayKey,
+  useProgress,
+} from "@/lib/progress";
 import { SKILL_LABEL, skillForDate } from "@/lib/schedule";
 import { buildQueue } from "@/lib/srs";
 import {
@@ -39,7 +54,7 @@ const SKILL_SUB: Record<Skill, string> = {
 
 export default function Home() {
   const p = useProgress();
-  if (!p || !p.settings.onboarded) return <Loading />;
+  if (!p) return <Loading />;
 
   const unit = getUnit(p.settings.unitId);
   const now = new Date();
@@ -48,6 +63,11 @@ export default function Home() {
   const skill = skillForDate(now);
   const foundationLeft = q.due.length + q.fresh.length;
   const goal = p.settings.dailyGoal;
+  const li = currentLevel(p);
+  const level = LEVELS[li];
+  const next = LEVELS[li + 1];
+  const unitReady =
+    lessonsDone(p, unit) === LESSON_COUNT && !unitPassed(p, unit);
 
   const mission =
     foundationLeft > 0
@@ -57,7 +77,21 @@ export default function Home() {
           href: "/fondasi",
           cta: "Mulai",
         }
-      : skill
+      : unitReady
+        ? {
+            title: "Saatnya Ujian Unit",
+            sub: `Semua pelajaran ${unit.title} sudah selesai. Lulus untuk membuka unit berikutnya.`,
+            href: examHref("unit", unit.id),
+            cta: "Mulai ujian",
+          }
+        : levelReadyForExam(p, li) && next
+          ? {
+              title: `Ujian naik ke ${next.cefr}`,
+              sub: `Semua unit ${level.cefr} lulus. Satu ujian lagi untuk naik tingkat.`,
+              href: examHref("level", level.id),
+              cta: "Mulai ujian",
+            }
+          : skill
         ? {
             title: `Misi ${SKILL_LABEL[skill]}`,
             sub: SKILL_SUB[skill],
@@ -106,13 +140,23 @@ export default function Home() {
         <div className="min-w-0">
           <div className="text-sm text-mute">{greeting(now)},</div>
           <div className="truncate text-xl font-extrabold">
-            {p.settings.name || "Penjelajah"}
+            {p.settings.name.trim() || OWNER}
           </div>
         </div>
         <Link
+          href="/latihan"
+          className="ml-auto shrink-0 rounded-full bg-surface px-3 py-1.5 text-sm font-bold text-lavender ring-1 ring-lavender/30 transition hover:ring-lavender/60 lg:ml-auto"
+          title={`${level.name} · perkiraan IELTS ${level.ielts}`}
+        >
+          {level.cefr}
+          <span className="ml-1 hidden font-semibold text-mute sm:inline">
+            · {level.name}
+          </span>
+        </Link>
+        <Link
           href="/pengaturan"
           aria-label="Pengaturan"
-          className="ml-auto grid size-11 place-items-center rounded-full bg-surface text-mute transition hover:text-ink active:scale-90 lg:hidden"
+          className="grid size-11 place-items-center rounded-full bg-surface text-mute transition hover:text-ink active:scale-90 lg:hidden"
         >
           <Icon kind="settings" size={20} />
         </Link>
@@ -200,11 +244,14 @@ export default function Home() {
               href="/latihan"
               className="text-sm font-semibold text-lavender hover:underline"
             >
-              Lihat semua
+              Lihat jalur
             </Link>
           }
         >
           Lanjutkan belajar
+          <span className="block text-sm font-semibold text-mute">
+            {unit.title}
+          </span>
         </SectionTitle>
         <div className="grid gap-3 md:grid-cols-2">
           {rows.map((r) => (

@@ -3,8 +3,9 @@
 // Review kartu fondasi dengan algoritma FSRS (pustaka ts-fsrs).
 
 import { createEmptyCard, fsrs, Rating, type Grade } from "ts-fsrs";
+import { allItems } from "./content";
 import type { Item } from "./types";
-import { type Progress, todayKey, update } from "./progress";
+import { type Progress, scaledXp, todayKey, update } from "./progress";
 
 const scheduler = fsrs({ enable_fuzz: true });
 
@@ -16,12 +17,16 @@ export interface Queue {
   fresh: Item[]; // kartu baru untuk hari ini
 }
 
+/**
+ * Review jatuh tempo diambil dari SEMUA unit (kata unit lama tetap diulang),
+ * kartu baru hanya dari unit yang sedang dibuka.
+ */
 export function buildQueue(
   p: Progress,
   items: Item[],
   now = new Date(),
 ): Queue {
-  const due = items
+  const due = allItems()
     .filter((i) => p.cards[i.id] && p.cards[i.id].due <= now)
     .sort((a, b) => +p.cards[a.id].due - +p.cards[b.id].due);
   const learnedToday = p.days[todayKey(now)]?.newWords.length ?? 0;
@@ -56,7 +61,7 @@ export function gradeCard(
     if (!day.reviewed.includes(itemId)) day.reviewed.push(itemId);
     day.total += 1;
     if (grade !== Rating.Again) day.correct += 1;
-    day.xp += grade === Rating.Again ? 1 : 2;
+    day.xp += scaledXp(grade === Rating.Again ? 1 : 2, p);
     p.days[k] = day;
   });
   return nextDue;

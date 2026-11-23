@@ -8,9 +8,10 @@ Semua materi disimpan sebagai file JSON di repo (`content/<bahasa>/unit-XX.json`
 {
   "id": "en-u01",            // <bahasa>-u<nomor>
   "language": "en",          // en | ko | ja
-  "level": "B1",             // CEFR untuk en; nanti TOPIK/JLPT untuk ko/ja
+  "level": "B1",             // tingkat jalur: B1 | B1+ | B2 | B2+ | C1 (nanti TOPIK/JLPT untuk ko/ja)
   "title": "...",            // judul unit (bahasa Indonesia)
   "theme": "...",
+  "tags": ["karier", ...],   // opsional: tujuan/minat untuk personalisasi (lihat di bawah)
   "items": [...],            // kartu fondasi (masuk review FSRS)
   "grammar": [...],          // poin tata bahasa singkat
   "listening": [...],
@@ -20,6 +21,31 @@ Semua materi disimpan sebagai file JSON di repo (`content/<bahasa>/unit-XX.json`
   "conversation": [...]
 }
 ```
+
+## Jalur tingkat dan ujian
+
+Unit dikelompokkan per tingkat lewat kolom `level`, berurutan sesuai array `UNITS` di `src/lib/content.ts`.
+Aturan tingkat ada di `src/lib/levels.ts`.
+
+- **Ujian Unit**: 3 nyawa, membuka unit berikutnya di tingkat yang sama. Boleh diambil sebelum semua pelajaran selesai (lompat).
+- **Ujian Naik Tingkat**: soal dari semua unit di tingkat itu. Lulus = naik tingkat dan semua unit di bawahnya ikut lulus, jadi bisa dipakai sebagai Uji Lompat.
+- Soal ujian dibuat otomatis dari `items` dan `grammar` (arti, padanan, isi celah, susun kata, dengar-lalu-ketik, kalimat benar). Tidak perlu menulis soal ujian terpisah, tapi pastikan `cloze` yang diisi `answer` sama persis dengan `example`.
+- Makin tinggi tingkat, makin berat: isi celah diketik (bukan pilihan), kata pengecoh di susun kata, ambang dengar lebih tinggi, audio tanpa opsi pelan, transkrip listening disembunyikan, ide jawaban conversation disembunyikan, dan XP lebih besar.
+
+Panduan isi per tingkat:
+
+| Tingkat | Kosakata & tata bahasa | Panjang writing | Gaya tugas |
+|---|---|---|---|
+| B1 | frasa kerja sehari-hari, present perfect, going to/will | 50–110 kata | email, pesan Slack |
+| B1+ | pengalaman & rencana, present perfect continuous, gerund | 120–180 kata | wawancara, paragraf opini IELTS |
+| B2 | argumentasi, conditional, passive, kolokasi akademik | 180–250 kata | presentasi, esai IELTS Task 2 |
+| B2+ | nuansa, hedging, reported speech, idiom bisnis | 250+ kata | negosiasi, ringkasan artikel sains |
+| C1 | register formal, inversion, cleft sentence | 250–300 kata | esai beasiswa, diskusi panel |
+
+### tags
+
+Kunci tujuan: `karier`, `ielts`, `studi`, `travel`. Kunci minat: `teknologi`, `bisnis`, `desain`, `sains`.
+Tag yang cocok dengan profil di Pengaturan disorot di halaman Jalur.
 
 ## items (kartu fondasi)
 

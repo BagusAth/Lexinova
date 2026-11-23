@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  // Layar sambutan sudah dihapus (aplikasi khusus untuk Bagus); tautan lama diarahkan ke beranda.
+  async redirects() {
+    return [{ source: "/selamat-datang", destination: "/", permanent: true }];
+  },
   async headers() {
     return [
       {

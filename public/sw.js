@@ -3,9 +3,9 @@
 // - Halaman: network-first, jatuh ke cache saat offline.
 // - Permintaan ke domain lain (mis. LanguageTool) tidak disentuh.
 
-const VERSION = "v3";
+const VERSION = "v5";
 const CACHE = `lexinova-${VERSION}`;
-const PAGES = ["/", "/selamat-datang", "/kata", "/latihan", "/fondasi", "/listening", "/reading", "/writing", "/speaking", "/conversation", "/hasil", "/pengaturan"];
+const PAGES = ["/", "/kata", "/latihan", "/fondasi", "/listening", "/reading", "/writing", "/speaking", "/conversation", "/hasil", "/pengaturan", "/ujian"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -55,6 +55,11 @@ self.addEventListener("fetch", (event) => {
         }
         return res;
       })
-      .catch(() => caches.match(req).then((hit) => hit || (req.mode === "navigate" ? caches.match("/") : Response.error()))),
+      // Halaman dengan query (mis. /ujian?unit=...) memakai salinan halaman tanpa query.
+      .catch(() =>
+        caches
+          .match(req, { ignoreSearch: req.mode === "navigate" })
+          .then((hit) => hit || (req.mode === "navigate" ? caches.match("/") : Response.error())),
+      ),
   );
 });

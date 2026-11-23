@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { getUnit } from "@/lib/content";
+import { type Difficulty, difficultyOf } from "@/lib/levels";
 import { addResult, markDone, useProgress } from "@/lib/progress";
 import { speak, useRecognition } from "@/lib/speech";
 import { fuzzyContains } from "@/lib/text";
@@ -18,9 +19,17 @@ import {
 export default function ConversationPage() {
   const p = useProgress();
   if (!p) return <Loading />;
-  const ex = getUnit(p.settings.unitId).conversation[0];
+  const unit = getUnit(p.settings.unitId);
+  const ex = unit.conversation[0];
   if (!ex) return <Muted>Belum ada materi conversation.</Muted>;
-  return <Dialog ex={ex} autoVoice={p.settings.autoVoice} />;
+  return (
+    <Dialog
+      key={ex.id}
+      ex={ex}
+      autoVoice={p.settings.autoVoice}
+      hints={difficultyOf(unit).hints}
+    />
+  );
 }
 
 type Msg = { who: "them" | "me" | "tip"; text: string };
@@ -43,7 +52,16 @@ function route(
   };
 }
 
-function Dialog({ ex, autoVoice }: { ex: Conversation; autoVoice: boolean }) {
+function Dialog({
+  ex,
+  autoVoice,
+  hints,
+}: {
+  ex: Conversation;
+  autoVoice: boolean;
+  hints: Difficulty["hints"];
+}) {
+  const [hintFor, setHintFor] = useState<string | null>(null);
   const [nodeId, setNodeId] = useState(ex.start);
   const [msgs, setMsgs] = useState<Msg[]>([
     { who: "them", text: ex.nodes[ex.start].them },
@@ -147,7 +165,17 @@ function Dialog({ ex, autoVoice }: { ex: Conversation; autoVoice: boolean }) {
         </>
       ) : (
         <div className="sticky bottom-0 -mx-5 flex flex-col gap-2 border-t border-line bg-bg px-5 pt-3 pb-[max(0.5rem,env(safe-area-inset-bottom))] sm:-mx-8 sm:px-8 lg:mx-0 lg:rounded-3xl lg:border lg:bg-surface lg:p-4">
-          {node.hints && node.hints.length > 0 && (
+          {hints === "tap" && node.hints && node.hints.length > 0 && hintFor !== nodeId && (
+            <button
+              type="button"
+              onClick={() => setHintFor(nodeId)}
+              className="w-fit text-xs font-bold text-lavender hover:underline"
+            >
+              Butuh ide jawaban?
+            </button>
+          )}
+          {(hints === "show" || (hints === "tap" && hintFor === nodeId)) &&
+            node.hints && node.hints.length > 0 && (
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-mute">
               <span className="font-bold text-lavender">Ide:</span>
               {node.hints.map((h) => (
