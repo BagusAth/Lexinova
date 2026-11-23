@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Lexinova",
     short_name: "Lexinova",
-    description: "Belajar bahasa Inggris dari B1 sampai C1, gratis dan offline.",
+    description: "Belajar bahasa Inggris (B1–C1) dan Jepang (Kana–N1), gratis dan offline.",
     lang: "id",
     start_url: "/",
     scope: "/",

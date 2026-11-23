@@ -1,0 +1,438 @@
+{
+ "id": "ja-u11",
+ "language": "ja",
+ "level": "N1",
+ "title": "Esai dan opini akademik",
+ "theme": "Bahasa tulis formal untuk esai, seminar, dan beasiswa",
+ "tags": [
+  "studi",
+  "jlpt"
+ ],
+ "items": [
+  {
+   "id": "ja-u11-i01",
+   "type": "pattern",
+   "term": "〜に ほかならない",
+   "meaning": "tidak lain adalah ...",
+   "example": "{成功|せいこう} の {理由|りゆう} は {努力|どりょく} に ほかならない 。",
+   "example_id": "Alasan keberhasilannya tidak lain adalah usaha keras.",
+   "cloze": "{成功|せいこう} の {理由|りゆう} は {努力|どりょく} に ____ 。",
+   "answer": "ほかならない"
+  },
+  {
+   "id": "ja-u11-i02",
+   "type": "pattern",
+   "term": "〜を {余儀|よぎ}なく される",
+   "meaning": "terpaksa ... (karena keadaan)",
+   "example": "{台風|たいふう} の ため 、 {計画|けいかく} は {変更|へんこう} を {余儀|よぎ}なく された 。",
+   "example_id": "Karena topan, rencana terpaksa diubah.",
+   "cloze": "{台風|たいふう} の ため 、 {計画|けいかく} は {変更|へんこう} を ____ された 。",
+   "answer": "{余儀|よぎ}なく"
+  },
+  {
+   "id": "ja-u11-i03",
+   "type": "pattern",
+   "term": "〜と は いえ",
+   "meaning": "walaupun ...; meskipun demikian",
+   "example": "{便利|べんり} に なった と は いえ 、 {課題|かだい} は {残|のこ}って いる 。",
+   "example_id": "Walaupun sudah menjadi praktis, masih ada persoalan.",
+   "cloze": "{便利|べんり} に なった と は ____ 、 {課題|かだい} は {残|のこ}って いる 。",
+   "answer": "いえ"
+  },
+  {
+   "id": "ja-u11-i04",
+   "type": "pattern",
+   "term": "〜に {至|いた}る",
+   "meaning": "sampai pada ...; hingga ...",
+   "example": "{議論|ぎろん} は {深夜|しんや} に {至|いた}る まで {続|つづ}いた 。",
+   "example_id": "Diskusi berlanjut hingga larut malam.",
+   "cloze": "{議論|ぎろん} は {深夜|しんや} に ____ まで {続|つづ}いた 。",
+   "answer": "{至|いた}る"
+  },
+  {
+   "id": "ja-u11-i05",
+   "type": "pattern",
+   "term": "〜を もって",
+   "meaning": "per ...; dengan ... (formal)",
+   "example": "{本日|ほんじつ} を もって {受付|うけつけ} を {終了|しゅうりょう} いたします 。",
+   "example_id": "Pendaftaran ditutup per hari ini.",
+   "cloze": "{本日|ほんじつ} を ____ {受付|うけつけ} を {終了|しゅうりょう} いたします 。",
+   "answer": "もって"
+  },
+  {
+   "id": "ja-u11-i06",
+   "type": "word",
+   "term": "{顕著|けんちょ}",
+   "meaning": "mencolok; nyata",
+   "example": "{都市|とし} と {地方|ちほう} の {格差|かくさ} が {顕著|けんちょ} に なって いる 。",
+   "example_id": "Kesenjangan antara kota dan daerah makin mencolok.",
+   "cloze": "{都市|とし} と {地方|ちほう} の {格差|かくさ} が ____ に なって いる 。",
+   "answer": "{顕著|けんちょ}"
+  },
+  {
+   "id": "ja-u11-i07",
+   "type": "word",
+   "term": "{一概|いちがい} に",
+   "meaning": "begitu saja; secara umum (dengan bentuk negatif)",
+   "example": "{一概|いちがい} に {悪|わる}い と は {言|い}えない 。",
+   "example_id": "Tidak bisa begitu saja dikatakan buruk.",
+   "cloze": "____ に {悪|わる}い と は {言|い}えない 。",
+   "answer": "{一概|いちがい}"
+  },
+  {
+   "id": "ja-u11-i08",
+   "type": "pattern",
+   "term": "〜ならでは",
+   "meaning": "khas ...; hanya bisa didapat dari ...",
+   "example": "{留学|りゅうがく} ならでは の {経験|けいけん} が できた 。",
+   "example_id": "Saya mendapat pengalaman yang khas dari kuliah di luar negeri.",
+   "cloze": "{留学|りゅうがく} ____ の {経験|けいけん} が できた 。",
+   "answer": "ならでは"
+  },
+  {
+   "id": "ja-u11-i09",
+   "type": "word",
+   "term": "{示唆|しさ}",
+   "meaning": "isyarat; implikasi",
+   "example": "この {研究|けんきゅう} は {教育|きょういく} へ の {重要|じゅうよう} な {示唆|しさ} を {与|あた}える 。",
+   "example_id": "Penelitian ini memberi implikasi penting bagi pendidikan.",
+   "cloze": "この {研究|けんきゅう} は {教育|きょういく} へ の {重要|じゅうよう} な ____ を {与|あた}える 。",
+   "answer": "{示唆|しさ}"
+  },
+  {
+   "id": "ja-u11-i10",
+   "type": "pattern",
+   "term": "〜べく",
+   "meaning": "untuk ...; demi ... (formal)",
+   "example": "{夢|ゆめ} を {実現|じつげん} すべく 、 {留学|りゅうがく} を {決意|けつい} した 。",
+   "example_id": "Untuk mewujudkan mimpi, saya memutuskan kuliah di luar negeri.",
+   "cloze": "{夢|ゆめ} を {実現|じつげん} ____ 、 {留学|りゅうがく} を {決意|けつい} した 。",
+   "answer": "すべく"
+  },
+  {
+   "id": "ja-u11-i11",
+   "type": "word",
+   "term": "{不可欠|ふかけつ}",
+   "meaning": "mutlak diperlukan",
+   "example": "{国際協力|こくさいきょうりょく} は {問題解決|もんだいかいけつ} に {不可欠|ふかけつ} だ 。",
+   "example_id": "Kerja sama internasional mutlak diperlukan untuk memecahkan masalah.",
+   "cloze": "{国際協力|こくさいきょうりょく} は {問題解決|もんだいかいけつ} に ____ だ 。",
+   "answer": "{不可欠|ふかけつ}"
+  },
+  {
+   "id": "ja-u11-i12",
+   "type": "pattern",
+   "term": "〜に {即|そく}して",
+   "meaning": "sesuai dengan (kenyataan, aturan)",
+   "example": "{現実|げんじつ} に {即|そく}して {考|かんが}える {必要|ひつよう} が ある 。",
+   "example_id": "Perlu berpikir sesuai dengan kenyataan.",
+   "cloze": "{現実|げんじつ} に ____ {考|かんが}える {必要|ひつよう} が ある 。",
+   "answer": "{即|そく}して"
+  }
+ ],
+ "grammar": [
+  {
+   "id": "ja-u11-g01",
+   "title": "Penegasan formal: 〜にほかならない",
+   "explanation": "〜にほかならない berarti 'tidak lain adalah', dipakai dalam esai untuk menegaskan sebab atau hakikat sesuatu. Kata benda langsung diikuti に ほかならない.",
+   "examples": [
+    "{今回|こんかい} の {成功|せいこう} は {皆|みな}さん の {協力|きょうりょく} の {結果|けっか} に ほかならない 。",
+    "{言語|げんご} を {学|まな}ぶ こと は 、 {文化|ぶんか} を {学|まな}ぶ こと に ほかならない 。"
+   ],
+   "common_mistake": {
+    "wrong": "{成功|せいこう} は {努力|どりょく} を ほかならない 。",
+    "right": "{成功|せいこう} は {努力|どりょく} に ほかならない 。"
+   }
+  },
+  {
+   "id": "ja-u11-g02",
+   "title": "Konsesi: 〜とはいえ dan 〜ものの",
+   "explanation": "Keduanya berarti 'walaupun ...' dalam tulisan formal. Bagian sesudahnya harus berlawanan dengan yang sebelumnya. 〜とはいえ juga bisa berdiri di awal kalimat sebagai 'meski demikian'.",
+   "examples": [
+    "{春|はる} と は いえ 、 まだ {寒|さむ}い 。",
+    "{技術|ぎじゅつ} は {進歩|しんぽ} した もの の 、 {課題|かだい} も {多|おお}い 。"
+   ],
+   "common_mistake": {
+    "wrong": "{春|はる} と は いえ 、 とても {暖|あたた}かくて {春|はる} らしい 。",
+    "right": "{春|はる} と は いえ 、 まだ {寒|さむ}い 。"
+   }
+  },
+  {
+   "id": "ja-u11-g03",
+   "title": "Tujuan formal: 〜べく",
+   "explanation": "Bentuk kamus + べく berarti 'untuk / demi' dalam tulisan formal. する boleh menjadi すべく. Pola ini menyatakan tekad pelaku, jadi tidak dipakai untuk meminta atau menyuruh orang lain.",
+   "examples": [
+    "{問題|もんだい} を {解決|かいけつ} すべく 、 {調査|ちょうさ} を {行|おこな}った 。",
+    "{期待|きたい} に {応|こた}える べく 、 {全力|ぜんりょく} を {尽|つ}くす 。"
+   ],
+   "common_mistake": {
+    "wrong": "{合格|ごうかく} すべく 、 {頑張|がんば}って ください 。",
+    "right": "{合格|ごうかく} すべく 、 {毎日|まいにち} {勉強|べんきょう} して いる 。"
+   }
+  }
+ ],
+ "listening": [
+  {
+   "id": "ja-u11-l01",
+   "title": "Seminar: bahasa dan masyarakat",
+   "speakers": [
+    {
+     "name": "Prof. Mori",
+     "voice": "ja-JP"
+    },
+    {
+     "name": "Bagus",
+     "voice": "ja-JP"
+    }
+   ],
+   "lines": [
+    {
+     "speaker": "Prof. Mori",
+     "text": "{本日|ほんじつ} は 、 {言語|げんご} と {文化|ぶんか} の {関係|かんけい} に ついて {考|かんが}えて みましょう 。"
+    },
+    {
+     "speaker": "Prof. Mori",
+     "text": "{敬語|けいご} の {複雑|ふくざつ} さ は 、 {日本|にほん} の {社会|しゃかい} が {人間関係|にんげんかんけい} を {重視|じゅうし} して きた こと の {表|あらわ}れ に ほかならない 。"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "{先生|せんせい} 、 {若者|わかもの} の {敬語離|けいごばな}れ が {進|すす}んで いる と {聞|き}きます が 。"
+    },
+    {
+     "speaker": "Prof. Mori",
+     "text": "{確|たし}か に {使|つか}い{方|かた} は {変化|へんか} して いる 。 と は いえ 、 {敬語|けいご} が {消|き}える わけ では ない 。"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "{形|かたち} が {変|か}わって も 、 {相手|あいて} を {思|おも}う {気持|きも}ち は {残|のこ}る と いう こと です か 。"
+    },
+    {
+     "speaker": "Prof. Mori",
+     "text": "その とおり 。 {言葉|ことば} は {時代|じだい} に {即|そく}して {変|か}わって いく もの な の です 。"
+    }
+   ],
+   "dictation": [
+    1,
+    3,
+    5
+   ],
+   "questions": [
+    {
+     "q": "Menurut profesor, kerumitan keigo mencerminkan apa?",
+     "options": [
+      "Masyarakat yang mengutamakan hubungan antarmanusia",
+      "Pengaruh bahasa asing",
+      "Sistem pendidikan yang ketat"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Bagaimana pendapat profesor tentang anak muda dan keigo?",
+     "options": [
+      "Keigo akan hilang",
+      "Cara pakainya berubah, tapi keigo tidak hilang",
+      "Anak muda lebih sopan"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Apa kesimpulan seminar?",
+     "options": [
+      "Bahasa berubah sesuai zaman",
+      "Bahasa tidak boleh berubah",
+      "Keigo sebaiknya dihapus"
+     ],
+     "answer": 0
+    }
+   ]
+  }
+ ],
+ "reading": [
+  {
+   "id": "ja-u11-r01",
+   "title": "Esai: makna belajar di luar negeri",
+   "text": "{留学|りゅうがく} の {価値|かち} は 、 {語学力|ごがくりょく} の {向上|こうじょう} だけ に ある の では ない 。 {異|こと}なる {価値観|かちかん} を {持|も}つ {人々|ひとびと} と {日々|ひび} {接|せっ}する こと で 、 {自分|じぶん} が {当|あ}たり{前|まえ} だ と {思|おも}って いた もの を {問|と}い{直|なお}す {機会|きかい} が {生|う}まれる 。 もちろん 、 {孤独|こどく} や {経済的|けいざいてき} な {負担|ふたん} など 、 {留学|りゅうがく} に は {困難|こんなん} も {伴|ともな}う 。 と は いえ 、 その {困難|こんなん} を {乗|の}り{越|こ}える {過程|かてい} こそ が 、 {人|ひと} を {成長|せいちょう} させる の で ある 。 {留学|りゅうがく} と は 、 {外|そと} の {世界|せかい} を {知|し}る {旅|たび} で ある と {同時|どうじ} に 、 {自分自身|じぶんじしん} を {知|し}る {旅|たび} に ほかならない 。",
+   "glossary": [
+    {
+     "term": "{価値観|かちかん}",
+     "meaning": "nilai-nilai; cara pandang"
+    },
+    {
+     "term": "{接|せっ}する",
+     "meaning": "berinteraksi"
+    },
+    {
+     "term": "{問|と}い{直|なお}す",
+     "meaning": "mempertanyakan ulang"
+    },
+    {
+     "term": "{伴|ともな}う",
+     "meaning": "menyertai"
+    },
+    {
+     "term": "{乗|の}り{越|こ}える",
+     "meaning": "mengatasi"
+    },
+    {
+     "term": "{過程|かてい}",
+     "meaning": "proses"
+    },
+    {
+     "term": "{自分自身|じぶんじしん}",
+     "meaning": "diri sendiri"
+    }
+   ],
+   "questions": [
+    {
+     "q": "Menurut penulis, nilai kuliah di luar negeri tidak hanya terletak pada apa?",
+     "options": [
+      "Peningkatan kemampuan bahasa",
+      "Pengalaman kerja",
+      "Gelar akademik"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Apa yang membuat orang tumbuh menurut penulis?",
+     "options": [
+      "Biaya yang besar",
+      "Proses mengatasi kesulitan",
+      "Nilai ujian"
+     ],
+     "answer": 1,
+     "explain": "「〜こそが」 menegaskan: justru prosesnya."
+    },
+    {
+     "q": "Apa kesimpulan esai ini?",
+     "options": [
+      "Kuliah di luar negeri adalah perjalanan mengenal dunia sekaligus diri sendiri",
+      "Kuliah di luar negeri terlalu mahal",
+      "Lebih baik belajar bahasa di dalam negeri"
+     ],
+     "answer": 0
+    }
+   ]
+  }
+ ],
+ "writing": [
+  {
+   "id": "ja-u11-w01",
+   "mode": "build",
+   "prompt": "Terjemahkan dengan menyusun ubin kata.",
+   "sentences": [
+    {
+     "id": "Alasan keberhasilannya tidak lain adalah usaha keras.",
+     "ja": "{成功|せいこう} の {理由|りゆう} は {努力|どりょく} に ほかならない 。"
+    },
+    {
+     "id": "Walaupun sudah menjadi praktis, masih ada persoalan.",
+     "ja": "{便利|べんり} に なった と は いえ 、 {課題|かだい} は {残|のこ}って いる 。"
+    },
+    {
+     "id": "Untuk mewujudkan mimpi, saya memutuskan kuliah di luar negeri.",
+     "ja": "{夢|ゆめ} を {実現|じつげん} すべく 、 {留学|りゅうがく} を {決意|けつい} した 。"
+    },
+    {
+     "id": "Tidak bisa begitu saja dikatakan buruk.",
+     "ja": "{一概|いちがい} に {悪|わる}い と は {言|い}えない 。"
+    },
+    {
+     "id": "Kerja sama internasional mutlak diperlukan.",
+     "ja": "{国際協力|こくさいきょうりょく} は {不可欠|ふかけつ} だ 。"
+    }
+   ]
+  }
+ ],
+ "speaking": [
+  {
+   "id": "ja-u11-s01",
+   "mode": "shadowing",
+   "sentences": [
+    "{成功|せいこう} の {理由|りゆう} は {努力|どりょく} に ほかならない 。",
+    "{便利|べんり} に なった と は いえ 、 {課題|かだい} は {残|のこ}って いる 。",
+    "{一概|いちがい} に {悪|わる}い と は {言|い}えない 。",
+    "{留学|りゅうがく} ならでは の {経験|けいけん} が できた 。",
+    "{夢|ゆめ} を {実現|じつげん} すべく 、 {留学|りゅうがく} を {決意|けつい} した 。",
+    "{現実|げんじつ} に {即|そく}して {考|かんが}える {必要|ひつよう} が ある 。"
+   ],
+   "focus": "Kalimat esai panjang dibaca dengan nada tenang. Beri jeda singkat setelah 「とはいえ」 dan sebelum kesimpulan."
+  },
+  {
+   "id": "ja-u11-s02",
+   "mode": "answer",
+   "prompt": "Gaya wawancara beasiswa MEXT: mengapa kamu ingin belajar di Jepang? Jawab dalam 3 sampai 4 kalimat formal.",
+   "sample_answer": "{私|わたし} が {日本|にほん} で の {留学|りゅうがく} を {希望|きぼう} する の は 、 {人|ひと} に やさしい {技術|ぎじゅつ} を {学|まな}ぶ ため です 。 {日本|にほん} は {高齢化|こうれいか} と いう {課題|かだい} に {世界|せかい} で {最|もっと}も {早|はや}く {直面|ちょくめん} して いる {国|くに} の {一|ひと}つ です 。 その {経験|けいけん} ならでは の {知見|ちけん} を {学|まな}び 、 {将来|しょうらい} インドネシア の {社会|しゃかい} に {還元|かんげん} したい と {考|かんが}えて おります 。"
+  }
+ ],
+ "conversation": [
+  {
+   "id": "ja-u11-c01",
+   "title": "Diskusi laporan dengan dosen",
+   "role_you": "Mahasiswa pascasarjana",
+   "role_them": "Prof. Mori, dosen pembimbing",
+   "start": "n1",
+   "nodes": {
+    "n1": {
+     "them": "{君|きみ} の レポート を {読|よ}んだ よ 。 {結論|けつろん} が やや {一方的|いっぽうてき} だ と {思|おも}う が 、 どう {考|かんが}える ？",
+     "hints": [
+      "Saya sudah baca laporanmu. Kesimpulannya agak sepihak, bagaimana menurutmu?"
+     ],
+     "choices": [
+      {
+       "text": "ご{指摘|してき} ありがとう ございます 。 {確|たし}か に 、 {反対|はんたい} の {立場|たちば} の {議論|ぎろん} が {不足|ふそく} して いた と {思|おも}います 。",
+       "next": "n2",
+       "ok": true
+      },
+      {
+       "text": "いいえ 、 {先生|せんせい} が {間違|まちが}って います 。",
+       "next": "n2",
+       "ok": false,
+       "feedback": "Menyanggah dosen secara langsung terdengar kasar. Terima masukannya dulu, baru jelaskan posisimu."
+      }
+     ]
+    },
+    "n2": {
+     "them": "では 、 どう {修正|しゅうせい} する つもり かね 。",
+     "hints": [
+      "Lalu, bagaimana kamu akan merevisinya?"
+     ],
+     "choices": [
+      {
+       "text": "{反論|はんろん} を {紹介|しょうかい} した うえ で 、 データ に {即|そく}して {結論|けつろん} を {見直|みなお}す つもり です 。",
+       "next": "n3",
+       "ok": true
+      },
+      {
+       "text": "{全部|ぜんぶ} {書|か}き{直|なお}します 。 {理由|りゆう} は ありません 。",
+       "next": "n3",
+       "ok": false,
+       "feedback": "Berikan rencana yang konkret dan beralasan, misalnya memasukkan argumen tandingan dan data."
+      }
+     ]
+    },
+    "n3": {
+     "them": "いい だろう 。 {締|し}め{切|き}り は {来週|らいしゅう} の {金曜日|きんようび} と する 。",
+     "hints": [
+      "Baik. Tenggatnya Jumat minggu depan."
+     ],
+     "choices": [
+      {
+       "text": "{承知|しょうち} いたしました 。 {期待|きたい} に {応|こた}える べく 、 {努力|どりょく} いたします 。",
+       "next": "end",
+       "ok": true
+      },
+      {
+       "text": "かしこまりました 。 よろしく お{願|ねが}い いたします 。",
+       "next": "end",
+       "ok": true
+      }
+     ]
+    },
+    "end": {
+     "them": "{期待|きたい} して いる よ 。",
+     "end": true
+    }
+   }
+  }
+ ]
+}

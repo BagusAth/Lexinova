@@ -13,7 +13,7 @@ import {
   plain,
   splitTokens,
 } from "@/lib/ja";
-import { JaToken, T } from "@/components/T";
+import { JaToken, T, useTextSettings } from "@/components/T";
 import { Quiz } from "@/components/Quiz";
 import { SkillDone } from "@/components/SkillDone";
 import {
@@ -90,6 +90,7 @@ function ReadingExercise({
   const [added, setAdded] = useState(0);
   const [score, setScore] = useState("");
   const ja = isJaMarkup(ex.text);
+  const furiTap = useTextSettings().furigana === "tap";
   const parts = useMemo(() => segment(ex.text, ex.glossary), [ex]);
   const jaParts = useMemo(
     () => (ja ? segmentJa(ex.text, ex.glossary) : []),
@@ -133,11 +134,17 @@ function ReadingExercise({
       <div className="text-2xl font-extrabold">{ex.title}</div>
       <Muted>
         Ketuk kata bergaris untuk melihat artinya.
-        {ja && " Furigana di atas kanji menunjukkan cara bacanya."}
+        {ja &&
+          (furiTap
+            ? " Sentuh atau sorot kanji untuk melihat furigananya."
+            : " Furigana di atas kanji menunjukkan cara bacanya.")}
       </Muted>
       <Card>
         {ja ? (
-          <p lang="ja" className="ja text-xl leading-[2.6]">
+          <p
+            lang="ja"
+            className={`ja ${furiTap ? "furi-tap" : ""} text-xl leading-[2.6]`}
+          >
             {jaParts.map(({ tok, g }, i) => {
               const gap =
                 i > 0 &&

@@ -15,6 +15,12 @@ import ja03 from "@content/ja/unit-03.json";
 import ja04 from "@content/ja/unit-04.json";
 import ja05 from "@content/ja/unit-05.json";
 import ja06 from "@content/ja/unit-06.json";
+import ja07 from "@content/ja/unit-07.json";
+import ja08 from "@content/ja/unit-08.json";
+import ja09 from "@content/ja/unit-09.json";
+import ja10 from "@content/ja/unit-10.json";
+import ja11 from "@content/ja/unit-11.json";
+import ja12 from "@content/ja/unit-12.json";
 
 // Daftar unit, urut sesuai jalur belajar (tingkat diambil dari kolom `level`).
 // Tambah unit baru: import file JSON-nya lalu masukkan ke array ini.
@@ -36,6 +42,12 @@ export const UNITS: Unit[] = [
   ja04, // N5
   ja05, // N4
   ja06, // N4
+  ja07, // N3
+  ja08, // N3
+  ja09, // N2
+  ja10, // N2
+  ja11, // N1
+  ja12, // N1
 ] as Unit[];
 
 export function getUnit(id?: string): Unit {

@@ -1,0 +1,442 @@
+{
+ "id": "ja-u08",
+ "language": "ja",
+ "level": "N3",
+ "title": "Komunikasi kerja yang sopan",
+ "theme": "Keigo dasar, telepon kantor, dan email",
+ "tags": [
+  "karier",
+  "jlpt"
+ ],
+ "items": [
+  {
+   "id": "ja-u08-i01",
+   "type": "word",
+   "term": "{申|もう}します",
+   "meaning": "nama saya ... (merendahkan diri)",
+   "example": "インドネシア から {来|き}た バグス と {申|もう}します 。",
+   "example_id": "Saya Bagus dari Indonesia.",
+   "cloze": "インドネシア から {来|き}た バグス と ____ 。",
+   "answer": "{申|もう}します"
+  },
+  {
+   "id": "ja-u08-i02",
+   "type": "word",
+   "term": "いらっしゃいます",
+   "meaning": "ada; datang; pergi (hormat)",
+   "example": "{部長|ぶちょう} は {今|いま} {会議室|かいぎしつ} に いらっしゃいます 。",
+   "example_id": "Pak manajer sekarang ada di ruang rapat.",
+   "cloze": "{部長|ぶちょう} は {今|いま} {会議室|かいぎしつ} に ____ 。",
+   "answer": "いらっしゃいます"
+  },
+  {
+   "id": "ja-u08-i03",
+   "type": "word",
+   "term": "{伺|うかが}います",
+   "meaning": "berkunjung; bertanya (merendahkan diri)",
+   "example": "{明日|あした} {十時|じゅうじ} に {御社|おんしゃ} へ {伺|うかが}います 。",
+   "example_id": "Besok jam sepuluh saya akan berkunjung ke perusahaan Anda.",
+   "cloze": "{明日|あした} {十時|じゅうじ} に {御社|おんしゃ} へ ____ 。",
+   "answer": "{伺|うかが}います"
+  },
+  {
+   "id": "ja-u08-i04",
+   "type": "word",
+   "term": "{拝見|はいけん}",
+   "meaning": "melihat (merendahkan diri)",
+   "example": "{資料|しりょう} を {拝見|はいけん} しました 。",
+   "example_id": "Saya sudah melihat dokumennya.",
+   "cloze": "{資料|しりょう} を ____ しました 。",
+   "answer": "{拝見|はいけん}"
+  },
+  {
+   "id": "ja-u08-i05",
+   "type": "pattern",
+   "term": "お〜 ください",
+   "meaning": "silakan ... (hormat)",
+   "example": "こちら で {少々|しょうしょう} お{待|ま}ち ください 。",
+   "example_id": "Silakan tunggu sebentar di sini.",
+   "cloze": "こちら で {少々|しょうしょう} お____ ください 。",
+   "answer": "{待|ま}ち"
+  },
+  {
+   "id": "ja-u08-i06",
+   "type": "word",
+   "term": "{折|お}り{返|かえ}し",
+   "meaning": "(menelepon) balik",
+   "example": "{戻|もど}りましたら 、 {折|お}り{返|かえ}し お{電話|でんわ} します 。",
+   "example_id": "Begitu kembali, saya akan telepon balik.",
+   "cloze": "{戻|もど}りましたら 、 ____ お{電話|でんわ} します 。",
+   "answer": "{折|お}り{返|かえ}し"
+  },
+  {
+   "id": "ja-u08-i07",
+   "type": "pattern",
+   "term": "〜ば",
+   "meaning": "jika ... (syarat)",
+   "example": "{時間|じかん} が あれば 、 {手伝|てつだ}います 。",
+   "example_id": "Kalau ada waktu, saya bantu.",
+   "cloze": "{時間|じかん} が ____ 、 {手伝|てつだ}います 。",
+   "answer": "あれば"
+  },
+  {
+   "id": "ja-u08-i08",
+   "type": "pattern",
+   "term": "〜そう です (kabar)",
+   "meaning": "katanya ...",
+   "example": "{来週|らいしゅう} の {会議|かいぎ} は {中止|ちゅうし} だ そう です 。",
+   "example_id": "Katanya rapat minggu depan dibatalkan.",
+   "cloze": "{来週|らいしゅう} の {会議|かいぎ} は {中止|ちゅうし} だ ____ です 。",
+   "answer": "そう"
+  },
+  {
+   "id": "ja-u08-i09",
+   "type": "word",
+   "term": "{担当|たんとう}",
+   "meaning": "penanggung jawab",
+   "example": "この {件|けん} の {担当|たんとう} は {私|わたし} です 。",
+   "example_id": "Penanggung jawab urusan ini adalah saya.",
+   "cloze": "この {件|けん} の ____ は {私|わたし} です 。",
+   "answer": "{担当|たんとう}"
+  },
+  {
+   "id": "ja-u08-i10",
+   "type": "word",
+   "term": "{添付|てんぷ}",
+   "meaning": "lampiran; melampirkan",
+   "example": "{添付|てんぷ} の ファイル を ご{確認|かくにん} ください 。",
+   "example_id": "Mohon periksa file terlampir.",
+   "cloze": "____ の ファイル を ご{確認|かくにん} ください 。",
+   "answer": "{添付|てんぷ}"
+  },
+  {
+   "id": "ja-u08-i11",
+   "type": "pattern",
+   "term": "お{世話|せわ} に なって おります",
+   "meaning": "terima kasih atas kerja samanya (pembuka email/telepon)",
+   "example": "いつも お{世話|せわ} に なって おります 。",
+   "example_id": "Terima kasih atas kerja sama Anda selama ini.",
+   "cloze": "いつも お{世話|せわ} に ____ おります 。",
+   "answer": "なって"
+  },
+  {
+   "id": "ja-u08-i12",
+   "type": "pattern",
+   "term": "{恐|おそ}れ{入|い}りますが",
+   "meaning": "mohon maaf, tetapi ... (sangat sopan)",
+   "example": "{恐|おそ}れ{入|い}りますが 、 もう {一度|いちど} お{名前|なまえ} を お{願|ねが}いします 。",
+   "example_id": "Mohon maaf, boleh sebutkan nama Anda sekali lagi?",
+   "cloze": "____ 、 もう {一度|いちど} お{名前|なまえ} を お{願|ねが}いします 。",
+   "answer": "{恐|おそ}れ{入|い}りますが"
+  }
+ ],
+ "grammar": [
+  {
+   "id": "ja-u08-g01",
+   "title": "Sonkeigo dan kenjougo",
+   "explanation": "Sonkeigo (尊敬語) meninggikan orang lain: いらっしゃる, おっしゃる, ご覧になる. Kenjougo (謙譲語) merendahkan diri sendiri: 申す, 伺う, 拝見する. Jangan pernah memakai sonkeigo untuk diri sendiri.",
+   "examples": [
+    "{社長|しゃちょう} が いらっしゃいました 。",
+    "{私|わたし} が {伺|うかが}います 。",
+    "{資料|しりょう} を {拝見|はいけん} しました 。"
+   ],
+   "common_mistake": {
+    "wrong": "{私|わたし} は バグス と おっしゃいます 。",
+    "right": "{私|わたし} は バグス と {申|もう}します 。"
+   }
+  },
+  {
+   "id": "ja-u08-g02",
+   "title": "Pengandaian 〜ば",
+   "explanation": "〜ば menekankan syarat: 'jika ..., maka ...'. Cara membentuk: 行く → 行けば, ある → あれば, kata sifat い: 安い → 安ければ. 〜たら lebih umum dipakai dalam percakapan dan juga berarti 'setelah ...'.",
+   "examples": [
+    "{安|やす}ければ {買|か}います 。",
+    "{駅|えき} に {着|つ}いたら 、 {電話|でんわ} して ください 。",
+    "{雨|あめ} が {降|ふ}れば 、 {中止|ちゅうし} です 。"
+   ],
+   "common_mistake": {
+    "wrong": "{安|やす}いれば {買|か}います 。",
+    "right": "{安|やす}ければ {買|か}います 。"
+   }
+  },
+  {
+   "id": "ja-u08-g03",
+   "title": "Dua macam 〜そうです",
+   "explanation": "Bentuk ます tanpa ます + そうです = kelihatannya (降りそうです, dari apa yang dilihat). Bentuk biasa + そうです = katanya (降るそうです, dari informasi orang lain). Artinya sangat berbeda.",
+   "examples": [
+    "{雨|あめ} が {降|ふ}りそう です 。",
+    "{明日|あした} は {雨|あめ} が {降|ふ}る そう です 。"
+   ],
+   "common_mistake": {
+    "wrong": "{天気予報|てんきよほう} に よると 、 {明日|あした} は {雨|あめ} が {降|ふ}りそう です 。",
+    "right": "{天気予報|てんきよほう} に よると 、 {明日|あした} は {雨|あめ} が {降|ふ}る そう です 。"
+   }
+  }
+ ],
+ "listening": [
+  {
+   "id": "ja-u08-l01",
+   "title": "Menerima telepon dari klien",
+   "speakers": [
+    {
+     "name": "Kimura",
+     "voice": "ja-JP"
+    },
+    {
+     "name": "Bagus",
+     "voice": "ja-JP"
+    }
+   ],
+   "lines": [
+    {
+     "speaker": "Kimura",
+     "text": "お{世話|せわ} に なって おります 。 ABC {商事|しょうじ} の {木村|きむら} と {申|もう}します 。"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "いつも お{世話|せわ} に なって おります 。 {担当|たんとう} の バグス です 。"
+    },
+    {
+     "speaker": "Kimura",
+     "text": "{佐藤|さとう} {部長|ぶちょう} は いらっしゃいます か ？"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "{申|もう}し{訳|わけ} ございません 。 {佐藤|さとう} は ただいま {会議中|かいぎちゅう} です 。"
+    },
+    {
+     "speaker": "Kimura",
+     "text": "そう です か 。 では 、 {戻|もど}られたら お{電話|でんわ} を いただけます か ？"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "かしこまりました 。 {戻|もど}りましたら 、 {折|お}り{返|かえ}し お{電話|でんわ} いたします 。"
+    }
+   ],
+   "dictation": [
+    1,
+    3,
+    5
+   ],
+   "questions": [
+    {
+     "q": "Siapa yang dicari penelepon?",
+     "options": [
+      "Bagus",
+      "Manajer Sato",
+      "Kimura"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Kenapa Sato tidak bisa menerima telepon?",
+     "options": [
+      "Sedang rapat",
+      "Sedang cuti",
+      "Sudah pulang"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Kenapa Bagus menyebut atasannya 「佐藤」 tanpa 「部長」?",
+     "options": [
+      "Karena sedang marah",
+      "Saat bicara dengan pihak luar, rekan sendiri tidak ditinggikan",
+      "Karena lupa jabatannya"
+     ],
+     "answer": 1,
+     "explain": "Konsep uchi-soto: kepada orang luar, orang dari perusahaan sendiri tidak diberi gelar hormat."
+    }
+   ]
+  }
+ ],
+ "reading": [
+  {
+   "id": "ja-u08-r01",
+   "title": "Email bisnis untuk mengatur jadwal",
+   "text": "{木村|きむら} {様|さま} 。 いつも お{世話|せわ} に なって おります 。 {株式会社|かぶしきがいしゃ} ルナ の バグス です 。 {先日|せんじつ} は お{忙|いそが}しい ところ 、 ありがとう ございました 。 {次回|じかい} の {打|う}ち{合|あ}わせ です が 、 {来週|らいしゅう} {火曜日|かようび} の {午後|ごご} は いかが でしょう か 。 ご{都合|つごう} が {悪|わる}ければ 、 {候補|こうほ} の {日|ひ} を いくつか {教|おし}えて いただけます と {幸|さいわ}い です 。 {資料|しりょう} を {添付|てんぷ} いたします ので 、 ご{確認|かくにん} ください 。 よろしく お{願|ねが}い いたします 。",
+   "glossary": [
+    {
+     "term": "{打|う}ち{合|あ}わせ",
+     "meaning": "pertemuan; rapat koordinasi"
+    },
+    {
+     "term": "いかが",
+     "meaning": "bagaimana (sopan)"
+    },
+    {
+     "term": "ご{都合|つごう}",
+     "meaning": "keadaan; jadwal (Anda)"
+    },
+    {
+     "term": "{候補|こうほ}",
+     "meaning": "pilihan; kandidat"
+    },
+    {
+     "term": "{幸|さいわ}い",
+     "meaning": "senang (bila ...)"
+    },
+    {
+     "term": "{添付|てんぷ}",
+     "meaning": "lampiran",
+     "item_id": "ja-u08-i10"
+    },
+    {
+     "term": "{先日|せんじつ}",
+     "meaning": "beberapa hari lalu"
+    }
+   ],
+   "questions": [
+    {
+     "q": "Apa tujuan email ini?",
+     "options": [
+      "Menolak kerja sama",
+      "Mengatur jadwal pertemuan berikutnya",
+      "Meminta pembayaran"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Apa yang diminta jika hari Selasa tidak bisa?",
+     "options": [
+      "Membatalkan pertemuan",
+      "Memberi beberapa tanggal pilihan",
+      "Menelepon langsung"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Apa yang dilampirkan?",
+     "options": [
+      "Dokumen",
+      "Foto",
+      "Kontrak"
+     ],
+     "answer": 0
+    }
+   ]
+  }
+ ],
+ "writing": [
+  {
+   "id": "ja-u08-w01",
+   "mode": "build",
+   "prompt": "Terjemahkan dengan menyusun ubin kata.",
+   "sentences": [
+    {
+     "id": "Saya Bagus dari Indonesia.",
+     "ja": "インドネシア から {来|き}た バグス と {申|もう}します 。"
+    },
+    {
+     "id": "Saya sudah melihat dokumennya.",
+     "ja": "{資料|しりょう} を {拝見|はいけん} しました 。"
+    },
+    {
+     "id": "Kalau ada waktu, saya bantu.",
+     "ja": "{時間|じかん} が あれば 、 {手伝|てつだ}います 。"
+    },
+    {
+     "id": "Mohon periksa file terlampir.",
+     "ja": "{添付|てんぷ} の ファイル を ご{確認|かくにん} ください 。"
+    },
+    {
+     "id": "Katanya rapat minggu depan dibatalkan.",
+     "ja": "{来週|らいしゅう} の {会議|かいぎ} は {中止|ちゅうし} だ そう です 。"
+    }
+   ]
+  }
+ ],
+ "speaking": [
+  {
+   "id": "ja-u08-s01",
+   "mode": "shadowing",
+   "sentences": [
+    "いつも お{世話|せわ} に なって おります 。",
+    "バグス と {申|もう}します 。",
+    "{少々|しょうしょう} お{待|ま}ち ください 。",
+    "{折|お}り{返|かえ}し お{電話|でんわ} いたします 。",
+    "{恐|おそ}れ{入|い}りますが 、 もう {一度|いちど} お{願|ねが}いします 。",
+    "かしこまりました 。"
+   ],
+   "focus": "Keigo diucapkan pelan dan jelas. かしこまりました dengan nada datar yang turun di akhir."
+  },
+  {
+   "id": "ja-u08-s02",
+   "mode": "answer",
+   "prompt": "Kamu menerima telepon untuk atasanmu yang sedang keluar kantor. Sampaikan dengan sopan bahwa ia sedang keluar, lalu tawarkan untuk menelepon balik (3 kalimat).",
+   "sample_answer": "{申|もう}し{訳|わけ} ございません 。 {佐藤|さとう} は ただいま {外出|がいしゅつ} して おります 。 {戻|もど}りましたら 、 {折|お}り{返|かえ}し お{電話|でんわ} いたしましょう か 。"
+  }
+ ],
+ "conversation": [
+  {
+   "id": "ja-u08-c01",
+   "title": "Bertamu ke kantor klien",
+   "role_you": "Tamu dari perusahaan lain",
+   "role_them": "Resepsionis",
+   "start": "n1",
+   "nodes": {
+    "n1": {
+     "them": "いらっしゃいませ 。 {失礼|しつれい} です が 、 どちら {様|さま} でしょう か 。",
+     "hints": [
+      "Selamat datang. Maaf, dengan siapa?"
+     ],
+     "choices": [
+      {
+       "text": "{株式会社|かぶしきがいしゃ} ルナ の バグス と {申|もう}します 。",
+       "next": "n2",
+       "ok": true
+      },
+      {
+       "text": "バグス さん です 。",
+       "next": "n2",
+       "ok": false,
+       "feedback": "Jangan memakai さん untuk diri sendiri. Pakai 「〜と申します」."
+      }
+     ]
+    },
+    "n2": {
+     "them": "お{約束|やくそく} は いただいて おります でしょう か 。",
+     "hints": [
+      "Apakah Anda sudah membuat janji?"
+     ],
+     "choices": [
+      {
+       "text": "はい 、 {二時|にじ} に {木村|きむら} {様|さま} と お{約束|やくそく} が あります 。",
+       "next": "n3",
+       "ok": true
+      },
+      {
+       "text": "はい 、 {木村|きむら} が {待|ま}って います 。",
+       "next": "n3",
+       "ok": false,
+       "feedback": "Orang dari perusahaan lain harus ditinggikan: 「木村様」, bukan 「木村」."
+      }
+     ]
+    },
+    "n3": {
+     "them": "かしこまりました 。 {少々|しょうしょう} お{待|ま}ち ください 。",
+     "hints": [
+      "Baik. Mohon tunggu sebentar."
+     ],
+     "choices": [
+      {
+       "text": "はい 、 よろしく お{願|ねが}いします 。",
+       "next": "end",
+       "ok": true
+      },
+      {
+       "text": "はい 、 {待|ま}って あげます 。",
+       "next": "end",
+       "ok": false,
+       "feedback": "「〜てあげる」 terdengar seperti memberi kebaikan dan tidak sopan di sini."
+      }
+     ]
+    },
+    "end": {
+     "them": "お{待|ま}たせ いたしました 。 どうぞ 、 こちら へ 。",
+     "end": true
+    }
+   }
+  }
+ ]
+}

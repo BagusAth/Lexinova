@@ -192,6 +192,18 @@ const PUNCT_ROMAJI: Record<string, string> = {
   "。": ".", "、": ",", "？": "?", "！": "!", "「": '"', "」": '"', "〜": "~", "…": "...",
 };
 
+/**
+ * Partikel は yang menempel di akhir token (〜には, 〜では, 〜とは, mis.
+ * 泣かずには, ならでは) dibaca "wa", bukan "ha".
+ */
+function withParticleSuffix(r: string): string {
+  const conv = (s: string) =>
+    kanaToRomaji(s).replace(/[。、？！]/g, (c) => PUNCT_ROMAJI[c]);
+  const m = r.match(/^(.+?)(に|で|と)は$/);
+  if (m) return `${conv(m[1])}${conv(m[2])}wa`;
+  return conv(r);
+}
+
 /** Romaji otomatis dari markup: "watashi wa gakusei desu." */
 export function romaji(text: string): string {
   let out = "";
@@ -202,7 +214,7 @@ export function romaji(text: string): string {
       continue;
     }
     const word = hasJapanese(r)
-      ? (PARTICLE[r] ?? kanaToRomaji(r).replace(/[。、？！]/g, (c) => PUNCT_ROMAJI[c]))
+      ? (PARTICLE[r] ?? withParticleSuffix(r))
       : r;
     out += (out ? " " : "") + word;
   }

@@ -1,0 +1,441 @@
+{
+ "id": "ja-u12",
+ "language": "ja",
+ "level": "N1",
+ "title": "Budaya, anime, dan estetika Jepang",
+ "theme": "Industri anime, wabi-sabi, dan pariwisata budaya",
+ "tags": [
+  "budaya",
+  "travel",
+  "jlpt"
+ ],
+ "items": [
+  {
+   "id": "ja-u12-i01",
+   "type": "pattern",
+   "term": "〜を よそに",
+   "meaning": "tanpa memedulikan ...",
+   "example": "{周囲|しゅうい} の {心配|しんぱい} を よそに 、 {彼|かれ} は {一人|ひとり} で {旅|たび} に {出|で}た 。",
+   "example_id": "Tanpa memedulikan kekhawatiran orang sekitar, ia pergi berkelana sendirian.",
+   "cloze": "{周囲|しゅうい} の {心配|しんぱい} を ____ 、 {彼|かれ} は {一人|ひとり} で {旅|たび} に {出|で}た 。",
+   "answer": "よそに"
+  },
+  {
+   "id": "ja-u12-i02",
+   "type": "pattern",
+   "term": "〜ともなると",
+   "meaning": "kalau sudah (sampai tingkat) ...",
+   "example": "{人気作品|にんきさくひん} ともなると 、 {放送前|ほうそうまえ} から {話題|わだい} に なる 。",
+   "example_id": "Kalau sudah karya populer, ramai dibicarakan bahkan sebelum tayang.",
+   "cloze": "{人気作品|にんきさくひん} ____ 、 {放送前|ほうそうまえ} から {話題|わだい} に なる 。",
+   "answer": "ともなると"
+  },
+  {
+   "id": "ja-u12-i03",
+   "type": "word",
+   "term": "{侘|わ}び{寂|さ}び",
+   "meaning": "wabi-sabi: keindahan dalam kesederhanaan dan ketidaksempurnaan",
+   "example": "{古|ふる}い {茶碗|ちゃわん} に {侘|わ}び{寂|さ}び を {感|かん}じる 。",
+   "example_id": "Saya merasakan wabi-sabi pada mangkuk teh tua.",
+   "cloze": "{古|ふる}い {茶碗|ちゃわん} に ____ を {感|かん}じる 。",
+   "answer": "{侘|わ}び{寂|さ}び"
+  },
+  {
+   "id": "ja-u12-i04",
+   "type": "word",
+   "term": "{醍醐味|だいごみ}",
+   "meaning": "nikmat sejati; daya tarik utama",
+   "example": "{旅|たび} の {醍醐味|だいごみ} は {予定外|よていがい} の {出会|であ}い に ある 。",
+   "example_id": "Daya tarik utama perjalanan ada pada pertemuan tak terduga.",
+   "cloze": "{旅|たび} の ____ は {予定外|よていがい} の {出会|であ}い に ある 。",
+   "answer": "{醍醐味|だいごみ}"
+  },
+  {
+   "id": "ja-u12-i05",
+   "type": "pattern",
+   "term": "〜に {堪|た}えない",
+   "meaning": "tidak tahan untuk (dilihat, didengar) ...",
+   "example": "その {映画|えいが} の {暴力場面|ぼうりょくばめん} は {見|み}る に {堪|た}えない 。",
+   "example_id": "Adegan kekerasan di film itu tidak tahan untuk ditonton.",
+   "cloze": "その {映画|えいが} の {暴力場面|ぼうりょくばめん} は {見|み}る に ____ 。",
+   "answer": "{堪|た}えない",
+   "note": "Ini ungkapan negatif. Jangan dipakai untuk memuji."
+  },
+  {
+   "id": "ja-u12-i06",
+   "type": "word",
+   "term": "{継承|けいしょう}",
+   "meaning": "pewarisan; meneruskan (tradisi, teknik)",
+   "example": "{伝統工芸|でんとうこうげい} を {次|つぎ} の {世代|せだい} に {継承|けいしょう} する 。",
+   "example_id": "Meneruskan kerajinan tradisional kepada generasi berikutnya.",
+   "cloze": "{伝統工芸|でんとうこうげい} を {次|つぎ} の {世代|せだい} に ____ する 。",
+   "answer": "{継承|けいしょう}"
+  },
+  {
+   "id": "ja-u12-i07",
+   "type": "pattern",
+   "term": "〜ずには いられない",
+   "meaning": "tidak bisa tidak ...; tak kuasa menahan ...",
+   "example": "その {結末|けつまつ} に は {泣|な}かずには いられなかった 。",
+   "example_id": "Saya tak kuasa menahan tangis melihat akhir ceritanya.",
+   "cloze": "その {結末|けつまつ} に は ____ いられなかった 。",
+   "answer": "{泣|な}かずには"
+  },
+  {
+   "id": "ja-u12-i08",
+   "type": "word",
+   "term": "{斬新|ざんしん}",
+   "meaning": "segar; inovatif",
+   "example": "{斬新|ざんしん} な {映像表現|えいぞうひょうげん} が {高|たか}く {評価|ひょうか} された 。",
+   "example_id": "Ekspresi visual yang inovatif dinilai tinggi.",
+   "cloze": "____ な {映像表現|えいぞうひょうげん} が {高|たか}く {評価|ひょうか} された 。",
+   "answer": "{斬新|ざんしん}"
+  },
+  {
+   "id": "ja-u12-i09",
+   "type": "pattern",
+   "term": "〜を ものともせず",
+   "meaning": "tanpa gentar menghadapi ...",
+   "example": "{批判|ひはん} を ものともせず 、 {作品|さくひん} を {作|つく}り{続|つづ}けた 。",
+   "example_id": "Tanpa gentar menghadapi kritik, ia terus berkarya.",
+   "cloze": "{批判|ひはん} を ____ 、 {作品|さくひん} を {作|つく}り{続|つづ}けた 。",
+   "answer": "ものともせず"
+  },
+  {
+   "id": "ja-u12-i10",
+   "type": "word",
+   "term": "{聖地巡礼|せいちじゅんれい}",
+   "meaning": "kunjungan ke lokasi latar anime/film",
+   "example": "{聖地巡礼|せいちじゅんれい} が {地域経済|ちいきけいざい} を {活性化|かっせいか} させて いる 。",
+   "example_id": "Kunjungan ke lokasi latar anime menghidupkan ekonomi daerah.",
+   "cloze": "____ が {地域経済|ちいきけいざい} を {活性化|かっせいか} させて いる 。",
+   "answer": "{聖地巡礼|せいちじゅんれい}"
+  },
+  {
+   "id": "ja-u12-i11",
+   "type": "word",
+   "term": "{過酷|かこく}",
+   "meaning": "berat; keras (kondisi)",
+   "example": "アニメ {業界|ぎょうかい} の {過酷|かこく} な {労働環境|ろうどうかんきょう} が {問題|もんだい} に なって いる 。",
+   "example_id": "Kondisi kerja yang berat di industri anime menjadi masalah.",
+   "cloze": "アニメ {業界|ぎょうかい} の ____ な {労働環境|ろうどうかんきょう} が {問題|もんだい} に なって いる 。",
+   "answer": "{過酷|かこく}"
+  },
+  {
+   "id": "ja-u12-i12",
+   "type": "pattern",
+   "term": "〜と あって",
+   "meaning": "karena (situasinya istimewa) ...",
+   "example": "{連休|れんきゅう} と あって 、 {京都|きょうと} は {観光客|かんこうきゃく} で あふれて いた 。",
+   "example_id": "Karena libur panjang, Kyoto dipenuhi wisatawan.",
+   "cloze": "{連休|れんきゅう} と ____ 、 {京都|きょうと} は {観光客|かんこうきゃく} で あふれて いた 。",
+   "answer": "あって"
+  }
+ ],
+ "grammar": [
+  {
+   "id": "ja-u12-g01",
+   "title": "〜をよそに dan 〜をものともせず",
+   "explanation": "Keduanya berarti tidak terpengaruh oleh sesuatu. 〜をよそに: mengabaikan kekhawatiran atau protes orang lain (sering bernada kritik). 〜をものともせず: berani menghadapi hambatan (bernada memuji). Sesudahnya harus ada tindakan yang tetap dilakukan.",
+   "examples": [
+    "{親|おや} の {反対|はんたい} を よそに 、 {彼|かれ} は {声優|せいゆう} に なった 。",
+    "{怪我|けが} を ものともせず 、 {最後|さいご} まで {走|はし}り{抜|ぬ}いた 。"
+   ],
+   "common_mistake": {
+    "wrong": "{怪我|けが} を ものともせず 、 {試合|しあい} を {休|やす}んだ 。",
+    "right": "{怪我|けが} を ものともせず 、 {試合|しあい} に {出|で}た 。"
+   }
+  },
+  {
+   "id": "ja-u12-g02",
+   "title": "〜ずにはいられない",
+   "explanation": "Bentuk ない tanpa ない + ずにはいられない berarti tidak bisa menahan diri untuk melakukan sesuatu. する berubah menjadi せずにはいられない.",
+   "examples": [
+    "この {曲|きょく} を {聴|き}く と 、 {踊|おど}らずには いられない 。",
+    "{彼|かれ} の {話|はなし} に {感動|かんどう} せずには いられなかった 。"
+   ],
+   "common_mistake": {
+    "wrong": "{感動|かんどう} しずには いられない 。",
+    "right": "{感動|かんどう} せずには いられない 。"
+   }
+  },
+  {
+   "id": "ja-u12-g03",
+   "title": "〜とあって",
+   "explanation": "〜とあって = 'karena situasinya istimewa, maka ...'. Menjelaskan keadaan khusus yang wajar menimbulkan akibat yang terlihat. Bagian akhirnya berupa fakta, bukan keinginan atau ajakan pembicara.",
+   "examples": [
+    "{人気声優|にんきせいゆう} が {来|く}る と あって 、 {会場|かいじょう} は {満員|まんいん} だった 。",
+    "{初日|しょにち} と あって 、 {映画館|えいがかん} に は {長|なが}い {列|れつ} が できた 。"
+   ],
+   "common_mistake": {
+    "wrong": "{初日|しょにち} と あって 、 {映画館|えいがかん} に {行|い}きたい 。",
+    "right": "{初日|しょにち} と あって 、 {映画館|えいがかん} は {混|こ}んで いた 。"
+   }
+  }
+ ],
+ "listening": [
+  {
+   "id": "ja-u12-l01",
+   "title": "Wawancara dengan sutradara animasi",
+   "speakers": [
+    {
+     "name": "Kobayashi",
+     "voice": "ja-JP"
+    },
+    {
+     "name": "Fujita",
+     "voice": "ja-JP"
+    }
+   ],
+   "lines": [
+    {
+     "speaker": "Kobayashi",
+     "text": "{藤田|ふじた} さん の {新作|しんさく} は 、 {公開初日|こうかいしょにち} から {大|だい} ヒット と あって 、 {話題|わだい} に なって います ね 。"
+    },
+    {
+     "speaker": "Fujita",
+     "text": "ありがとう ございます 。 {正直|しょうじき} 、 {制作中|せいさくちゅう} は {不安|ふあん} で たまりません でした 。"
+    },
+    {
+     "speaker": "Kobayashi",
+     "text": "{業界|ぎょうかい} の {過酷|かこく} な {環境|かんきょう} も よく {話題|わだい} に なります が 。"
+    },
+    {
+     "speaker": "Fujita",
+     "text": "{確|たし}か に {厳|きび}しい です 。 と は いえ 、 {若|わか}い {人|ひと} たち が {技術|ぎじゅつ} を {継承|けいしょう} して くれて いる の は {心強|こころづよ}い です 。"
+    },
+    {
+     "speaker": "Kobayashi",
+     "text": "{最後|さいご} に 、 {作品|さくひん} の {見|み}どころ を {教|おし}えて ください 。"
+    },
+    {
+     "speaker": "Fujita",
+     "text": "{日本|にほん} の {古|ふる}い {町並|まちな}み の {美|うつく}しさ です 。 {侘|わ}び{寂|さ}び を {映像|えいぞう} で {表現|ひょうげん} したかった ん です 。"
+    }
+   ],
+   "dictation": [
+    1,
+    3,
+    5
+   ],
+   "questions": [
+    {
+     "q": "Bagaimana perasaan Fujita selama produksi?",
+     "options": [
+      "Sangat cemas",
+      "Sangat santai",
+      "Bosan"
+     ],
+     "answer": 0,
+     "explain": "「不安でたまらない」 = cemas sekali."
+    },
+    {
+     "q": "Apa yang membuatnya tenang soal masa depan industri?",
+     "options": [
+      "Gaji yang naik",
+      "Anak muda yang meneruskan keterampilan",
+      "Teknologi AI"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Apa daya tarik utama karyanya?",
+     "options": [
+      "Adegan aksi",
+      "Keindahan kota tua Jepang dan wabi-sabi",
+      "Musik rock"
+     ],
+     "answer": 1
+    }
+   ]
+  }
+ ],
+ "reading": [
+  {
+   "id": "ja-u12-r01",
+   "title": "Seichi junrei dan revitalisasi daerah",
+   "text": "アニメ の {舞台|ぶたい} と なった {土地|とち} を ファン が {訪|おとず}れる 「{聖地巡礼|せいちじゅんれい}」 は 、 {今|いま} や {地域振興|ちいきしんこう} の {重要|じゅうよう} な {手段|しゅだん} と なって いる 。 {人口減少|じんこうげんしょう} に {悩|なや}む {地方|ちほう} の {町|まち} に とって 、 {全国|ぜんこく} から 、 さらに は {海外|かいがい} から {若者|わかもの} が {集|あつ}まる こと の {意義|いぎ} は {大|おお}きい 。 しかし 、 {観光客|かんこうきゃく} の {急増|きゅうぞう} が {住民|じゅうみん} の {生活|せいかつ} を {脅|おびや}かす {例|れい} も {少|すく}なく ない 。 {一時|いちじ} の ブーム で {終|お}わらせない ため に は 、 ファン と {住民|じゅうみん} が {互|たが}い の {文化|ぶんか} を {尊重|そんちょう} し 、 {作品|さくひん} ならでは の {魅力|みりょく} を {長|なが}く {伝|つた}えて いく {仕組|しく}み が {不可欠|ふかけつ} で ある 。",
+   "glossary": [
+    {
+     "term": "{聖地巡礼|せいちじゅんれい}",
+     "meaning": "kunjungan ke lokasi latar anime",
+     "item_id": "ja-u12-i10"
+    },
+    {
+     "term": "{地域振興|ちいきしんこう}",
+     "meaning": "revitalisasi daerah"
+    },
+    {
+     "term": "{手段|しゅだん}",
+     "meaning": "sarana; cara"
+    },
+    {
+     "term": "{意義|いぎ}",
+     "meaning": "makna; arti penting"
+    },
+    {
+     "term": "{脅|おびや}かす",
+     "meaning": "mengancam; mengganggu"
+    },
+    {
+     "term": "{尊重|そんちょう}",
+     "meaning": "menghormati"
+    },
+    {
+     "term": "{仕組|しく}み",
+     "meaning": "mekanisme; sistem"
+    }
+   ],
+   "questions": [
+    {
+     "q": "Mengapa seichi junrei penting bagi daerah?",
+     "options": [
+      "Mendatangkan anak muda ke daerah yang penduduknya berkurang",
+      "Menambah pajak pemerintah pusat",
+      "Mengurangi wisatawan asing"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Masalah apa yang disebut dalam teks?",
+     "options": [
+      "Lonjakan wisatawan mengganggu kehidupan warga",
+      "Kurangnya anime baru",
+      "Harga tiket kereta naik"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Apa yang diperlukan agar tidak menjadi tren sesaat?",
+     "options": [
+      "Melarang wisatawan datang",
+      "Sikap saling menghormati dan mekanisme jangka panjang",
+      "Membuka lebih banyak toko suvenir"
+     ],
+     "answer": 1
+    }
+   ]
+  }
+ ],
+ "writing": [
+  {
+   "id": "ja-u12-w01",
+   "mode": "build",
+   "prompt": "Terjemahkan dengan menyusun ubin kata.",
+   "sentences": [
+    {
+     "id": "Tanpa memedulikan kekhawatiran orang sekitar, ia pergi berkelana sendirian.",
+     "ja": "{周囲|しゅうい} の {心配|しんぱい} を よそに 、 {彼|かれ} は {一人|ひとり} で {旅|たび} に {出|で}た 。"
+    },
+    {
+     "id": "Saya tak kuasa menahan tangis melihat akhir ceritanya.",
+     "ja": "その {結末|けつまつ} に は {泣|な}かずには いられなかった 。"
+    },
+    {
+     "id": "Daya tarik utama perjalanan ada pada pertemuan tak terduga.",
+     "ja": "{旅|たび} の {醍醐味|だいごみ} は {予定外|よていがい} の {出会|であ}い に ある 。"
+    },
+    {
+     "id": "Karena libur panjang, Kyoto dipenuhi wisatawan.",
+     "ja": "{連休|れんきゅう} と あって 、 {京都|きょうと} は {観光客|かんこうきゃく} で あふれて いた 。"
+    },
+    {
+     "id": "Meneruskan kerajinan tradisional kepada generasi berikutnya.",
+     "ja": "{伝統工芸|でんとうこうげい} を {次|つぎ} の {世代|せだい} に {継承|けいしょう} する 。"
+    }
+   ]
+  }
+ ],
+ "speaking": [
+  {
+   "id": "ja-u12-s01",
+   "mode": "shadowing",
+   "sentences": [
+    "{旅|たび} の {醍醐味|だいごみ} は {予定外|よていがい} の {出会|であ}い に ある 。",
+    "{古|ふる}い {茶碗|ちゃわん} に {侘|わ}び{寂|さ}び を {感|かん}じる 。",
+    "その {結末|けつまつ} に は {泣|な}かずには いられなかった 。",
+    "{連休|れんきゅう} と あって 、 {京都|きょうと} は {観光客|かんこうきゃく} で あふれて いた 。",
+    "{批判|ひはん} を ものともせず 、 {作品|さくひん} を {作|つく}り{続|つづ}けた 。",
+    "{斬新|ざんしん} な {映像表現|えいぞうひょうげん} が {高|たか}く {評価|ひょうか} された 。"
+   ],
+   "focus": "Nada bercerita: beri tekanan pada kata kunci seperti 醍醐味 dan 侘び寂び, lalu jeda singkat setelah 「とあって」."
+  },
+  {
+   "id": "ja-u12-s02",
+   "mode": "answer",
+   "prompt": "Ceritakan karya Jepang (anime, film, atau buku) yang paling berkesan bagimu dan mengapa. Pakai minimal satu pola N1 (〜ずにはいられない, 〜とあって, 〜ならでは) dalam 3 sampai 4 kalimat.",
+   "sample_answer": "{私|わたし} に とって {一番|いちばん} {印象|いんしょう} に {残|のこ}って いる の は 、 「{君|きみ}の{名|な}は。」 です 。 {美|うつく}しい {映像|えいぞう} と {音楽|おんがく} は 、 {日本|にほん} の アニメ ならでは の {魅力|みりょく} だ と {思|おも}います 。 {最後|さいご} の {場面|ばめん} で は 、 {泣|な}かずには いられません でした 。 いつか {映画|えいが} の {舞台|ぶたい} に なった {飛騨|ひだ} を {訪|おとず}れたい です 。"
+  }
+ ],
+ "conversation": [
+  {
+   "id": "ja-u12-c01",
+   "title": "Ngobrol soal anime dengan teman",
+   "role_you": "Kamu",
+   "role_them": "Rina, teman Jepang",
+   "start": "n1",
+   "nodes": {
+    "n1": {
+     "them": "{最近|さいきん} {観|み}た アニメ で 、 {何|なに} か よかった の ある ？",
+     "hints": [
+      "Ada anime bagus yang baru kamu tonton?"
+     ],
+     "choices": [
+      {
+       "text": "うん 、 {映像|えいぞう} が {斬新|ざんしん} な {作品|さくひん} が あって 、 {何度|なんど} も {観|み}ずには いられなかった よ 。",
+       "next": "n2",
+       "ok": true
+      },
+      {
+       "text": "うん 、 {観|み}る に {堪|た}えない くらい {最高|さいこう} だった 。",
+       "next": "n2",
+       "ok": false,
+       "feedback": "「見るに堪えない」 berarti 'tidak tahan untuk ditonton' (sangat buruk), jadi tidak bisa dipakai untuk memuji."
+      }
+     ]
+    },
+    "n2": {
+     "them": "へえ 、 {舞台|ぶたい} に なった {町|まち} に {行|い}って みたい と {思|おも}う ？",
+     "hints": [
+      "Wah, kamu ingin pergi ke kota latarnya?"
+     ],
+     "choices": [
+      {
+       "text": "うん 、 {聖地巡礼|せいちじゅんれい} は {旅|たび} の {醍醐味|だいごみ} だ と {思|おも}う 。",
+       "next": "n3",
+       "ok": true
+      },
+      {
+       "text": "{行|い}きたい けど 、 {地元|じもと} の {人|ひと} に {迷惑|めいわく} を かけない ように したい な 。",
+       "next": "n3",
+       "ok": true
+      }
+     ]
+    },
+    "n3": {
+     "them": "じゃあ 、 {次|つぎ} の {連休|れんきゅう} に {一緒|いっしょ} に {行|い}こう よ ！",
+     "hints": [
+      "Kalau begitu, libur panjang berikutnya kita pergi bareng!"
+     ],
+     "choices": [
+      {
+       "text": "いい ね ！ {連休|れんきゅう} だ から {混|こ}む だろう し 、 {早|はや}め に {宿|やど} を {予約|よやく} しよう 。",
+       "next": "end",
+       "ok": true
+      },
+      {
+       "text": "はい 、 {検討|けんとう} させて いただきます 。",
+       "next": "end",
+       "ok": false,
+       "feedback": "Terlalu formal untuk teman dekat dan terdengar seperti menolak halus. Jawab santai: 「いいね！」."
+      }
+     ]
+    },
+    "end": {
+     "them": "{決|き}まり ！ {楽|たの}しみ に して る ね 。",
+     "end": true
+    }
+   }
+  }
+ ]
+}

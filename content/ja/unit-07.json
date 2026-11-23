@@ -1,0 +1,449 @@
+{
+ "id": "ja-u07",
+ "language": "ja",
+ "level": "N3",
+ "title": "Tinggal di Jepang",
+ "theme": "Apartemen, sampah, tetangga, dan ke dokter",
+ "tags": [
+  "travel",
+  "budaya",
+  "jlpt"
+ ],
+ "items": [
+  {
+   "id": "ja-u07-i01",
+   "type": "pattern",
+   "term": "〜ように なる",
+   "meaning": "menjadi (bisa/terbiasa) ...",
+   "example": "{日本語|にほんご} が {話|はな}せる ように なりました 。",
+   "example_id": "Saya jadi bisa berbahasa Jepang.",
+   "cloze": "{日本語|にほんご} が {話|はな}せる ____ なりました 。",
+   "answer": "ように"
+  },
+  {
+   "id": "ja-u07-i02",
+   "type": "pattern",
+   "term": "〜て しまう",
+   "meaning": "terlanjur ...; tidak sengaja ...",
+   "example": "{電車|でんしゃ} に {傘|かさ} を {忘|わす}れて しまいました 。",
+   "example_id": "Payung saya tertinggal di kereta.",
+   "cloze": "{電車|でんしゃ} に {傘|かさ} を {忘|わす}れて ____ 。",
+   "answer": "しまいました",
+   "note": "Dalam percakapan santai sering menjadi 〜ちゃった."
+  },
+  {
+   "id": "ja-u07-i03",
+   "type": "word",
+   "term": "{家賃|やちん}",
+   "meaning": "uang sewa rumah",
+   "example": "{家賃|やちん} は {毎月|まいつき} {二十五日|にじゅうごにち} に {払|はら}います 。",
+   "example_id": "Uang sewa dibayar setiap tanggal 25.",
+   "cloze": "____ は {毎月|まいつき} {二十五日|にじゅうごにち} に {払|はら}います 。",
+   "answer": "{家賃|やちん}"
+  },
+  {
+   "id": "ja-u07-i04",
+   "type": "word",
+   "term": "{燃|も}える ゴミ",
+   "meaning": "sampah yang bisa dibakar",
+   "example": "{燃|も}える ゴミ は {月曜日|げつようび} と {木曜日|もくようび} に {出|だ}します 。",
+   "example_id": "Sampah yang bisa dibakar dibuang hari Senin dan Kamis.",
+   "cloze": "____ ゴミ は {月曜日|げつようび} と {木曜日|もくようび} に {出|だ}します 。",
+   "answer": "{燃|も}える",
+   "note": "Jadwal dan cara memilah sampah berbeda di tiap kota."
+  },
+  {
+   "id": "ja-u07-i05",
+   "type": "word",
+   "term": "{近所|きんじょ}",
+   "meaning": "lingkungan sekitar rumah; tetangga",
+   "example": "{近所|きんじょ} の {人|ひと} に あいさつ しましょう 。",
+   "example_id": "Mari menyapa orang-orang di sekitar rumah.",
+   "cloze": "____ の {人|ひと} に あいさつ しましょう 。",
+   "answer": "{近所|きんじょ}"
+  },
+  {
+   "id": "ja-u07-i06",
+   "type": "pattern",
+   "term": "〜られる (pasif merugikan)",
+   "meaning": "di-... (pasif, biasanya merugikan)",
+   "example": "{隣|となり} の {人|ひと} に {夜|よる} {遅|おそ}く まで {騒|さわ}がれました 。",
+   "example_id": "Saya terganggu karena tetangga ribut sampai larut malam.",
+   "cloze": "{隣|となり} の {人|ひと} に {夜|よる} {遅|おそ}く まで ____ 。",
+   "answer": "{騒|さわ}がれました"
+  },
+  {
+   "id": "ja-u07-i07",
+   "type": "word",
+   "term": "{具合|ぐあい}",
+   "meaning": "kondisi (badan)",
+   "example": "{具合|ぐあい} が {悪|わる}い ので 、 {病院|びょういん} に {行|い}きます 。",
+   "example_id": "Karena badan kurang sehat, saya ke rumah sakit.",
+   "cloze": "____ が {悪|わる}い ので 、 {病院|びょういん} に {行|い}きます 。",
+   "answer": "{具合|ぐあい}"
+  },
+  {
+   "id": "ja-u07-i08",
+   "type": "word",
+   "term": "{保険証|ほけんしょう}",
+   "meaning": "kartu asuransi kesehatan",
+   "example": "{受付|うけつけ} で {保険証|ほけんしょう} を {出|だ}して ください 。",
+   "example_id": "Tolong serahkan kartu asuransi di resepsionis.",
+   "cloze": "{受付|うけつけ} で ____ を {出|だ}して ください 。",
+   "answer": "{保険証|ほけんしょう}"
+  },
+  {
+   "id": "ja-u07-i09",
+   "type": "pattern",
+   "term": "〜ように する",
+   "meaning": "berusaha (membiasakan) untuk ...",
+   "example": "{毎日|まいにち} {野菜|やさい} を {食|た}べる ように して います 。",
+   "example_id": "Saya berusaha makan sayur setiap hari.",
+   "cloze": "{毎日|まいにち} {野菜|やさい} を {食|た}べる ように ____ います 。",
+   "answer": "して"
+  },
+  {
+   "id": "ja-u07-i10",
+   "type": "word",
+   "term": "{引|ひ}っ{越|こ}し",
+   "meaning": "pindahan rumah",
+   "example": "{来月|らいげつ} 、 {大阪|おおさか} に {引|ひ}っ{越|こ}し を します 。",
+   "example_id": "Bulan depan saya pindah ke Osaka.",
+   "cloze": "{来月|らいげつ} 、 {大阪|おおさか} に ____ を します 。",
+   "answer": "{引|ひ}っ{越|こ}し"
+  },
+  {
+   "id": "ja-u07-i11",
+   "type": "pattern",
+   "term": "〜そう です (kelihatannya)",
+   "meaning": "kelihatannya ...; sepertinya akan ...",
+   "example": "{雨|あめ} が {降|ふ}りそう です ね 。",
+   "example_id": "Kelihatannya akan hujan ya.",
+   "cloze": "{雨|あめ} が ____ です ね 。",
+   "answer": "{降|ふ}りそう"
+  },
+  {
+   "id": "ja-u07-i12",
+   "type": "word",
+   "term": "{役所|やくしょ}",
+   "meaning": "kantor pemerintahan kota",
+   "example": "{住所|じゅうしょ} が {変|か}わったら 、 {役所|やくしょ} に {届|とど}けます 。",
+   "example_id": "Kalau alamat berubah, laporkan ke kantor pemerintahan kota.",
+   "cloze": "{住所|じゅうしょ} が {変|か}わったら 、 ____ に {届|とど}けます 。",
+   "answer": "{役所|やくしょ}"
+  }
+ ],
+ "grammar": [
+  {
+   "id": "ja-u07-g01",
+   "title": "〜ようになる dan 〜ようにする",
+   "explanation": "〜ようになる menyatakan perubahan keadaan (jadi bisa, jadi terbiasa). 〜ようにする menyatakan usaha sadar untuk membiasakan sesuatu. Untuk 'jadi bisa', pakai bentuk potensial: 話す → 話せる.",
+   "examples": [
+    "{漢字|かんじ} が {読|よ}める ように なりました 。",
+    "{遅刻|ちこく} しない ように して います 。",
+    "{早|はや}く {寝|ね}る ように して ください 。"
+   ],
+   "common_mistake": {
+    "wrong": "{日本語|にほんご} が {話|はな}す ように なりました 。",
+    "right": "{日本語|にほんご} が {話|はな}せる ように なりました 。"
+   }
+  },
+  {
+   "id": "ja-u07-g02",
+   "title": "〜てしまう",
+   "explanation": "Bentuk て + しまう punya dua makna: (1) tindakan tuntas, (2) kejadian yang disesali atau tidak disengaja. Dalam percakapan santai berubah menjadi 〜ちゃう / 〜じゃう.",
+   "examples": [
+    "{財布|さいふ} を {落|お}として しまいました 。",
+    "{宿題|しゅくだい} を {全部|ぜんぶ} やって しまいました 。",
+    "{寝坊|ねぼう} しちゃった 。"
+   ],
+   "common_mistake": {
+    "wrong": "{財布|さいふ} を {落|お}とす しまいました 。",
+    "right": "{財布|さいふ} を {落|お}として しまいました 。"
+   }
+  },
+  {
+   "id": "ja-u07-g03",
+   "title": "Pasif merugikan",
+   "explanation": "Bahasa Jepang memakai bentuk pasif untuk mengatakan bahwa kita dirugikan oleh tindakan orang lain atau keadaan: 雨に降られた (kehujanan), 弟にケーキを食べられた (kuenya dimakan adik). Pelaku ditandai に.",
+   "examples": [
+    "{雨|あめ} に {降|ふ}られました 。",
+    "{弟|おとうと} に ケーキ を {食|た}べられました 。"
+   ],
+   "common_mistake": {
+    "wrong": "{雨|あめ} が {降|ふ}られました 。",
+    "right": "{雨|あめ} に {降|ふ}られました 。"
+   }
+  }
+ ],
+ "listening": [
+  {
+   "id": "ja-u07-l01",
+   "title": "Aturan sampah dari pemilik apartemen",
+   "speakers": [
+    {
+     "name": "Suzuki",
+     "voice": "ja-JP"
+    },
+    {
+     "name": "Bagus",
+     "voice": "ja-JP"
+    }
+   ],
+   "lines": [
+    {
+     "speaker": "Suzuki",
+     "text": "バグス さん 、 {引|ひ}っ{越|こ}し お{疲|つか}れ{様|さま} でした 。 ゴミ の {出|だ}し{方|かた} を {説明|せつめい} します ね 。"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "はい 、 お{願|ねが}いします 。 {日本|にほん} の ルール は {難|むずか}しそう です 。"
+    },
+    {
+     "speaker": "Suzuki",
+     "text": "{燃|も}える ゴミ は {月曜日|げつようび} と {木曜日|もくようび} 、 {朝|あさ} {八時|はちじ} まで に {出|だ}して ください 。"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "ペットボトル は どう すれば いい です か ？"
+    },
+    {
+     "speaker": "Suzuki",
+     "text": "キャップ と ラベル を {外|はず}して 、 {水曜日|すいようび} に {出|だ}します 。"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "わかりました 。 {間違|まちが}えない ように 、 {紙|かみ} に {書|か}いて おきます 。"
+    }
+   ],
+   "dictation": [
+    1,
+    3,
+    5
+   ],
+   "questions": [
+    {
+     "q": "Kapan sampah yang bisa dibakar dibuang?",
+     "options": [
+      "Senin dan Kamis",
+      "Rabu saja",
+      "Setiap hari"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Apa yang harus dilakukan pada botol plastik?",
+     "options": [
+      "Langsung dibuang",
+      "Melepas tutup dan label",
+      "Dibuang bersama sampah terbakar"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Apa yang akan Bagus lakukan?",
+     "options": [
+      "Menulis aturannya di kertas",
+      "Bertanya ke tetangga",
+      "Pindah apartemen"
+     ],
+     "answer": 0,
+     "explain": "「間違えないように」 = supaya tidak salah."
+    }
+   ]
+  }
+ ],
+ "reading": [
+  {
+   "id": "ja-u07-r01",
+   "title": "Pertama kali ke dokter di Jepang",
+   "text": "{先週|せんしゅう} 、 {熱|ねつ} が {出|で}て 、 {初|はじ}めて {日本|にほん} の {病院|びょういん} に {行|い}きました 。 {受付|うけつけ} で {保険証|ほけんしょう} を {出|だ}す と 、 {問診票|もんしんひょう} を {渡|わた}されました 。 {症状|しょうじょう} や アレルギー に ついて {書|か}く {紙|かみ} です 。 {漢字|かんじ} が {多|おお}くて {大変|たいへん} でした が 、 {翻訳|ほんやく} アプリ を {使|つか}って なんとか {書|か}けました 。 {日本|にほん} で は {保険|ほけん} が ある と 、 {治療費|ちりょうひ} は {三割|さんわり} だけ {払|はら}えば いい そう です 。 {具合|ぐあい} が {悪|わる}い とき は {無理|むり} を しない ように しよう と {思|おも}いました 。",
+   "glossary": [
+    {
+     "term": "{問診票|もんしんひょう}",
+     "meaning": "formulir pemeriksaan awal"
+    },
+    {
+     "term": "{渡|わた}されました",
+     "meaning": "diberi (bentuk pasif)"
+    },
+    {
+     "term": "{症状|しょうじょう}",
+     "meaning": "gejala"
+    },
+    {
+     "term": "{翻訳|ほんやく}",
+     "meaning": "terjemahan"
+    },
+    {
+     "term": "なんとか",
+     "meaning": "entah bagaimana, akhirnya bisa"
+    },
+    {
+     "term": "{三割|さんわり}",
+     "meaning": "tiga puluh persen"
+    },
+    {
+     "term": "{保険証|ほけんしょう}",
+     "meaning": "kartu asuransi kesehatan",
+     "item_id": "ja-u07-i08"
+    },
+    {
+     "term": "{無理|むり}",
+     "meaning": "memaksakan diri"
+    }
+   ],
+   "questions": [
+    {
+     "q": "Apa yang diberikan setelah menyerahkan kartu asuransi?",
+     "options": [
+      "Obat",
+      "Formulir pemeriksaan awal",
+      "Tagihan"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Bagaimana penulis mengisi formulirnya?",
+     "options": [
+      "Dibantu perawat",
+      "Dengan aplikasi penerjemah",
+      "Dalam bahasa Inggris"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Berapa bagian biaya yang dibayar pasien yang punya asuransi?",
+     "options": [
+      "10%",
+      "30%",
+      "Gratis"
+     ],
+     "answer": 1,
+     "explain": "「三割」 = 30%."
+    }
+   ]
+  }
+ ],
+ "writing": [
+  {
+   "id": "ja-u07-w01",
+   "mode": "build",
+   "prompt": "Terjemahkan dengan menyusun ubin kata.",
+   "sentences": [
+    {
+     "id": "Saya jadi bisa membaca kanji.",
+     "ja": "{漢字|かんじ} が {読|よ}める ように なりました 。"
+    },
+    {
+     "id": "Payung saya tertinggal di kereta.",
+     "ja": "{電車|でんしゃ} に {傘|かさ} を {忘|わす}れて しまいました 。"
+    },
+    {
+     "id": "Saya berusaha makan sayur setiap hari.",
+     "ja": "{毎日|まいにち} {野菜|やさい} を {食|た}べる ように して います 。"
+    },
+    {
+     "id": "Kelihatannya akan hujan.",
+     "ja": "{雨|あめ} が {降|ふ}りそう です 。"
+    },
+    {
+     "id": "Saya kehujanan.",
+     "ja": "{雨|あめ} に {降|ふ}られました 。"
+    }
+   ]
+  }
+ ],
+ "speaking": [
+  {
+   "id": "ja-u07-s01",
+   "mode": "shadowing",
+   "sentences": [
+    "{日本語|にほんご} が {話|はな}せる ように なりました 。",
+    "{電車|でんしゃ} に {傘|かさ} を {忘|わす}れて しまいました 。",
+    "{具合|ぐあい} が {悪|わる}い ので 、 {病院|びょういん} に {行|い}きます 。",
+    "{雨|あめ} が {降|ふ}りそう です ね 。",
+    "{近所|きんじょ} の {人|ひと} に あいさつ しましょう 。",
+    "{燃|も}える ゴミ は {月曜日|げつようび} に {出|だ}します 。"
+   ],
+   "focus": "Bentuk しまいました diucapkan ringan dan cepat. Bentuk santai 〜ちゃった sering terdengar di anime dan percakapan sehari-hari."
+  },
+  {
+   "id": "ja-u07-s02",
+   "mode": "answer",
+   "prompt": "Ceritakan satu kejadian sial yang pernah kamu alami, pakai 〜てしまいました atau pasif seperti 雨に降られました (3 kalimat).",
+   "sample_answer": "{先週|せんしゅう} 、 {電車|でんしゃ} に {傘|かさ} を {忘|わす}れて しまいました 。 その {後|あと} 、 {雨|あめ} に {降|ふ}られて 、 びしょびしょ に なりました 。 {今|いま} は {折|お}りたたみ{傘|がさ} を {持|も}つ ように して います 。"
+  }
+ ],
+ "conversation": [
+  {
+   "id": "ja-u07-c01",
+   "title": "Menyapa tetangga baru",
+   "role_you": "Penghuni baru",
+   "role_them": "Yamada-san, tetangga",
+   "start": "n1",
+   "nodes": {
+    "n1": {
+     "them": "あ 、 {新|あたら}しく {引|ひ}っ{越|こ}して {来|き}た {方|かた} です か ？",
+     "hints": [
+      "Oh, Anda yang baru pindah ke sini?"
+     ],
+     "choices": [
+      {
+       "text": "はい 、 203 {号室|ごうしつ} の バグス です 。 よろしく お{願|ねが}いします 。",
+       "next": "n2",
+       "ok": true
+      },
+      {
+       "text": "いいえ 、 {引|ひ}っ{越|こ}し です 。",
+       "next": "n2",
+       "ok": false,
+       "feedback": "Jawab sambil memperkenalkan diri: 「はい、203号室のバグスです。よろしくお願いします。」"
+      }
+     ]
+    },
+    "n2": {
+     "them": "こちら こそ 。 {困|こま}った こと が あったら 、 {何|なん} でも {聞|き}いて ください ね 。",
+     "hints": [
+      "Sama-sama. Kalau ada kesulitan, tanya apa saja ya."
+     ],
+     "choices": [
+      {
+       "text": "ありがとう ございます 。 {実|じつ} は ゴミ の {日|ひ} が よく わからなくて …… 。",
+       "next": "n3",
+       "ok": true
+      },
+      {
+       "text": "じゃあ 、 {全部|ぜんぶ} {教|おし}えて 。",
+       "next": "n3",
+       "ok": false,
+       "feedback": "Terlalu santai dan menuntut untuk tetangga baru. Pakai bentuk sopan dan sampaikan masalahnya."
+      }
+     ]
+    },
+    "n3": {
+     "them": "ああ 、 カレンダー が ある から 、 あとで {持|も}って {行|い}きます よ 。",
+     "hints": [
+      "Ah, ada kalendernya, nanti saya bawakan."
+     ],
+     "choices": [
+      {
+       "text": "{助|たす}かります 。 わざわざ すみません 。",
+       "next": "end",
+       "ok": true
+      },
+      {
+       "text": "ありがとう ございます 。 お{願|ねが}いします 。",
+       "next": "end",
+       "ok": true
+      }
+     ]
+    },
+    "end": {
+     "them": "いいえ 。 これから よろしく ね 。",
+     "end": true
+    }
+   }
+  }
+ ]
+}

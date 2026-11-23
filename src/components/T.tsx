@@ -40,7 +40,11 @@ export function TextSettingsProvider({
   );
 }
 
-const plainOf = (tok: string) => tok.replace(/\{([^|{}]+)\|[^{}]+\}/g, "$1");
+export function useTextSettings(): TextSettings {
+  return useContext(TextSettingsContext);
+}
+
+const plainOf =(tok: string) => tok.replace(/\{([^|{}]+)\|[^{}]+\}/g, "$1");
 
 /** Satu token Jepang (dengan ruby untuk kanji). */
 export function JaToken({ tok }: { tok: string }) {

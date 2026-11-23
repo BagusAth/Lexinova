@@ -3,7 +3,7 @@
 // - Halaman: network-first, jatuh ke cache saat offline.
 // - Permintaan ke domain lain (mis. LanguageTool) tidak disentuh.
 
-const VERSION = "v7";
+const VERSION = "v8";
 const CACHE = `lexinova-${VERSION}`;
 const PAGES = ["/", "/kata", "/latihan", "/fondasi", "/listening", "/reading", "/writing", "/speaking", "/conversation", "/hasil", "/pengaturan", "/ujian", "/tata-bahasa"];
 

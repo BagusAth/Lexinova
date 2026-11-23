@@ -1,0 +1,440 @@
+{
+ "id": "ja-u10",
+ "language": "ja",
+ "level": "N2",
+ "title": "Wawancara kerja dan keigo bisnis",
+ "theme": "Wawancara, menolak dengan halus, dan negosiasi",
+ "tags": [
+  "karier",
+  "jlpt"
+ ],
+ "items": [
+  {
+   "id": "ja-u10-i01",
+   "type": "pattern",
+   "term": "〜させて いただきます",
+   "meaning": "izinkan saya ... (sangat sopan)",
+   "example": "{本日|ほんじつ} の {資料|しりょう} を {説明|せつめい} させて いただきます 。",
+   "example_id": "Izinkan saya menjelaskan dokumen hari ini.",
+   "cloze": "{本日|ほんじつ} の {資料|しりょう} を {説明|せつめい} ____ いただきます 。",
+   "answer": "させて"
+  },
+  {
+   "id": "ja-u10-i02",
+   "type": "pattern",
+   "term": "〜かねます",
+   "meaning": "tidak dapat ... (penolakan sopan)",
+   "example": "その {条件|じょうけん} で は お{受|う}け いたし かねます 。",
+   "example_id": "Dengan syarat itu kami tidak dapat menerimanya.",
+   "cloze": "その {条件|じょうけん} で は お{受|う}け いたし ____ 。",
+   "answer": "かねます"
+  },
+  {
+   "id": "ja-u10-i03",
+   "type": "word",
+   "term": "{志望動機|しぼうどうき}",
+   "meaning": "alasan melamar",
+   "example": "{志望動機|しぼうどうき} を {教|おし}えて ください 。",
+   "example_id": "Tolong sebutkan alasan Anda melamar.",
+   "cloze": "____ を {教|おし}えて ください 。",
+   "answer": "{志望動機|しぼうどうき}"
+  },
+  {
+   "id": "ja-u10-i04",
+   "type": "word",
+   "term": "{御社|おんしゃ}",
+   "meaning": "perusahaan Anda (lisan)",
+   "example": "{御社|おんしゃ} の {理念|りねん} に {共感|きょうかん} しました 。",
+   "example_id": "Saya sependapat dengan filosofi perusahaan Anda.",
+   "cloze": "____ の {理念|りねん} に {共感|きょうかん} しました 。",
+   "answer": "{御社|おんしゃ}",
+   "note": "Dalam tulisan (surat lamaran, email) dipakai 貴社 (kisha)."
+  },
+  {
+   "id": "ja-u10-i05",
+   "type": "word",
+   "term": "{強|つよ}み",
+   "meaning": "kekuatan; kelebihan",
+   "example": "{私|わたし} の {強|つよ}み は {問題|もんだい} を {解決|かいけつ} する {力|ちから} です 。",
+   "example_id": "Kelebihan saya adalah kemampuan memecahkan masalah.",
+   "cloze": "{私|わたし} の ____ は {問題|もんだい} を {解決|かいけつ} する {力|ちから} です 。",
+   "answer": "{強|つよ}み"
+  },
+  {
+   "id": "ja-u10-i06",
+   "type": "pattern",
+   "term": "〜を {通|つう}じて",
+   "meaning": "melalui ...",
+   "example": "{開発|かいはつ} の {経験|けいけん} を {通|つう}じて 、 チームワーク を {学|まな}びました 。",
+   "example_id": "Melalui pengalaman pengembangan, saya belajar kerja tim.",
+   "cloze": "{開発|かいはつ} の {経験|けいけん} を ____ 、 チームワーク を {学|まな}びました 。",
+   "answer": "{通|つう}じて"
+  },
+  {
+   "id": "ja-u10-i07",
+   "type": "pattern",
+   "term": "〜に {関|かん}して",
+   "meaning": "mengenai ...",
+   "example": "{納期|のうき} に {関|かん}して ご{相談|そうだん} が ございます 。",
+   "example_id": "Ada yang ingin saya diskusikan mengenai tenggat pengiriman.",
+   "cloze": "{納期|のうき} に ____ ご{相談|そうだん} が ございます 。",
+   "answer": "{関|かん}して"
+  },
+  {
+   "id": "ja-u10-i08",
+   "type": "word",
+   "term": "{前向|まえむ}き",
+   "meaning": "positif; dengan serius",
+   "example": "ご{提案|ていあん} は {前向|まえむ}き に {検討|けんとう} いたします 。",
+   "example_id": "Usulan Anda akan kami pertimbangkan dengan serius.",
+   "cloze": "ご{提案|ていあん} は ____ に {検討|けんとう} いたします 。",
+   "answer": "{前向|まえむ}き"
+  },
+  {
+   "id": "ja-u10-i09",
+   "type": "word",
+   "term": "{検討|けんとう}",
+   "meaning": "pertimbangan",
+   "example": "{社内|しゃない} で {検討|けんとう} して から 、 ご{連絡|れんらく} します 。",
+   "example_id": "Setelah kami pertimbangkan secara internal, kami akan menghubungi Anda.",
+   "cloze": "{社内|しゃない} で ____ して から 、 ご{連絡|れんらく} します 。",
+   "answer": "{検討|けんとう}"
+  },
+  {
+   "id": "ja-u10-i10",
+   "type": "pattern",
+   "term": "〜ざる を えない",
+   "meaning": "terpaksa ...; mau tidak mau ...",
+   "example": "{予算|よさん} が {足|た}りない ので 、 {計画|けいかく} を {変更|へんこう} せざる を えない 。",
+   "example_id": "Karena anggaran kurang, terpaksa mengubah rencana.",
+   "cloze": "{予算|よさん} が {足|た}りない ので 、 {計画|けいかく} を {変更|へんこう} ____ を えない 。",
+   "answer": "せざる"
+  },
+  {
+   "id": "ja-u10-i11",
+   "type": "word",
+   "term": "{恐縮|きょうしゅく}",
+   "meaning": "merasa tidak enak; mohon maaf (sangat sopan)",
+   "example": "お{忙|いそが}しい ところ {恐縮|きょうしゅく} です が 、 ご{確認|かくにん} ください 。",
+   "example_id": "Mohon maaf mengganggu kesibukan Anda, mohon diperiksa.",
+   "cloze": "お{忙|いそが}しい ところ ____ です が 、 ご{確認|かくにん} ください 。",
+   "answer": "{恐縮|きょうしゅく}"
+  },
+  {
+   "id": "ja-u10-i12",
+   "type": "pattern",
+   "term": "〜{次第|しだい}",
+   "meaning": "segera setelah ...",
+   "example": "{結果|けっか} が {分|わ}かり {次第|しだい} 、 ご{連絡|れんらく} いたします 。",
+   "example_id": "Segera setelah hasilnya diketahui, kami akan menghubungi Anda.",
+   "cloze": "{結果|けっか} が {分|わ}かり ____ 、 ご{連絡|れんらく} いたします 。",
+   "answer": "{次第|しだい}"
+  }
+ ],
+ "grammar": [
+  {
+   "id": "ja-u10-g01",
+   "title": "〜させていただく",
+   "explanation": "Bentuk kausatif + ていただく berarti 'izinkan saya ...' dengan sangat halus. Pakai saat memang ada pihak yang mengizinkan; terlalu sering memakainya terdengar berlebihan.",
+   "examples": [
+    "{自己紹介|じこしょうかい} を させて いただきます 。",
+    "{本日|ほんじつ} は {休|やす}ませて いただきます 。"
+   ],
+   "common_mistake": {
+    "wrong": "{説明|せつめい} させれて いただきます 。",
+    "right": "{説明|せつめい} させて いただきます 。"
+   }
+  },
+  {
+   "id": "ja-u10-g02",
+   "title": "Menolak dengan halus: 〜かねます",
+   "explanation": "Bahasa bisnis Jepang jarang berkata 'tidak' secara langsung. 〜かねます / いたしかねます berarti 'tidak dapat ...'. Hati-hati: 〜かねません justru berarti 'bisa saja terjadi (hal buruk)'.",
+   "examples": [
+    "あいにく 、 その {日|ひ} は {都合|つごう} が {悪|わる}い の です が 。",
+    "ご{要望|ようぼう} に は お{応|こた}え いたし かねます 。",
+    "このまま で は {事故|じこ} に なり かねません 。"
+   ],
+   "common_mistake": {
+    "wrong": "お{受|う}け いたし かねません 。",
+    "right": "お{受|う}け いたし かねます 。"
+   }
+  },
+  {
+   "id": "ja-u10-g03",
+   "title": "Terpaksa: 〜ざるをえない",
+   "explanation": "Bentuk ない tanpa ない + ざるをえない berarti 'terpaksa, tidak ada pilihan lain'. する berubah menjadi せざるをえない.",
+   "examples": [
+    "{雨|あめ} で 、 {試合|しあい} を {中止|ちゅうし} せざる を えなかった 。",
+    "{上司|じょうし} の {命令|めいれい} なら 、 {行|い}かざる を えない 。"
+   ],
+   "common_mistake": {
+    "wrong": "{中止|ちゅうし} しざる を えない 。",
+    "right": "{中止|ちゅうし} せざる を えない 。"
+   }
+  }
+ ],
+ "listening": [
+  {
+   "id": "ja-u10-l01",
+   "title": "Wawancara kerja di perusahaan Jepang",
+   "speakers": [
+    {
+     "name": "Nakamura",
+     "voice": "ja-JP"
+    },
+    {
+     "name": "Bagus",
+     "voice": "ja-JP"
+    }
+   ],
+   "lines": [
+    {
+     "speaker": "Nakamura",
+     "text": "それでは 、 {自己紹介|じこしょうかい} を お{願|ねが}い します 。"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "バグス と {申|もう}します 。 インドネシア で {五年間|ごねんかん} 、 ウェブ {開発|かいはつ} に {携|たずさ}わって まいりました 。"
+    },
+    {
+     "speaker": "Nakamura",
+     "text": "{志望動機|しぼうどうき} を {教|おし}えて ください 。"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "{御社|おんしゃ} の {教育|きょういく} アプリ を {通|つう}じて 、 {多|おお}く の {人|ひと} の {学|まな}び を {支|ささ}えたい と {考|かんが}えた から です 。"
+    },
+    {
+     "speaker": "Nakamura",
+     "text": "{日本|にほん} で {働|はたら}く うえ で 、 {心配|しんぱい} な こと は あります か 。"
+    },
+    {
+     "speaker": "Bagus",
+     "text": "{敬語|けいご} は まだ {勉強中|べんきょうちゅう} です が 、 {毎日|まいにち} {練習|れんしゅう} する ように して います 。"
+    }
+   ],
+   "dictation": [
+    1,
+    3,
+    5
+   ],
+   "questions": [
+    {
+     "q": "Berapa lama pengalaman Bagus di pengembangan web?",
+     "options": [
+      "3 tahun",
+      "5 tahun",
+      "10 tahun"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Apa alasan Bagus melamar?",
+     "options": [
+      "Gaji yang tinggi",
+      "Ingin mendukung pembelajaran banyak orang lewat aplikasi pendidikan",
+      "Ingin tinggal di Tokyo"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Apa yang masih ia pelajari?",
+     "options": [
+      "Keigo",
+      "Pemrograman",
+      "Bahasa Inggris"
+     ],
+     "answer": 0
+    }
+   ]
+  }
+ ],
+ "reading": [
+  {
+   "id": "ja-u10-r01",
+   "title": "Shūkatsu: budaya mencari kerja di Jepang",
+   "text": "{日本|にほん} の {就職活動|しゅうしょくかつどう} 、 いわゆる 「{就活|しゅうかつ}」 に は 、 {独特|どくとく} の ルール が ある 。 {多|おお}く の {学生|がくせい} は {黒|くろ} の リクルート スーツ を {着|き}て 、 {同|おな}じ {時期|じき} に {一斉|いっせい} に {活動|かつどう} を {始|はじ}める 。 {面接|めんせつ} で は 、 {入室|にゅうしつ} の とき の ノック の {回数|かいすう} や 、 {座|すわ}る タイミング まで {見|み}られる と {言|い}われて いる 。 ただし 、 {最近|さいきん} は {外国人|がいこくじん} の {採用|さいよう} を {増|ふ}やす {企業|きぎょう} も {多|おお}く 、 {服装自由|ふくそうじゆう} の {面接|めんせつ} も {珍|めずら}しく ない 。 {形|かたち} に こだわる と いう より 、 {相手|あいて} へ の {敬意|けいい} を {示|しめ}す こと が {大切|たいせつ} な の だ 。",
+   "glossary": [
+    {
+     "term": "{就職活動|しゅうしょくかつどう}",
+     "meaning": "kegiatan mencari kerja"
+    },
+    {
+     "term": "{独特|どくとく}",
+     "meaning": "khas; unik"
+    },
+    {
+     "term": "{一斉|いっせい}",
+     "meaning": "serentak"
+    },
+    {
+     "term": "{面接|めんせつ}",
+     "meaning": "wawancara"
+    },
+    {
+     "term": "{採用|さいよう}",
+     "meaning": "perekrutan"
+    },
+    {
+     "term": "{珍|めずら}しく",
+     "meaning": "jarang; langka"
+    },
+    {
+     "term": "{敬意|けいい}",
+     "meaning": "rasa hormat"
+    }
+   ],
+   "questions": [
+    {
+     "q": "Apa itu 'shūkatsu'?",
+     "options": [
+      "Kegiatan mencari kerja",
+      "Festival kampus",
+      "Ujian masuk universitas"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Apa yang konon diperhatikan saat wawancara?",
+     "options": [
+      "Jumlah ketukan pintu dan waktu duduk",
+      "Merek ponsel",
+      "Nilai rapor SD"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Apa inti pesan penulis?",
+     "options": [
+      "Harus selalu memakai jas hitam",
+      "Menunjukkan rasa hormat lebih penting daripada formalitas",
+      "Perusahaan asing lebih baik"
+     ],
+     "answer": 1
+    }
+   ]
+  }
+ ],
+ "writing": [
+  {
+   "id": "ja-u10-w01",
+   "mode": "build",
+   "prompt": "Terjemahkan dengan menyusun ubin kata.",
+   "sentences": [
+    {
+     "id": "Izinkan saya menjelaskan dokumen hari ini.",
+     "ja": "{本日|ほんじつ} の {資料|しりょう} を {説明|せつめい} させて いただきます 。"
+    },
+    {
+     "id": "Usulan Anda akan kami pertimbangkan dengan serius.",
+     "ja": "ご{提案|ていあん} は {前向|まえむ}き に {検討|けんとう} いたします 。"
+    },
+    {
+     "id": "Kelebihan saya adalah kemampuan memecahkan masalah.",
+     "ja": "{私|わたし} の {強|つよ}み は {問題|もんだい} を {解決|かいけつ} する {力|ちから} です 。"
+    },
+    {
+     "id": "Segera setelah hasilnya diketahui, kami akan menghubungi Anda.",
+     "ja": "{結果|けっか} が {分|わ}かり {次第|しだい} 、 ご{連絡|れんらく} いたします 。"
+    },
+    {
+     "id": "Karena anggaran kurang, terpaksa mengubah rencana.",
+     "ja": "{予算|よさん} が {足|た}りない ので 、 {計画|けいかく} を {変更|へんこう} せざる を えない 。"
+    }
+   ]
+  }
+ ],
+ "speaking": [
+  {
+   "id": "ja-u10-s01",
+   "mode": "shadowing",
+   "sentences": [
+    "{説明|せつめい} させて いただきます 。",
+    "お{受|う}け いたし かねます 。",
+    "{前向|まえむ}き に {検討|けんとう} いたします 。",
+    "お{忙|いそが}しい ところ {恐縮|きょうしゅく} です が 。",
+    "{結果|けっか} が {分|わ}かり {次第|しだい} 、 ご{連絡|れんらく} いたします 。",
+    "{御社|おんしゃ} の {理念|りねん} に {共感|きょうかん} しました 。"
+   ],
+   "focus": "Keigo panjang diucapkan lancar tanpa terputus. Beri jeda alami setelah 恐縮ですが dan 次第."
+  },
+  {
+   "id": "ja-u10-s02",
+   "mode": "answer",
+   "prompt": "Simulasi wawancara: jawab 「あなたの強みは何ですか」 dengan satu kelebihan dan satu contoh pengalaman (3 sampai 4 kalimat, keigo).",
+   "sample_answer": "{私|わたし} の {強|つよ}み は 、 {問題|もんだい} を {粘|ねば}り{強|づよ}く {解決|かいけつ} する {力|ちから} です 。 {前|まえ} の {会社|かいしゃ} で は 、 アプリ の {動作|どうさ} が {遅|おそ}い と いう {問題|もんだい} が ありました 。 チーム で {原因|げんいん} を {調|しら}べ 、 {読|よ}み{込|こ}み {時間|じかん} を {半分|はんぶん} に {短縮|たんしゅく} しました 。 この {経験|けいけん} を {御社|おんしゃ} で も {活|い}かしたい と {考|かんが}えて おります 。"
+  }
+ ],
+ "conversation": [
+  {
+   "id": "ja-u10-c01",
+   "title": "Negosiasi tenggat dengan klien",
+   "role_you": "Penanggung jawab proyek",
+   "role_them": "Ogawa-san, klien",
+   "start": "n1",
+   "nodes": {
+    "n1": {
+     "them": "{来月末|らいげつまつ} まで に {納品|のうひん} して いただきたい の です が 。",
+     "hints": [
+      "Kami ingin barangnya dikirim paling lambat akhir bulan depan."
+     ],
+     "choices": [
+      {
+       "text": "{恐縮|きょうしゅく} です が 、 その {日程|にってい} で は {対応|たいおう} いたし かねます 。",
+       "next": "n2",
+       "ok": true
+      },
+      {
+       "text": "{無理|むり} です 。",
+       "next": "n2",
+       "ok": false,
+       "feedback": "Terlalu blak-blakan untuk klien. Pakai 「〜いたしかねます」 dengan pembuka 「恐縮ですが」."
+      }
+     ]
+    },
+    "n2": {
+     "them": "では 、 いつ なら {可能|かのう} でしょう か 。",
+     "hints": [
+      "Kalau begitu, kapan yang memungkinkan?"
+     ],
+     "choices": [
+      {
+       "text": "{再来月|さらいげつ} の {十日|とおか} で あれば 、 {確実|かくじつ} に {納品|のうひん} できます 。",
+       "next": "n3",
+       "ok": true
+      },
+      {
+       "text": "わかりません 。 {後|あと} で {考|かんが}えます 。",
+       "next": "n3",
+       "ok": false,
+       "feedback": "Berikan alternatif yang jelas. Klien Jepang menghargai jadwal yang pasti."
+      }
+     ]
+    },
+    "n3": {
+     "them": "わかりました 。 {社内|しゃない} で {検討|けんとう} させて いただきます 。",
+     "hints": [
+      "Baik. Kami akan mempertimbangkannya secara internal."
+     ],
+     "choices": [
+      {
+       "text": "ありがとう ございます 。 ご{検討|けんとう} の ほど 、 よろしく お{願|ねが}い いたします 。",
+       "next": "end",
+       "ok": true
+      },
+      {
+       "text": "はい 、 {早|はや}く {決|き}めて ください 。",
+       "next": "end",
+       "ok": false,
+       "feedback": "Terkesan mendesak. Tutup dengan 「ご検討のほど、よろしくお願いいたします」."
+      }
+     ]
+    },
+    "end": {
+     "them": "{結果|けっか} が {出|で} {次第|しだい} 、 ご{連絡|れんらく} いたします 。",
+     "end": true
+    }
+   }
+  }
+ ]
+}

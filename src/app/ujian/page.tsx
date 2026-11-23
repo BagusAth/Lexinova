@@ -460,7 +460,7 @@ function Result({
   const text = levelUp
     ? nextLevel
       ? `Sekarang kamu di tingkat ${nextLevel.name}, kira-kira setara ${nextLevel.badges[0].replace("≈ ", "")}. Di sini kamu berlatih: ${nextLevel.canDo.charAt(0).toLowerCase()}${nextLevel.canDo.slice(1)}`
-      : "Semua tingkat sudah kamu lewati. Saatnya memakai bahasa Inggrismu di dunia nyata."
+      : `Semua tingkat sudah kamu lewati. Saatnya memakai ${cfg.lang === "ja" ? "bahasa Jepang" : "bahasa Inggris"}mu di dunia nyata.`
     : outcome.nextUnit
       ? `Skor ${pct}%. Unit berikutnya terbuka: ${outcome.nextUnit.title}.`
       : `Skor ${pct}%. Semua unit ${cfg.levels[cfg.levelIdx].cefr} sudah lulus, jadi Ujian Naik Tingkat sekarang terbuka.`;

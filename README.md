@@ -3,7 +3,7 @@
 Aplikasi belajar bahasa pribadi untuk Bagus Athallah, bertema astronomi dan 100% gratis:
 
 - **Bahasa Inggris**: B1 → B1+ → B2 → B2+ → C1 (10 unit, 120 kartu).
-- **Bahasa Jepang**: Kana → N5 → N4 → N3 → N2 → N1 (6 unit untuk Kana, N5, N4; 139 kartu. N3–N1 menyusul).
+- **Bahasa Jepang**: Kana → N5 → N4 → N3 → N2 → N1 (12 unit, 211 kartu, 2 unit per tingkat).
 
 Next.js + TypeScript + Tailwind, dipasang sebagai PWA, di-host gratis di Vercel.
 Tidak ada server, database, atau AI berbayar: materi ada di file JSON, progres di `localStorage`.
@@ -43,7 +43,7 @@ npm run check:content
 ```
 content/                materi pelajaran (lihat content/FORMAT.md)
   en/unit-01..10.json   bahasa Inggris, 2 unit per tingkat
-  ja/unit-01..06.json   bahasa Jepang: hiragana, katakana, 2×N5, 2×N4
+  ja/unit-01..12.json   bahasa Jepang: hiragana, katakana, lalu 2 unit per tingkat N5–N1
 scripts/
   check-content.mjs     validasi materi (npm run check:content)
 public/sw.js            service worker (cache untuk offline)
@@ -81,7 +81,7 @@ src/components/         komponen UI (tema astronomi ada di cosmic.tsx dan global
 
 ## Menambah materi
 
-1. Buat `content/en/unit-11.json` atau `content/ja/unit-07.json` mengikuti `content/FORMAT.md` (isi kolom `language`, `level`, dan `tags`; teks Jepang memakai markup `{漢字|かな}`).
+1. Buat `content/en/unit-11.json` atau `content/ja/unit-13.json` mengikuti `content/FORMAT.md` (isi kolom `language`, `level`, dan `tags`; teks Jepang memakai markup `{漢字|かな}`).
 2. Import di `src/lib/content.ts` dan tambahkan ke array `UNITS`, berurutan sesuai tingkat.
 3. Jalankan `npm run check:content` sampai hasilnya "Materi valid".
 

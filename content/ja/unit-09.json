@@ -1,0 +1,449 @@
+{
+ "id": "ja-u09",
+ "language": "ja",
+ "level": "N2",
+ "title": "Berita dan masyarakat Jepang",
+ "theme": "Teknologi, populasi menua, dan cara kerja baru",
+ "tags": [
+  "sains",
+  "teknologi",
+  "jlpt"
+ ],
+ "items": [
+  {
+   "id": "ja-u09-i01",
+   "type": "pattern",
+   "term": "〜に よると",
+   "meaning": "menurut ...",
+   "example": "{調査|ちょうさ} に よると 、 {在宅勤務|ざいたくきんむ} が {増|ふ}えて いる 。",
+   "example_id": "Menurut survei, kerja dari rumah meningkat.",
+   "cloze": "{調査|ちょうさ} に ____ 、 {在宅勤務|ざいたくきんむ} が {増|ふ}えて いる 。",
+   "answer": "よると"
+  },
+  {
+   "id": "ja-u09-i02",
+   "type": "word",
+   "term": "{高齢化|こうれいか}",
+   "meaning": "penuaan penduduk",
+   "example": "{日本|にほん} は {高齢化|こうれいか} が {進|すす}んで いる 。",
+   "example_id": "Penuaan penduduk di Jepang terus berlanjut.",
+   "cloze": "{日本|にほん} は ____ が {進|すす}んで いる 。",
+   "answer": "{高齢化|こうれいか}"
+  },
+  {
+   "id": "ja-u09-i03",
+   "type": "word",
+   "term": "{人手不足|ひとでぶそく}",
+   "meaning": "kekurangan tenaga kerja",
+   "example": "{介護|かいご} の {現場|げんば} で は {人手不足|ひとでぶそく} が {深刻|しんこく} だ 。",
+   "example_id": "Kekurangan tenaga kerja di bidang perawatan lansia sangat serius.",
+   "cloze": "{介護|かいご} の {現場|げんば} で は ____ が {深刻|しんこく} だ 。",
+   "answer": "{人手不足|ひとでぶそく}"
+  },
+  {
+   "id": "ja-u09-i04",
+   "type": "pattern",
+   "term": "〜に {対|たい}して",
+   "meaning": "terhadap ...",
+   "example": "{若者|わかもの} に {対|たい}して アンケート を {行|おこな}った 。",
+   "example_id": "Survei dilakukan terhadap anak muda.",
+   "cloze": "{若者|わかもの} に ____ アンケート を {行|おこな}った 。",
+   "answer": "{対|たい}して"
+  },
+  {
+   "id": "ja-u09-i05",
+   "type": "pattern",
+   "term": "〜わけ では ない",
+   "meaning": "bukan berarti ...",
+   "example": "AI が {全部|ぜんぶ} の {仕事|しごと} を {奪|うば}う わけ では ない 。",
+   "example_id": "Bukan berarti AI akan merebut semua pekerjaan.",
+   "cloze": "AI が {全部|ぜんぶ} の {仕事|しごと} を {奪|うば}う ____ では ない 。",
+   "answer": "わけ"
+  },
+  {
+   "id": "ja-u09-i06",
+   "type": "pattern",
+   "term": "〜ことに なる",
+   "meaning": "diputuskan bahwa ...",
+   "example": "{来年|らいねん} から {制度|せいど} が {変|か}わる こと に なった 。",
+   "example_id": "Diputuskan bahwa sistemnya berubah mulai tahun depan.",
+   "cloze": "{来年|らいねん} から {制度|せいど} が {変|か}わる こと に ____ 。",
+   "answer": "なった"
+  },
+  {
+   "id": "ja-u09-i07",
+   "type": "word",
+   "term": "{導入|どうにゅう}",
+   "meaning": "penerapan (sistem baru)",
+   "example": "{多|おお}く の {会社|かいしゃ} が {新|あたら}しい システム を {導入|どうにゅう} した 。",
+   "example_id": "Banyak perusahaan menerapkan sistem baru.",
+   "cloze": "{多|おお}く の {会社|かいしゃ} が {新|あたら}しい システム を ____ した 。",
+   "answer": "{導入|どうにゅう}"
+  },
+  {
+   "id": "ja-u09-i08",
+   "type": "word",
+   "term": "{影響|えいきょう}",
+   "meaning": "pengaruh; dampak",
+   "example": "{円安|えんやす} の {影響|えいきょう} で {観光客|かんこうきゃく} が {増|ふ}えた 。",
+   "example_id": "Karena dampak yen melemah, wisatawan bertambah.",
+   "cloze": "{円安|えんやす} の ____ で {観光客|かんこうきゃく} が {増|ふ}えた 。",
+   "answer": "{影響|えいきょう}"
+  },
+  {
+   "id": "ja-u09-i09",
+   "type": "pattern",
+   "term": "〜に {伴|ともな}って",
+   "meaning": "seiring dengan ...",
+   "example": "{技術|ぎじゅつ} の {進歩|しんぽ} に {伴|ともな}って 、 {働|はたら}き{方|かた} も {変|か}わった 。",
+   "example_id": "Seiring kemajuan teknologi, cara kerja pun berubah.",
+   "cloze": "{技術|ぎじゅつ} の {進歩|しんぽ} に ____ 、 {働|はたら}き{方|かた} も {変|か}わった 。",
+   "answer": "{伴|ともな}って"
+  },
+  {
+   "id": "ja-u09-i10",
+   "type": "word",
+   "term": "{課題|かだい}",
+   "meaning": "tantangan; persoalan",
+   "example": "{一番|いちばん} の {課題|かだい} は {情報|じょうほう} の {安全|あんぜん} だ 。",
+   "example_id": "Tantangan terbesar adalah keamanan informasi.",
+   "cloze": "{一番|いちばん} の ____ は {情報|じょうほう} の {安全|あんぜん} だ 。",
+   "answer": "{課題|かだい}"
+  },
+  {
+   "id": "ja-u09-i11",
+   "type": "pattern",
+   "term": "〜と いう より",
+   "meaning": "bukan ..., melainkan ...",
+   "example": "{問題|もんだい} は {技術|ぎじゅつ} と いう より 、 {使|つか}う {人|ひと} の {意識|いしき} だ 。",
+   "example_id": "Masalahnya bukan teknologi, melainkan kesadaran penggunanya.",
+   "cloze": "{問題|もんだい} は {技術|ぎじゅつ} と ____ より 、 {使|つか}う {人|ひと} の {意識|いしき} だ 。",
+   "answer": "いう"
+  },
+  {
+   "id": "ja-u09-i12",
+   "type": "word",
+   "term": "{普及|ふきゅう}",
+   "meaning": "meluas; menjadi umum",
+   "example": "キャッシュレス {決済|けっさい} が {普及|ふきゅう} して きた 。",
+   "example_id": "Pembayaran nontunai mulai meluas.",
+   "cloze": "キャッシュレス {決済|けっさい} が ____ して きた 。",
+   "answer": "{普及|ふきゅう}"
+  }
+ ],
+ "grammar": [
+  {
+   "id": "ja-u09-g01",
+   "title": "Gaya tulisan だ・である",
+   "explanation": "Berita, laporan, dan esai memakai bentuk biasa (〜だ, 〜である, 〜ている) tanpa です/ます. Jangan mencampur dua gaya dalam satu tulisan.",
+   "examples": [
+    "{人口|じんこう} は {減|へ}って いる 。",
+    "これ は {大|おお}きな {課題|かだい} で ある 。"
+   ],
+   "common_mistake": {
+    "wrong": "{人口|じんこう} は {減|へ}って います が 、 これ は {課題|かだい} で ある 。",
+    "right": "{人口|じんこう} は {減|へ}って いる が 、 これ は {課題|かだい} で ある 。"
+   }
+  },
+  {
+   "id": "ja-u09-g02",
+   "title": "〜わけではない dan 〜わけがない",
+   "explanation": "わけではない = bukan berarti (menyangkal sebagian). わけがない = tidak mungkin (menyangkal kuat). Sebelum わけ dipakai bentuk biasa: する, した, 高い, 静かな.",
+   "examples": [
+    "{高|たか}い {物|もの} が {全部|ぜんぶ} いい わけ では ない 。",
+    "あんな に {練習|れんしゅう} した の だ から 、 {負|ま}ける わけ が ない 。"
+   ],
+   "common_mistake": {
+    "wrong": "{全員|ぜんいん} が {賛成|さんせい} わけ では ない 。",
+    "right": "{全員|ぜんいん} が {賛成|さんせい} する わけ では ない 。"
+   }
+  },
+  {
+   "id": "ja-u09-g03",
+   "title": "〜ことになる dan 〜ことにする",
+   "explanation": "ことにする = saya sendiri yang memutuskan. ことになる = diputuskan oleh pihak lain atau keadaan. ことになっている = sudah menjadi aturan.",
+   "examples": [
+    "{来月|らいげつ} から {大阪|おおさか} に {転勤|てんきん} する こと に なりました 。",
+    "{毎朝|まいあさ} {走|はし}る こと に しました 。"
+   ],
+   "common_mistake": {
+    "wrong": "{会社|かいしゃ} の {決定|けってい} で 、 {転勤|てんきん} する こと に しました 。",
+    "right": "{会社|かいしゃ} の {決定|けってい} で 、 {転勤|てんきん} する こと に なりました 。"
+   }
+  }
+ ],
+ "listening": [
+  {
+   "id": "ja-u09-l01",
+   "title": "Berita radio: kerja dari rumah",
+   "speakers": [
+    {
+     "name": "Penyiar",
+     "voice": "ja-JP"
+    },
+    {
+     "name": "Prof. Ito",
+     "voice": "ja-JP"
+    }
+   ],
+   "lines": [
+    {
+     "speaker": "Penyiar",
+     "text": "{次|つぎ} の ニュース です 。 {政府|せいふ} の {調査|ちょうさ} に よると 、 {在宅勤務|ざいたくきんむ} を {続|つづ}ける {会社|かいしゃ} が {増|ふ}えて います 。"
+    },
+    {
+     "speaker": "Prof. Ito",
+     "text": "{通勤|つうきん} の {時間|じかん} が なくなって 、 {家族|かぞく} と {過|す}ごす {時間|じかん} が {増|ふ}えた と いう {声|こえ} が {多|おお}い です 。"
+    },
+    {
+     "speaker": "Penyiar",
+     "text": "{一方|いっぽう} で 、 {問題|もんだい} は ない の でしょう か 。"
+    },
+    {
+     "speaker": "Prof. Ito",
+     "text": "{全員|ぜんいん} に {合|あ}う わけ では ありません 。 {一人|ひとり} で {働|はたら}く と {孤独|こどく} を {感|かん}じる {人|ひと} も います 。"
+    },
+    {
+     "speaker": "Penyiar",
+     "text": "{今後|こんご} の {課題|かだい} は {何|なん} でしょう か 。"
+    },
+    {
+     "speaker": "Prof. Ito",
+     "text": "{技術|ぎじゅつ} と いう より 、 チーム の コミュニケーション を どう {保|たも}つ か が {課題|かだい} です ね 。"
+    }
+   ],
+   "dictation": [
+    1,
+    3,
+    5
+   ],
+   "questions": [
+    {
+     "q": "Menurut survei, apa yang meningkat?",
+     "options": [
+      "Perusahaan yang melanjutkan kerja dari rumah",
+      "Jam lembur",
+      "Jumlah karyawan baru"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Apa kekurangan kerja dari rumah menurut Prof. Ito?",
+     "options": [
+      "Biaya listrik naik",
+      "Sebagian orang merasa kesepian",
+      "Internet lambat"
+     ],
+     "answer": 1,
+     "explain": "「孤独を感じる」 = merasa kesepian."
+    },
+    {
+     "q": "Apa tantangan ke depan menurutnya?",
+     "options": [
+      "Teknologi yang mahal",
+      "Menjaga komunikasi tim",
+      "Kurangnya kantor"
+     ],
+     "answer": 1
+    }
+   ]
+  }
+ ],
+ "reading": [
+  {
+   "id": "ja-u09-r01",
+   "title": "Robot perawat dan kekurangan tenaga kerja",
+   "text": "{日本|にほん} で は {高齢化|こうれいか} が {進|すす}み 、 {介護|かいご} の {現場|げんば} で は {人手不足|ひとでぶそく} が {深刻|しんこく} に なって いる 。 その {対策|たいさく} と して 、 {介護|かいご} ロボット を {導入|どうにゅう} する {施設|しせつ} が {増|ふ}えて いる 。 {例|たと}えば 、 {夜間|やかん} に {利用者|りようしゃ} の {様子|ようす} を {見守|みまも}る センサー や 、 {職員|しょくいん} の {腰|こし} の {負担|ふたん} を {減|へ}らす スーツ が ある 。 しかし 、 ロボット が {人|ひと} の {代|か}わり に なる わけ では ない 。 {会話|かいわ} や {心|こころ} の ケア は 、 やはり {人|ひと} に しか できない から だ 。 {技術|ぎじゅつ} の {進歩|しんぽ} に {伴|ともな}って 、 {人|ひと} と ロボット が どう {役割|やくわり} を {分|わ}ける か が {問|と}われて いる 。",
+   "glossary": [
+    {
+     "term": "{介護|かいご}",
+     "meaning": "perawatan lansia"
+    },
+    {
+     "term": "{対策|たいさく}",
+     "meaning": "langkah penanganan"
+    },
+    {
+     "term": "{施設|しせつ}",
+     "meaning": "fasilitas"
+    },
+    {
+     "term": "{見守|みまも}る",
+     "meaning": "mengawasi; menjaga"
+    },
+    {
+     "term": "{負担|ふたん}",
+     "meaning": "beban"
+    },
+    {
+     "term": "{役割|やくわり}",
+     "meaning": "peran"
+    },
+    {
+     "term": "{問|と}われて",
+     "meaning": "dipertanyakan"
+    },
+    {
+     "term": "{導入|どうにゅう}",
+     "meaning": "penerapan",
+     "item_id": "ja-u09-i07"
+    },
+    {
+     "term": "{人手不足|ひとでぶそく}",
+     "meaning": "kekurangan tenaga kerja",
+     "item_id": "ja-u09-i03"
+    }
+   ],
+   "questions": [
+    {
+     "q": "Kenapa robot perawat makin banyak dipakai?",
+     "options": [
+      "Karena lebih murah dari manusia",
+      "Untuk mengatasi kekurangan tenaga kerja",
+      "Karena diwajibkan pemerintah"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Apa fungsi 'suit' yang disebut dalam teks?",
+     "options": [
+      "Mengurangi beban pinggang petugas",
+      "Mengawasi lansia di malam hari",
+      "Berbicara dengan lansia"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Apa yang menurut teks hanya bisa dilakukan manusia?",
+     "options": [
+      "Memindahkan pasien",
+      "Percakapan dan perawatan perasaan",
+      "Mencatat data"
+     ],
+     "answer": 1
+    }
+   ]
+  }
+ ],
+ "writing": [
+  {
+   "id": "ja-u09-w01",
+   "mode": "build",
+   "prompt": "Terjemahkan dengan menyusun ubin kata.",
+   "sentences": [
+    {
+     "id": "Menurut survei, kerja dari rumah meningkat.",
+     "ja": "{調査|ちょうさ} に よると 、 {在宅勤務|ざいたくきんむ} が {増|ふ}えて いる 。"
+    },
+    {
+     "id": "Bukan berarti AI akan merebut semua pekerjaan.",
+     "ja": "AI が {全部|ぜんぶ} の {仕事|しごと} を {奪|うば}う わけ では ない 。"
+    },
+    {
+     "id": "Diputuskan bahwa sistemnya berubah mulai tahun depan.",
+     "ja": "{来年|らいねん} から {制度|せいど} が {変|か}わる こと に なった 。"
+    },
+    {
+     "id": "Seiring kemajuan teknologi, cara kerja pun berubah.",
+     "ja": "{技術|ぎじゅつ} の {進歩|しんぽ} に {伴|ともな}って 、 {働|はたら}き{方|かた} も {変|か}わった 。"
+    },
+    {
+     "id": "Tantangan terbesar adalah keamanan informasi.",
+     "ja": "{一番|いちばん} の {課題|かだい} は {情報|じょうほう} の {安全|あんぜん} だ 。"
+    }
+   ]
+  }
+ ],
+ "speaking": [
+  {
+   "id": "ja-u09-s01",
+   "mode": "shadowing",
+   "sentences": [
+    "{日本|にほん} は {高齢化|こうれいか} が {進|すす}んで いる 。",
+    "{人手不足|ひとでぶそく} が {深刻|しんこく} だ 。",
+    "AI が {全部|ぜんぶ} の {仕事|しごと} を {奪|うば}う わけ では ない 。",
+    "キャッシュレス {決済|けっさい} が {普及|ふきゅう} して きた 。",
+    "{技術|ぎじゅつ} の {進歩|しんぽ} に {伴|ともな}って 、 {働|はたら}き{方|かた} も {変|か}わった 。",
+    "{一番|いちばん} の {課題|かだい} は {情報|じょうほう} の {安全|あんぜん} だ 。"
+   ],
+   "focus": "Kata Sino-Jepang panjang diucapkan dengan ketukan rata: ko-u-re-i-ka, hi-to-de-bu-so-ku. Nada berita datar dan jelas."
+  },
+  {
+   "id": "ja-u09-s02",
+   "mode": "answer",
+   "prompt": "Gaya diskusi JLPT: apakah kerja dari rumah sebaiknya terus dipakai? Beri pendapat dan satu alasan (3 sampai 4 kalimat).",
+   "sample_answer": "{私|わたし} は {在宅勤務|ざいたくきんむ} を {続|つづ}けた ほう が いい と {思|おも}います 。 {通勤|つうきん} の {時間|じかん} が ない ので 、 {勉強|べんきょう} や {家族|かぞく} の {時間|じかん} が {増|ふ}える から です 。 ただ 、 {全部|ぜんぶ} {在宅|ざいたく} に する わけ では なく 、 {週|しゅう} に {一回|いっかい} は {会|あ}って {話|はな}す の が {大切|たいせつ} だ と {思|おも}います 。"
+  }
+ ],
+ "conversation": [
+  {
+   "id": "ja-u09-c01",
+   "title": "Diskusi soal AI dengan rekan kerja",
+   "role_you": "Engineer",
+   "role_them": "Kato-san, rekan kerja",
+   "start": "n1",
+   "nodes": {
+    "n1": {
+     "them": "{最近|さいきん} 、 うち の {会社|かいしゃ} も AI を {導入|どうにゅう} する こと に なった そう です よ 。",
+     "hints": [
+      "Katanya perusahaan kita juga diputuskan akan menerapkan AI."
+     ],
+     "choices": [
+      {
+       "text": "そう なんです か 。 {仕事|しごと} の やり{方|かた} が {変|か}わりそう です ね 。",
+       "next": "n2",
+       "ok": true
+      },
+      {
+       "text": "はい 、 {私|わたし} が {導入|どうにゅう} する こと に しました 。",
+       "next": "n2",
+       "ok": false,
+       "feedback": "Itu keputusan perusahaan, bukan keputusanmu. Tanggapi kabarnya dengan 「そうなんですか」."
+      }
+     ]
+    },
+    "n2": {
+     "them": "{仕事|しごと} が なくなる ん じゃ ない か と {心配|しんぱい} して いる {人|ひと} も いる みたい です 。",
+     "hints": [
+      "Sepertinya ada yang khawatir pekerjaannya hilang."
+     ],
+     "choices": [
+      {
+       "text": "でも 、 {全部|ぜんぶ} の {仕事|しごと} が なくなる わけ では ない と {思|おも}います 。",
+       "next": "n3",
+       "ok": true
+      },
+      {
+       "text": "{仕事|しごと} が なくなる わけ が ない です 。",
+       "next": "n3",
+       "ok": false,
+       "feedback": "Terlalu mutlak. 「わけがない」 = tidak mungkin. Untuk menyangkal sebagian pakai 「わけではない」."
+      }
+     ]
+    },
+    "n3": {
+     "them": "たしか に 。 じゃあ 、 {私|わたし} たち は {何|なに} を {準備|じゅんび} すれば いい でしょう ね 。",
+     "hints": [
+      "Benar juga. Lalu apa yang sebaiknya kita persiapkan?"
+     ],
+     "choices": [
+      {
+       "text": "AI を {使|つか}う {技術|ぎじゅつ} と いう より 、 {考|かんが}える {力|ちから} を {磨|みが}く こと だ と {思|おも}います 。",
+       "next": "end",
+       "ok": true
+      },
+      {
+       "text": "まず は {研修|けんしゅう} を {受|う}けて みる の は どう でしょう か 。",
+       "next": "end",
+       "ok": true
+      }
+     ]
+    },
+    "end": {
+     "them": "なるほど 。 {今度|こんど} の {会議|かいぎ} で {提案|ていあん} して みましょう 。",
+     "end": true
+    }
+   }
+  }
+ ]
+}
