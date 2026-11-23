@@ -1,0 +1,171 @@
+{
+  "id": "en-u05",
+  "language": "en",
+  "level": "B2",
+  "title": "Presentasi ide produk",
+  "theme": "Meyakinkan pemangku kepentingan dengan data",
+  "tags": ["karier", "teknologi", "bisnis"],
+  "items": [
+    { "id": "en-u05-i01", "type": "word", "term": "stakeholder", "meaning": "pemangku kepentingan", "example": "Every stakeholder wants something slightly different.", "example_id": "Setiap pemangku kepentingan menginginkan hal yang sedikit berbeda.", "cloze": "Every ____ wants something slightly different.", "answer": "stakeholder" },
+    { "id": "en-u05-i02", "type": "idiom", "term": "get someone on board", "meaning": "mendapatkan dukungan seseorang", "example": "Getting the sales team on board took a few meetings.", "example_id": "Butuh beberapa rapat untuk mendapatkan dukungan tim sales.", "cloze": "Getting the sales team on ____ took a few meetings.", "answer": "board" },
+    { "id": "en-u05-i03", "type": "phrasal_verb", "term": "back up (a claim)", "meaning": "mendukung (klaim) dengan bukti", "example": "Can you back up that claim with data?", "example_id": "Bisakah kamu mendukung klaim itu dengan data?", "cloze": "Can you back ____ that claim with data?", "answer": "up" },
+    { "id": "en-u05-i04", "type": "collocation", "term": "drive engagement", "meaning": "mendorong keterlibatan pengguna", "example": "Push notifications can drive engagement, but only if they're useful.", "example_id": "Notifikasi bisa mendorong keterlibatan, tapi hanya jika berguna.", "cloze": "Push notifications can ____ engagement, but only if they're useful.", "answer": "drive" },
+    { "id": "en-u05-i05", "type": "collocation", "term": "a significant increase", "meaning": "kenaikan yang signifikan", "example": "We saw a significant increase in sign-ups after the redesign.", "example_id": "Kami melihat kenaikan pendaftaran yang signifikan setelah desain ulang.", "cloze": "We saw a ____ increase in sign-ups after the redesign.", "answer": "significant" },
+    { "id": "en-u05-i06", "type": "word", "term": "bottleneck", "meaning": "titik hambatan", "example": "Manual testing has become our biggest bottleneck.", "example_id": "Pengujian manual sudah menjadi hambatan terbesar kami.", "cloze": "Manual testing has become our biggest ____.", "answer": "bottleneck" },
+    { "id": "en-u05-i07", "type": "word", "term": "outweigh", "meaning": "lebih besar (bobotnya) daripada", "example": "The benefits clearly outweigh the costs.", "example_id": "Manfaatnya jelas lebih besar daripada biayanya.", "cloze": "The benefits clearly ____ the costs.", "answer": "outweigh" },
+    { "id": "en-u05-i08", "type": "pattern", "term": "To put it simply, ...", "meaning": "Sederhananya, ...", "example": "To put it simply, users don't understand the pricing page.", "example_id": "Sederhananya, pengguna tidak paham halaman harga.", "cloze": "To put it ____, users don't understand the pricing page.", "answer": "simply" },
+    { "id": "en-u05-i09", "type": "phrasal_verb", "term": "scale up", "meaning": "memperbesar skala", "example": "If the pilot works, we can scale up next quarter.", "example_id": "Kalau uji coba berhasil, kita bisa memperbesar skalanya kuartal depan.", "cloze": "If the pilot works, we can scale ____ next quarter.", "answer": "up" },
+    { "id": "en-u05-i10", "type": "collocation", "term": "raise a concern", "meaning": "menyampaikan kekhawatiran", "example": "The legal team raised a concern about user privacy.", "example_id": "Tim legal menyampaikan kekhawatiran soal privasi pengguna.", "cloze": "The legal team ____ a concern about user privacy.", "answer": "raised" },
+    { "id": "en-u05-i11", "type": "idiom", "term": "in a nutshell", "meaning": "singkatnya", "example": "In a nutshell, we want to make onboarding twice as fast.", "example_id": "Singkatnya, kami ingin proses onboarding dua kali lebih cepat.", "cloze": "In a ____, we want to make onboarding twice as fast.", "answer": "nutshell" },
+    { "id": "en-u05-i12", "type": "word", "term": "trade-off", "meaning": "kompromi; untung-rugi", "example": "There's always a trade-off between speed and quality.", "example_id": "Selalu ada kompromi antara kecepatan dan kualitas.", "cloze": "There's always a ____ between speed and quality.", "answer": "trade-off" }
+  ],
+  "grammar": [
+    {
+      "id": "en-u05-g01",
+      "title": "Passive voice untuk laporan dan data",
+      "explanation": "Dalam laporan, yang penting biasanya hasil atau datanya, bukan siapa pelakunya. Pakai be + V3 (was collected, have been tested, will be shared). Pastikan kata kerjanya bentuk ketiga.",
+      "examples": ["The feature was used by 40% of users.", "Three options have been tested so far.", "The results will be shared next week."],
+      "common_mistake": { "wrong": "The survey was send to 500 users.", "right": "The survey was sent to 500 users." }
+    },
+    {
+      "id": "en-u05-g02",
+      "title": "Second conditional untuk usulan",
+      "explanation": "Untuk membayangkan hasil sebuah usulan, pakai If + past simple, lalu would + V1. Jangan pakai 'would' di bagian 'if'. Bentuk ini terdengar lebih sopan dan hati-hati daripada 'will'.",
+      "examples": ["If we simplified the sign-up form, more people would finish it.", "What would happen if we removed the free plan?", "If I were you, I'd start with a small test."],
+      "common_mistake": { "wrong": "If we would add a dark mode, users would like it.", "right": "If we added a dark mode, users would like it." }
+    }
+  ],
+  "listening": [
+    {
+      "id": "en-u05-l01",
+      "title": "Pitch ke kepala produk",
+      "speakers": [ { "name": "Bagus", "voice": "en-US" }, { "name": "Ms Patel", "voice": "en-GB" } ],
+      "lines": [
+        { "speaker": "Bagus", "text": "Thanks for your time. In a nutshell, I'd like to propose a faster onboarding flow." },
+        { "speaker": "Ms Patel", "text": "Okay. What's the problem with the current one?" },
+        { "speaker": "Bagus", "text": "Right now, almost half of new users drop out before they finish the sign-up form." },
+        { "speaker": "Ms Patel", "text": "That's a lot. Can you back that up with data?" },
+        { "speaker": "Bagus", "text": "Yes. The numbers were collected over three months, and the biggest bottleneck is the email verification step." },
+        { "speaker": "Ms Patel", "text": "And if we removed that step, what would the risks be?" },
+        { "speaker": "Bagus", "text": "There's a trade-off with security, but we'd verify users later, before their first payment." }
+      ],
+      "dictation": [2, 4, 6],
+      "questions": [
+        { "q": "What problem does Bagus describe?", "options": ["The app is too expensive", "Many new users don't finish signing up", "The servers are slow"], "answer": 1 },
+        { "q": "What is the biggest bottleneck?", "options": ["The pricing page", "Email verification", "The payment form"], "answer": 1 },
+        { "q": "How would Bagus deal with the security risk?", "options": ["By ignoring it", "By verifying users before their first payment", "By adding a second password"], "answer": 1 }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "id": "en-u05-r01",
+      "title": "Why most product pitches fail",
+      "text": "Most product pitches fail for a simple reason: they describe a solution before anyone agrees there is a problem. Decision-makers hear dozens of ideas every month, and they are naturally sceptical. A strong pitch starts with evidence that the problem is real and costly, such as support tickets, churn figures, or short clips from user interviews. Only then is the solution introduced, ideally as a small experiment rather than a large project. Experienced product managers also address objections before they are raised. If a feature might slow down the app, they say so, and explain how the risk would be measured. Finally, the best pitches end with a clear request: a budget, two engineers for a sprint, or simply permission to run a test. A pitch without a specific ask is just a presentation.",
+      "glossary": [
+        { "term": "decision-makers", "meaning": "pengambil keputusan" },
+        { "term": "sceptical", "meaning": "skeptis; ragu" },
+        { "term": "churn", "meaning": "pelanggan yang berhenti memakai produk" },
+        { "term": "objections", "meaning": "keberatan" },
+        { "term": "raised", "meaning": "disampaikan", "item_id": "en-u05-i10" },
+        { "term": "sprint", "meaning": "periode kerja singkat tim (1–2 minggu)" },
+        { "term": "ask", "meaning": "(kata benda) permintaan" }
+      ],
+      "questions": [
+        { "q": "According to the text, why do most pitches fail?", "options": ["They are too short", "They present a solution before proving the problem", "They include too much data"], "answer": 1 },
+        { "q": "How should the solution ideally be introduced?", "options": ["As a small experiment", "As a long-term strategy", "As a finished product"], "answer": 0 },
+        { "q": "What does the writer mean by 'a specific ask'?", "options": ["A question for the audience", "A clear request, such as a budget or people", "A summary slide"], "answer": 1 }
+      ]
+    }
+  ],
+  "writing": [
+    {
+      "id": "en-u05-w01",
+      "prompt": "Tulis email proposal ke kepala produk (Ms Patel). Usulkan satu fitur baru untuk aplikasimu. Jelaskan masalahnya dengan data, solusimu, risiko atau trade-off-nya, lalu tutup dengan permintaan yang spesifik.",
+      "min_words": 180,
+      "max_words": 260,
+      "checklist": [
+        "Masalah dijelaskan dengan angka atau bukti",
+        "Solusi diusulkan sebagai eksperimen kecil",
+        "Minimal satu kalimat passive voice (… were analysed / … has been consulted)",
+        "Ada second conditional (If we …, we would …)",
+        "Ditutup dengan permintaan spesifik (orang, waktu, atau anggaran)"
+      ],
+      "useful_phrases": ["I'd like to propose ...", "Over the last three months, ... were analysed.", "If we ..., we would ...", "The main trade-off is ...", "Could we have ... to run a two-week test?"],
+      "model_answer": "Subject: Proposal: one-tap sign-in for returning users\n\nHi Ms Patel,\n\nI'd like to propose a small experiment to reduce drop-off at sign-in.\n\nOver the last three months, 18,000 login attempts were analysed, and we found that 27% of returning users abandon the app at the password screen. Most of them are on mobile, where typing long passwords is frustrating. Support tickets tell the same story: password resets are now our most common request.\n\nMy suggestion is to add one-tap sign-in with a magic link sent by email. If we offered this option to returning users, I estimate that we would recover at least a third of those lost sessions. To put it simply, fewer people would give up before they even see their dashboard.\n\nThe main trade-off is security. Email links can be forwarded, so each link would expire after ten minutes and could only be used once. The legal team has already been consulted, and they have not raised any concerns so far.\n\nCould we have two engineers for one sprint? We would release the feature to 10% of users, compare the results with the current flow, and share a short report before deciding whether to scale it up.\n\nBest regards,\nBagus"
+    }
+  ],
+  "speaking": [
+    {
+      "id": "en-u05-s01",
+      "mode": "shadowing",
+      "sentences": [
+        "In a nutshell, we want to make onboarding twice as fast.",
+        "The data was collected over three months.",
+        "If we simplified the form, more people would finish it.",
+        "The benefits clearly outweigh the costs.",
+        "There's always a trade-off between speed and quality.",
+        "Can you back up that claim with data?"
+      ],
+      "focus": "Tekanan kalimat pada kata penting (DATA, TWICE, BENEFITS), dan bunyi 'th' pada 'there's' dan 'three'."
+    },
+    {
+      "id": "en-u05-s02",
+      "mode": "answer",
+      "prompt": "Gaya IELTS Speaking Part 3: 'Do you think technology companies collect too much data about their users?' Jawab dengan pendapat, alasan, dan contoh (5 sampai 6 kalimat).",
+      "sample_answer": "To some extent, yes. Many apps collect far more information than they actually need, and most users never read the privacy policy. For example, a simple flashlight app shouldn't need access to your contacts. On the other hand, some data is genuinely useful, because it helps companies fix bugs and improve their products. I think the real problem is transparency rather than the data itself. If companies explained clearly what they collected and why, people would trust them much more."
+    }
+  ],
+  "conversation": [
+    {
+      "id": "en-u05-c01",
+      "title": "Menghadapi keberatan stakeholder",
+      "role_you": "Developer yang mengusulkan fitur",
+      "role_them": "Mr Lim, kepala keuangan",
+      "start": "n1",
+      "nodes": {
+        "n1": {
+          "them": "I've read your proposal. Honestly, I'm not convinced we need another feature right now.",
+          "hints": ["akui kekhawatirannya: I understand your concern", "minta kesempatan menjelaskan"],
+          "replies": [
+            { "match": ["understand", "fair", "concern", "appreciate", "i see", "explain"], "next": "n2" }
+          ],
+          "fallback": { "next": "n2", "feedback": "Contoh: \"I understand your concern. Could I explain why we think it's urgent?\"" }
+        },
+        "n2": {
+          "them": "Go on. What's the actual problem you're trying to solve?",
+          "hints": ["masalah + angka: Almost half of new users ...", "passive: The data was collected ..."],
+          "replies": [
+            { "match": ["users", "percent", "half", "drop", "data", "problem"], "next": "n3" }
+          ],
+          "fallback": { "next": "n3", "feedback": "Contoh: \"Almost half of new users drop out during sign-up. The data was collected over three months.\"" }
+        },
+        "n3": {
+          "them": "Fine, but how much is this going to cost us?",
+          "hints": ["perkiraan biaya: It would take two engineers for ...", "tekankan bahwa ini eksperimen kecil"],
+          "replies": [
+            { "match": ["engineers", "sprint", "weeks", "small", "test", "cost", "only"], "next": "n4" }
+          ],
+          "fallback": { "next": "n4", "feedback": "Contoh: \"It would only take two engineers for one sprint, because we'd start with a small test.\"" }
+        },
+        "n4": {
+          "them": "And what if it doesn't work?",
+          "hints": ["second conditional: If it didn't work, we would ...", "sebut cara mengukurnya"],
+          "replies": [
+            { "match": ["if it", "would", "stop", "measure", "roll back", "learn", "results"], "next": "n5" }
+          ],
+          "fallback": { "next": "n5", "feedback": "Contoh: \"If it didn't work, we would simply roll it back. We'd measure the results after two weeks.\"" }
+        },
+        "n5": {
+          "them": "Hmm. I suppose the benefits might outweigh the costs. What exactly do you need from me?",
+          "hints": ["permintaan spesifik: Could we have approval for ...?"],
+          "replies": [
+            { "match": ["approval", "budget", "could we", "need", "permission", "sprint"], "next": "end" }
+          ],
+          "fallback": { "next": "end", "feedback": "Contoh: \"Could we have approval for a two-week test with 10% of users?\"" }
+        },
+        "end": { "them": "All right. Send me a one-page summary and I'll approve the test this week.", "end": true }
+      }
+    }
+  ]
+}

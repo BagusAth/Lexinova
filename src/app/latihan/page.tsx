@@ -15,6 +15,7 @@ import {
   NODE_ORDER,
   type NodeKey,
   nodeDone,
+  nodeHref,
   TAG_LABEL,
   unitPassed,
   unitsOfLevel,
@@ -38,12 +39,14 @@ import { ButtonLink, Loading, ProgressBar, SectionTitle } from "@/components/ui"
 
 const NODE_LABEL: Record<NodeKey, string> = {
   fondasi: "Fondasi",
+  grammar: "Tata bahasa",
   ...SKILL_LABEL,
   ujian: "Ujian Unit",
 };
 
 const NODE_SUB: Record<NodeKey, string> = {
   fondasi: "Kosakata & kolokasi",
+  grammar: "Penjelasan & cek singkat",
   listening: "Dialog dan dikte",
   reading: "Artikel pendek",
   writing: "Teks singkat",
@@ -230,7 +233,7 @@ function LevelHero({ p, cur, target }: { p: Progress; cur: number; target: numbe
                   : "Ujian akhir C1"
                 : next
                   ? `Uji lompat ke ${next.cefr}`
-                  : "Uji lompat"}
+                  : "Ujian akhir C1"}
             </ButtonLink>
           </div>
         )}
@@ -267,7 +270,7 @@ function LevelUnits({ p, li, cur }: { p: Progress; li: number; cur: number }) {
           merasa mampu? Ambil Uji Lompat di kartu atas.
         </p>
       )}
-      <div className="grid gap-4 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         {units.map((u) => (
           <UnitCard key={u.id} p={p} u={u} />
         ))}
@@ -278,6 +281,7 @@ function LevelUnits({ p, li, cur }: { p: Progress; li: number; cur: number }) {
 
 const NODE_ICON: Record<NodeKey, IconKind> = {
   fondasi: "fondasi",
+  grammar: "grammar",
   listening: "listening",
   reading: "reading",
   writing: "writing",
@@ -299,7 +303,7 @@ function UnitCard({ p, u }: { p: Progress; u: Unit }) {
 
   function go(key: NodeKey) {
     update((d) => void (d.settings.unitId = u.id));
-    router.push(key === "ujian" ? examHref("unit", u.id) : `/${key}`);
+    router.push(nodeHref(key, u.id));
   }
 
   return (
@@ -357,16 +361,13 @@ function UnitCard({ p, u }: { p: Progress; u: Unit }) {
                 const isDone = nodeDone(p, u, k);
                 const isNext = k === firstOpen;
                 return (
-                  <li
-                    key={k}
-                    className="relative flex w-full justify-center"
-                    style={{ transform: `translateX(${ZIG[i]}px)` }}
-                  >
+                  <li key={k} className="relative flex w-full justify-center">
                     <button
                       type="button"
                       onClick={() => go(k)}
                       aria-label={`${NODE_LABEL[k]}${isDone ? ", selesai" : ""}`}
                       className="group relative flex flex-col items-center"
+                      style={{ transform: `translateX(${ZIG[i]}px)` }}
                     >
                       {isNext && (
                         <span className="animate-float absolute -top-7 z-10 rounded-xl bg-ink px-2.5 py-1 text-[11px] font-extrabold whitespace-nowrap text-[#2a2470] shadow-soft">

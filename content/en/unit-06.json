@@ -1,0 +1,164 @@
+{
+  "id": "en-u06",
+  "language": "en",
+  "level": "B2",
+  "title": "Teknologi, sains, dan masyarakat",
+  "theme": "Membahas AI dan pekerjaan untuk esai IELTS",
+  "tags": ["ielts", "sains", "teknologi", "studi"],
+  "items": [
+    { "id": "en-u06-i01", "type": "word", "term": "automation", "meaning": "otomatisasi", "example": "Automation has changed the way factories work.", "example_id": "Otomatisasi telah mengubah cara pabrik bekerja.", "cloze": "____ has changed the way factories work.", "answer": "Automation" },
+    { "id": "en-u06-i02", "type": "word", "term": "replace", "meaning": "menggantikan", "example": "AI is unlikely to replace teachers completely.", "example_id": "AI kecil kemungkinannya menggantikan guru sepenuhnya.", "cloze": "AI is unlikely to ____ teachers completely.", "answer": "replace" },
+    { "id": "en-u06-i03", "type": "collocation", "term": "a growing number of", "meaning": "semakin banyak", "example": "A growing number of students use AI to check their essays.", "example_id": "Semakin banyak mahasiswa memakai AI untuk mengecek esai mereka.", "cloze": "A ____ number of students use AI to check their essays.", "answer": "growing" },
+    { "id": "en-u06-i04", "type": "collocation", "term": "pose a risk", "meaning": "menimbulkan risiko", "example": "Fake videos pose a serious risk to elections.", "example_id": "Video palsu menimbulkan risiko serius bagi pemilu.", "cloze": "Fake videos ____ a serious risk to elections.", "answer": "pose" },
+    { "id": "en-u06-i05", "type": "phrasal_verb", "term": "keep up with", "meaning": "mengikuti (perkembangan)", "example": "It's hard to keep up with new tools every month.", "example_id": "Sulit mengikuti alat-alat baru setiap bulan.", "cloze": "It's hard to keep up ____ new tools every month.", "answer": "with" },
+    { "id": "en-u06-i06", "type": "phrasal_verb", "term": "rely on", "meaning": "bergantung pada", "example": "Many companies now rely on cloud services.", "example_id": "Banyak perusahaan sekarang bergantung pada layanan cloud.", "cloze": "Many companies now rely ____ cloud services.", "answer": "on" },
+    { "id": "en-u06-i07", "type": "word", "term": "widespread", "meaning": "meluas", "example": "Smartphones became widespread in the 2010s.", "example_id": "Ponsel pintar menjadi meluas pada tahun 2010-an.", "cloze": "Smartphones became ____ in the 2010s.", "answer": "widespread" },
+    { "id": "en-u06-i08", "type": "pattern", "term": "It could be argued that ...", "meaning": "Dapat dikatakan bahwa ...", "example": "It could be argued that AI makes workers more productive.", "example_id": "Dapat dikatakan bahwa AI membuat pekerja lebih produktif.", "cloze": "It could be ____ that AI makes workers more productive.", "answer": "argued" },
+    { "id": "en-u06-i09", "type": "idiom", "term": "a double-edged sword", "meaning": "pedang bermata dua", "example": "Social media is a double-edged sword for young people.", "example_id": "Media sosial adalah pedang bermata dua bagi anak muda.", "cloze": "Social media is a double-edged ____ for young people.", "answer": "sword" },
+    { "id": "en-u06-i10", "type": "collocation", "term": "carry out research", "meaning": "melakukan penelitian", "example": "The university carried out research on screen time.", "example_id": "Universitas itu melakukan penelitian tentang waktu layar.", "cloze": "The university ____ out research on screen time.", "answer": "carried" },
+    { "id": "en-u06-i11", "type": "word", "term": "whereas", "meaning": "sedangkan", "example": "Older workers prefer meetings, whereas younger workers prefer chat.", "example_id": "Pekerja yang lebih tua lebih suka rapat, sedangkan yang muda lebih suka chat.", "cloze": "Older workers prefer meetings, ____ younger workers prefer chat.", "answer": "whereas" },
+    { "id": "en-u06-i12", "type": "word", "term": "tackle", "meaning": "menangani (masalah)", "example": "Governments must tackle misinformation online.", "example_id": "Pemerintah harus menangani misinformasi di internet.", "cloze": "Governments must ____ misinformation online.", "answer": "tackle" }
+  ],
+  "grammar": [
+    {
+      "id": "en-u06-g01",
+      "title": "Relative clause: who, which, whose",
+      "explanation": "Relative clause menambahkan keterangan pada kata benda. Tanpa koma (defining) berarti informasinya penting untuk menentukan yang dimaksud. Dengan koma (non-defining) berarti informasi tambahan, dan di sini tidak boleh memakai 'that'. 'Whose' menyatakan kepemilikan.",
+      "examples": ["Engineers who use AI tools save time.", "The report, which was published last week, surprised many experts.", "Workers whose jobs are at risk need retraining."],
+      "common_mistake": { "wrong": "The study, that was published in 2023, was widely shared.", "right": "The study, which was published in 2023, was widely shared." }
+    },
+    {
+      "id": "en-u06-g02",
+      "title": "Although, despite, whereas",
+      "explanation": "'Although' diikuti klausa lengkap (subjek + kata kerja). 'Despite' diikuti kata benda atau V-ing, bukan klausa. 'Whereas' membandingkan dua hal yang berbeda.",
+      "examples": ["Although AI is powerful, it still makes mistakes.", "Despite the risks, many companies use it.", "Some jobs will disappear, whereas others will be created."],
+      "common_mistake": { "wrong": "Despite AI is powerful, it makes mistakes.", "right": "Although AI is powerful, it makes mistakes." }
+    }
+  ],
+  "listening": [
+    {
+      "id": "en-u06-l01",
+      "title": "Podcast: AI dan pekerjaan",
+      "speakers": [ { "name": "Emma", "voice": "en-GB" }, { "name": "Dr Okafor", "voice": "en-US" } ],
+      "lines": [
+        { "speaker": "Emma", "text": "Welcome back. Today we're asking a big question: will AI replace our jobs?" },
+        { "speaker": "Dr Okafor", "text": "It's a fair question. Automation has always replaced some tasks, but it rarely replaces whole jobs overnight." },
+        { "speaker": "Emma", "text": "So which workers should be worried?" },
+        { "speaker": "Dr Okafor", "text": "People whose work is mostly routine, like data entry, face the highest risk." },
+        { "speaker": "Emma", "text": "And what about creative jobs, such as design?" },
+        { "speaker": "Dr Okafor", "text": "Although AI can produce images quickly, clients still rely on designers to understand what they actually need." },
+        { "speaker": "Emma", "text": "So the key is to keep up with the tools rather than fight them?" },
+        { "speaker": "Dr Okafor", "text": "Exactly. A growing number of companies are hiring people who can work with AI, not against it." }
+      ],
+      "dictation": [3, 5, 7],
+      "questions": [
+        { "q": "According to Dr Okafor, what does automation usually replace?", "options": ["Whole jobs overnight", "Some tasks", "Only creative work"], "answer": 1 },
+        { "q": "Who faces the highest risk?", "options": ["Designers", "People who do routine work", "Managers"], "answer": 1 },
+        { "q": "What is the main advice?", "options": ["Avoid AI tools", "Learn to work with AI", "Change careers quickly"], "answer": 1, "explain": "'Keep up with the tools' = mengikuti perkembangan alat, bukan melawannya." }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "id": "en-u06-r01",
+      "title": "Can AI make us lazy thinkers?",
+      "text": "A growing number of studies are looking at how AI assistants affect the way we think. In one experiment carried out at a European university, two groups of students wrote short essays. The first group could use an AI tool, whereas the second group could only use a search engine. The essays written with AI were finished faster and contained fewer grammar mistakes. However, when the students were tested a week later, those who had relied on AI remembered significantly less of what they had written. The researchers call this 'cognitive offloading': when a tool does the thinking for us, our brains invest less effort in storing the information. This does not mean AI should be avoided. It could be argued that calculators caused similar fears decades ago. The lesson is to use AI as a coach that asks questions, not as a ghostwriter that answers them.",
+      "glossary": [
+        { "term": "carried out", "meaning": "dilakukan", "item_id": "en-u06-i10" },
+        { "term": "whereas", "meaning": "sedangkan", "item_id": "en-u06-i11" },
+        { "term": "search engine", "meaning": "mesin pencari" },
+        { "term": "relied on", "meaning": "bergantung pada", "item_id": "en-u06-i06" },
+        { "term": "cognitive offloading", "meaning": "memindahkan beban berpikir ke alat" },
+        { "term": "invest", "meaning": "mencurahkan (usaha)" },
+        { "term": "ghostwriter", "meaning": "penulis bayangan" }
+      ],
+      "questions": [
+        { "q": "What was the difference between the two groups?", "options": ["One group used AI, the other used a search engine", "One group wrote longer essays", "One group studied at home"], "answer": 0 },
+        { "q": "What happened a week later?", "options": ["The AI group remembered less", "Both groups remembered the same", "The search group forgot everything"], "answer": 0 },
+        { "q": "What is the writer's conclusion?", "options": ["AI should be banned in schools", "AI should be used to ask questions, not to do the work", "Calculators are more dangerous than AI"], "answer": 1 }
+      ]
+    }
+  ],
+  "writing": [
+    {
+      "id": "en-u06-w01",
+      "prompt": "IELTS Writing Task 2 (lengkap): 'Some people believe that artificial intelligence will create more jobs than it destroys. Others think it will lead to widespread unemployment. Discuss both views and give your own opinion.' Tulis esai 4 paragraf: pendahuluan, pandangan pertama, pandangan kedua, dan kesimpulan berisi pendapatmu.",
+      "min_words": 230,
+      "max_words": 320,
+      "checklist": [
+        "Pendahuluan memparafrasekan soal dan menyebut pendapatmu",
+        "Satu paragraf untuk tiap pandangan, masing-masing dengan contoh",
+        "Penghubung kontras (Although / Whereas / On the other hand)",
+        "Minimal satu relative clause (which / who / whose)",
+        "Kesimpulan menegaskan pendapat tanpa ide baru"
+      ],
+      "useful_phrases": ["While some argue that ..., others fear that ...", "On the one hand, ...", "History suggests that ...", "Workers whose ...", "In conclusion, I believe ..."],
+      "model_answer": "Artificial intelligence is developing so quickly that many people are worried about the future of work. While some argue that AI will generate more jobs than it eliminates, others fear that it will leave millions unemployed. In my view, both outcomes are possible, but the result will depend on how well societies prepare.\n\nOn the one hand, history suggests that new technology tends to create new kinds of work. When computers became widespread, typists disappeared, but millions of jobs were created in software, design and online services. Similarly, AI is already producing roles such as data annotators and AI trainers, which did not exist ten years ago. Companies that use AI to become more productive may also grow and hire more staff.\n\nOn the other hand, the speed of this change is unusual. Workers whose tasks are mostly routine, like customer service agents or data entry clerks, could lose their jobs faster than they can retrain. Although new positions may appear, they often require skills that these workers do not have, and they may be located in different cities or even countries. Without support, this could lead to serious inequality.\n\nIn conclusion, I believe AI is more likely to change jobs than to destroy work altogether. However, governments and employers must tackle the transition seriously by investing in affordable training, so that the benefits of automation are shared widely rather than concentrated in the hands of a few."
+    }
+  ],
+  "speaking": [
+    {
+      "id": "en-u06-s01",
+      "mode": "shadowing",
+      "sentences": [
+        "It could be argued that AI makes workers more productive.",
+        "Social media is a double-edged sword for young people.",
+        "Although AI is powerful, it still makes mistakes.",
+        "Workers whose jobs are at risk need retraining.",
+        "Governments must tackle misinformation online.",
+        "It's hard to keep up with new tools every month."
+      ],
+      "focus": "Linking 'could be argued' (could-be-AR-gued), 'double-edged' dengan bunyi /dʒd/ di akhir, dan bunyi /ð/ pada 'although'."
+    },
+    {
+      "id": "en-u06-s02",
+      "mode": "answer",
+      "prompt": "IELTS Speaking Part 2: 'Describe a piece of technology you use every day.' Sebutkan apa itu, bagaimana kamu memakainya, dan kenapa penting bagimu. Bicara 1 sampai 2 menit (6 sampai 8 kalimat).",
+      "sample_answer": "The piece of technology I couldn't live without is my laptop. I use it for almost everything: coding at work, studying English in the evening, and even watching films at the weekend. I bought it about two years ago, when my old one became too slow to run modern development tools. What I like most is that it's light enough to carry around, so I can work from a café when I need a change of scene. Having said that, it's a double-edged sword, because it also makes it very hard to switch off from work. I've started closing it completely after eight in the evening to protect my free time. Overall, it's the tool that has helped my career the most, and I'd probably feel lost without it."
+    }
+  ],
+  "conversation": [
+    {
+      "id": "en-u06-c01",
+      "title": "Debat santai: AI di tempat kerja",
+      "role_you": "Developer",
+      "role_them": "Sara, rekan kerja yang skeptis",
+      "start": "n1",
+      "nodes": {
+        "n1": {
+          "them": "Did you see the email? Management wants everyone to use AI coding tools from next month. I'm not a fan.",
+          "hints": ["tanya alasannya: Really? Why not?", "beri pendapat awalmu"],
+          "replies": [
+            { "match": ["why", "what", "really", "how come", "think", "not a fan"], "next": "n2" }
+          ],
+          "fallback": { "next": "n2", "feedback": "Contoh: \"Really? Why not? I think they could save us a lot of time.\"" }
+        },
+        "n2": {
+          "them": "Because people will stop thinking. If the tool writes the code, how will juniors learn?",
+          "hints": ["akui sebagian: That's a fair point, but ...", "beri sisi lain"],
+          "replies": [
+            { "match": ["fair point", "but", "although", "however", "agree", "true"], "next": "n3" }
+          ],
+          "fallback": { "next": "n3", "feedback": "Contoh: \"That's a fair point, but juniors could still learn if they review the code instead of just copying it.\"" }
+        },
+        "n3": {
+          "them": "Maybe. But there's also the security risk. Our code would be sent to an external company.",
+          "hints": ["usulkan solusi: We could ... / unless ...", "pakai conditional"],
+          "replies": [
+            { "match": ["could", "if", "unless", "local", "policy", "only", "rule"], "next": "n4" }
+          ],
+          "fallback": { "next": "n4", "feedback": "Contoh: \"We could use a tool that runs locally, or only use it for code that isn't sensitive.\"" }
+        },
+        "n4": {
+          "them": "Okay, that would help. So what would you suggest we tell management?",
+          "hints": ["usulan konkret: Why don't we suggest ...?", "uji coba kecil dengan aturan jelas"],
+          "replies": [
+            { "match": ["suggest", "pilot", "test", "trial", "guidelines", "why don't", "start"], "next": "end" }
+          ],
+          "fallback": { "next": "end", "feedback": "Contoh: \"Why don't we suggest a one-month pilot with clear guidelines, and then review the results?\"" }
+        },
+        "end": { "them": "Good idea. Let's write it up together and send it this afternoon.", "end": true }
+      }
+    }
+  ]
+}

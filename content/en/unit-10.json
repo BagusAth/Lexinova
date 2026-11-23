@@ -1,0 +1,172 @@
+{
+  "id": "en-u10",
+  "language": "en",
+  "level": "C1",
+  "title": "Memimpin rapat dan diskusi global",
+  "theme": "Fasilitasi, ketidaksetujuan yang diplomatis, dan budaya kerja lintas negara",
+  "tags": ["karier", "bisnis", "travel", "sains"],
+  "items": [
+    { "id": "en-u10-i01", "type": "word", "term": "facilitate", "meaning": "memandu (rapat, diskusi)", "example": "I'll facilitate the workshop, but everyone is expected to contribute.", "example_id": "Saya yang memandu workshop, tapi semua orang diharapkan berkontribusi.", "cloze": "I'll ____ the workshop, but everyone is expected to contribute.", "answer": "facilitate" },
+    { "id": "en-u10-i02", "type": "idiom", "term": "play devil's advocate", "meaning": "sengaja mengambil sudut pandang berlawanan", "example": "Let me play devil's advocate for a moment.", "example_id": "Izinkan saya sengaja mengambil sudut pandang berlawanan sebentar.", "cloze": "Let me play devil's ____ for a moment.", "answer": "advocate" },
+    { "id": "en-u10-i03", "type": "pattern", "term": "I take your point, but ...", "meaning": "Saya paham maksud Anda, tetapi ...", "example": "I take your point, but the data suggests otherwise.", "example_id": "Saya paham maksud Anda, tapi datanya menunjukkan hal lain.", "cloze": "I take your ____, but the data suggests otherwise.", "answer": "point" },
+    { "id": "en-u10-i04", "type": "collocation", "term": "reach a consensus", "meaning": "mencapai mufakat", "example": "We need to reach a consensus before the end of the meeting.", "example_id": "Kita perlu mencapai mufakat sebelum rapat berakhir.", "cloze": "We need to ____ a consensus before the end of the meeting.", "answer": "reach" },
+    { "id": "en-u10-i05", "type": "word", "term": "sidetracked", "meaning": "keluar dari topik", "example": "Sorry, we're getting sidetracked; let's go back to the budget.", "example_id": "Maaf, kita mulai keluar topik; mari kembali ke anggaran.", "cloze": "Sorry, we're getting ____; let's go back to the budget.", "answer": "sidetracked" },
+    { "id": "en-u10-i06", "type": "word", "term": "park (an issue)", "meaning": "menunda pembahasan sementara", "example": "Let's park that issue and come back to it next week.", "example_id": "Mari tunda dulu masalah itu dan bahas lagi minggu depan.", "cloze": "Let's ____ that issue and come back to it next week.", "answer": "park" },
+    { "id": "en-u10-i07", "type": "pattern", "term": "must have + V3", "meaning": "pasti telah ... (dugaan kuat tentang masa lalu)", "example": "The message must have been misunderstood.", "example_id": "Pesannya pasti telah disalahpahami.", "cloze": "The message must ____ been misunderstood.", "answer": "have" },
+    { "id": "en-u10-i08", "type": "idiom", "term": "lost in translation", "meaning": "hilang atau berubah makna saat diterjemahkan", "example": "Some humour gets lost in translation.", "example_id": "Sebagian humor hilang maknanya saat diterjemahkan.", "cloze": "Some humour gets lost in ____.", "answer": "translation" },
+    { "id": "en-u10-i09", "type": "idiom", "term": "read between the lines", "meaning": "memahami makna tersirat", "example": "In some cultures, you have to read between the lines.", "example_id": "Di beberapa budaya, kamu harus memahami makna yang tersirat.", "cloze": "In some cultures, you have to read between the ____.", "answer": "lines" },
+    { "id": "en-u10-i10", "type": "word", "term": "articulate", "meaning": "mengungkapkan dengan jelas", "example": "She articulated the team's concerns very clearly.", "example_id": "Dia mengungkapkan kekhawatiran tim dengan sangat jelas.", "cloze": "She ____ the team's concerns very clearly.", "answer": "articulated" },
+    { "id": "en-u10-i11", "type": "phrasal_verb", "term": "follow through (on)", "meaning": "menuntaskan (janji, rencana)", "example": "Decisions mean nothing if nobody follows through on them.", "example_id": "Keputusan tak ada artinya kalau tidak ada yang menuntaskannya.", "cloze": "Decisions mean nothing if nobody follows ____ on them.", "answer": "through" },
+    { "id": "en-u10-i12", "type": "collocation", "term": "the implementation of", "meaning": "pelaksanaan (nominalisasi formal)", "example": "The implementation of the new policy will begin in May.", "example_id": "Pelaksanaan kebijakan baru akan dimulai bulan Mei.", "cloze": "The ____ of the new policy will begin in May.", "answer": "implementation" }
+  ],
+  "grammar": [
+    {
+      "id": "en-u10-g01",
+      "title": "Modal deduksi masa lalu",
+      "explanation": "Untuk menyimpulkan apa yang terjadi di masa lalu, pakai modal + have + V3: 'must have' (hampir pasti), 'might/may have' (mungkin), 'can't have' (hampir pasti tidak). Setelah modal, selalu 'have', bukan 'had'.",
+      "examples": ["They must have misunderstood the deadline.", "He can't have seen the email; he was on leave.", "The file might have been deleted by mistake."],
+      "common_mistake": { "wrong": "She must had forgotten the meeting.", "right": "She must have forgotten the meeting." }
+    },
+    {
+      "id": "en-u10-g02",
+      "title": "Nominalisasi untuk register formal",
+      "explanation": "Laporan formal sering mengubah kata kerja menjadi kata benda (implement → implementation, decide → decision, reduce → reduction). Hasilnya lebih padat, objektif, dan tidak berfokus pada orang. Hindari kontraksi dan bahasa lisan dalam register ini.",
+      "examples": ["The implementation of the policy was delayed.", "There has been a significant reduction in costs.", "Our recommendation is the adoption of a shared calendar."],
+      "common_mistake": { "wrong": "We decided to do it, but it got delayed because people didn't agree.", "right": "The implementation was delayed owing to a lack of consensus." }
+    }
+  ],
+  "listening": [
+    {
+      "id": "en-u10-l01",
+      "title": "Rapat tim lintas negara",
+      "speakers": [ { "name": "Bagus", "voice": "en-US" }, { "name": "Sophie", "voice": "en-GB" }, { "name": "Kenji", "voice": "en-AU" } ],
+      "lines": [
+        { "speaker": "Bagus", "text": "Thanks for joining from three time zones. Today's goal is to reach a consensus on the release date." },
+        { "speaker": "Sophie", "text": "I'll play devil's advocate. Why not delay by a month and fix everything properly?" },
+        { "speaker": "Kenji", "text": "I take your point, but our client in Tokyo has already announced the launch." },
+        { "speaker": "Bagus", "text": "Kenji, you mentioned yesterday that the client was flexible. Something must have changed." },
+        { "speaker": "Kenji", "text": "Yes, their marketing team must have moved faster than expected. The press release went out this morning." },
+        { "speaker": "Sophie", "text": "Then let's park the extra features and focus on the critical bugs." },
+        { "speaker": "Bagus", "text": "Agreed. I'll summarise the decision in writing, so nothing gets lost in translation, and we'll follow through on Friday." }
+      ],
+      "dictation": [2, 4, 6],
+      "questions": [
+        { "q": "What is the goal of the meeting?", "options": ["To hire new staff", "To agree on a release date", "To plan a trip to Tokyo"], "answer": 1 },
+        { "q": "Why can't the release be delayed?", "options": ["The client has already announced it", "The budget has run out", "Sophie is going on leave"], "answer": 0 },
+        { "q": "What do they decide?", "options": ["To delay everything by a month", "To postpone extra features and fix critical bugs", "To cancel the project"], "answer": 1 }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "id": "en-u10-r01",
+      "title": "Low-context and high-context communication",
+      "text": "The anthropologist Edward T. Hall distinguished between low-context and high-context cultures. In low-context cultures, such as the Netherlands or the United States, good communication is expected to be explicit: people say what they mean, and responsibility for understanding lies mainly with the speaker. In high-context cultures, including Japan and Indonesia, much of the meaning is carried by tone, relationships and what is left unsaid, so listeners are expected to read between the lines. Neither style is superior, but problems arise when they meet. A Dutch manager may interpret an Indonesian colleague's 'maybe' as genuine uncertainty, whereas it might have been a polite refusal. Conversely, direct feedback that sounds efficient in Amsterdam can come across as aggressive in Jakarta. Research on global teams suggests that the most effective leaders do not simply adopt one style. Instead, they articulate the norms explicitly at the start of a project, agreeing, for instance, that silence does not mean agreement and that disagreement in meetings is welcome.",
+      "glossary": [
+        { "term": "anthropologist", "meaning": "antropolog" },
+        { "term": "explicit", "meaning": "terang-terangan; tersurat" },
+        { "term": "read between the lines", "meaning": "memahami makna tersirat", "item_id": "en-u10-i09" },
+        { "term": "superior", "meaning": "lebih unggul" },
+        { "term": "Conversely", "meaning": "sebaliknya" },
+        { "term": "come across as", "meaning": "terkesan", "item_id": "en-u08-i03" },
+        { "term": "articulate", "meaning": "mengungkapkan dengan jelas", "item_id": "en-u10-i10" },
+        { "term": "norms", "meaning": "norma; aturan tak tertulis" }
+      ],
+      "questions": [
+        { "q": "In low-context cultures, who is mainly responsible for understanding?", "options": ["The listener", "The speaker", "The manager"], "answer": 1 },
+        { "q": "Why might a Dutch manager misunderstand an Indonesian colleague's 'maybe'?", "options": ["It could actually be a polite 'no'", "Indonesians never say 'maybe'", "The translation app was wrong"], "answer": 0 },
+        { "q": "According to research, what do effective global leaders do?", "options": ["Use only a direct style", "Avoid meetings altogether", "Agree on communication norms explicitly"], "answer": 2 }
+      ]
+    }
+  ],
+  "writing": [
+    {
+      "id": "en-u10-w01",
+      "prompt": "Tulis laporan formal singkat untuk direktur dengan judul 'Improving the effectiveness of cross-border team meetings'. Pakai bagian Introduction, Findings, Recommendations, dan Conclusion. Gunakan register formal dan nominalisasi.",
+      "min_words": 280,
+      "max_words": 400,
+      "checklist": [
+        "Ada judul bagian (Introduction, Findings, Recommendations, Conclusion)",
+        "Temuan didukung data atau contoh",
+        "Register formal: nominalisasi, tanpa kontraksi",
+        "Minimal satu modal deduksi (must have / may have)",
+        "Rekomendasi konkret dan bisa langsung diterapkan"
+      ],
+      "useful_phrases": ["The purpose of this report is to ...", "The findings are based on ...", "In light of these findings, the following measures are recommended:", "... must have been misunderstood, since ...", "The implementation of ... would require ..."],
+      "model_answer": "Report: Improving the effectiveness of cross-border team meetings\n\nIntroduction\nThe purpose of this report is to assess the effectiveness of weekly meetings between our teams in Jakarta, Singapore and Amsterdam, and to recommend improvements. The findings are based on a survey of 34 team members and a review of the minutes from the past eight weeks.\n\nFindings\nFirstly, meetings frequently overrun. On average, scheduled one-hour meetings lasted 78 minutes, mainly because discussions became sidetracked by issues relevant to only two or three participants. Secondly, participation is uneven. Colleagues in Amsterdam accounted for over half of all contributions, whereas several Jakarta-based engineers reported that they rarely felt comfortable disagreeing in a group setting. Thirdly, decisions are not consistently followed through. In five of the eight meetings reviewed, agreed actions had no named owner, and at least two important decisions must have been misunderstood, since they were later implemented differently in different offices.\n\nRecommendations\nIn light of these findings, the following measures are recommended:\n1. The circulation of a written agenda at least 24 hours in advance, with a time limit for each item.\n2. The rotation of the facilitator role between offices, so that each region leads the discussion in turn.\n3. The introduction of a short anonymous poll for key decisions, allowing quieter members to express disagreement.\n4. The distribution of written minutes within two hours of each meeting, listing every action, its owner and its deadline.\n\nConclusion\nThe current meeting format does not make full use of the expertise available across the three offices. The implementation of the measures above would require minimal cost, yet it is likely to result in shorter meetings, broader participation and greater consistency in the execution of decisions. A review after one quarter is advised."
+    }
+  ],
+  "speaking": [
+    {
+      "id": "en-u10-s01",
+      "mode": "shadowing",
+      "sentences": [
+        "Let me play devil's advocate for a moment.",
+        "I take your point, but the data suggests otherwise.",
+        "Sorry, we're getting sidetracked; let's go back to the budget.",
+        "The message must have been misunderstood.",
+        "Let's park that issue and come back to it next week.",
+        "Decisions mean nothing if nobody follows through on them."
+      ],
+      "focus": "Bentuk lemah 'must have' /ˈmʌstəv/, intonasi tegas tapi sopan pada 'I take your point', dan jeda pendek di titik koma."
+    },
+    {
+      "id": "en-u10-s02",
+      "mode": "answer",
+      "prompt": "Kamu fasilitator rapat. Dua rekan berdebat panjang tentang topik yang tidak ada di agenda, dan waktu tinggal 10 menit. Apa yang kamu katakan untuk mengembalikan rapat ke jalurnya secara diplomatis? (5 sampai 6 kalimat)",
+      "sample_answer": "Sorry to interrupt, but I'm conscious that we've only got about ten minutes left. This is clearly an important discussion, and I don't want to cut it short unfairly. Could I suggest that we park it for now and set up a separate call with the two of you and anyone else who's directly involved? I'll note both positions in the minutes so nothing gets lost. In the meantime, let's go back to the release plan, because we need to reach a decision on that today. Does that work for everyone?"
+    }
+  ],
+  "conversation": [
+    {
+      "id": "en-u10-c01",
+      "title": "Memfasilitasi rapat yang memanas",
+      "role_you": "Fasilitator rapat",
+      "role_them": "Mark, kepala tim Amsterdam",
+      "start": "n1",
+      "nodes": {
+        "n1": {
+          "them": "Frankly, I think the Jakarta team's estimates are unrealistic. We've missed two deadlines already.",
+          "hints": ["tanggapi tenang dan netral: I hear your concern ...", "ajak melihat fakta dulu"],
+          "replies": [
+            { "match": ["hear", "understand", "concern", "take your point", "fair", "appreciate", "let's look"], "next": "n2" }
+          ],
+          "fallback": { "next": "n2", "feedback": "Contoh: \"I hear your concern, Mark. Let's look at what actually caused the delays before we draw conclusions.\"" }
+        },
+        "n2": {
+          "them": "The cause is obvious. They say yes to everything and then don't deliver.",
+          "hints": ["tantang asumsi dengan sopan", "modal deduksi: There might have been ..."],
+          "replies": [
+            { "match": ["might have", "must have", "may have", "could have", "assum", "perhaps", "possible"], "next": "n3" }
+          ],
+          "fallback": { "next": "n3", "feedback": "Contoh: \"There might have been a misunderstanding. In some cultures, 'yes' can mean 'I heard you' rather than 'I agree'.\"" }
+        },
+        "n3": {
+          "them": "That's an interesting point. So what would you suggest?",
+          "hints": ["usulan konkret", "nominalisasi: the introduction of ..."],
+          "replies": [
+            { "match": ["suggest", "propose", "written", "estimate", "review", "introduc", "agree"], "next": "n4" }
+          ],
+          "fallback": { "next": "n4", "feedback": "Contoh: \"I'd propose the introduction of a written estimate review, where each team can raise risks before we commit.\"" }
+        },
+        "n4": {
+          "them": "Fine, but who will make sure this actually happens? We've had good ideas before.",
+          "hints": ["tegaskan tindak lanjut: I'll ... by ...", "sebut pemilik tugas dan tenggatnya"],
+          "replies": [
+            { "match": ["i'll", "i will", "owner", "follow through", "by friday", "deadline", "responsible"], "next": "n5" }
+          ],
+          "fallback": { "next": "n5", "feedback": "Contoh: \"I'll own it. I'll send a draft process by Friday, and we'll review it at next week's meeting.\"" }
+        },
+        "n5": {
+          "them": "Okay. I appreciate you taking this seriously. Anything else before we close?",
+          "hints": ["rangkum keputusan", "beri kesempatan tim lain bicara"],
+          "replies": [
+            { "match": ["recap", "summar", "before we", "anyone", "jakarta", "thank", "decided"], "next": "end" }
+          ],
+          "fallback": { "next": "end", "feedback": "Contoh: \"Just to recap: we'll trial the estimate review for one month. Before we close, does anyone from Jakarta want to add anything?\"" }
+        },
+        "end": { "them": "Good meeting, everyone. Thanks for steering that so calmly.", "end": true }
+      }
+    }
+  ]
+}

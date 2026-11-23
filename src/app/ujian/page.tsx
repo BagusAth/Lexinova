@@ -252,13 +252,19 @@ function ExamFlow({ cfg, p }: { cfg: Config; p: Progress }) {
             <Planet id="exam-intro" tone={level.tone} size={96} />
           </div>
           <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-bold tracking-wide uppercase">
-            {cfg.kind === "unit" ? "Ujian Unit" : "Ujian Naik Tingkat"}
+            {cfg.kind === "unit"
+              ? "Ujian Unit"
+              : LEVELS[cfg.levelIdx + 1]
+                ? "Ujian Naik Tingkat"
+                : "Ujian Akhir"}
           </span>
           <h2 className="text-2xl font-extrabold">{cfg.subtitle}</h2>
           <p className="max-w-md text-sm text-ink/85">
             {cfg.kind === "unit"
               ? `${name}, lulus ujian ini untuk membuka unit berikutnya. Salah ${HEARTS} kali dan ujian berhenti, tapi kamu bisa mencoba lagi kapan saja.`
-              : `${name}, lulus di sini dan kamu naik tingkat. Soalnya diambil dari semua unit ${level.cefr}, jadi ini juga bisa dipakai sebagai Uji Lompat.`}
+              : LEVELS[cfg.levelIdx + 1]
+                ? `${name}, lulus di sini dan kamu naik tingkat. Soalnya diambil dari semua unit ${level.cefr}, jadi ini juga bisa dipakai sebagai Uji Lompat.`
+                : `${name}, ini ujian terakhir di jalur Lexinova. Soalnya diambil dari semua unit C1 dengan tingkat kesulitan tertinggi.`}
           </p>
         </div>
 

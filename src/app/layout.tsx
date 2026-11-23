@@ -12,7 +12,7 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: "Lexinova",
-  description: "Your universe of words. Belajar bahasa Inggris B1 setiap hari.",
+  description: "Your universe of words. Belajar bahasa Inggris dari B1 sampai C1 setiap hari.",
   appleWebApp: {
     capable: true,
     title: "Lexinova",

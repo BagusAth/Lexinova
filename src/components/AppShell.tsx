@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 import {
   lastSaveFailed,
   requestPersistentStorage,
   streak,
+  updateToday,
   useProgress,
 } from "@/lib/progress";
 import { Achievement } from "./Achievement";
@@ -31,6 +32,28 @@ export function AppShell({ children }: { children: ReactNode }) {
   // terhapus saat browser membersihkan penyimpanan otomatis.
   useEffect(() => {
     requestPersistentStorage();
+  }, []);
+
+  // Catat menit belajar: hanya saat tab terlihat dan Bagus aktif (ada
+  // ketukan, ketikan, atau gulir dalam 2 menit terakhir), jadi tab yang
+  // ditinggal terbuka tidak ikut terhitung.
+  const lastActive = useRef(0);
+  useEffect(() => {
+    const mark = () => (lastActive.current = Date.now());
+    mark();
+    const events = ["pointerdown", "keydown", "scroll", "touchstart"] as const;
+    events.forEach((e) => window.addEventListener(e, mark, { passive: true }));
+    const timer = window.setInterval(() => {
+      if (
+        document.visibilityState === "visible" &&
+        Date.now() - lastActive.current < 120_000
+      )
+        updateToday((d) => void (d.minutes = (d.minutes ?? 0) + 1));
+    }, 60_000);
+    return () => {
+      events.forEach((e) => window.removeEventListener(e, mark));
+      window.clearInterval(timer);
+    };
   }, []);
 
   return (

@@ -1,0 +1,179 @@
+{
+  "id": "en-u04",
+  "language": "en",
+  "level": "B1+",
+  "title": "Traveling dan konferensi teknologi",
+  "theme": "Bandara, small talk, dan networking",
+  "tags": ["travel", "karier", "teknologi"],
+  "items": [
+    { "id": "en-u04-i01", "type": "phrasal_verb", "term": "check in", "meaning": "lapor masuk (hotel, bandara)", "example": "We need to check in at the hotel before six.", "example_id": "Kita harus check-in di hotel sebelum jam enam.", "cloze": "We need to check ____ at the hotel before six.", "answer": "in" },
+    { "id": "en-u04-i02", "type": "collocation", "term": "boarding pass", "meaning": "pas naik pesawat", "example": "Please have your boarding pass ready at the gate.", "example_id": "Siapkan pas naik pesawatmu di gerbang.", "cloze": "Please have your boarding ____ ready at the gate.", "answer": "pass" },
+    { "id": "en-u04-i03", "type": "phrasal_verb", "term": "get around", "meaning": "bepergian/berkeliling di suatu tempat", "example": "The easiest way to get around Tokyo is by train.", "example_id": "Cara termudah berkeliling Tokyo adalah naik kereta.", "cloze": "The easiest way to get ____ Tokyo is by train.", "answer": "around" },
+    { "id": "en-u04-i04", "type": "collocation", "term": "make small talk", "meaning": "berbasa-basi", "example": "It's easier to make small talk if you ask questions.", "example_id": "Lebih mudah berbasa-basi kalau kamu bertanya.", "cloze": "It's easier to ____ small talk if you ask questions.", "answer": "make", "note": "Bukan 'do small talk'." },
+    { "id": "en-u04-i05", "type": "word", "term": "keynote", "meaning": "pidato utama (acara)", "example": "The keynote starts at nine in the main hall.", "example_id": "Pidato utama mulai jam sembilan di aula utama.", "cloze": "The ____ starts at nine in the main hall.", "answer": "keynote" },
+    { "id": "en-u04-i06", "type": "phrasal_verb", "term": "run into", "meaning": "bertemu tanpa sengaja", "example": "I ran into an old colleague at the conference.", "example_id": "Saya tak sengaja bertemu rekan lama di konferensi.", "cloze": "I ran ____ an old colleague at the conference.", "answer": "into" },
+    { "id": "en-u04-i07", "type": "idiom", "term": "keep in touch", "meaning": "tetap berhubungan", "example": "Let's keep in touch after the event.", "example_id": "Mari tetap berhubungan setelah acara.", "cloze": "Let's keep in ____ after the event.", "answer": "touch" },
+    { "id": "en-u04-i08", "type": "pattern", "term": "Do you happen to know ...?", "meaning": "Apakah kebetulan Anda tahu ...?", "example": "Do you happen to know where the workshop room is?", "example_id": "Apakah kebetulan kamu tahu di mana ruang workshop-nya?", "cloze": "Do you ____ to know where the workshop room is?", "answer": "happen", "note": "Pertanyaan tidak langsung: 'where the room is', bukan 'where is the room'." },
+    { "id": "en-u04-i09", "type": "word", "term": "delayed", "meaning": "tertunda; terlambat", "example": "Our flight was delayed by two hours.", "example_id": "Penerbangan kami tertunda dua jam.", "cloze": "Our flight was ____ by two hours.", "answer": "delayed" },
+    { "id": "en-u04-i10", "type": "pattern", "term": "used to + V1", "meaning": "dulu biasa/sering", "example": "I used to hate flying, but now I enjoy it.", "example_id": "Dulu saya benci naik pesawat, tapi sekarang saya menikmatinya.", "cloze": "I ____ to hate flying, but now I enjoy it.", "answer": "used" },
+    { "id": "en-u04-i11", "type": "word", "term": "jet lag", "meaning": "kelelahan karena beda zona waktu", "example": "I still have jet lag after the long flight.", "example_id": "Saya masih jet lag setelah penerbangan panjang.", "cloze": "I still have jet ____ after the long flight.", "answer": "lag" },
+    { "id": "en-u04-i12", "type": "collocation", "term": "exchange contacts", "meaning": "bertukar kontak", "example": "We exchanged contacts and connected on LinkedIn.", "example_id": "Kami bertukar kontak dan terhubung di LinkedIn.", "cloze": "We ____ contacts and connected on LinkedIn.", "answer": "exchanged" }
+  ],
+  "grammar": [
+    {
+      "id": "en-u04-g01",
+      "title": "Pertanyaan tidak langsung",
+      "explanation": "Setelah pembuka sopan seperti 'Could you tell me', 'Do you know', atau 'I wonder', susunan kalimatnya kembali seperti kalimat biasa (subjek dulu, baru kata kerja). Untuk pertanyaan ya/tidak, pakai 'if' atau 'whether'.",
+      "examples": ["Could you tell me where the registration desk is?", "Do you know what time the keynote starts?", "I wonder if the talks are recorded."],
+      "common_mistake": { "wrong": "Could you tell me where is the registration desk?", "right": "Could you tell me where the registration desk is?" }
+    },
+    {
+      "id": "en-u04-g02",
+      "title": "Used to untuk kebiasaan masa lalu",
+      "explanation": "Pakai 'used to + V1' untuk kebiasaan atau keadaan di masa lalu yang sekarang sudah tidak berlaku. Bentuk negatif dan tanya memakai 'did' dan 'use to' (tanpa -d).",
+      "examples": ["I used to work in an office.", "Did you use to travel for work?", "I didn't use to drink coffee."],
+      "common_mistake": { "wrong": "I use to travel a lot when I was younger.", "right": "I used to travel a lot when I was younger." }
+    }
+  ],
+  "listening": [
+    {
+      "id": "en-u04-l01",
+      "title": "Bertemu di konferensi",
+      "speakers": [ { "name": "Hana", "voice": "en-AU" }, { "name": "Bagus", "voice": "en-US" } ],
+      "lines": [
+        { "speaker": "Hana", "text": "Hi, is this seat taken? I'm Hana, by the way." },
+        { "speaker": "Bagus", "text": "No, go ahead. I'm Bagus. Did you enjoy the keynote this morning?" },
+        { "speaker": "Hana", "text": "I did. I used to work on voice apps, so the part about speech recognition was really interesting." },
+        { "speaker": "Bagus", "text": "Same here. Do you happen to know where the design workshop is?" },
+        { "speaker": "Hana", "text": "It's on the second floor, but it's been delayed by thirty minutes." },
+        { "speaker": "Bagus", "text": "Great, then we have time for coffee. Let's exchange contacts so we can keep in touch." }
+      ],
+      "dictation": [1, 3, 5],
+      "questions": [
+        { "q": "What did Hana use to work on?", "options": ["Voice apps", "Travel websites", "Online games"], "answer": 0 },
+        { "q": "Where is the design workshop?", "options": ["In the main hall", "On the second floor", "Next to the café"], "answer": 1 },
+        { "q": "Why do they have time for coffee?", "options": ["The keynote ended early", "The workshop has been delayed", "Bagus missed his flight"], "answer": 1 }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "id": "en-u04-r01",
+      "title": "How to beat jet lag",
+      "text": "Jet lag happens when your body clock is out of sync with the time zone you are in. Flying east is usually harder than flying west, because it is more difficult to go to bed earlier than to stay up later. Experts suggest a few simple steps. Before you travel, start moving your bedtime one hour closer to the new time zone. On the plane, drink plenty of water and avoid too much coffee. When you arrive, get as much daylight as you can, since light is the strongest signal for your body clock. Short naps are fine, but try not to sleep for more than twenty minutes. Most people adjust at a rate of about one day per time zone, so a trip from Jakarta to London may take almost a week to recover from fully.",
+      "glossary": [
+        { "term": "jet lag", "meaning": "kelelahan karena beda zona waktu", "item_id": "en-u04-i11" },
+        { "term": "body clock", "meaning": "jam biologis" },
+        { "term": "out of sync", "meaning": "tidak selaras" },
+        { "term": "time zone", "meaning": "zona waktu" },
+        { "term": "daylight", "meaning": "cahaya siang hari" },
+        { "term": "naps", "meaning": "tidur sebentar" },
+        { "term": "adjust", "meaning": "menyesuaikan diri" }
+      ],
+      "questions": [
+        { "q": "Why is flying east usually harder?", "options": ["The flights are longer", "Going to bed earlier is more difficult", "Airports in the east are busier"], "answer": 1 },
+        { "q": "What is the strongest signal for your body clock?", "options": ["Coffee", "Light", "Food"], "answer": 1 },
+        { "q": "How long should a nap be, according to the text?", "options": ["No more than twenty minutes", "About an hour", "As long as you need"], "answer": 0 }
+      ]
+    }
+  ],
+  "writing": [
+    {
+      "id": "en-u04-w01",
+      "prompt": "Kamu baru pulang dari konferensi teknologi. Tulis email ke timmu: ceritakan dua hal yang kamu pelajari, satu orang menarik yang kamu temui, dan satu ide yang ingin kamu coba bersama tim.",
+      "min_words": 120,
+      "max_words": 180,
+      "checklist": [
+        "Pembuka yang menjelaskan tujuan email",
+        "Dua hal yang dipelajari dengan penghubung (First, Also)",
+        "Past simple untuk kejadian di konferensi",
+        "Satu usulan dengan 'I'd like to try ...' atau 'What if we ...?'",
+        "Penutup yang mengajak diskusi"
+      ],
+      "useful_phrases": ["I wanted to share a few highlights.", "First, ... Also, ...", "I ran into ..., who used to ...", "One idea I'd like to try is ...", "What do you think?"],
+      "model_answer": "Hi everyone,\n\nI'm back from the tech summit, and I wanted to share a few highlights.\n\nFirst, the keynote on speech recognition showed how small teams can add voice search with free browser tools. Also, a design workshop reminded me that we should test our screens with real users more often, not just with our own team.\n\nI also ran into Hana, a developer who used to work on voice apps in Melbourne. She offered to share her testing checklist, and we agreed to keep in touch.\n\nOne idea I'd like to try is a short user test every Friday: fifteen minutes, three users, one feature. It wouldn't take much time, and we'd catch problems earlier.\n\nWhat do you think? I'm happy to explain more at Monday's stand-up.\n\nBest,\nBagus"
+    }
+  ],
+  "speaking": [
+    {
+      "id": "en-u04-s01",
+      "mode": "shadowing",
+      "sentences": [
+        "Could you tell me where the registration desk is?",
+        "Do you happen to know what time the keynote starts?",
+        "Our flight was delayed by two hours.",
+        "I used to hate flying, but now I enjoy it.",
+        "Let's keep in touch after the event.",
+        "The easiest way to get around Tokyo is by train."
+      ],
+      "focus": "Intonasi turun di akhir pertanyaan tidak langsung, 'used to' dibaca /juːstə/, dan bunyi /d/ di akhir 'delayed'."
+    },
+    {
+      "id": "en-u04-s02",
+      "mode": "answer",
+      "prompt": "Gaya IELTS Speaking Part 1: ceritakan perjalanan paling berkesan yang pernah kamu lakukan. Ke mana, dengan siapa, dan apa yang paling kamu ingat? (4 sampai 5 kalimat)",
+      "sample_answer": "The most memorable trip I've taken was to Yogyakarta with my university friends. We used to travel together every year, but we hadn't done it for a while. We spent most of the time getting around the city by motorbike and trying street food. What I remember most is watching the sunrise at Borobudur, even though we had to wake up at three. I'd love to go back with my family one day."
+    }
+  ],
+  "conversation": [
+    {
+      "id": "en-u04-c01",
+      "title": "Small talk di konferensi",
+      "role_you": "Peserta konferensi",
+      "role_them": "Daniel, product manager dari Singapura",
+      "start": "n1",
+      "nodes": {
+        "n1": {
+          "them": "Hi there! Mind if I join you? This coffee line is taking forever.",
+          "hints": ["persilakan: Not at all, go ahead", "perkenalkan diri"],
+          "replies": [
+            { "match": ["sure", "go ahead", "of course", "please", "no problem", "not at all"], "next": "n2" }
+          ],
+          "fallback": { "next": "n2", "feedback": "Contoh: \"Not at all, go ahead. I'm Bagus, by the way.\"" }
+        },
+        "n2": {
+          "them": "Thanks. I'm Daniel. So what brings you to the conference?",
+          "hints": ["alasan datang: I'm here to learn about ...", "sebut pekerjaanmu"],
+          "replies": [
+            { "match": ["learn", "here", "work", "developer", "interested", "because"], "next": "n3" }
+          ],
+          "fallback": { "next": "n3", "feedback": "Contoh: \"I'm a web developer, and I'm here to learn more about AI tools.\"" }
+        },
+        "n3": {
+          "them": "Nice. Have you been to any good talks so far?",
+          "hints": ["sudah: The keynote was ...", "belum: Not yet, I just arrived"],
+          "replies": [
+            { "match": ["keynote", "yes", "talk", "was", "interesting", "great"], "next": "n4a" },
+            { "match": ["not yet", "just arrived", "no", "haven't"], "next": "n4b" }
+          ],
+          "fallback": { "next": "n4b", "feedback": "Contoh: \"Yes, the keynote on voice apps was really interesting.\"" }
+        },
+        "n4a": {
+          "them": "I missed that one! Do you happen to know if it was recorded?",
+          "hints": ["pertanyaan tidak langsung: I'm not sure if ...", "atau: I think they'll post it ..."],
+          "replies": [
+            { "match": ["not sure", "think", "recorded", "online", "website", "later", "yes", "no"], "next": "n5" }
+          ],
+          "fallback": { "next": "n5", "feedback": "Contoh: \"I'm not sure if it was recorded, but I think the slides will be online later.\"" }
+        },
+        "n4b": {
+          "them": "No worries. The design workshop on the second floor is supposed to be great. Are you going?",
+          "hints": ["ya atau mungkin, beri alasan"],
+          "replies": [
+            { "match": ["yes", "maybe", "probably", "going", "might", "sure"], "next": "n5" }
+          ],
+          "fallback": { "next": "n5", "feedback": "Contoh: \"Probably! I'm interested in UX, so it sounds perfect.\"" }
+        },
+        "n5": {
+          "them": "It was great talking to you. Shall we keep in touch?",
+          "hints": ["setuju dan tawarkan bertukar kontak"],
+          "replies": [
+            { "match": ["sure", "yes", "keep in touch", "linkedin", "contact", "exchange", "definitely"], "next": "end" }
+          ],
+          "fallback": { "next": "end", "feedback": "Contoh: \"Definitely. Let's exchange contacts. Are you on LinkedIn?\"" }
+        },
+        "end": { "them": "Great, I'll add you on LinkedIn. Enjoy the rest of the conference!", "end": true }
+      }
+    }
+  ]
+}

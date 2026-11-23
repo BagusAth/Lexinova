@@ -1,0 +1,171 @@
+{
+  "id": "en-u08",
+  "language": "en",
+  "level": "B2+",
+  "title": "Riset UX dan berpikir desain",
+  "theme": "Wawancara pengguna, kritik desain, dan psikologi pilihan",
+  "tags": ["desain", "sains", "studi"],
+  "items": [
+    { "id": "en-u08-i01", "type": "collocation", "term": "pain point", "meaning": "titik masalah yang dirasakan pengguna", "example": "Slow checkout is the biggest pain point for our users.", "example_id": "Checkout yang lambat adalah masalah terbesar bagi pengguna kami.", "cloze": "Slow checkout is the biggest pain ____ for our users.", "answer": "point" },
+    { "id": "en-u08-i02", "type": "word", "term": "intuitive", "meaning": "intuitif; mudah dipahami tanpa diajari", "example": "The new navigation feels far more intuitive.", "example_id": "Navigasi barunya terasa jauh lebih intuitif.", "cloze": "The new navigation feels far more ____.", "answer": "intuitive" },
+    { "id": "en-u08-i03", "type": "phrasal_verb", "term": "come across as", "meaning": "terkesan; terlihat seperti", "example": "The error message comes across as rude.", "example_id": "Pesan error-nya terkesan kasar.", "cloze": "The error message comes across ____ rude.", "answer": "as" },
+    { "id": "en-u08-i04", "type": "collocation", "term": "cognitive load", "meaning": "beban kognitif (usaha berpikir)", "example": "Too many options increase cognitive load.", "example_id": "Terlalu banyak pilihan menambah beban kognitif.", "cloze": "Too many options increase cognitive ____.", "answer": "load" },
+    { "id": "en-u08-i05", "type": "word", "term": "iterate (on)", "meaning": "menyempurnakan berulang-ulang", "example": "We'll iterate on the design after each round of testing.", "example_id": "Kami akan menyempurnakan desainnya setelah setiap putaran pengujian.", "cloze": "We'll ____ on the design after each round of testing.", "answer": "iterate" },
+    { "id": "en-u08-i06", "type": "idiom", "term": "at first glance", "meaning": "sekilas; pada pandangan pertama", "example": "At first glance, the dashboard looks clean.", "example_id": "Sekilas, dasbornya terlihat rapi.", "cloze": "At first ____, the dashboard looks clean.", "answer": "glance" },
+    { "id": "en-u08-i07", "type": "pattern", "term": "Having + V3, ...", "meaning": "Setelah ..., (participle clause)", "example": "Having tested five versions, we chose the simplest one.", "example_id": "Setelah menguji lima versi, kami memilih yang paling sederhana.", "cloze": "____ tested five versions, we chose the simplest one.", "answer": "Having" },
+    { "id": "en-u08-i08", "type": "pattern", "term": "I wish we had + V3", "meaning": "Seandainya dulu kami ...", "example": "I wish we had talked to users earlier.", "example_id": "Seandainya dulu kami bicara dengan pengguna lebih awal.", "cloze": "I wish we ____ talked to users earlier.", "answer": "had" },
+    { "id": "en-u08-i09", "type": "phrasal_verb", "term": "stand out", "meaning": "menonjol", "example": "The main button should stand out on the page.", "example_id": "Tombol utama seharusnya menonjol di halaman.", "cloze": "The main button should stand ____ on the page.", "answer": "out" },
+    { "id": "en-u08-i10", "type": "word", "term": "consistency", "meaning": "konsistensi", "example": "Consistency across screens builds trust.", "example_id": "Konsistensi antarlayar membangun kepercayaan.", "cloze": "____ across screens builds trust.", "answer": "Consistency" },
+    { "id": "en-u08-i11", "type": "collocation", "term": "gather insights", "meaning": "mengumpulkan wawasan", "example": "We interviewed eight users to gather insights.", "example_id": "Kami mewawancarai delapan pengguna untuk mengumpulkan wawasan.", "cloze": "We interviewed eight users to ____ insights.", "answer": "gather" },
+    { "id": "en-u08-i12", "type": "idiom", "term": "trial and error", "meaning": "coba-coba", "example": "Most good designs come from trial and error.", "example_id": "Sebagian besar desain yang bagus lahir dari coba-coba.", "cloze": "Most good designs come from trial and ____.", "answer": "error" }
+  ],
+  "grammar": [
+    {
+      "id": "en-u08-g01",
+      "title": "Participle clause untuk tulisan yang ringkas",
+      "explanation": "Participle clause memadatkan dua kalimat menjadi satu. 'Having + V3' berarti 'setelah', V-ing berarti 'sambil/karena', dan V3 bermakna pasif. Subjek kedua klausa harus sama.",
+      "examples": ["Having interviewed ten users, we noticed a clear pattern.", "Designed for beginners, the app avoids technical terms.", "Looking at the data, we decided to simplify the form."],
+      "common_mistake": { "wrong": "Having interview the users, we changed the layout.", "right": "Having interviewed the users, we changed the layout." }
+    },
+    {
+      "id": "en-u08-g02",
+      "title": "Wish dan if only",
+      "explanation": "Untuk harapan tentang keadaan sekarang, pakai wish + past simple. Untuk penyesalan tentang masa lalu, pakai wish + past perfect (had + V3). 'If only' artinya sama, tapi lebih kuat.",
+      "examples": ["I wish the app loaded faster.", "I wish we had tested it on older phones.", "If only we had more time before the launch."],
+      "common_mistake": { "wrong": "I wish we tested it before the launch last month.", "right": "I wish we had tested it before the launch last month." }
+    }
+  ],
+  "listening": [
+    {
+      "id": "en-u08-l01",
+      "title": "Wawancara pengguna",
+      "speakers": [ { "name": "Bagus", "voice": "en-US" }, { "name": "Mrs Wong", "voice": "en-AU" } ],
+      "lines": [
+        { "speaker": "Bagus", "text": "Thanks for joining. Could you show me how you usually pay your bills in the app?" },
+        { "speaker": "Mrs Wong", "text": "Sure. At first glance it looks simple, but I can never find the bills section." },
+        { "speaker": "Bagus", "text": "That's really useful. What do you do instead?" },
+        { "speaker": "Mrs Wong", "text": "I search for it, or I ask my son. Honestly, I wish the menu had fewer options." },
+        { "speaker": "Bagus", "text": "Is there anything on this screen that comes across as confusing?" },
+        { "speaker": "Mrs Wong", "text": "The green button and the grey button look the same to me, so nothing really stands out." },
+        { "speaker": "Bagus", "text": "Having heard that from several users, I think we need to rethink the colours." }
+      ],
+      "dictation": [1, 3, 5],
+      "questions": [
+        { "q": "What is Mrs Wong's main problem?", "options": ["Bills are too expensive", "She can't find the bills section", "The app keeps crashing"], "answer": 1 },
+        { "q": "What does she wish?", "options": ["That the menu had fewer options", "That her son used the app", "That the app had more colours"], "answer": 0 },
+        { "q": "What does Bagus conclude?", "options": ["The bills section should be removed", "The colours need to be rethought", "They should stop interviewing users"], "answer": 1 }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "id": "en-u08-r01",
+      "title": "Why fewer choices can make users happier",
+      "text": "In a famous study at a California supermarket, researchers set up a tasting table with either six or twenty-four kinds of jam. The larger display attracted more visitors, yet shoppers who saw only six options were about ten times more likely to buy a jar. Psychologists describe this as choice overload: when we face too many alternatives, the effort of comparing them increases cognitive load, and we often postpone the decision altogether. Later studies have shown that the effect is not universal; experts who know exactly what they want are less affected. Nevertheless, the lesson for designers is powerful. Navigation menus, pricing pages and settings screens frequently present every possible option at once. Having identified the few choices that most people actually need, designers can show those first and hide advanced options behind a single, clearly labelled link.",
+      "glossary": [
+        { "term": "tasting table", "meaning": "meja cicip" },
+        { "term": "choice overload", "meaning": "kebanyakan pilihan" },
+        { "term": "cognitive load", "meaning": "beban kognitif", "item_id": "en-u08-i04" },
+        { "term": "postpone", "meaning": "menunda" },
+        { "term": "universal", "meaning": "berlaku untuk semua orang" },
+        { "term": "Nevertheless", "meaning": "meskipun demikian" },
+        { "term": "advanced options", "meaning": "opsi lanjutan" }
+      ],
+      "questions": [
+        { "q": "Which display attracted more visitors?", "options": ["The six-jam display", "The twenty-four-jam display", "Both equally"], "answer": 1 },
+        { "q": "What often happens when we face too many options?", "options": ["We buy more", "We delay the decision", "We trust the brand more"], "answer": 1 },
+        { "q": "What does the writer recommend to designers?", "options": ["Remove all advanced settings", "Show the most needed choices first", "Use more colours in menus"], "answer": 1 }
+      ]
+    }
+  ],
+  "writing": [
+    {
+      "id": "en-u08-w01",
+      "prompt": "Tulis kritik desain (design critique) untuk sebuah aplikasi yang sering kamu pakai. Jelaskan apa yang sudah baik, dua masalah utama beserta dampaknya bagi pengguna, dan usulan perbaikan yang bisa diuji. Gunakan nada profesional.",
+      "min_words": 220,
+      "max_words": 330,
+      "checklist": [
+        "Dibuka dengan konteks aplikasi dan penggunanya",
+        "Pujian yang spesifik sebelum kritik",
+        "Dua masalah dengan dampak nyata bagi pengguna",
+        "Minimal satu participle clause (Having ..., Designed for ...)",
+        "Usulan perbaikan yang bisa diuji"
+      ],
+      "useful_phrases": ["Designed for ..., the app ...", "However, two problems stand out.", "Having watched ..., I noticed that ...", "This can come across as ...", "I would suggest two changes that could be tested ..."],
+      "model_answer": "Design critique: a popular food delivery app\n\nDesigned for people who are hungry and in a hurry, the app does a good job of getting users from the home screen to a finished order. The layout is visually consistent, restaurant photos are large and appetising, and the order tracking map is genuinely delightful. These details make the experience feel fast and trustworthy.\n\nHowever, two problems stand out. First, the checkout page tries to do too much at once. Promotions, tip options, cutlery preferences and three payment methods all appear on a single screen. Having watched several friends use it, I noticed that most of them scrolled up and down repeatedly before paying, which suggests that the cognitive load is too high. Some users may even abandon their order at this stage.\n\nSecond, the delivery fee is only shown at the very end. At first glance the prices look cheap, but the final total often comes as a surprise, and this can come across as dishonest. Users who feel tricked are less likely to return.\n\nTo improve the experience, I would suggest two changes that could be tested with a small group of users. The checkout could be split into two short steps, with tips and cutlery moved behind an optional link. In addition, the estimated delivery fee could be displayed on each restaurant card. If both changes reduced drop-off by even a few percent, the impact on revenue would be significant."
+    }
+  ],
+  "speaking": [
+    {
+      "id": "en-u08-s01",
+      "mode": "shadowing",
+      "sentences": [
+        "Slow checkout is the biggest pain point for our users.",
+        "Having tested five versions, we chose the simplest one.",
+        "I wish we had talked to users earlier.",
+        "Too many options increase cognitive load.",
+        "The error message comes across as rude.",
+        "Most good designs come from trial and error."
+      ],
+      "focus": "Bedakan 'we'd' dan 'we had', tekanan pada COG-ni-tive dan in-TU-i-tive, serta linking 'comes across as'."
+    },
+    {
+      "id": "en-u08-s02",
+      "mode": "answer",
+      "prompt": "Ceritakan sebuah proyek (kerja atau pribadi) yang tidak berjalan sesuai rencana. Apa yang terjadi, apa yang kamu sesali (pakai I wish ...), dan apa yang kamu pelajari? (5 sampai 6 kalimat)",
+      "sample_answer": "Last year I built a budgeting app for my friends, but almost nobody used it after the first week. Having spent two months on it, I was pretty disappointed. Looking back, I wish I had shown them a simple prototype before writing so much code. It turned out they didn't want to track every expense; they just wanted a reminder before payday. The biggest lesson was that I should test the idea before I perfect the product. Now I always talk to at least five users before I start building anything."
+    }
+  ],
+  "conversation": [
+    {
+      "id": "en-u08-c01",
+      "title": "Memimpin wawancara pengguna",
+      "role_you": "Peneliti UX",
+      "role_them": "Laura, pengguna aplikasi reservasi restoran",
+      "start": "n1",
+      "nodes": {
+        "n1": {
+          "them": "Hi, I'm Laura. I've never done a user interview before. What do I need to do?",
+          "hints": ["tenangkan: There are no right or wrong answers ...", "minta dia berpikir sambil bicara (think aloud)"],
+          "replies": [
+            { "match": ["no right", "wrong answers", "just", "think aloud", "honest", "relax", "testing the app"], "next": "n2" }
+          ],
+          "fallback": { "next": "n2", "feedback": "Contoh: \"There are no right or wrong answers. We're testing the app, not you. Just use it as you normally would and think aloud.\"" }
+        },
+        "n2": {
+          "them": "Okay. So... I'm on the home screen now. What should I try first?",
+          "hints": ["beri tugas: Could you try to ...?", "jangan memberi petunjuk caranya"],
+          "replies": [
+            { "match": ["could you", "try", "find", "imagine", "show me", "book", "reserve"], "next": "n3" }
+          ],
+          "fallback": { "next": "n3", "feedback": "Contoh: \"Could you try to book a table for two people this Saturday evening?\"" }
+        },
+        "n3": {
+          "them": "Hmm, I'm looking for the date... I can't see it anywhere. Is it supposed to be here?",
+          "hints": ["jangan langsung menolong: What would you expect ...?", "tanyakan di mana dia akan mencari"],
+          "replies": [
+            { "match": ["expect", "where would", "what would", "how would", "tell me more", "think"], "next": "n4" }
+          ],
+          "fallback": { "next": "n4", "feedback": "Contoh: \"What would you expect to see here? Where would you look for it?\"" }
+        },
+        "n4": {
+          "them": "I'd expect a calendar at the top, like in other apps. Oh, there it is, under 'More options'. That's a bit hidden.",
+          "hints": ["gali perasaannya: How did that make you feel?", "minta penilaian skala 1 sampai 5"],
+          "replies": [
+            { "match": ["feel", "why", "how", "scale", "rate", "difficult", "frustrat"], "next": "n5" }
+          ],
+          "fallback": { "next": "n5", "feedback": "Contoh: \"How did that make you feel? On a scale of one to five, how easy was it?\"" }
+        },
+        "n5": {
+          "them": "Honestly, a little frustrated. Maybe a two out of five. Are we done?",
+          "hints": ["tanya satu hal terakhir", "tutup dengan terima kasih"],
+          "replies": [
+            { "match": ["thank", "helpful", "last", "one more", "anything else", "done", "almost"], "next": "end" }
+          ],
+          "fallback": { "next": "end", "feedback": "Contoh: \"Almost. Is there anything else you'd change? Thank you, this has been really helpful.\"" }
+        },
+        "end": { "them": "You're welcome! I hope it helps make the app easier for everyone.", "end": true }
+      }
+    }
+  ]
+}

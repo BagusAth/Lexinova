@@ -6,6 +6,7 @@ import type { Skill } from "@/lib/types";
 export type IconKind =
   | Skill
   | "fondasi"
+  | "grammar"
   | "home"
   | "words"
   | "explore"
@@ -50,6 +51,7 @@ const PATHS: Record<IconKind, ReactNode> = {
   fondasi: (
     <path d="M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2z" />
   ),
+  grammar: <path d="M4 6h11M4 11h8M4 16h6M13 17l3 3 5-6" />,
   listening: (
     <path d="M3 14v-2a9 9 0 0118 0v2M3 14a2 2 0 012-2h1v7H5a2 2 0 01-2-2zM21 14a2 2 0 00-2-2h-1v7h1a2 2 0 002-2z" />
   ),
@@ -143,8 +145,9 @@ const PLANET_TONES = {
 
 export type PlanetTone = keyof typeof PLANET_TONES;
 
-export const SKILL_TONE: Record<Skill | "fondasi", PlanetTone> = {
+export const SKILL_TONE: Record<Skill | "fondasi" | "grammar", PlanetTone> = {
   fondasi: "violet",
+  grammar: "lavender",
   listening: "cyan",
   reading: "lavender",
   writing: "pink",

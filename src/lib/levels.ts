@@ -240,10 +240,11 @@ export function xpMultiplierFor(unitId: string): number {
 
 // ---- node jalur dalam satu unit ----
 
-export type NodeKey = Skill | "fondasi" | "ujian";
+export type NodeKey = Skill | "fondasi" | "grammar" | "ujian";
 
 export const NODE_ORDER: NodeKey[] = [
   "fondasi",
+  "grammar",
   "listening",
   "reading",
   "writing",
@@ -255,6 +256,8 @@ export const NODE_ORDER: NodeKey[] = [
 export function nodeDone(p: Progress, u: Unit, key: NodeKey): boolean {
   if (key === "ujian") return unitPassed(p, u);
   if (key === "fondasi") return u.items.every((i) => p.cards[i.id]);
+  if (key === "grammar")
+    return u.grammar.length > 0 && u.grammar.every((g) => p.done[g.id]);
   const list = u[key] as { id: string }[];
   return list.length > 0 && list.every((x) => p.done[x.id]);
 }
@@ -271,6 +274,13 @@ export function frontierUnit(p: Progress): Unit {
     UNITS.find((u) => unitUnlocked(p, u) && !unitPassed(p, u)) ??
     UNITS[UNITS.length - 1]
   );
+}
+
+/** Alamat halaman untuk sebuah node jalur. */
+export function nodeHref(key: NodeKey, unitId: string): string {
+  if (key === "ujian") return examHref("unit", unitId);
+  if (key === "grammar") return "/tata-bahasa";
+  return `/${key}`;
 }
 
 export function examHref(kind: "unit" | "level", id: string): string {

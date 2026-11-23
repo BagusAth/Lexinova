@@ -52,11 +52,22 @@ export default function Progres() {
   const acc = day.total ? Math.round((day.correct / day.total) * 100) : null;
   const cur = streak(p, now);
 
-  const skills: { key: Skill | "fondasi"; label: string; value: number }[] = [
+  const skills: {
+    key: Skill | "fondasi" | "grammar";
+    label: string;
+    value: number;
+  }[] = [
     {
       key: "fondasi",
       label: "Fondasi",
       value: foundationProgress(p, unit.items),
+    },
+    {
+      key: "grammar",
+      label: "Tata bahasa",
+      value: unit.grammar.length
+        ? unit.grammar.filter((g) => p.done[g.id]).length / unit.grammar.length
+        : 0,
     },
     ...(Object.keys(SKILL_LABEL) as Skill[]).map((s) => ({
       key: s,
@@ -150,6 +161,10 @@ export default function Progres() {
               <dd className="font-bold text-cyan">
                 {acc === null ? "–" : `${acc}%`}
               </dd>
+            </div>
+            <div className="flex justify-between">
+              <dt className="text-mute">Waktu belajar</dt>
+              <dd className="font-bold">{day.minutes ?? 0} menit</dd>
             </div>
             <div className="flex justify-between">
               <dt className="text-mute">Kata baru</dt>

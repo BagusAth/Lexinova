@@ -21,9 +21,17 @@ import {
 export default function ReadingPage() {
   const p = useProgress();
   if (!p) return <Loading />;
-  const ex = getUnit(p.settings.unitId).reading[0];
+  const unit = getUnit(p.settings.unitId);
+  const ex = unit.reading[0];
   if (!ex) return <Muted>Belum ada materi reading.</Muted>;
-  return <ReadingExercise ex={ex} inReview={(id) => !!p.cards[id]} />;
+  return (
+    <ReadingExercise
+      key={ex.id}
+      ex={ex}
+      level={unit.level}
+      inReview={(id) => !!p.cards[id]}
+    />
+  );
 }
 
 type Gloss = Reading["glossary"][number];
@@ -51,9 +59,11 @@ function segment(text: string, glossary: Gloss[]): (string | Gloss)[] {
 
 function ReadingExercise({
   ex,
+  level,
   inReview,
 }: {
   ex: Reading;
+  level: string;
   inReview: (itemId: string) => boolean;
 }) {
   const [phase, setPhase] = useState<"read" | "quiz" | "done">("read");
@@ -92,7 +102,7 @@ function ReadingExercise({
 
   return (
     <>
-      <TopBar left="Reading · B1" right={`${minutes} menit`} />
+      <TopBar left={`Reading · ${level}`} right={`${minutes} menit`} />
       <div className="text-2xl font-extrabold">{ex.title}</div>
       <Muted>Ketuk kata bergaris untuk melihat artinya.</Muted>
       <Card>

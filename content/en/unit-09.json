@@ -1,0 +1,173 @@
+{
+  "id": "en-u09",
+  "language": "en",
+  "level": "C1",
+  "title": "Personal statement dan studi pascasarjana",
+  "theme": "Menulis dan berbicara meyakinkan untuk beasiswa",
+  "tags": ["studi", "ielts", "karier"],
+  "items": [
+    { "id": "en-u09-i01", "type": "word", "term": "pursue", "meaning": "menempuh; mengejar (tujuan)", "example": "I intend to pursue a master's degree in human-computer interaction.", "example_id": "Saya berniat menempuh gelar master di bidang interaksi manusia-komputer.", "cloze": "I intend to ____ a master's degree in human-computer interaction.", "answer": "pursue" },
+    { "id": "en-u09-i02", "type": "word", "term": "firsthand", "meaning": "secara langsung (mengalami/melihat sendiri)", "example": "I saw firsthand how poor design excludes older users.", "example_id": "Saya melihat langsung bagaimana desain yang buruk menyingkirkan pengguna lansia.", "cloze": "I saw ____ how poor design excludes older users.", "answer": "firsthand" },
+    { "id": "en-u09-i03", "type": "collocation", "term": "spark an interest (in)", "meaning": "memicu minat", "example": "A volunteering project sparked my interest in accessibility.", "example_id": "Sebuah proyek relawan memicu minat saya pada aksesibilitas.", "cloze": "A volunteering project ____ my interest in accessibility.", "answer": "sparked" },
+    { "id": "en-u09-i04", "type": "idiom", "term": "bridge the gap", "meaning": "menjembatani kesenjangan", "example": "I want to bridge the gap between engineers and designers.", "example_id": "Saya ingin menjembatani kesenjangan antara engineer dan desainer.", "cloze": "I want to bridge the ____ between engineers and designers.", "answer": "gap" },
+    { "id": "en-u09-i05", "type": "pattern", "term": "Not only did ..., but ... also ...", "meaning": "Tidak hanya ..., tetapi juga ... (inversi)", "example": "Not only did the project improve sales, but it also changed my career goals.", "example_id": "Proyek itu tidak hanya meningkatkan penjualan, tetapi juga mengubah tujuan karier saya.", "cloze": "Not only ____ the project improve sales, but it also changed my career goals.", "answer": "did" },
+    { "id": "en-u09-i06", "type": "pattern", "term": "What ... is ...", "meaning": "Yang ... adalah ... (cleft sentence)", "example": "What I find most rewarding is solving real problems for real people.", "example_id": "Yang paling memuaskan bagi saya adalah memecahkan masalah nyata bagi orang sungguhan.", "cloze": "What I find most rewarding ____ solving real problems for real people.", "answer": "is" },
+    { "id": "en-u09-i07", "type": "collocation", "term": "equip someone with", "meaning": "membekali seseorang dengan", "example": "This programme will equip me with research skills.", "example_id": "Program ini akan membekali saya dengan keterampilan riset.", "cloze": "This programme will ____ me with research skills.", "answer": "equip" },
+    { "id": "en-u09-i08", "type": "phrasal_verb", "term": "give back (to)", "meaning": "berkontribusi kembali (kepada)", "example": "After graduating, I plan to give back to my community.", "example_id": "Setelah lulus, saya berencana berkontribusi kembali untuk komunitas saya.", "cloze": "After graduating, I plan to give ____ to my community.", "answer": "back" },
+    { "id": "en-u09-i09", "type": "word", "term": "underrepresented", "meaning": "kurang terwakili", "example": "Older adults are underrepresented in user research.", "example_id": "Orang lanjut usia kurang terwakili dalam riset pengguna.", "cloze": "Older adults are ____ in user research.", "answer": "underrepresented" },
+    { "id": "en-u09-i10", "type": "idiom", "term": "a steep learning curve", "meaning": "proses belajar yang berat di awal", "example": "Leading my first team was a steep learning curve.", "example_id": "Memimpin tim pertama saya adalah proses belajar yang berat.", "cloze": "Leading my first team was a steep learning ____.", "answer": "curve" },
+    { "id": "en-u09-i11", "type": "pattern", "term": "In light of ...", "meaning": "Mengingat ...; berdasarkan ...", "example": "In light of my experience, I chose to focus on accessibility.", "example_id": "Berdasarkan pengalaman saya, saya memilih fokus pada aksesibilitas.", "cloze": "In ____ of my experience, I chose to focus on accessibility.", "answer": "light" },
+    { "id": "en-u09-i12", "type": "word", "term": "tangible", "meaning": "nyata; konkret", "example": "I want my research to have a tangible impact.", "example_id": "Saya ingin riset saya berdampak nyata.", "cloze": "I want my research to have a ____ impact.", "answer": "tangible" }
+  ],
+  "grammar": [
+    {
+      "id": "en-u09-g01",
+      "title": "Inversi untuk penekanan",
+      "explanation": "Setelah ungkapan negatif atau pembatas di awal kalimat (Not only, Rarely, Never before, Only after), urutan subjek dan kata bantu dibalik seperti pertanyaan. Gaya ini membuat tulisan akademik dan esai beasiswa terdengar matang, tapi jangan dipakai berlebihan.",
+      "examples": ["Not only did I lead the team, but I also trained two new developers.", "Rarely have I seen a problem affect so many users.", "Only after the launch did we realise how serious the issue was."],
+      "common_mistake": { "wrong": "Not only I led the project, but I also managed the budget.", "right": "Not only did I lead the project, but I also managed the budget." }
+    },
+    {
+      "id": "en-u09-g02",
+      "title": "Cleft sentence: what ... is / it was ... that",
+      "explanation": "Cleft sentence memfokuskan perhatian pada satu bagian kalimat. 'What + klausa + is' menonjolkan hal yang dimaksud; 'It was ... that ...' menonjolkan penyebab atau pelaku. Setelah 'is', kata kerja memakai bentuk dasar dengan 'to' atau -ing, bukan campuran keduanya.",
+      "examples": ["What motivates me is the chance to make technology fairer.", "It was my grandmother's struggle with her phone that made me interested in accessibility.", "What I need now is formal research training."],
+      "common_mistake": { "wrong": "What I want is to studying accessibility.", "right": "What I want is to study accessibility." }
+    }
+  ],
+  "listening": [
+    {
+      "id": "en-u09-l01",
+      "title": "Panel wawancara beasiswa",
+      "speakers": [ { "name": "Professor Hughes", "voice": "en-GB" }, { "name": "Bagus", "voice": "en-US" } ],
+      "lines": [
+        { "speaker": "Professor Hughes", "text": "Your application mentions accessibility. What first sparked that interest?" },
+        { "speaker": "Bagus", "text": "It was watching my grandmother struggle with a banking app that made me realise how many people technology leaves behind." },
+        { "speaker": "Professor Hughes", "text": "And how has your professional experience prepared you for postgraduate research?" },
+        { "speaker": "Bagus", "text": "Not only have I built products for millions of users, but I've also interviewed older adults, who are often underrepresented in research." },
+        { "speaker": "Professor Hughes", "text": "Why this programme, rather than one closer to home?" },
+        { "speaker": "Bagus", "text": "What attracts me is the lab's work on inclusive design. It would equip me with research methods I simply can't learn on the job." },
+        { "speaker": "Professor Hughes", "text": "And afterwards?" },
+        { "speaker": "Bagus", "text": "I intend to return to Indonesia and give back by helping local companies build products that everyone can use." }
+      ],
+      "dictation": [1, 3, 5],
+      "questions": [
+        { "q": "What sparked Bagus's interest in accessibility?", "options": ["A university lecture", "His grandmother's difficulty with an app", "A job advertisement"], "answer": 1 },
+        { "q": "Why does he want this specific programme?", "options": ["Because it is cheap", "Because of its work on inclusive design", "Because his friends study there"], "answer": 1 },
+        { "q": "What does he plan to do after graduating?", "options": ["Stay abroad permanently", "Return to Indonesia and help local companies", "Start his own bank"], "answer": 1 }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "id": "en-u09-r01",
+      "title": "What admissions committees actually look for",
+      "text": "Every year, admissions committees at competitive universities read thousands of personal statements, and most of them sound remarkably similar. Applicants describe themselves as passionate, hard-working and eager to learn, yet rarely provide evidence for any of these claims. What distinguishes a memorable statement is not impressive vocabulary but a coherent narrative. The strongest essays usually begin with a specific moment that sparked the applicant's interest, then show how that interest was tested and deepened through study or work. Crucially, they explain why this particular programme is the logical next step, referring to courses, researchers or facilities by name. Committees are also alert to statements that have clearly been polished by someone else, or generated with little personal input; such essays tend to lack the small, concrete details that only the writer could know. In short, readers are not looking for a perfect candidate, but for a credible one whose goals are realistic and whose story hangs together.",
+      "glossary": [
+        { "term": "admissions committees", "meaning": "panitia penerimaan mahasiswa" },
+        { "term": "distinguishes", "meaning": "membedakan" },
+        { "term": "coherent narrative", "meaning": "alur cerita yang runtut" },
+        { "term": "sparked", "meaning": "memicu", "item_id": "en-u09-i03" },
+        { "term": "Crucially", "meaning": "yang terpenting" },
+        { "term": "alert", "meaning": "waspada; peka" },
+        { "term": "credible", "meaning": "dapat dipercaya" },
+        { "term": "hangs together", "meaning": "padu; masuk akal" }
+      ],
+      "questions": [
+        { "q": "What do many personal statements lack, according to the text?", "options": ["Evidence for their claims", "Advanced vocabulary", "A clear title"], "answer": 0 },
+        { "q": "How do the strongest essays usually begin?", "options": ["With a famous quotation", "With a specific moment that sparked an interest", "With a list of achievements"], "answer": 1 },
+        { "q": "What kind of candidate are committees looking for?", "options": ["A perfect candidate", "A credible candidate with realistic goals", "The candidate with the most experience"], "answer": 1 }
+      ]
+    }
+  ],
+  "writing": [
+    {
+      "id": "en-u09-w01",
+      "prompt": "Tulis bagian inti personal statement untuk beasiswa S2 (misalnya LPDP atau Chevening). Ceritakan momen yang memicu minatmu, bagaimana pengalamanmu memperdalamnya, kenapa program ini yang kamu pilih, dan dampak yang ingin kamu ciptakan setelah lulus.",
+      "min_words": 260,
+      "max_words": 380,
+      "checklist": [
+        "Dibuka dengan momen spesifik, bukan kalimat klise",
+        "Ada bukti konkret (angka, proyek, peran)",
+        "Alasan spesifik memilih program ini",
+        "Minimal satu inversi atau cleft sentence",
+        "Rencana setelah lulus yang realistis dan terukur"
+      ],
+      "useful_phrases": ["It was ... that made me ...", "What struck me was ...", "Not only did I ..., but I also ...", "In light of ..., ...", "After graduating, I intend to ..."],
+      "model_answer": "It was a Sunday afternoon when my grandmother handed me her phone, close to tears, because she could not find the button to pay her electricity bill. The app had been redesigned the week before, and a feature she had used for years was now hidden behind three unlabelled icons. What struck me was not the inconvenience itself, but how quickly she concluded that the problem was her own fault.\n\nThat moment changed the way I approach my work as a web developer. Over the past four years, I have built features used by more than two million customers, but I have also started to ask who our products leave out. Not only did I introduce accessibility checks into our release process, but I also organised the company's first interviews with users over sixty. In light of what we learned, the team simplified the payment flow, and complaints from older customers fell by nearly forty percent.\n\nPractical experience, however, has its limits. I can fix individual screens, yet I lack the research methods needed to understand why certain groups struggle and how to design for them systematically. This is why the programme in Human-Computer Interaction appeals to me so strongly. Its modules on inclusive design and its research group on ageing and technology would equip me with exactly the skills I am missing.\n\nAfter graduating, I intend to return to Indonesia, where the number of older internet users is growing rapidly, yet they remain underrepresented in product research. My goal is to help local companies adopt inclusive design guidelines, so that the next time someone like my grandmother opens an app, it works for her too."
+    }
+  ],
+  "speaking": [
+    {
+      "id": "en-u09-s01",
+      "mode": "shadowing",
+      "sentences": [
+        "What I find most rewarding is solving real problems for real people.",
+        "Not only did the project improve sales, but it also changed my career goals.",
+        "I saw firsthand how poor design excludes older users.",
+        "This programme will equip me with research skills.",
+        "Leading my first team was a steep learning curve.",
+        "After graduating, I plan to give back to my community."
+      ],
+      "focus": "Ritme kalimat panjang: jeda alami sebelum 'but it also', tekanan pada 'WHAT I find', dan bunyi /ɜː/ pada 'learning' dan 'curve'."
+    },
+    {
+      "id": "en-u09-s02",
+      "mode": "answer",
+      "prompt": "IELTS Speaking Part 3 atau wawancara beasiswa: 'Should universities focus on preparing students for jobs, or on knowledge for its own sake?' Beri jawaban seimbang dengan pendapat yang jelas (6 sampai 8 kalimat).",
+      "sample_answer": "I'd say universities have to do both, although the balance depends on the subject. On the one hand, students invest a huge amount of time and money, so it's reasonable for them to expect skills that employers value. On the other hand, if universities only trained people for today's jobs, graduates would struggle when those jobs change, which in technology happens every few years. What employers increasingly ask for, in my experience, is the ability to think critically and learn quickly, and that comes from deep knowledge rather than narrow training. So rather than choosing one side, I think universities should teach fundamentals rigorously and connect them to real projects. That way, students leave with both understanding and practical experience."
+    }
+  ],
+  "conversation": [
+    {
+      "id": "en-u09-c01",
+      "title": "Wawancara beasiswa: pertanyaan sulit",
+      "role_you": "Pelamar beasiswa S2",
+      "role_them": "Ms Adeyemi, panel pewawancara",
+      "start": "n1",
+      "nodes": {
+        "n1": {
+          "them": "Let's start with something challenging. Tell us about a time you failed.",
+          "hints": ["ceritakan kegagalan spesifik", "cleft: What I learned was ..."],
+          "replies": [
+            { "match": ["failed", "mistake", "project", "learned", "didn't", "wrong", "when i"], "next": "n2" }
+          ],
+          "fallback": { "next": "n2", "feedback": "Contoh: \"Last year I launched a feature without testing it with older users. What I learned was that assumptions are expensive.\"" }
+        },
+        "n2": {
+          "them": "And what did you do differently afterwards?",
+          "hints": ["tindakan konkret", "inversi: Not only did I ..., but I also ..."],
+          "replies": [
+            { "match": ["not only", "started", "introduced", "now i", "always", "changed", "since then"], "next": "n3" }
+          ],
+          "fallback": { "next": "n3", "feedback": "Contoh: \"Not only did I start running user interviews, but I also added accessibility checks to every release.\"" }
+        },
+        "n3": {
+          "them": "Many applicants have stronger academic records than you. Why should we choose you?",
+          "hints": ["akui dengan elegan, lalu tonjolkan pengalaman", "sebut dampak nyata"],
+          "replies": [
+            { "match": ["experience", "impact", "although", "while", "practical", "real", "users"], "next": "n4" }
+          ],
+          "fallback": { "next": "n4", "feedback": "Contoh: \"While my grades are good rather than perfect, I bring four years of practical experience and evidence of real impact on users.\"" }
+        },
+        "n4": {
+          "them": "Suppose you couldn't return to work in Indonesia straight after graduating. What would you do?",
+          "hints": ["jawab hipotetis: I would ...", "tunjukkan komitmen jangka panjang"],
+          "replies": [
+            { "match": ["would", "still", "remotely", "contribute", "long run", "mentor", "commit"], "next": "n5" }
+          ],
+          "fallback": { "next": "n5", "feedback": "Contoh: \"I would still contribute remotely, for example by mentoring local designers, and return as soon as I could.\"" }
+        },
+        "n5": {
+          "them": "Final question: in one sentence, what impact do you hope to have in ten years?",
+          "hints": ["satu kalimat padat dan terukur", "pakai tangible atau bridge the gap"],
+          "replies": [
+            { "match": ["impact", "help", "bridge", "everyone", "inclusive", "million", "companies"], "next": "end" }
+          ],
+          "fallback": { "next": "end", "feedback": "Contoh: \"I hope to have helped Indonesian companies make their products usable for millions of people who are currently left out.\"" }
+        },
+        "end": { "them": "Thank you, Bagus. That was a very thoughtful interview. You'll hear from us next month.", "end": true }
+      }
+    }
+  ]
+}

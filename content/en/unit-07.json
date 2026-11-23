@@ -1,0 +1,170 @@
+{
+  "id": "en-u07",
+  "language": "en",
+  "level": "B2+",
+  "title": "Negosiasi dengan klien",
+  "theme": "Ruang lingkup, anggaran, dan tenggat",
+  "tags": ["karier", "bisnis"],
+  "items": [
+    { "id": "en-u07-i01", "type": "idiom", "term": "scope creep", "meaning": "melebarnya ruang lingkup proyek sedikit demi sedikit", "example": "Scope creep is the main reason this project is late.", "example_id": "Lingkup kerja yang terus melebar adalah alasan utama proyek ini terlambat.", "cloze": "Scope ____ is the main reason this project is late.", "answer": "creep" },
+    { "id": "en-u07-i02", "type": "idiom", "term": "meet someone halfway", "meaning": "berkompromi; bertemu di tengah", "example": "We can't do it for that price, but we could meet you halfway.", "example_id": "Kami tidak bisa dengan harga itu, tapi kita bisa berkompromi.", "cloze": "We can't do it for that price, but we could meet you ____.", "answer": "halfway" },
+    { "id": "en-u07-i03", "type": "word", "term": "non-negotiable", "meaning": "tidak bisa ditawar", "example": "The launch date is non-negotiable for the client.", "example_id": "Tanggal peluncuran tidak bisa ditawar bagi klien.", "cloze": "The launch date is ____ for the client.", "answer": "non-negotiable" },
+    { "id": "en-u07-i04", "type": "collocation", "term": "come to an agreement", "meaning": "mencapai kesepakatan", "example": "After two hours, we finally came to an agreement.", "example_id": "Setelah dua jam, akhirnya kami mencapai kesepakatan.", "cloze": "After two hours, we finally came to an ____.", "answer": "agreement" },
+    { "id": "en-u07-i05", "type": "phrasal_verb", "term": "push back (on)", "meaning": "menolak; tidak setuju", "example": "The client pushed back on the new timeline.", "example_id": "Klien menolak jadwal yang baru.", "cloze": "The client pushed ____ on the new timeline.", "answer": "back" },
+    { "id": "en-u07-i06", "type": "pattern", "term": "I'm afraid (that) ...", "meaning": "Sayangnya ... (penolakan sopan)", "example": "I'm afraid that won't be possible within this budget.", "example_id": "Sayangnya itu tidak mungkin dengan anggaran ini.", "cloze": "I'm ____ that won't be possible within this budget.", "answer": "afraid" },
+    { "id": "en-u07-i07", "type": "word", "term": "leverage", "meaning": "daya tawar; memanfaatkan", "example": "Our experience in fintech gives us some leverage.", "example_id": "Pengalaman kami di fintech memberi kami sedikit daya tawar.", "cloze": "Our experience in fintech gives us some ____.", "answer": "leverage" },
+    { "id": "en-u07-i08", "type": "idiom", "term": "bear in mind", "meaning": "ingat; pertimbangkan", "example": "Please bear in mind that extra features take extra time.", "example_id": "Mohon diingat bahwa fitur tambahan butuh waktu tambahan.", "cloze": "Please bear in ____ that extra features take extra time.", "answer": "mind" },
+    { "id": "en-u07-i09", "type": "idiom", "term": "a ballpark figure", "meaning": "angka perkiraan kasar", "example": "Could you give me a ballpark figure for the redesign?", "example_id": "Bisakah kamu memberi perkiraan kasar biaya desain ulangnya?", "cloze": "Could you give me a ballpark ____ for the redesign?", "answer": "figure" },
+    { "id": "en-u07-i10", "type": "pattern", "term": "would be willing to", "meaning": "bersedia", "example": "We would be willing to extend the deadline by a week.", "example_id": "Kami bersedia memperpanjang tenggat satu minggu.", "cloze": "We would be ____ to extend the deadline by a week.", "answer": "willing" },
+    { "id": "en-u07-i11", "type": "word", "term": "deliverable", "meaning": "hasil kerja yang diserahkan", "example": "The first deliverable is a clickable prototype.", "example_id": "Hasil kerja pertama adalah prototipe yang bisa diklik.", "cloze": "The first ____ is a clickable prototype.", "answer": "deliverable" },
+    { "id": "en-u07-i12", "type": "phrasal_verb", "term": "walk away (from)", "meaning": "mundur (dari kesepakatan)", "example": "If the terms don't improve, we may have to walk away.", "example_id": "Kalau syaratnya tidak membaik, kami mungkin harus mundur.", "cloze": "If the terms don't improve, we may have to walk ____.", "answer": "away" }
+  ],
+  "grammar": [
+    {
+      "id": "en-u07-g01",
+      "title": "Hedging: melunakkan pernyataan",
+      "explanation": "Dalam negosiasi, pernyataan yang terlalu langsung bisa terdengar kasar. Lunakkan dengan 'it seems', 'might', 'a little', 'we'd prefer', atau ubah perintah menjadi pertanyaan. Pesannya tetap tegas, tapi nadanya profesional.",
+      "examples": ["It seems that the budget might be a little tight.", "We'd prefer to keep the original scope.", "That appears to be slightly higher than we expected."],
+      "common_mistake": { "wrong": "Your price is too high. Lower it.", "right": "Your price seems a little higher than we expected. Is there any flexibility?" }
+    },
+    {
+      "id": "en-u07-g02",
+      "title": "Reported speech untuk merangkum rapat",
+      "explanation": "Saat melaporkan ucapan orang lain, tenses biasanya mundur satu langkah (will → would, can → could, present → past) dan keterangan waktu ikut berubah (tomorrow → the next day). Pertanyaan ya/tidak dilaporkan dengan 'whether' atau 'if'.",
+      "examples": ["The client said they needed the app by March.", "She asked whether we could reduce the price.", "They told us they would sign the following week."],
+      "common_mistake": { "wrong": "He said that he will send the contract tomorrow.", "right": "He said that he would send the contract the next day." }
+    }
+  ],
+  "listening": [
+    {
+      "id": "en-u07-l01",
+      "title": "Negosiasi harga dan tenggat",
+      "speakers": [ { "name": "Ms Tan", "voice": "en-GB" }, { "name": "Bagus", "voice": "en-US" } ],
+      "lines": [
+        { "speaker": "Ms Tan", "text": "We've looked at your quote, and I'm afraid it's a bit higher than we expected." },
+        { "speaker": "Bagus", "text": "I understand. Bear in mind that the price includes three months of support after launch." },
+        { "speaker": "Ms Tan", "text": "That's helpful, but our budget is fixed. Is there any flexibility on your side?" },
+        { "speaker": "Bagus", "text": "We'd be willing to reduce the price by ten percent if we move the chat feature to a second phase." },
+        { "speaker": "Ms Tan", "text": "The launch date in March is non-negotiable, though. Can you still meet it?" },
+        { "speaker": "Bagus", "text": "Yes, with the smaller scope we can. So it seems we've come to an agreement?" },
+        { "speaker": "Ms Tan", "text": "I think so. I'll send you the revised contract by Friday." }
+      ],
+      "dictation": [1, 3, 5],
+      "questions": [
+        { "q": "What is Ms Tan's first concern?", "options": ["The launch date", "The price", "The design"], "answer": 1 },
+        { "q": "What does Bagus offer in exchange for a lower price?", "options": ["Moving one feature to a later phase", "Cancelling the support period", "Working at weekends"], "answer": 0 },
+        { "q": "What cannot be changed?", "options": ["The March launch date", "The support period", "The chat feature"], "answer": 0 }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "id": "en-u07-r01",
+      "title": "The power of the first number",
+      "text": "In negotiations, the first number mentioned often has a surprising amount of power. Psychologists call this the anchoring effect. Once a figure has been put on the table, both sides tend to adjust from it rather than think independently. In a well-known experiment, experienced estate agents were shown the same house but given different listing prices. Their valuations stayed remarkably close to whichever price they had seen first, even though most of them insisted that the listing price had not influenced them. For freelancers and agencies, the lesson is clear: it usually pays to make the first offer, provided it is ambitious but defensible. If the other side anchors first, negotiators are advised not to respond to the number directly. Instead, they might shift the conversation back to value, scope and deliverables before naming a figure of their own.",
+      "glossary": [
+        { "term": "anchoring effect", "meaning": "efek jangkar (angka pertama memengaruhi penilaian)" },
+        { "term": "estate agents", "meaning": "agen properti" },
+        { "term": "valuations", "meaning": "penilaian harga" },
+        { "term": "insisted", "meaning": "bersikeras" },
+        { "term": "defensible", "meaning": "bisa dipertanggungjawabkan" },
+        { "term": "deliverables", "meaning": "hasil kerja yang diserahkan", "item_id": "en-u07-i11" }
+      ],
+      "questions": [
+        { "q": "What is the anchoring effect?", "options": ["People ignore the first number", "The first number influences later judgements", "Experts always agree on prices"], "answer": 1 },
+        { "q": "What did most of the estate agents believe?", "options": ["That the listing price had not influenced them", "That the house was overpriced", "That the experiment was unfair"], "answer": 0 },
+        { "q": "What should you do if the other side names a number first?", "options": ["Accept it quickly", "Reply immediately with a lower number", "Talk about value and scope before giving your own figure"], "answer": 2 }
+      ]
+    }
+  ],
+  "writing": [
+    {
+      "id": "en-u07-w01",
+      "prompt": "Tulis email rangkuman setelah negosiasi dengan klien (Ms Tan). Rangkum apa yang disepakati, apa yang ditunda ke fase 2, dan langkah selanjutnya. Gunakan reported speech serta bahasa yang sopan tapi tegas.",
+      "min_words": 200,
+      "max_words": 320,
+      "checklist": [
+        "Pembuka menyebut tujuan email (to summarise our call)",
+        "Reported speech minimal dua kali (You mentioned that ..., You asked whether ...)",
+        "Poin kesepakatan disusun jelas (bernomor)",
+        "Hedging untuk hal sensitif (It seems ..., We would prefer ...)",
+        "Langkah berikutnya dengan tenggat yang jelas"
+      ],
+      "useful_phrases": ["I'm writing to summarise what we discussed.", "You mentioned that ...", "After some discussion, we agreed on the following points:", "It seems this would be possible if ...", "Please let me know if I have misunderstood anything."],
+      "model_answer": "Subject: Summary of today's call – mobile app project\n\nDear Ms Tan,\n\nThank you for your time this afternoon. I'm writing to summarise what we discussed, so that both teams share the same understanding before the contract is revised.\n\nAt the start of the call, you mentioned that our original quote was higher than your approved budget, and that the March launch date could not be moved. We explained that the price included three months of post-launch support, which we would prefer to keep, as it significantly reduces risk for your team.\n\nAfter some discussion, we agreed on the following points:\n\n1. The total price will be reduced by 10%.\n2. The in-app chat feature will be moved to a second phase, which we will quote separately in April.\n3. The launch date remains 15 March.\n4. Post-launch support stays at three months.\n\nYou also asked whether we could share a clickable prototype earlier. It seems this would be possible if we receive the final brand guidelines by next Wednesday, so I would be grateful if your design team could send them by then.\n\nNext steps: you said you would send the revised contract by Friday, and we will confirm the detailed timeline within two working days of signing.\n\nPlease let me know if I have misunderstood anything. Otherwise, we look forward to getting started.\n\nKind regards,\nBagus Athallah"
+    }
+  ],
+  "speaking": [
+    {
+      "id": "en-u07-s01",
+      "mode": "shadowing",
+      "sentences": [
+        "I'm afraid that won't be possible within this budget.",
+        "We would be willing to extend the deadline by a week.",
+        "Could you give me a ballpark figure for the redesign?",
+        "Please bear in mind that extra features take extra time.",
+        "It seems that the budget might be a little tight.",
+        "After two hours, we finally came to an agreement."
+      ],
+      "focus": "Nada sopan: intonasi lembut pada 'I'm afraid', bentuk lemah 'would' /wəd/, dan tekanan jelas pada angka serta kata kunci."
+    },
+    {
+      "id": "en-u07-s02",
+      "mode": "answer",
+      "prompt": "Situasi kerja: klien meminta tiga fitur tambahan tanpa menambah biaya atau tenggat. Tolak dengan sopan, jelaskan alasannya, lalu tawarkan dua alternatif (5 sampai 6 kalimat).",
+      "sample_answer": "Thank you for sharing these ideas; they would definitely make the app stronger. I'm afraid we can't add all three features without changing the budget or the deadline, because each of them needs at least a week of development and testing. Bear in mind that rushing them could also put the March launch at risk. There are two options I'd suggest. We could add the most important feature now and move the other two to a second phase. Alternatively, if the launch date had some flexibility, we'd be willing to include all three for a small additional fee."
+    }
+  ],
+  "conversation": [
+    {
+      "id": "en-u07-c01",
+      "title": "Negosiasi anggaran",
+      "role_you": "Pemilik agensi kecil",
+      "role_them": "Mr Rahman, manajer pengadaan",
+      "start": "n1",
+      "nodes": {
+        "n1": {
+          "them": "Thanks for coming in. I'll be direct: your quote is about thirty percent above our budget.",
+          "hints": ["tanggapi dengan tenang: I see. Could you tell me ...?", "tanyakan kisaran anggaran mereka"],
+          "replies": [
+            { "match": ["i see", "understand", "could you", "budget", "range", "what"], "next": "n2" }
+          ],
+          "fallback": { "next": "n2", "feedback": "Contoh: \"I see. Could you tell me what range you had in mind?\"" }
+        },
+        "n2": {
+          "them": "We were thinking closer to forty thousand dollars. Is there any room to move?",
+          "hints": ["hedging: That would be a little difficult ...", "tawarkan syarat: We'd be willing to ... if ..."],
+          "replies": [
+            { "match": ["willing", "if", "could", "difficult", "flexib", "scope", "phase"], "next": "n3" }
+          ],
+          "fallback": { "next": "n3", "feedback": "Contoh: \"That would be difficult at full scope, but we'd be willing to lower the price if we reduced the number of features.\"" }
+        },
+        "n3": {
+          "them": "Which features would you suggest removing?",
+          "hints": ["usulkan fitur yang ditunda", "jelaskan dampaknya bagi pengguna"],
+          "replies": [
+            { "match": ["chat", "report", "phase", "later", "second", "move", "postpone", "dashboard"], "next": "n4" }
+          ],
+          "fallback": { "next": "n4", "feedback": "Contoh: \"We could move the reporting dashboard to a second phase. Users won't need it during the first month.\"" }
+        },
+        "n4": {
+          "them": "Hmm. Our CEO also wants the app live before the end of March. That's non-negotiable.",
+          "hints": ["setujui dengan syarat: That's achievable, provided ...", "sebut apa yang kamu butuhkan dari klien"],
+          "replies": [
+            { "match": ["as long as", "provided", "achievable", "possible", "if", "need", "feedback"], "next": "n5" }
+          ],
+          "fallback": { "next": "n5", "feedback": "Contoh: \"That's achievable, provided we get your feedback on each design within three working days.\"" }
+        },
+        "n5": {
+          "them": "All right. If we meet you halfway on the price, do we have a deal?",
+          "hints": ["konfirmasi dan rangkum kesepakatan", "usulkan langkah berikutnya"],
+          "replies": [
+            { "match": ["deal", "agree", "yes", "summary", "send", "contract", "great"], "next": "end" }
+          ],
+          "fallback": { "next": "end", "feedback": "Contoh: \"I think we have a deal. I'll send you a summary today so we can update the contract.\"" }
+        },
+        "end": { "them": "Perfect. I look forward to receiving it. It's a pleasure doing business with you.", "end": true }
+      }
+    }
+  ]
+}

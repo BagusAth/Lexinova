@@ -7,7 +7,7 @@ export function SkillDone({
   title,
   detail,
 }: {
-  skill: Skill;
+  skill: Skill | "grammar";
   title: string;
   detail: string;
 }) {

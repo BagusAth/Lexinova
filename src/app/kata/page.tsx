@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { allItems } from "@/lib/content";
+import { UNITS } from "@/lib/content";
+import { LEVELS } from "@/lib/levels";
 import { useProgress } from "@/lib/progress";
 import { speak } from "@/lib/speech";
 import { wordStatus, type WordStatus } from "@/lib/stats";
@@ -31,9 +32,12 @@ export default function Kata() {
   const p = useProgress();
   const [q, setQ] = useState("");
   const [filter, setFilter] = useState<WordStatus | "semua">("semua");
+  const [level, setLevel] = useState<string>("semua");
   if (!p) return <Loading />;
 
-  const items = allItems().map((i) => ({ ...i, status: wordStatus(p, i.id) }));
+  const items = UNITS.filter((u) => level === "semua" || u.level === level).flatMap((u) =>
+    u.items.map((i) => ({ ...i, level: u.level, status: wordStatus(p, i.id) })),
+  );
   const counts = {
     semua: items.length,
     baru: 0,
@@ -60,9 +64,9 @@ export default function Kata() {
             mulai kamu pelajari.
           </p>
         </div>
-        <ButtonLink href="/fondasi" className="hidden md:inline-flex">
-          Review sekarang
-        </ButtonLink>
+        <div className="hidden md:block">
+          <ButtonLink href="/fondasi">Review sekarang</ButtonLink>
+        </div>
       </div>
 
       <div className="flex flex-col gap-3 md:flex-row md:items-center">
@@ -86,11 +90,28 @@ export default function Kata() {
         </div>
       </div>
 
-      <ul className="grid gap-3 md:grid-cols-2">
+      <div
+        className="-mx-5 -mt-2 flex gap-2 overflow-x-auto px-5 [scrollbar-width:none] md:mx-0 md:px-0"
+        aria-label="Filter tingkat"
+      >
+        {["semua", ...LEVELS.map((l) => l.cefr)].map((l) => (
+          <button
+            key={l}
+            type="button"
+            aria-pressed={level === l}
+            onClick={() => setLevel(l)}
+            className={`shrink-0 rounded-full px-3.5 py-1.5 text-xs font-bold transition ${level === l ? "bg-cyan/20 text-cyan ring-1 ring-cyan/40" : "bg-surface text-mute hover:text-ink"}`}
+          >
+            {l === "semua" ? "Semua tingkat" : l}
+          </button>
+        ))}
+      </div>
+
+      <ul className="grid grid-cols-1 gap-3 md:grid-cols-2">
         {shown.map((i) => (
           <li
             key={i.id}
-            className="flex items-center gap-3 rounded-3xl bg-surface p-4 shadow-soft"
+            className="flex min-w-0 items-center gap-3 rounded-3xl bg-surface p-4 shadow-soft"
           >
             <button
               type="button"
@@ -101,8 +122,14 @@ export default function Kata() {
               <Icon kind="volume" size={20} />
             </button>
             <div className="min-w-0 flex-1">
-              <div className="truncate font-bold">{i.term}</div>
+              <div className="flex items-center gap-2">
+                <span className="truncate font-bold">{i.term}</span>
+                <span className="shrink-0 rounded-md bg-elevated px-1.5 text-[10px] font-bold text-mute">
+                  {i.level}
+                </span>
+              </div>
               <div className="truncate text-sm text-mute">{i.meaning}</div>
+              <div className="truncate text-xs text-mute/80 italic">{i.example}</div>
             </div>
             <span
               className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-bold ${STATUS_STYLE[i.status]}`}

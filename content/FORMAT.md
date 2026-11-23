@@ -27,6 +27,7 @@ Semua materi disimpan sebagai file JSON di repo (`content/<bahasa>/unit-XX.json`
 Unit dikelompokkan per tingkat lewat kolom `level`, berurutan sesuai array `UNITS` di `src/lib/content.ts`.
 Aturan tingkat ada di `src/lib/levels.ts`.
 
+- **Pelajaran per unit** (node di Jalur): Fondasi (`items`), Tata bahasa (`grammar`, penjelasan + cek pilih kalimat benar), Listening, Reading, Writing, Speaking, Conversation.
 - **Ujian Unit**: 3 nyawa, membuka unit berikutnya di tingkat yang sama. Boleh diambil sebelum semua pelajaran selesai (lompat).
 - **Ujian Naik Tingkat**: soal dari semua unit di tingkat itu. Lulus = naik tingkat dan semua unit di bawahnya ikut lulus, jadi bisa dipakai sebagai Uji Lompat.
 - Soal ujian dibuat otomatis dari `items` dan `grammar` (arti, padanan, isi celah, susun kata, dengar-lalu-ketik, kalimat benar). Tidak perlu menulis soal ujian terpisah, tapi pastikan `cloze` yang diisi `answer` sama persis dengan `example`.

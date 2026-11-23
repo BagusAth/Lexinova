@@ -106,7 +106,7 @@ export default function Home() {
           };
 
   const rows: {
-    key: Skill | "fondasi";
+    key: Skill | "fondasi" | "grammar";
     title: string;
     sub: string;
     href: string;
@@ -118,6 +118,15 @@ export default function Home() {
       sub: "Kosakata dan kolokasi",
       href: "/fondasi",
       value: foundationProgress(p, unit.items),
+    },
+    {
+      key: "grammar",
+      title: "Tata bahasa",
+      sub: unit.grammar.map((g) => g.title).join(" · "),
+      href: "/tata-bahasa",
+      value: unit.grammar.length
+        ? unit.grammar.filter((g) => p.done[g.id]).length / unit.grammar.length
+        : 0,
     },
     ...SKILLS.map((s) => ({
       key: s,
@@ -253,12 +262,12 @@ export default function Home() {
             {unit.title}
           </span>
         </SectionTitle>
-        <div className="grid gap-3 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
           {rows.map((r) => (
             <Link
               key={r.key}
               href={r.href}
-              className={`flex items-center gap-4 rounded-3xl bg-surface p-4 shadow-soft ring-1 transition hover:-translate-y-0.5 hover:ring-lavender/40 active:scale-[0.98] ${
+              className={`flex min-w-0 items-center gap-4 rounded-3xl bg-surface p-4 shadow-soft ring-1 transition hover:-translate-y-0.5 hover:ring-lavender/40 active:scale-[0.98] ${
                 r.key === skill ? "ring-lavender/50" : "ring-transparent"
               }`}
             >
